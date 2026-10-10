@@ -11,7 +11,7 @@ This dossier and its LaTeX/PDF counterpart are integrated into the main manuscri
 
 ## Additional measured-observable case (separate from this article snapshot)
 
-The [Bradley 2022 NV0 report](../results/bradley2022-nv0/report_sv.md) adds a second experimentally anchored family with an explicit effective Hamiltonian, matched conditions and 24 original observations. The heldout envelope diagnostic passes; the fixed-frequency X diagnostic fails. This is a calibrated, retrospective observable comparison, not the strict step-2 microscopic model validation. The historical blocked record and article claims remain unchanged. The new case is not yet integrated into the compiled manuscript or dossier PDFs.
+The [Bradley 2022 NV0 report](../results/bradley2022-nv0/report_sv.md) adds a second experimentally anchored family with an explicit effective Hamiltonian, matched conditions and 24 original observations. The heldout envelope diagnostic passes; the fixed-frequency X diagnostic fails. This is a calibrated, retrospective observable comparison, not the strict step-2 microscopic model validation. The historical blocked record remains unchanged. The current main manuscript and Supplement include the Bradley comparison and subsequent complete-protocol, convergence and paired SeQUeNCe/QuNetSim studies; the standalone steps-1–4 dossier remains a historical execution snapshot. Updated article claims are checked by `scripts/document_article_update.py` and mapped in `evidence/article_update_claim_map.json`.
 
 ## Manuscript artifacts
 

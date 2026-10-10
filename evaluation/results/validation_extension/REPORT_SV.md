@@ -1,6 +1,6 @@
 # Gemensam protokollvalidering, spinnbadskonvergens och två nätverkssimulatorer
 
-**Utfört 10 oktober 2026.** Detta är ett nytt körbart resultatpaket efter det granskade Bradley-fallet. De tidigare manuskriptens resultat är egna historiska snapshots; deras PDF-filer har inte skrivits om med dessa nya resultat.
+**Utfört 10 oktober 2026.** Detta är ett nytt körbart resultatpaket efter det granskade Bradley-fallet. Den aktuella huvudartikeln och supplementet innehåller nu dessa resultat tillsammans med Bradley-fallet. De ursprungliga körningarna och det fristående systemdossieret behåller sina historiska källidentiteter. Artikelns nya påståenden kontrolleras i `evidence/article_update_claim_map.json`; bygg- och sidgranskningen redovisas i `evidence/article_release_verification.json`.
 
 ## Vad som är färdigt
 

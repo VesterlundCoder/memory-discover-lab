@@ -2,7 +2,7 @@
 
 **David Vesterlund — WestQuant, Vesterlund Ventures, Sweden. 10 October 2026.**
 
-This repository accompanies *WestQuant Memory Discovery Lab: An Evidence-Aware Framework from Experimental Data to Quantum-Memory Simulation*. Its contribution is an executable source-to-model workflow with explicit physical and evidence boundaries. It is an English scientific manuscript based on actual reruns of version 0.6.0, with analytical verification, processed experimental-data reanalysis, retained negative diagnostics and event-simulator integration.
+This repository accompanies *WestQuant Memory Discovery Lab: An Evidence-Aware Framework from Experimental Data to Quantum-Memory Simulation*. Its contribution is an executable source-to-model workflow with explicit physical and evidence boundaries. It is an English scientific manuscript covering the original version-0.6.0 reruns and the subsequent Bradley, complete-protocol, convergence and two-simulator studies. It retains analytical verification, processed experimental-data reanalysis, negative diagnostics and revision-specific source identities.
 
 It does not report new hardware experiments, a validated new-material lifetime, or better-than-SOTA performance. ML for T2 is a separate project; no ML training is performed here.
 
@@ -14,7 +14,7 @@ It does not report new hardware experiments, a validated new-material lifetime, 
 | `supplement/supplement.tex`, `supplement/supplement.pdf` | Interfaces, reference conditions, diagnostics, work counts and reproducibility details |
 | `lab/` | Evaluated Python package, tests, configurations, dataset adapters and detailed outputs |
 | `evidence/` | Article result snapshot, actual rerun logs, source-archive identity and claim-to-result map |
-| `figures/` | Five reproducible scientific figures in PDF and PNG |
+| `figures/` | Five original figures and four validation-extension figures in PDF and PNG |
 | `tables/` | Supplementary LaTeX tables and CSV counterparts generated from JSON |
 | `scripts/` | Reproduction, figure/table generation and reporting verification |
 
@@ -26,7 +26,7 @@ It does not report new hardware experiments, a validated new-material lifetime, 
 - Ten primary-text-reviewed coherence references coexist with 201 provisional molecular entries; incomplete records are not promoted to physical predictions.
 - Deterministic Hamiltonian controls and a known-generator count experiment verify specified models. The latter recovers 0.979663 ms from a 1 ms synthetic generator.
 - A calibrated but nonunique fixed-point channel produces 87 retrieved pairs in 400,000 ideal-input SeQUeNCe attempts. These are simulated outcomes under incomplete optical assumptions.
-- The original 75 tests and seven system tests passed. The repair revision adds eleven regression tests: 75 lab tests and 18 evaluation tests pass in the full environment; seven optional tests are skipped in the core environment. No new-material superiority is inferred.
+- The original and repair test records remain historical. In the latest extension environment, 109 tests ran: 107 passed and two optional backend tests were skipped. A fresh offline replay matched 359 JSON records and 11 exact RNG arrays. No new-material superiority is inferred.
 
 ## Reproduce
 
@@ -51,11 +51,11 @@ python scripts/reproduce.py --out reproductions/my-paper
 
 This verifies bundled measurement bytes and recomputes fits, channel/network controls, figures and reporting checks in a fresh output tree. It reuses reviewed paper transcriptions and reference tables. It excludes reacquisition of the unlicensed molecular collection and rechecking unbundled primary-paper bytes. `--online` explicitly invokes the wider original source-acquisition workflow and requires those remote servers. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md), [evaluation/README.md](evaluation/README.md) and [REPRODUCTION_REPAIR.md](REPRODUCTION_REPAIR.md) for exact scope and validation.
 
-PDF compilation uses the already included figures and tables. The standalone `.tex` download needs its companion `figures/` directory from this bundle.
+PDF compilation uses the included figures, tables and section files: `make pdf`. Use the complete repository source tree rather than the standalone `.tex` download. For the updated claim checks and English figure regeneration, see [REPRODUCIBILITY.md](REPRODUCIBILITY.md#current-manuscript-and-validation-extension).
 
 ## Provenance and publication status
 
-The evaluated software archive SHA-256 is `c64b94a573def9d999b65be7201947e9c2ce4e496aaf201650d7c1e3d44733aa`. `evidence/study_manifest.json` records the source archive and the fresh validation scope. The accompanying `SHA256SUMS` covers the final repository payload. Study results are retrospective, not prospectively preregistered.
+The original evaluated software archive SHA-256 is `c64b94a573def9d999b65be7201947e9c2ce4e496aaf201650d7c1e3d44733aa`. `evidence/study_manifest.json` records the source archive and the fresh validation scope. The accompanying `SHA256SUMS` covers the final repository payload. Study results are retrospective, not prospectively preregistered.
 
 The code and article materials are published at https://github.com/VesterlundCoder/memory-discover-lab. No DOI or peer-review acceptance is asserted. The manuscript draft has not undergone independent scientific review. The private archive preserves the complete historical `lab/` tree; only the selected files in `evidence/` and their detailed underlying outputs are used as this article's fresh result snapshot.
 
@@ -63,10 +63,10 @@ See [DATA_SOURCES.md](DATA_SOURCES.md) and [LICENSE_NOTICES.md](LICENSE_NOTICES.
 
 ## Additional system-paper evaluations
 
-The runnable evaluation package implements steps 1–4. Step 1 has been executed on 73 channel-age points and 90 processed fidelities: maximum full-Choi discrepancy is below 2e-14. A second-family software control, seven constructed-fault ablations and the local performance/robustness experiment also pass (108 cold jobs across workers 1, 2 and 4). A [second measured observable case: Bradley 2022 NV0 Ramsey](evaluation/results/bradley2022-nv0/report_sv.md) has now been executed on 24 experimental points with an explicit effective Hamiltonian and matched conditions. Its heldout envelope diagnostic passes, but its fixed-frequency X diagnostic fails; the strict microscopic physical-validation task and independent external reproduction remain pending. See [evaluation/README.md](evaluation/README.md) and the retained [step-1 report](evaluation/results/step1-executed/report.md). The original steps 1–4 are integrated into the main manuscript and Supplement; the new measured-observable case is documented separately, with a complete execution dossier in evaluation/paper/. The original numerical snapshot and initial system records remain traceable.
+The runnable evaluation package implements steps 1–4. Step 1 has been executed on 73 channel-age points and 90 processed fidelities: maximum full-Choi discrepancy is below 2e-14. A second-family software control, seven constructed-fault ablations and the local performance/robustness experiment also pass (108 cold jobs across workers 1, 2 and 4). A [second measured observable case: Bradley 2022 NV0 Ramsey](evaluation/results/bradley2022-nv0/report_sv.md) has now been executed on 24 experimental points with an explicit effective Hamiltonian and matched conditions. Its heldout envelope diagnostic passes, but its fixed-frequency X diagnostic fails; the strict microscopic physical-validation task and independent external reproduction remain pending. See [evaluation/README.md](evaluation/README.md) and the retained [step-1 report](evaluation/results/step1-executed/report.md). The original steps 1–4, Bradley case and subsequent validation extension are integrated into the main manuscript and Supplement. The standalone dossier in evaluation/paper/ retains the historical steps 1–4. The original numerical snapshot and initial system records remain traceable.
 
 ## New executed validation extension (10 October 2026)
 
 The [Swedish result report](evaluation/results/validation_extension/REPORT_SV.md) and [extension reproduction instructions](evaluation/README.md#protocol-convergence-and-second-network-simulator) document joint time-dependent protocol checks, spin-bath convergence and native SeQUeNCe/QuNetSim executions. Numerical results: 56 channel-age points, 336 state probes, 69 coherence calls and a larger 256-run paired simulator study with 131,072 attempts. All 128 larger paired comparisons passed. A fresh offline replay compared every archived native run and RNG trace.
 
-Joint experimental validation remains inconclusive because matched fidelity data are missing. The converged baths are synthetic; no material prediction is authorized. QuNetSim uses a custom QuTiP density backend and shared external logical time, so physical network timing is not cross-validated. These new results are separate from the existing article PDFs.
+Joint experimental validation remains inconclusive because matched fidelity data are missing. The converged baths are synthetic; no material prediction is authorized. QuNetSim uses a custom QuTiP density backend and shared external logical time, so physical network timing is not cross-validated. These results are included in the current article and Supplement. `evidence/article_update_claim_map.json` connects five updated claim groups to checked result bytes; `evidence/article_release_verification.json` records the manuscript build and page review.

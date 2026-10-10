@@ -1,0 +1,92 @@
+\section{Distinct-family Bradley observable reanalysis}
+\label{sec:bradleysupplement}
+The additional dataset is \href{https://doi.org/10.4121/16887658.v3}{4TU.ResearchData version 3}, associated with Bradley et al., \href{https://doi.org/10.1038/s41534-022-00637-w}{npj Quantum Information 8, 122 (2022)}. Its archive MD5 is \code{0e1fb4500688659f9dcca3123831e4f3}. The bundle retains the original archive, source analysis notebook and extracted \code{data\_3b.json}; SHA-256 identities and CC BY 4.0 attribution are in \path{data/experimental/bradley2022/provenance.json}. The runner verifies that the extracted bytes match the nested source archive. Source fitted arrays are not treated as measurements.
+
+\subsection{Conditions, Hamiltonian and measurement model}
+The memory is one $^{13}$C spin ($I=1/2$) near an NV centre in type-IIa CVD diamond with target 0.01\% $^{13}$C composition. The sample temperature is 4 K; the reviewed NV-frame field is $(B_x,B_y,B_z)=(0.3\pm0.1,0.06\pm0.08,46.801\pm0.001)$ G. Fig.~3b uses free evolution in heralded NV$^0$, no refocusing pulses, 1 ms ionization/recharging pulses, and NV$^-$ postselection after recapture. Nuclear-spin data are not SPAM-corrected. A site-resolved bath realization is not identified by the nominal isotope fraction.
+
+The source gives $A_\parallel=80\pm1$ Hz and $A_\perp=271\pm4$ Hz measured in NV$^-$. Transferring them to NV$^0$ would be an additional physical assumption. NV$^0$ electron relaxation inferred from the same envelope is also not independent validation data. The executed comparison instead uses $H_{\rm eff}/h=\Delta\nu I_z$, with $I_z=\mathrm{diag}(1/2,-1/2)$ and $\Delta\nu=\BFrequency{}$ Hz. A separate NMR measurement reports 50\,229.8$\pm$0.1 Hz; the RF reference is 50\,150 Hz, corresponding to the source's artificial 80 Hz detuning relative to 50\,230 Hz. The frequency is fixed, not fitted to held-out $X$.
+
+The envelope is $E(t)=\exp[-(t/\tau)^\beta]$. With $U=\exp(-i2\pi\Delta\nu I_zt)$, the normalized channel has Kraus operators $\sqrt{(1+E)/2}\,U$ and $\sqrt{(1-E)/2}\,UZ$. The measured transverse length is $AE(t)$ and signed projection is $E(t)[c\cos(2\pi\Delta\nu t)+s\sin(2\pi\Delta\nu t)]$. The parameters $A,c,s$ belong to preparation/readout amplitudes, not channel attenuation. Independent matrix-exponential propagation checks the channel convention, CP/TP and physical states. No noisy measured Bloch length is clipped, normalized to one or given an artificial zero-age point.
+
+\subsection{Actual calibration, held-out diagnostics and failure}
+The envelope has 13 ages: nine calibration points through 80.3 ms and four held-out points at 90.3--120.3 ms. Signed $X$ has 11 ages: five calibration points through 6.18 ms and six held-out points thereafter. The separate series have separate signal amplitudes. The split was selected after source inspection. $A,\tau,\beta$ fit only envelope calibration points; $c,s$ fit only the first five $X$ points, with envelope parameters retained. No optimizer uses the withheld values. Fits are deterministic and require no sampling seed.
+
+The retained fit is $A=\BAmplitude{}$, $\tau=\BTauMs{}$ ms, $\beta=\BBeta{}$, $c=\BCos{}$ and $s=\BSin{}$. The original all-envelope fit reports 57$\pm$3 ms and $\beta=1.2\pm0.1$; the subset scale here is not a new measured $T_2$ or confidence interval. Each gate compares the maximum absolute held-out residual divided by its unchanged source error with three. Envelope discrepancy \BEnvelopeError{} passes; $X$ discrepancy \BXError{} fails. $X$ sensitivity at 79.7 and 79.9 Hz gives 3.2085 and 3.1070, respectively, so the failure is retained without changing the gate.
+
+Source covariance, raw-shot likelihood and propagation of calibration uncertainty are unavailable. The positive Bloch length may also have an unmodeled noise floor. This is therefore a descriptive adequacy screen and cannot refute the original experiment's interpretation. The completed observable comparison retains \code{physical\_validation\_passed=false}, \code{microscopic\_model\_validated=false} and \code{network\_exported=false}. It does not supply the original strict normalized-complex pure-dephasing case or optical IO review.
+
+\section{Joint write-store-read and detection controls}
+The source profile is pinned by hash in \path{evaluation/config/validation_extension/protocol.json}. Controls override its storage description with supplied Markov rates; an unexecuted nuclear-bath noise contribution is removed from that budget. IO times are 100/200 $\mu$s for writing/reading. A separate named readout background uses a 10 $\mu$s detection window. Its declaration must be independent of signal noise and cannot reuse an existing source identity. The event model is \code{exclusive\_signal\_then\_background}.
+
+Seven instrument cases at eight ages $[0,10^{-4},5\times10^{-4},10^{-3},0.005,0.01,0.03,0.1]$ s give \ProtoPoints{} complete channel-age maps and \ProtoProbes{} state probes. Cases cover identity, full loss, background only, dephasing/loss, thermal/background, biased background and noise dominance. Each configuration records relaxation, dephasing, erasure, equilibrium population, detuning, write/read efficiency/depolarization and background population/rates. The independently formed matrix-unit/Liouvillian Choi map and six outputs agree with the lab at $10^{-10}$ tolerance, with maximum discrepancy \ProtoError{}. CP/TP and event probabilities are also checked. At zero acceptance the conditional fidelity is missing. A background-only map can have acceptance but has signal efficiency zero and average target overlap $1/2$.
+
+The experiment audit checks the bundled PR2026 NPZ with SHA-256
+\par\noindent\begin{minipage}{\linewidth}\centering\small\texttt{110cbe3846f1068ea099902b3d834fad599}\\\texttt{2025dd7d8f9608f49d7eb68cb951f}.\end{minipage}\par
+Nine source ages retain 27 central values for efficiency, noise and $g^{(2)}$, plus their errors. Every qubit-fidelity field is missing. Clock offset, herald/vacuum trial semantics and absent covariance remain unresolved. Neither Teller nor Bradley is substituted to fill these fields. \path{experimental_pending.json} specifies common conditions and required tomography, signal and background counts. This experiment gate is inconclusive independently of the numerical pass; no material or hardware validation follows.
+
+\section{Hamiltonian and refinement recipes for the synthetic baths}
+All nuclear spins are $^{13}$C with $I=1/2$, central projections $m=\pm1/2$, zero quadrupole terms and maximally mixed initialization. For site index $i=0,\ldots,n-1$, define $r_i=3.5(1.7)^i$ angstrom and $\theta_i=0.8i$. Its laboratory position is $(r_i\cos\theta_i,r_i\sin\theta_i,0.3r_i)$. The supplied hyperfine tensor has only its third row nonzero,
+\[
+(A_{i,zx},A_{i,zy},A_{i,zz})=(1600,300,2400)(3.5/r_i)^3\ \mathrm{Hz}.
+\]
+Every pair $i<j$ is explicitly specified as
+\[
+J_{ij}=120(0.25)^{i+j-1}\operatorname{diag}(1,1,-2)\ \mathrm{Hz}.
+\]
+The field is $(0,0,0.0002)$ T. With the retained PyCCE isotope convention $\gamma_{13\mathrm C}=6.72828532$ rad ms$^{-1}$ G$^{-1}$, the exact solver's Zeeman vector is $-\gamma_{13\mathrm C}\mathbf B\,10^7/(2\pi)$ Hz. This sign, angular-frequency conversion and field scaling are checked explicitly. Pair/hyperfine Hz convert to PyCCE kHz, time seconds to milliseconds and field tesla to gauss. Absent PyCCE pairs can otherwise acquire dipolar couplings, so a supplied zero interaction must also be explicit when used to suppress one.
+
+\subsection{Independent references and actual counts}
+Four spins define the exact/reference comparisons. Matrix-exponential and independent Hermitian eigensystem propagation construct the branch unitaries and $L(t)=\mathrm{Tr}[U_0U_1^\dagger]/d$. Strang propagation splits $G_m=G_B+(G_m-G_B)$ symmetrically within each free segment. Substep counts are 8, 16, 32, 64 and 128; they refine the propagator and do not refine a physical finite-width pulse.
+
+CCE orders 1--4 and pair cutoffs 5, 10, 20 and 40 angstrom are compared with exact four-spin dynamics. Bath sizes 2, 4, 6 and 8 and time-grid sizes 33, 65, 129 and 257 compare adjacent nested levels; their initial levels are inconclusive because no preceding comparator exists. The default curve grid has 33 ages over 0--0.4 ms. Three pulse choices (0, 1, 4 ideal CPMG pulses) give the exact count
+\[
+3\,[2+5+4+4+4+4]=\ConvCalls{}
+\]
+solver calls. There are \ConvRows{} diagnostics because a single independent-solver row uses two calls. Final tolerances are $10^{-10}$ for independent solvers, $10^{-4}$ for Strang/time-grid controls and $10^{-3}$ for CCE, cutoff and bath expansion. Failed coarser levels are retained; final rows pass. The time-grid metric is trapezoidal mean $|L|$, not all extrema or a fitted lifetime.
+
+The weak outer-coupling construction is a deliberate numerical control. Eight-spin convergence under these recipes says nothing about a dense material lattice, sample disorder ensemble or another time interval. No pulse-shape, pulse-error, transverse central-spin relaxation or phonon-model convergence is supplied. For profiles labeled \code{prediction\_purpose: material\_prediction}, the new gate checks certificate/profile hashes, all five refinement axes, error/tolerance, validated times, nonhypothetical evidence and independent physical-model review. It is a declared-evidence guard, not an automated replacement for scientific review; no certificate for a real material is issued.
+
+\section{Native simulator contracts and larger-study accounting}
+SeQUeNCe uses its \code{Timeline}, native events/processes and joint density manager. QuNetSim uses native \code{Host}/\code{Network} connections, quantum packets, ownership transfer and ACKs. A custom QuTiP density backend implements the local operations/channel action needed by this two-node protocol; its joint-state budget is four qubits. It preserves tensor ordering, releases consumed qubits and rejects unsupported measurement calls. Stock EQSN, general large-network operations and native physical timing are not validated by this backend. The simulator reference is \href{https://doi.org/10.1109/TQE.2021.3092395}{DiAdamo et al., IEEE Transactions on Quantum Engineering 2 (2021)}.
+
+Each heralded attempt prepares an ideal Bell pair and transfers one half between the QuNetSim hosts even if later readout loses it. Both retrievals apply the modeled signal or background branch, or erase the pair; all qubits are released after the attempt. The SeQUeNCe arm schedules loading/retrieval and resets the corresponding joint state after each cycle. An independent tensor-matrix-unit reference checks the local and joint evolution. The two arms use different channel application routes and the same external event outcome inputs.
+
+\subsection{Parameters, RNG and quality semantics}
+Sixteen combinations use $r_0\in\{0,5000\}$ s$^{-1}$, ages $\{0,0.001,0.01,0.03\}$ s and herald probabilities $\{0.25,0.75\}$. Constant rates are population 30, pure dephasing 50 and erasure 12 s$^{-1}$, with equilibrium population 0.2 and detuning 7 Hz. Writing/reading use efficiencies 0.8/0.7, depolarization 0.01/0.02, durations 100/200 $\mu$s and specified 4.2 K conditions. Readout uses a 10 $\mu$s window, background population 0.5 and age coefficient 50\,000 s$^{-2}$. The 40 ms attempt interval exceeds the complete cycle at every tested age. No overlap, routing, swapping, fiber propagation or contention is simulated.
+
+Master seed 20261010 is combined with each study seed and stream name through SHA-256; the first eight digest bytes interpreted little-endian seed NumPy's PCG64 generator. Three stream names are \code{herald}, \code{left\_readout} and \code{right\_readout}. The resulting exact uniform arrays are shared by both simulator arms and retained. Parameter cases share streams intentionally, so they are correlated; seeds, not all individual attempts or parameter rows, are independent Monte Carlo clusters.
+
+The signal/noise/loss thresholds are $\eta$, $\eta+q$ and one. Internal branch labels diagnose false-positive handling but do not decide whether an individual pair meets a quality requirement. Quality-qualified counts instead use the common model ensemble Bell fidelity $F_B\geq0.8$ and divide by modeled attempt time. Background can increase raw acceptance while reducing fidelity. Figure points show all eight seed outcomes without inferential intervals or claims of speed superiority.
+
+\subsection{Pilot, larger study and limitations}
+The pilot has seeds 1101--1103 and 32 attempts per arm: $16\times3\times2=96$ arm runs and 3072 attempts. After passing instrument/convergence/pilot prerequisites, seeds 2101--2108 and 512 attempts produce \LargerRuns{} arm runs and \LargerAttempts{} attempts. All \LargerPairs{} larger paired comparisons have identical branch counts and logical hashes; maximum mean-density error is \LargerError{}. Native event and quantum-transfer counts are \NativeEvents{} and \NativeTransfers{}. No selected arm fails. Across pilot and larger stages there are 352 arm runs, 176 paired comparisons and 134\,144 attempts.
+
+Both native stages run in separate child processes; QuNetSim's global network is never restarted after a completed stage in the same interpreter. QuNetSim's wall-clock queues do not provide the physical time used by this study. Storage age and event timestamps come from the supplied common logical trace, so equal hashes demonstrate trace adherence rather than equal native latency. The scientific scope is thus state/instrument consistency and native two-node transport under common external inputs, not physical network-timing equivalence or larger-network scalability.
+
+\clearpage
+\section{Current replay, claim mapping and manuscript build}
+The extension's actual source base is git commit \code{985c8fe}; the source changes were uncommitted when the selected computations ran. Their content identities, rather than that base alone, identify the executed implementation: lab hash
+\par\noindent\begin{minipage}{\linewidth}\centering\small\texttt{3852565376c2a529bb33bc9394cf96061}\\\texttt{eeee147e19b4f4bbc2da724cf224f5a},\end{minipage}\par
+and evaluation hash
+\par\noindent\begin{minipage}{\linewidth}\centering\small\texttt{ecc4ea6d77ca774a7f9cd3ed6f91285a5}\\\texttt{d5632a041ecdaa79ff829a5464cc373}.\end{minipage}\par
+The published result commit is \href{https://github.com/VesterlundCoder/memory-discover-lab/commit/935817372520428e88398235ad58ee3d9817e2ba}{\code{9358173}}. Manuscript/plotting scripts are outside the lab/evaluation fingerprints; the reporting generator verifies that the currently delivered source matches these content identities. Historical Bradley, repair and original-paper executions retain their own fingerprints and are not relabeled as executions at the new commit.
+
+The extension environment is Linux/Python 3.12.14, NumPy 2.3.5, SciPy 1.16.3, Matplotlib 3.10.8, PyCCE 1.1.1, SeQUeNCe 1.2.0, QuNetSim 0.1.2, QuTiP 5.3.1 and QuTiP-QIP 0.4.2. Its 126-distribution snapshot is \path{evaluation/config/validation_extension/requirements-tested.txt}. Install it in a separate Python 3.12 environment from older snapshots. PyCCE compatibility uses the retained SciPy utility and NumPy Unicode alias documented in Section~\ref{sec:repair}; installed dependency source is not patched.
+
+After installation, use a fresh output directory:
+\begin{quote}\small
+\code{export OMP\_NUM\_THREADS=1 OPENBLAS\_NUM\_THREADS=1 MKL\_NUM\_THREADS=1}\\
+\code{export WQ\_BLOCK\_EXTERNAL\_NETWORK=1}\\
+\code{export PYTHONPATH="\$PWD/scripts/network\_guard:\$PWD/lab"}\\
+\code{python scripts/run\_validation\_extension.py --count}\\
+\code{python scripts/run\_validation\_extension.py --out reproductions/my-extension}\\
+\code{python scripts/verify\_validation\_extension.py}\\
+\code{--reference evaluation/results/validation\_extension/selected}\\
+\code{--actual reproductions/my-extension}
+\end{quote}
+The last three lines form one command. \code{--resume} requires matching configuration and code fingerprints. Every native run JSON and RNG array is retained in the two \code{raw\_runs\_and\_traces.zip} files; their uncompressed duplicates are ignored by git. A fresh offline replay checked \ReplayRecords{} JSON records and \ReplayArrays{} exact RNG arrays, with equal scientific contents at absolute/relative tolerance $10^{-10}$. Runtime, timestamps/platform provenance and ZIP-container bytes are excluded, but per-archive integrity and each archived scientific record are checked.
+
+The current environment runs 34 evaluation tests plus 75 lab tests: \LatestPass{} pass and \LatestSkip{} optional PySCF/MaxwellBloch tests are skipped. Eleven extension tests cover noise/efficiency distinctions, false-positive limits, double counting, independent noncommuting propagation, certificate identity/time limits, explicit PyCCE pairs/Zeeman conventions, independent RNG streams and joint-state preservation/consumption in the custom backend. Historical full optional tests are a separate snapshot. The current system regression explicitly permits changed source hashes while comparing all four full scientific payloads; its strict pending physical case remains blocked. All replay/test checks are author-operated and not independent scientific review.
+
+\path{scripts/document_article_update.py} validates retained numerical values, status limitations, raw-data/result/archive hashes, source fingerprints, run counts and test logs, then generates two LaTeX tables, number macros and \path{evidence/article_update_claim_map.json}. The original ten-claim and system-evaluation maps remain historical. Extension figures are generated in English by \code{scripts/plot\_validation\_extension.py --language en} and \path{scripts/plot_article_bradley.py}; earlier Swedish figures remain unchanged. \code{make pdf} builds the article and this Supplement from included assets. TeX compilation and complete rendered-page inspection are recorded separately in the current manuscript-release evidence. These checks establish a complete report of the executed study; no new experimental data, independent material review or journal acceptance is implied.

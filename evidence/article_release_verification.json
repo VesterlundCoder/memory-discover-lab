@@ -1,0 +1,71 @@
+{
+  "schema": "westquant_manuscript_release_v1",
+  "status": "pass",
+  "date_utc": "2026-10-10",
+  "compiler": "pdfTeX 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian)",
+  "pdfs": {
+    "paper.pdf": {
+      "pages": 22,
+      "sha256": "03d943d60209c4f93d05d01df4d96b65217e683d4ba4505f4ac5bd430efce671",
+      "all_fonts_embedded": true,
+      "type_3_fonts": 0,
+      "text_extraction_passed": true,
+      "visual_review": {
+        "all_rendered_pages_reviewed": true,
+        "review_kind": "author-operated rendered-page inspection",
+        "reviewed_pdf_sha256": "03d943d60209c4f93d05d01df4d96b65217e683d4ba4505f4ac5bd430efce671"
+      }
+    },
+    "supplement/supplement.pdf": {
+      "pages": 15,
+      "sha256": "0f1c628b70a895f9dc416391a49fdb3ad0405d3e08074e472f16985007008e64",
+      "all_fonts_embedded": true,
+      "type_3_fonts": 0,
+      "text_extraction_passed": true,
+      "visual_review": {
+        "all_rendered_pages_reviewed": true,
+        "review_kind": "author-operated rendered-page inspection",
+        "reviewed_pdf_sha256": "0f1c628b70a895f9dc416391a49fdb3ad0405d3e08074e472f16985007008e64"
+      }
+    }
+  },
+  "bibliography_entries": 19,
+  "citation_keys_resolved": true,
+  "latex_critical_warnings": [],
+  "reporting_checks": {
+    "verify_results.py": "Verified 10 reporting invariants; wrote evidence/claim_result_map.json",
+    "document_article_update.py": "Verified five updated claim groups; generated numeric macros, two tables and evidence/article_update_claim_map.json"
+  },
+  "source_and_asset_sha256": {
+    "evaluation/paper/comparison.tex": "b4d30ae10d77329744a7931dde45e69c9cc8d50d9f616610ed1b1be6b1709442",
+    "evaluation/paper/faults.tex": "dd0261ec4ef5ea60fab8d290a359a617bb41f8c17fd626b548bce44193220fd7",
+    "evaluation/paper/performance.tex": "20614d135910f104616c7d4e6feb127bab7d42aabbe59e882db8dcb893f89f47",
+    "evaluation/paper/repair_protocol.tex": "60efd692ac80632efe116d9bbc934d1ab57ee3a5cb0f87a9a88f870486041de6",
+    "evidence/article_release_build.log": "96857029485d38e53459693914b18116c16b610304d4e44547c77f2cc05fbff6",
+    "evidence/article_update_claim_map.json": "d8e37a23fde140276453e07eb07177b9d986defe491c8073a9b0aaeb2628e491",
+    "figures/architecture.pdf": "a63596e533644557d244a18508329b83034e9399392896e11f3b2dd1815d3eb1",
+    "figures/deterministic_controls.pdf": "4b318f00d7a17bc37ac5edba7ac501b6a85d485b897718e7243167edbb2054dc",
+    "figures/network_control.pdf": "64e55891baaee3d3435d54e1aac4ebe3099436d0566daa1b4b7eac4721ddcc70",
+    "figures/pr_decay_diagnostics.pdf": "500a09e408c398bec2ccabce8c5ed885a42a02c95e656971880bcf8c31967c08",
+    "figures/teller_fidelities.pdf": "047fabb4a39b923baf0252fb2fa57a4256816f72d89e4e93410d42da3fd870a1",
+    "figures/validation_extension/bradley_observables.pdf": "2c697b7f556b8693ec8e45f895f5de833da9b4a63a9b7dc0fe955f90aaabd399",
+    "figures/validation_extension/crosssim_larger.pdf": "df28f9439ead627842832866c08522c7692e3a4bccf966d86ddfa36e11ba38fa",
+    "figures/validation_extension/protocol_joint.pdf": "fdeffd9b3a569c68ff3cd8501c4ba0d9aa9e30472576be32c4407871498d6ebc",
+    "figures/validation_extension/spin_convergence.pdf": "0799dab4db3d03a2886ac4534fd283a40a98e6b713e5a34ecd61fad3685a9d7e",
+    "paper.tex": "794e8bb423d6b3d8868331ea830faca7a2a1bc8bd281fcea8475b007218a4d85",
+    "scripts/document_article_update.py": "def9f777fba2a162bec1dbeff8d18f2d57d536a2fad99770291a0c90b1c0efa9",
+    "scripts/verify_article_release.py": "c0325aff6bc9b96170f247820d507a4447f60b75bfbad0e974cb13467b5e0710",
+    "sections/extended_validation.tex": "2031c7cd2ebcac6d7db4c3d7444eb3a259aceb4f5744da624201a5b79b7b4a71",
+    "supplement/supplement.tex": "99eb37c9cf724442557b31a8dd55006d62e82d7e7121acf0928220d9be4e6474",
+    "supplement/validation_extension.tex": "ddb46ac0fc69b8995e8f1075481c8afb77edfb30f301cf8788268887ccd3326a",
+    "tables/bootstrap.tex": "a582e10293fe2b03a16858ec6281293b76ed20b314907a68d262e39ec1b3decb",
+    "tables/decay.tex": "aa557e9e5b5a6a4b729a1d4ba646946154dae145bc5325737ea577cddcbd5a85",
+    "tables/holdout.tex": "dfa604f7cf5929454fc82574c9f6ca0692b4c1b31de19c96a43c7e2f2351f029",
+    "tables/validation_convergence.tex": "edc2f480faab1f95d86159474fdd0a425ee4fa0783bfde34b6c889cf0509edfe",
+    "tables/validation_crosssim.tex": "c9a925ea81419f1534d62d09c81cf20bcae4ab2bd34ace5cb8ea3439c32b14ff",
+    "tables/validation_extension_numbers.tex": "1a363d59c96a5942063bc59a58fb99f3c1b8d5b18f1fd20be9a771fb0b1594ef"
+  },
+  "new_physics_or_hardware_experiments": 0,
+  "independent_scientific_review_completed": false,
+  "journal_submission_or_acceptance_claimed": false
+}
