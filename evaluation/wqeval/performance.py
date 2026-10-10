@@ -7,7 +7,7 @@ import sys
 import numpy as np
 from memorylab.runner import enumerate_jobs,execute_job,run as native_run
 from memorylab.common import digest
-from .verification import portable_results, numeric_compare
+from .verification import portable_results, numeric_compare, channel_projection
 from .common import LAB,ROOT,read,write,new_output,audit_identity,csv_rows
 
 def study_for(config,workers):
@@ -49,7 +49,7 @@ def run(config,output):
                     env=env,stdout=log,stderr=subprocess.STDOUT,check=True,timeout=config['driver_timeout_s'])
             payload=portable_results(jobs)
             if portable is None:portable=payload
-            else:numeric_compare(portable,payload)
+            else:numeric_compare(channel_projection(portable),channel_projection(payload))
             r=read(rp);r['scientific_digest']=scientific_digest(jobs);records.append(r)
             rows.append({'workers':workers,'repeat':repeat,'order_position':position,'jobs':r['cold']['enumerated_run_count'],
                 'cold_s':r['cold_s'],'resume_s':r['warm_s'],'cold_jobs_per_s':r['cold']['enumerated_run_count']/r['cold_s'],

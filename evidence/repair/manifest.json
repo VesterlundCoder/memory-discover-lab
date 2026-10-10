@@ -5,17 +5,17 @@
   "candidate_local_git_commit": "b4fa295eb0b4a815a157f2dba4dbf6832317d589",
   "external_network_disabled_for_execution": true,
   "dependency_installation_network_allowed": true,
-  "evaluation_source_sha256": "4c762e6e9c5352d0fa7892b24f0c5fa6fd6c8b6de0259415bfeae42e0a97fbaa",
+  "evaluation_source_sha256": "254b1bbb8a1d3c95d28b63e69d40c3a7afcbc2aa76b4b14a2bf8a727c9ead1e9",
   "lab_source_sha256": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
   "core_tests": {
     "lab_executed": 75,
     "lab_passed": 68,
     "lab_skipped": 7,
-    "evaluation_passed": 15
+    "evaluation_passed": 18
   },
   "full_tests": {
     "lab_passed": 75,
-    "evaluation_passed": 15,
+    "evaluation_passed": 18,
     "skipped": 0
   },
   "software_pathway_passes": 2,
@@ -39,5 +39,18 @@
   "results": "evaluation/results/repaired/",
   "logs": "evidence/repair/",
   "all_pdf_pages_rendered_and_visually_inspected": true,
-  "numerical_confirmation_results": "evaluation/results/repaired-confirmation/"
+  "numerical_confirmation_results": "evaluation/results/repaired-confirmation/",
+  "candidate_local_git_scope": "Author-operated clone subsequently patched with the Choi-map comparator; actual Python fingerprints are authoritative",
+  "first_remote_ci_run": {
+    "schema": "pre_gauge_repair_history_v1",
+    "github_commit": "ffceec44e8962a41ab8dd42f425e089ef795d7e9",
+    "evaluation_source_sha256": "4c762e6e9c5352d0fa7892b24f0c5fa6fd6c8b6de0259415bfeae42e0a97fbaa",
+    "remote_ci_run_id": 38058979906,
+    "core_result": "failure",
+    "paper_result": "success",
+    "reason": "Direct Kraus entry equality rejected an equivalent channel representation across runners",
+    "correction": "Compare full and conditional Choi maps reconstructed from exported operators, and validate stored Choi consistency; numerical tolerance stays 1e-10",
+    "reference": "evidence/repair/first_remote_ci_failure.txt"
+  },
+  "channel_equality": "Reconstructed full and conditional Choi maps, stored full Choi consistency; Kraus gauge excluded"
 }

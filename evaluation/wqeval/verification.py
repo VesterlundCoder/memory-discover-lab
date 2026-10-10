@@ -3,6 +3,7 @@ import csv, math
 from pathlib import Path
 from .common import read, write, hash_file
 from memorylab.common import canonical
+from memorylab.channels import choi, decode, encode
 
 def numeric_compare(a,b,path='',atol=1e-10,rtol=1e-10):
     if isinstance(a,bool) or isinstance(b,bool):
@@ -20,6 +21,27 @@ def numeric_compare(a,b,path='',atol=1e-10,rtol=1e-10):
         if len(a)!=len(b):raise ValueError('Length mismatch: '+path)
         for i,(x,y) in enumerate(zip(a,b)):numeric_compare(x,y,path+'/'+str(i),atol,rtol)
     elif a!=b:raise ValueError('Value mismatch: '+path)
+
+def channel_projection(value):
+    """Compare maps, not the nonunique phases/basis of Kraus operators.
+
+    Retain full and conditional maps independently. Recompute both Choi
+    matrices from exported operators and check the stored full Choi matrix,
+    so a changed operator cannot be hidden behind unchanged summary metrics.
+    All other scientific fields and the vectorization convention are kept.
+    """
+    if isinstance(value,list):return [channel_projection(x) for x in value]
+    if not isinstance(value,dict):return value
+    if value.get('schema')=='westquant_memory_channel_v1':
+        if value['vectorization']!='column':raise ValueError('Unsupported channel vectorization')
+        full=encode(choi([decode(k) for k in value['kraus']]))
+        conditional=encode(choi([decode(k) for k in value['conditional_kraus']]))
+        numeric_compare(value['choi'],full,path='/exported_choi_consistency')
+        result={k:channel_projection(v) for k,v in value.items() if k not in ['kraus','conditional_kraus']}
+        result['choi']=full
+        result['conditional_choi']=conditional
+        return result
+    return {k:channel_projection(v) for k,v in value.items()}
 
 def portable_results(directory):
     """Full channel/config payload without execution-derived IDs or environments."""
@@ -54,14 +76,14 @@ def projection(directory):
                 rows=[{k:v for k,v in row.items() if k!='protected_reason'} for row in rows]
             p[name]=rows
         if step==1:p['cases']=read(directory/'cases.json')
-        if step==2 and s['network_exported']:p['channel_payload']=read(directory/'memory_device.json')
+        if step==2 and s['network_exported']:p['channel_payload']=channel_projection(read(directory/'memory_device.json'))
     elif step==4:
         def status(x):return {k:v for k,v in x.items() if k!='output'}
         p['summary']={k:v for k,v in s.items() if k not in ['identity','measurements','robustness']}
         p['robustness']={**s['robustness'],'restored_summary':status(s['robustness']['restored_summary'])}
         # Full portable payload is mandatory: a legacy source-dependent digest
         # alone is insufficient to compare computations across source versions.
-        p['scientific_results']=read(directory/'scientific_results.json')
+        p['scientific_results']=channel_projection(read(directory/'scientific_results.json'))
         rows=_csv(directory/'performance.csv')
         p['studies']=sorted([{k:r[k] for k in ['workers','repeat','order_position','jobs','resumed_runs']} for r in rows],key=lambda r:(r['repeat'],r['workers']))
         p['statuses']=[{'cold':status(x['cold']),'warm':status(x['warm'])} for x in s['measurements']]
@@ -84,4 +106,5 @@ def compare(reference,actual,require_same_source=False,atol=1e-10,rtol=1e-10):
             'excluded_from_numeric_equality':['UTC timestamps','input/output/temp path strings','environment versions (reported separately)',
                 'timing/order-arm measurements','RSS/CPU measurements','source-dependent run IDs and scientific digests (portable payload compared)',
                 'exception diagnostic path text'],
+            'channel_equality':'Full and conditional Choi matrices reconstructed from Kraus operators; stored full Choi consistency checked; Kraus gauge is not compared',
             'scope':'Scientific/configuration equality at specified tolerances, not equal performance or independent physical validation'}

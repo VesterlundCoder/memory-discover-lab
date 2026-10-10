@@ -1,0 +1,33 @@
+2026-10-10T14:17:21.3233290Z Traceback (most recent call last):
+2026-10-10T14:17:21.3242537Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/scripts/reproduce_system.py", line 18, in <module>
+2026-10-10T14:17:21.3244436Z     if args.reference_root:write(out/(name+'-comparison.json'),compare(args.reference_root/name,out/name,require_same_source=True))
+2026-10-10T14:17:21.3245609Z                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-10T14:17:21.3246862Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/evaluation/wqeval/verification.py", line 79, in compare
+2026-10-10T14:17:21.3248081Z     numeric_compare(projection(reference),projection(actual),atol=atol,rtol=rtol)
+2026-10-10T14:17:21.3249705Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/evaluation/wqeval/verification.py", line 18, in numeric_compare
+2026-10-10T14:17:21.3250715Z     for k in sorted(a):numeric_compare(a[k],b[k],path+'/'+k,atol,rtol)
+2026-10-10T14:17:21.3251125Z                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-10T14:17:21.3251819Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/evaluation/wqeval/verification.py", line 18, in numeric_compare
+2026-10-10T14:17:21.3252475Z     for k in sorted(a):numeric_compare(a[k],b[k],path+'/'+k,atol,rtol)
+2026-10-10T14:17:21.3252846Z                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-10T14:17:21.3253785Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/evaluation/wqeval/verification.py", line 21, in numeric_compare
+2026-10-10T14:17:21.3254709Z     for i,(x,y) in enumerate(zip(a,b)):numeric_compare(x,y,path+'/'+str(i),atol,rtol)
+2026-10-10T14:17:21.3255130Z                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-10T14:17:21.3255795Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/evaluation/wqeval/verification.py", line 18, in numeric_compare
+2026-10-10T14:17:21.3256456Z     for k in sorted(a):numeric_compare(a[k],b[k],path+'/'+k,atol,rtol)
+2026-10-10T14:17:21.3256841Z                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-10T14:17:21.3257465Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/evaluation/wqeval/verification.py", line 21, in numeric_compare
+2026-10-10T14:17:21.3258160Z     for i,(x,y) in enumerate(zip(a,b)):numeric_compare(x,y,path+'/'+str(i),atol,rtol)
+2026-10-10T14:17:21.3258576Z                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-10T14:17:21.3259214Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/evaluation/wqeval/verification.py", line 18, in numeric_compare
+2026-10-10T14:17:21.3259871Z     for k in sorted(a):numeric_compare(a[k],b[k],path+'/'+k,atol,rtol)
+2026-10-10T14:17:21.3260236Z                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-10T14:17:21.3260873Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/evaluation/wqeval/verification.py", line 21, in numeric_compare
+2026-10-10T14:17:21.3261545Z     for i,(x,y) in enumerate(zip(a,b)):numeric_compare(x,y,path+'/'+str(i),atol,rtol)
+2026-10-10T14:17:21.3261946Z                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-10T14:17:21.3262582Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/evaluation/wqeval/verification.py", line 21, in numeric_compare
+2026-10-10T14:17:21.3263247Z     for i,(x,y) in enumerate(zip(a,b)):numeric_compare(x,y,path+'/'+str(i),atol,rtol)
+2026-10-10T14:17:21.3263810Z                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-10-10T14:17:21.3264440Z   File "/home/runner/work/memory-discover-lab/memory-discover-lab/evaluation/wqeval/verification.py", line 14, in numeric_compare
+2026-10-10T14:17:21.3265106Z     if not equal:raise ValueError(f'Numeric mismatch: {path}: {a} != {b}')
+

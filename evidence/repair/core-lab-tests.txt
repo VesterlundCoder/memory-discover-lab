@@ -75,6 +75,6 @@ test_stable_separate_seed_streams (test_workflow.UnitsAndCandidateTests.test_sta
 test_two_pi_convention (test_workflow.UnitsAndCandidateTests.test_two_pi_convention) ... ok
 
 ----------------------------------------------------------------------
-Ran 75 tests in 1.186s
+Ran 75 tests in 1.411s
 
 OK (skipped=7)

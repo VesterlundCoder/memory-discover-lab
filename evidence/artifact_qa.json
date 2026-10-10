@@ -6,23 +6,28 @@
   "latex_overfull_boxes": 0,
   "latex_unresolved_references": 0,
   "reproduction_orchestrator": "completed successfully; numerical pipeline, figures, tables and reporting checks",
-  "automated_tests_passed": 90,
+  "automated_tests_passed": 93,
   "new_hardware_experiments": 0,
   "new_material_T2_verified": false,
   "system_evaluation_dossier_pages": 6,
   "original_tests_passed": 75,
-  "additional_evaluation_tests_passed": 15,
+  "additional_evaluation_tests_passed": 18,
   "core_ci_tests_passed": 7,
   "second_family_physical_validation": false,
   "system_evaluation_scope": "Steps 1, 3 and 4 executed at software scope; step 2 synthetic control executed, second-family experimental validation pending.",
   "pdf_sha256": {
-    "paper.pdf": "9812129859b8958ec1b6b3915bb1df9206953ed11c55735234fdc66739da4e86",
-    "supplement/supplement.pdf": "29e3ac5ffed15e6c283f99625a46b605485c7a11e9590dee4dab8b6a1794b23d",
-    "evaluation/reports/System_Evaluation_1_4.pdf": "f887174279ff9f113695b6dd6f8a63a3c29b58ba4cd12eeb12ba74057180a0e7"
+    "paper.pdf": "8a45dcdda6a25504cbd9b224e3ecc8a5137acf8c8644106173a9f469cdac6d2b",
+    "supplement/supplement.pdf": "5d2e3d12609929f42eed58f4cccbb3469b5243ea2ddf44868a80f2d7e74aac6b",
+    "evaluation/reports/System_Evaluation_1_4.pdf": "09c648b46b87fb6b62bd2f12c6026ab89f33f158b072877d9bbdb8339d936113"
   },
-  "repair_full_tests_passed": 90,
+  "repair_full_tests_passed": 93,
   "repair_core_lab_tests_passed": 68,
   "repair_core_lab_tests_skipped": 7,
-  "repair_core_evaluation_tests_passed": 15,
-  "original_plus_initial_evaluation_tests": 82
+  "repair_core_evaluation_tests_passed": 18,
+  "original_plus_initial_evaluation_tests": 82,
+  "remote_first_repair_ci": {
+    "id": 38058979906,
+    "core": "failure in nonunique Kraus representation equality; corrected and rerun",
+    "paper": "success"
+  }
 }

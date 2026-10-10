@@ -25,7 +25,7 @@
   },
   "network_exported": true,
   "identity": {
-    "at_utc": "2026-10-10T13:33:42.388499+00:00",
+    "at_utc": "2026-10-10T14:23:56.674193+00:00",
     "configuration": {
       "observable": "complex_pure_dephasing_coherence",
       "includes_population_relaxation": false,
@@ -71,7 +71,7 @@
       "seed": 20261010
     },
     "configuration_sha256": "219d11349c2fdce2876e11a9cfdb5953ed53050ffaa8577de132aa2154f6130a",
-    "evaluation_source_sha256": "4c762e6e9c5352d0fa7892b24f0c5fa6fd6c8b6de0259415bfeae42e0a97fbaa",
+    "evaluation_source_sha256": "254b1bbb8a1d3c95d28b63e69d40c3a7afcbc2aa76b4b14a2bf8a727c9ead1e9",
     "lab_source_sha256": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
     "inputs": [
       {

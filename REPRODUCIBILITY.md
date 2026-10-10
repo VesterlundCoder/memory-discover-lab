@@ -13,7 +13,7 @@ python -m unittest discover -s evaluation/tests -v
 python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired
 ```
 
-The core suite runs 75 lab tests with seven optional-backend skips, plus 15 evaluation/regression tests without skips. The full installation passes all 90 tests. A skipped test is not a passed backend validation. There are no tests requiring private source-lock files or a previous synthetic-demo run.
+The core suite runs 75 lab tests with seven optional-backend skips, plus 18 evaluation/regression tests without skips. The full installation passes all 93 tests. A skipped test is not a passed backend validation. There are no tests requiring private source-lock files or a previous synthetic-demo run.
 
 ## Offline system evaluation
 

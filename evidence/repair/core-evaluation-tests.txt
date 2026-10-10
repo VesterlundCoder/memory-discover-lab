@@ -5,16 +5,19 @@ test_integrity_and_condition_mismatch (test_evaluation.EvaluationTests.test_inte
 test_mismatch_blocks_export (test_evaluation.EvaluationTests.test_mismatch_blocks_export) ... ok
 test_pending_is_not_validation (test_evaluation.EvaluationTests.test_pending_is_not_validation) ... ok
 test_strict_json_and_occupied_output (test_evaluation.EvaluationTests.test_strict_json_and_occupied_output) ... ok
+test_changed_conditional_map_is_rejected_with_identical_metrics (test_reproducibility.ReproducibilityTests.test_changed_conditional_map_is_rejected_with_identical_metrics) ... ok
+test_changed_full_operators_cannot_hide_behind_stored_choi (test_reproducibility.ReproducibilityTests.test_changed_full_operators_cannot_hide_behind_stored_choi) ... ok
 test_comparison_ignores_execution_metadata (test_reproducibility.ReproducibilityTests.test_comparison_ignores_execution_metadata) ... ok
 test_comparison_rejects_scientific_change (test_reproducibility.ReproducibilityTests.test_comparison_rejects_scientific_change) ... ok
 test_corrupt_bundled_source_is_not_replaced_online (test_reproducibility.ReproducibilityTests.test_corrupt_bundled_source_is_not_replaced_online) ... ok
 test_group_validation_precedes_cache_writes (test_reproducibility.ReproducibilityTests.test_group_validation_precedes_cache_writes) ... ok
+test_kraus_unitary_gauge_preserves_channel_comparison (test_reproducibility.ReproducibilityTests.test_kraus_unitary_gauge_preserves_channel_comparison) ... ok
 test_missing_figure_inputs_preserve_existing_output (test_reproducibility.ReproducibilityTests.test_missing_figure_inputs_preserve_existing_output) ... ok
 test_nested_channel_change_not_discarded (test_reproducibility.ReproducibilityTests.test_nested_channel_change_not_discarded) ... ok
 test_offline_pinned_sources_without_legacy_cache_or_network (test_reproducibility.ReproducibilityTests.test_offline_pinned_sources_without_legacy_cache_or_network) ... ok
 test_source_mismatch_reported_and_strict_mode_rejects (test_reproducibility.ReproducibilityTests.test_source_mismatch_reported_and_strict_mode_rejects) ... ok
 
 ----------------------------------------------------------------------
-Ran 15 tests in 1.017s
+Ran 18 tests in 1.404s
 
 OK

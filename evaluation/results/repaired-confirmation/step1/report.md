@@ -19,7 +19,7 @@ WestQuant contributes reusable condition/evidence contracts, channel export and 
 
 ## Local construction timing
 
-Warm median: WestQuant 0.032700 s; direct script 0.072454 s. 5 randomized-order repeats per arm.
+Warm median: WestQuant 0.035247 s; direct script 0.050582 s. 5 randomized-order repeats per arm.
 These timings do not equalize full export, metadata or validation work. They exclude data ingestion, output IO, network events and downstream solvers. They cannot establish an end-to-end speedup. Native thread settings and machine details are recorded in the run environment; cross-machine performance is not assessed.
 
 ## Related tools: documentary comparison

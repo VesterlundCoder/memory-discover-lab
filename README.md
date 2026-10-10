@@ -26,7 +26,7 @@ It does not report new hardware experiments, a validated new-material lifetime, 
 - Ten primary-text-reviewed coherence references coexist with 201 provisional molecular entries; incomplete records are not promoted to physical predictions.
 - Deterministic Hamiltonian controls and a known-generator count experiment verify specified models. The latter recovers 0.979663 ms from a 1 ms synthetic generator.
 - A calibrated but nonunique fixed-point channel produces 87 retrieved pairs in 400,000 ideal-input SeQUeNCe attempts. These are simulated outcomes under incomplete optical assumptions.
-- The original 75 tests and seven system tests passed. The repair revision adds eight regression tests: 75 lab tests and 15 evaluation tests pass in the full environment; seven optional tests are skipped in the core environment. No new-material superiority is inferred.
+- The original 75 tests and seven system tests passed. The repair revision adds eleven regression tests: 75 lab tests and 18 evaluation tests pass in the full environment; seven optional tests are skipped in the core environment. No new-material superiority is inferred.
 
 ## Reproduce
 

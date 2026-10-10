@@ -35,24 +35,8 @@ test_bell_state_dephasing_is_not_single_qubit_fidelity (test_science.NetworkTest
 test_memory_preserves_entangled_joint_state (test_science.NetworkTests.test_memory_preserves_entangled_joint_state) ... ok
 test_missing_age_rejected (test_science.NetworkTests.test_missing_age_rejected) ... ok
 test_unmeasured_network_use_requires_opt_in (test_science.NetworkTests.test_unmeasured_network_use_requires_opt_in) ... ok
-test_pycce_single_spin_against_exact_commuting_bath (test_science.PyCCETests.test_pycce_single_spin_against_exact_commuting_bath) ... /workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/bath/array.py:673: SyntaxWarning: invalid escape sequence '\h'
-  the operator :math:`\hat S_x \hat S_x + \hat S_z`.
-/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/bath/state.py:257: SyntaxWarning: invalid escape sequence '\d'
-  Matrix used to transform :math:`S_z` matrix as :math:`S_z' = R^{\dagger} S_z R`.
-/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/utilities.py:158: SyntaxWarning: invalid escape sequence '\k'
-  Outer product of two complex vectors :math:`\ket{s_1}\bra{s_2}`.
-/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/bath/array.py:1917: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+test_pycce_single_spin_against_exact_commuting_bath (test_science.PyCCETests.test_pycce_single_spin_against_exact_commuting_bath) ... /workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/bath/array.py:1917: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
   all_spins = pd.read_csv(filepath, delim_whitespace=True, header=None, comment='%',
-/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/center.py:228: SyntaxWarning: invalid escape sequence '\h'
-  the operator :math:`\hat S_x \hat S_x + \hat S_z`.
-/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/run/pulses.py:56: SyntaxWarning: invalid escape sequence '\p'
-  Check if the rotation is about single cartesian axis by an angle :math:`\pi`.
-/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/run/mastereq.py:480: SyntaxWarning: invalid escape sequence '\k'
-  alpha (bool or list): Set of indexes defining the curent state of the qubit state :math:`\ket{0}`
-/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/h/functions.py:316: NumbaExperimentalFeatureWarning: First-class function type feature is experimental
-  hzeeman = zeeman(svec, gyro, mfield)
-/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/h/functions.py:320: NumbaPerformanceWarning: '@' is faster on contiguous arrays, called on (Array(complex128, 2, 'A', False, aligned=True), Array(complex128, 2, 'A', False, aligned=True))
-  hself = vec_tensor_vec(svec, tensor, svec)
 ok
 test_h2_energy_and_cache (test_science.PySCFTests.test_h2_energy_and_cache) ... ok
 test_analytic_vs_qutip_full_channel (test_science.QuTiPTests.test_analytic_vs_qutip_full_channel) ... ok
@@ -95,7 +79,7 @@ test_stable_separate_seed_streams (test_workflow.UnitsAndCandidateTests.test_sta
 test_two_pi_convention (test_workflow.UnitsAndCandidateTests.test_two_pi_convention) ... ok
 
 ----------------------------------------------------------------------
-Ran 75 tests in 21.436s
+Ran 75 tests in 3.265s
 
 OK
-Saving MBSolve to /tmp/tmpudbpmn7y/propagation.qu
+Saving MBSolve to /tmp/tmpgxalt4sk/propagation.qu
