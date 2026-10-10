@@ -1,0 +1,17 @@
+{
+  "repository": "VesterlundCoder/memory-discover-lab",
+  "commit": "de52b32f0c34a05cf4f6a0c01bca6ee087e6cb67",
+  "run_id": 38051481969,
+  "job_id": 114211334762,
+  "conclusion": "success",
+  "url": "https://github.com/VesterlundCoder/memory-discover-lab/actions/runs/38051481969",
+  "log_sha256": "8a516fd041f283ea415341b406c9c0d548a7e13397d811d79daabff6a5819c6d",
+  "python": "3.12.15",
+  "numpy": "2.5.3",
+  "scipy": "1.18.1",
+  "core_tests": 7,
+  "step1_channel_age_points": 73,
+  "step1_processed_fidelity_values": 90,
+  "step1_max_full_choi_error": 1.3214015338344021e-14,
+  "scope": "Fresh GitHub Actions checkout, core editable install, seven tests and automatic pinned source retrieval for step 1. Not full optional-backend reproduction or independent physical review."
+}

@@ -29,3 +29,14 @@ eval-step4:
 	$(PYTHON) scripts/evaluate_system.py step4 --out evaluation/results/local-step4
 test-evaluation:
 	$(PYTHON) -m unittest discover -s evaluation/tests -v
+
+.PHONY: system-paper-evidence
+system-paper-evidence:
+	$(PYTHON) scripts/document_system_evaluation.py
+
+.PHONY: system-paper-pdf
+system-paper-pdf: system-paper-evidence
+	mkdir -p build
+	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build evaluation/paper/System_Evaluation_1_4.tex
+	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build evaluation/paper/System_Evaluation_1_4.tex
+	cp build/System_Evaluation_1_4.pdf evaluation/reports/System_Evaluation_1_4.pdf

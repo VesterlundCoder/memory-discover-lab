@@ -105,3 +105,7 @@ docker run --rm -v "$PWD/container-results:/results" memory-discover-lab
 ```
 
 The container contains the core NumPy/SciPy lab; optional solvers and LaTeX need the separate full setup. Container build/run has not been independently verified here. GitHub Actions runs the seven core evaluation tests and the matched comparison, retaining its result artifact. CI source retrieval requires Zenodo availability.
+
+## Integrated manuscript and complete execution dossier
+
+The main article and Supplement now include all four system evaluations. [The complete dossier](paper/README.md) lists exact configurations, source fingerprints, run dates, statistical limits and claim pointers. Steps 2 and 3 have confirmations using the same evaluation-source fingerprint as the selected step-1 and step-4 records. The distinct-family physical case remains blocked; its pending run is retained. Regenerate reporting tables with `python scripts/document_system_evaluation.py`, compile the manuscript/Supplement with `make pdf`, and compile the standalone dossier with `make system-paper-pdf`. Core GitHub CI success is retained in `evidence/core_ci_verification.json`; it does not replace colleague-led scientific reproduction.

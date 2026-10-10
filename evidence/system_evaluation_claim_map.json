@@ -1,0 +1,97 @@
+{
+  "schema": "westquant_system_paper_evaluation_v1",
+  "retrospective": true,
+  "hardware_experiments": 0,
+  "ML_training_runs": 0,
+  "release_commit_for_core_ci": "de52b32f0c34a05cf4f6a0c01bca6ee087e6cb67",
+  "claims": [
+    {
+      "id": "SE1",
+      "claim": "Matched reference agreement",
+      "source": "evaluation/results/step1-executed/summary.json",
+      "value": 1.3103013043660781e-14,
+      "scope": "Specified equations and processed-data consistency"
+    },
+    {
+      "id": "SE2",
+      "claim": "Second-family software control",
+      "source": "evaluation/results/step2-confirmation/summary.json",
+      "value": 3.7192473226035814e-12,
+      "scope": "Synthetic curve and hypothetical write/read; no physical validation"
+    },
+    {
+      "id": "SE2P",
+      "claim": "Second physical-family case remains blocked",
+      "source": "evaluation/results/step2-physical-pending/summary.json",
+      "value": "blocked_missing_reviewed_data",
+      "scope": "Missing reviewed experimental inputs"
+    },
+    {
+      "id": "SE3",
+      "claim": "Constructed fault coverage",
+      "source": "evaluation/results/step3-confirmation/summary.json",
+      "value": 7,
+      "scope": "Seven selected faults, not empirical error incidence"
+    },
+    {
+      "id": "SE4",
+      "claim": "Local performance and checkpoint consistency",
+      "source": "evaluation/results/step4-executed/summary.json",
+      "value": 108,
+      "scope": "Nine bounded cold studies, one Linux environment; no large-scale claim"
+    },
+    {
+      "id": "SECI",
+      "claim": "Core fresh-checkout tests and automatic retrieval passed",
+      "source": "evidence/core_ci_verification.json",
+      "value": "success",
+      "scope": "Seven core tests and step 1; not colleague-led physical review"
+    }
+  ],
+  "runs": {
+    "step1": {
+      "status": "pass",
+      "at_utc": "2026-10-10T11:36:09.705458+00:00",
+      "configuration_sha256": "74bac2f28395431cfeedf02b5e7ed21c27da7d5864df54617b9f2f1e08786726",
+      "evaluation_source_sha256": "d8fc6d2ecb580e0ba1c8881ffbd542d087c493b7621cb89509948e595211ec92",
+      "lab_source_sha256": "9c4490acf2e5a42e8e10007989eeb94b5e406b17f5d187ca310847581ee2edb7",
+      "source": "evaluation/results/step1-executed/summary.json",
+      "sha256": "23abf681f58fe541bf8ca17386f1069323161a8d7f16322652c90925f378893d"
+    },
+    "step2": {
+      "status": "model_curve_gate_pass",
+      "at_utc": "2026-10-10T12:30:18.120846+00:00",
+      "configuration_sha256": "219d11349c2fdce2876e11a9cfdb5953ed53050ffaa8577de132aa2154f6130a",
+      "evaluation_source_sha256": "d8fc6d2ecb580e0ba1c8881ffbd542d087c493b7621cb89509948e595211ec92",
+      "lab_source_sha256": "9c4490acf2e5a42e8e10007989eeb94b5e406b17f5d187ca310847581ee2edb7",
+      "source": "evaluation/results/step2-confirmation/summary.json",
+      "sha256": "ded50e7fc3f4ab8cbd5079accf91d6330d2126103c582a6dea1bd622301603d9"
+    },
+    "step3": {
+      "status": "pass",
+      "at_utc": "2026-10-10T12:30:18.696014+00:00",
+      "configuration_sha256": "2873ab9cb0e7e3dd01565ede71e1ff3df0324b90b1b930a005de7eef4945e18a",
+      "evaluation_source_sha256": "d8fc6d2ecb580e0ba1c8881ffbd542d087c493b7621cb89509948e595211ec92",
+      "lab_source_sha256": "9c4490acf2e5a42e8e10007989eeb94b5e406b17f5d187ca310847581ee2edb7",
+      "source": "evaluation/results/step3-confirmation/summary.json",
+      "sha256": "67df8e2a4463ca5ba434847e2fd91194b4ae5ab29498af586c62516bd735cd7c"
+    },
+    "step4": {
+      "status": "pass",
+      "at_utc": "2026-10-10T11:35:34.038224+00:00",
+      "configuration_sha256": "72da011eb9fdd13d07e2073f258c07533a7d9723963af2ed44042dead165d02e",
+      "evaluation_source_sha256": "d8fc6d2ecb580e0ba1c8881ffbd542d087c493b7621cb89509948e595211ec92",
+      "lab_source_sha256": "9c4490acf2e5a42e8e10007989eeb94b5e406b17f5d187ca310847581ee2edb7",
+      "source": "evaluation/results/step4-executed/summary.json",
+      "sha256": "f2396155ac658b19da13d57b2e3db818e8a18e4d35070b01b3c968adf06c0600"
+    }
+  },
+  "performance_cold_jobs": 108,
+  "performance_checkpoint_reuses": 108,
+  "validation_limitations": [
+    "Second experimental physical-family baseline remains pending",
+    "One synthetic second-family case and seven selected fault cases",
+    "Local small-model benchmark with three repeats per worker count",
+    "Human independent reproduction and scientific review remain pending"
+  ]
+}
