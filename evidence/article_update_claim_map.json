@@ -1,0 +1,90 @@
+{
+  "schema": "westquant_article_update_claim_map_v1",
+  "status": "pass",
+  "retrospective": true,
+  "hardware_experiments": 0,
+  "claims": [
+    {
+      "id": "UP1",
+      "claim": "Distinct-family Bradley observable comparison, with retained X failure",
+      "source": "evaluation/results/bradley2022-nv0/summary.json",
+      "value": {
+        "equatorial_length": {
+          "calibration_points": 9,
+          "heldout_points": 4,
+          "max_heldout_residual_over_error": 2.4278228749508397,
+          "gate_passed": true
+        },
+        "X": {
+          "calibration_points": 5,
+          "heldout_points": 6,
+          "max_heldout_residual_over_error": 3.1580238592220016,
+          "gate_passed": false
+        }
+      },
+      "scope": "Calibrated effective model; physical_validation_passed=false; no optical export"
+    },
+    {
+      "id": "UP2",
+      "claim": "Joint effective protocol numerical verification",
+      "source": "evaluation/results/validation_extension/selected/protocol/summary.json",
+      "value": {
+        "points": 56,
+        "probes": 336,
+        "maximum_error": 1.4432936786951712e-15
+      },
+      "scope": "Hypothetical controls; matched experimental fidelity missing"
+    },
+    {
+      "id": "UP3",
+      "claim": "Bounded synthetic spin convergence",
+      "source": "evaluation/results/validation_extension/selected/convergence/summary.json",
+      "value": {
+        "calls": 69,
+        "rows": 66,
+        "axes": 6
+      },
+      "scope": "At most eight spins, ideal pulses, 0--0.4 ms; no material authorization"
+    },
+    {
+      "id": "UP4",
+      "claim": "Paired SeQUeNCe/QuNetSim larger study",
+      "source": "evaluation/results/validation_extension/selected/larger/summary.json",
+      "value": {
+        "arm_runs": 256,
+        "attempts": 131072,
+        "paired_comparisons": 128,
+        "maximum_mean_density_error": 2.4651482669227965e-15
+      },
+      "scope": "Custom QuTiP backend; shared logical clock; no physical timing equivalence"
+    },
+    {
+      "id": "UP5",
+      "claim": "Offline replay and latest test environment",
+      "source": "evidence/validation_extension/manifest.json",
+      "value": {
+        "replay_json": 359,
+        "replay_rng": 11,
+        "tests_passed": 107,
+        "tests_skipped": 2
+      },
+      "scope": "Author-operated same-machine checks; not independent scientific review"
+    }
+  ],
+  "inputs": {
+    "evaluation/results/bradley2022-nv0/summary.json": "f3356fb98de51ad5eaeec0ef9cd8645472d49a7c1905dfa7e835ac5468f857f9",
+    "data/experimental/bradley2022/provenance.json": "18f279c8cd939b84b8e7035d46e1264eb536caaa9109148fc1ee6d382c74fbbf",
+    "evaluation/results/validation_extension/selected/summary.json": "c9efc31bf7260dd403d0ea02021dd56e55f072a72d09117df0a9d8407297f743",
+    "evaluation/results/validation_extension/selected/protocol/summary.json": "a1ca62246de2ef876e557999cbb288213ae010954194449dd0259e2c601fa30e",
+    "evaluation/results/validation_extension/selected/convergence/summary.json": "86793509e7a72f47ae04b72745cdb6b0fb301175c63f3861dae4eb5ff8ea554d",
+    "evaluation/results/validation_extension/selected/pilot/summary.json": "aa551bbc091e1da32ab6158207996fd800bc1788d9ec9336e0cdabaa0892a1a1",
+    "evaluation/results/validation_extension/selected/larger/summary.json": "342900fc66b9d17cf6a92bb0f7bf9587a3e74e7e42896743906ba67db26d3f8e",
+    "evidence/validation_extension/manifest.json": "9aad28986774f92bab1f6390b1e9e155bdcc6491031b5ecfce3dc5098aac8974",
+    "evidence/validation_extension/offline-replay-verification.json": "8ca67d10164105089f8dab2dc9e2d92bb3b669b81fe6e1e04a1f593de83f3a9e"
+  },
+  "current_lab_source_sha256": "3852565376c2a529bb33bc9394cf96061eeee147e19b4f4bbc2da724cf224f5a",
+  "current_evaluation_source_sha256": "ecc4ea6d77ca774a7f9cd3ed6f91285a5d5632a041ecdaa79ff829a5464cc373",
+  "source_execution_git_base": "985c8fe0c7dac3830e187e8c74cd0a6eecf225f7",
+  "extension_sources_were_uncommitted_during_execution": true,
+  "independent_scientific_review_completed": false
+}

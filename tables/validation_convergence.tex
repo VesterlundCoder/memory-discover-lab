@@ -1,0 +1,10 @@
+\begin{table}[tbp]\centering\small
+\begin{tabular}{p{.29\linewidth}p{.25\linewidth}rr}\toprule Control & Final comparison & Maximum error & Tolerance\\\midrule
+Matrix exponential / spectral & 4-spin reference & \ensuremath{1.444\times10^{-15}} & \ensuremath{1.000\times10^{-10}}\\
+Strang substeps & 128 substeps & \ensuremath{2.332\times10^{-5}} & \ensuremath{1.000\times10^{-4}}\\
+CCE order & Order 4; 4 spins & \ensuremath{4.132\times10^{-10}} & \ensuremath{1.000\times10^{-3}}\\
+Pair cutoff & 40 angstrom; 4 spins & \ensuremath{4.132\times10^{-10}} & \ensuremath{1.000\times10^{-3}}\\
+Bath size & 6 to 8 spins & \ensuremath{1.452\times10^{-8}} & \ensuremath{1.000\times10^{-3}}\\
+Mean $|L|$ integration & 129 to 257 points & \ensuremath{1.950\times10^{-6}} & \ensuremath{1.000\times10^{-4}}\\
+\bottomrule\end{tabular}
+\caption{Final convergence diagnostics over 0--0.4 ms, taking the maximum over 0, 1 and 4 ideal pulses. Solver, CCE and cutoff errors use the exact four-spin reference; bath-size and time-grid errors compare adjacent nested levels. The time-grid metric is mean absolute coherence, not every revival extremum or an inferred lifetime.}\label{tab:validationconvergence}\end{table}

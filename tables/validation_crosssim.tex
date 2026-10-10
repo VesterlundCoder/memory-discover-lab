@@ -1,0 +1,6 @@
+\begin{table}[tbp]\centering\small
+\begin{tabular}{lrrrrr}\toprule Study & Seeds & Pairs of runs & Arm runs & Trials/run & Trials, both arms\\\midrule
+Pilot & 3 & 48 & 96 & 32 & 3\,072\\
+Larger & 8 & 128 & 256 & 512 & 131\,072\\
+\bottomrule\end{tabular}
+\caption{Actual native simulator work counts. Each parameter/seed combination is executed once per simulator. Paired shared traces test implementation agreement; seeds are the independent Monte Carlo clusters. Pilot and larger stages are separate processes and use different seeds.}\label{tab:validationcrosssim}\end{table}

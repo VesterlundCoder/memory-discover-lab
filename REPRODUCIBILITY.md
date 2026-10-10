@@ -13,7 +13,7 @@ python -m unittest discover -s evaluation/tests -v
 python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired --allow-source-change
 ```
 
-The core suite runs 75 lab tests with seven optional-backend skips, plus 18 evaluation/regression tests without skips. The full installation passes all 93 tests. A skipped test is not a passed backend validation. There are no tests requiring private source-lock files or a previous synthetic-demo run.
+The archived repair core suite ran 75 lab tests with seven optional-backend skips, plus 18 evaluation/regression tests without skips. Its full installation passed all 93 tests. The current extension record is separate: 109 tests ran, 107 passed and two optional backend tests were skipped. A skipped test is not a passed backend validation. There are no tests requiring private source-lock files or a previous synthetic-demo run.
 
 ## Offline system evaluation
 
@@ -61,6 +61,20 @@ The figure builder verifies/loads inputs before writing and stages all plots bef
 ## Optional-backend compatibility
 
 PyCCE 1.1.1 directly imports removed NumPy/SciPy names. Use the lab adapter (`memorylab.common.optional_import('pycce')`), which restores the same Unicode dtype alias and SciPy `isintlike` utility before importing PyCCE. A direct `import pycce` in a fresh process may fail in this pinned environment. The compatibility layer does not alter a spin Hamiltonian; the optional single-spin analytical check tests the calculation separately. The Linux PySCF `/proc/self/statm` compatibility fallback preserves RSS/VMS units when numeric PID paths are inaccessible.
+
+## Current manuscript and validation extension
+
+The updated article and Supplement integrate the Bradley observable case and the subsequent protocol/convergence/native-network extension. These additions retain their own measured bytes, code/configuration fingerprints, runtime pins and negative/inconclusive outcomes. Follow [evaluation/README.md](evaluation/README.md#protocol-convergence-and-second-network-simulator) for a fresh numerical replay in the separately pinned extension environment. The latest retained replay covers 359 JSON records and 11 exact RNG arrays; it is author-operated, not independent scientific reproduction.
+
+In that environment, regenerate checked manuscript content with:
+
+```bash
+make verify
+make article-update-figures
+make pdf
+```
+
+`make verify` checks the original ten reporting invariants and five updated claim groups. The extension generator validates input/archive hashes, actual source fingerprints, run counts, test logs and retained scope limitations; it generates numeric macros, two tables and `evidence/article_update_claim_map.json`. Figure generation creates the four English assets under `figures/validation_extension/`, without rerunning physics or overwriting the earlier Swedish figures. Compilation alone requires only TeX and the complete included source tree. `evidence/article_release_verification.json` records the compiled page counts, PDF hashes, reference/layout checks and visual inspection; its build log is `evidence/article_release_build.log`. The standalone system dossier remains the historical steps-1–4 report.
 
 ## PDFs and container
 

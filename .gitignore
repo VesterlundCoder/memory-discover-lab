@@ -5,6 +5,7 @@ __pycache__/
 *.egg-info/
 build/
 qa/
+tmp/pdfs/
 # Cache bytes are included locally for offline reproduction, not tracked by default.
 lab/**/cache/
 lab/t2_data/raw/

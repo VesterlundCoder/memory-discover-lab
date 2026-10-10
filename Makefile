@@ -1,6 +1,6 @@
 PYTHON ?= python
 
-.PHONY: pdf figures verify reproduce
+.PHONY: pdf figures verify reproduce article-update-evidence article-update-figures
 pdf:
 	mkdir -p build
 	pdflatex -interaction=nonstopmode -halt-on-error -output-directory=build paper.tex
@@ -16,6 +16,14 @@ figures:
 
 verify:
 	$(PYTHON) scripts/verify_results.py
+	$(PYTHON) scripts/document_article_update.py
+
+article-update-evidence:
+	$(PYTHON) scripts/document_article_update.py
+
+article-update-figures:
+	$(PYTHON) scripts/plot_validation_extension.py --language en --out figures/validation_extension
+	$(PYTHON) scripts/plot_article_bradley.py
 
 reproduce:
 	$(PYTHON) scripts/reproduce.py
