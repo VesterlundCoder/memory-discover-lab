@@ -2,10 +2,15 @@
 from pathlib import Path
 import csv
 import json
+import argparse
 
 ROOT = Path(__file__).resolve().parents[1]
-TABLES = ROOT / "tables"
-TABLES.mkdir(exist_ok=True)
+ap=argparse.ArgumentParser(description=__doc__)
+ap.add_argument("--inputs",type=Path,default=ROOT)
+ap.add_argument("--out",type=Path,default=ROOT/"tables")
+args=ap.parse_args();ROOT=args.inputs.resolve()
+TABLES = args.out.resolve()
+TABLES.mkdir(parents=True,exist_ok=True)
 
 def read(path):
     return json.loads((ROOT / path).read_text())

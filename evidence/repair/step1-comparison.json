@@ -1,0 +1,31 @@
+{
+  "status": "pass",
+  "step": 1,
+  "absolute_tolerance": 1e-10,
+  "relative_tolerance": 1e-10,
+  "source_fingerprints": {
+    "evaluation_source_sha256": {
+      "reference": "4c762e6e9c5352d0fa7892b24f0c5fa6fd6c8b6de0259415bfeae42e0a97fbaa",
+      "actual": "4c762e6e9c5352d0fa7892b24f0c5fa6fd6c8b6de0259415bfeae42e0a97fbaa",
+      "matches": true
+    },
+    "lab_source_sha256": {
+      "reference": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
+      "actual": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
+      "matches": true
+    }
+  },
+  "same_source_required": true,
+  "reference_summary_sha256": "27cb78d9f9b09fa58b5b73b25a1186242a95b52dd4958223257d7ad16546555c",
+  "actual_summary_sha256": "09207dcfe8087d0b24695320530e696793bbeb4133f91f7939e4cb79662c6485",
+  "excluded_from_numeric_equality": [
+    "UTC timestamps",
+    "input/output/temp path strings",
+    "environment versions (reported separately)",
+    "timing/order-arm measurements",
+    "RSS/CPU measurements",
+    "source-dependent run IDs and scientific digests (portable payload compared)",
+    "exception diagnostic path text"
+  ],
+  "scope": "Scientific/configuration equality at specified tolerances, not equal performance or independent physical validation"
+}

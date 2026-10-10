@@ -15,7 +15,7 @@ from .network import export, MemoryDevice
 from .sequence_adapter import run_link
 
 
-def run_baseline(config, output, offline=False):
+def run_baseline(config, output, offline=False, reviewed_bundle=None):
     actual_counts = {"measured_operating_point_backend_runs": 2,
                      "network_replicates": len(config["network_seeds"]),
                      "network_attempts_total": len(config["network_seeds"])*config["network_workload"]["attempts"],
@@ -29,6 +29,22 @@ def run_baseline(config, output, offline=False):
     lock = config["source_lock"]
     if set(lock["files"]) != set(config["download_files"]):
         raise MissingData("Reviewed data lock must cover every requested file")
+    if reviewed_bundle is not None:
+        from .bundled import reviewed_baseline_inputs
+        artifacts, metadata_record = reviewed_baseline_inputs(config, cache, reviewed_bundle)
+    else:
+        artifacts, metadata_record = _retrieve_inputs(config, client, offline)
+    write_json(out/"fetch_manifest.json", {"metadata": metadata_record, "artifacts": artifacts,
+                "all_checksums_verified": reviewed_bundle is None,
+                "numerical_data_checksums_verified": True,
+                "input_mode": "bundled_numerical_replay" if reviewed_bundle else "source_acquisition",
+                "unbundled_paper_bytes_verified": reviewed_bundle is None, "offline": offline})
+    return _compute_baseline(config, out, cache, artifacts, metadata_record, actual_counts, reviewed_bundle)
+
+
+def _retrieve_inputs(config, client, offline):
+    cache = client.root
+    lock = config['source_lock']
     metadata_url = f"https://zenodo.org/api/records/{lock['record_id']}"
     if offline:
         metadata, metadata_record = _cached_json(client, metadata_url, "teller2025_metadata")
@@ -63,12 +79,14 @@ def run_baseline(config, output, offline=False):
         if hashlib.sha256((cache/record["relative_path"]).read_bytes()).hexdigest() != source["sha256"]:
             raise MissingData("Paper differs from reviewed source")
         artifacts[source["filename"]] = record
-    write_json(out/"fetch_manifest.json", {"metadata": metadata_record, "artifacts": artifacts,
-                "all_checksums_verified": True, "offline": offline})
+    return artifacts, metadata_record
+
+
+def _compute_baseline(config, out, cache, artifacts, metadata_record, actual_counts, reviewed_bundle):
     write_json(out/"data_quality.json", {"reviewed_mapping_notes": config["source_mapping_notes"],
         "excluded_from_physical_inference": [{"file": "3a.csv",
         "reason": "Unclear abscissa unit: metadata says seconds; numeric extent is 0.070..1183.278 with no header",
-        "action": "retained with checksum, not used to estimate storage lifetime or pulse shape"}],
+        "action": "not bundled or used in numerical replay" if reviewed_bundle else "retained with checksum, not used to estimate storage lifetime or pulse shape"}],
         "review_status": "computational source audit; external domain-expert signoff pending"})
 
     def path(name):
@@ -266,6 +284,8 @@ def run_baseline(config, output, offline=False):
         "source_sha256": source_fingerprint(), "verified_run_counts": actual_counts,
         "catalog": summary_catalog, "source_artifacts": len(artifacts)+1,
         "source_data_checksums_verified": True, "experimental_reanalysis": reproduction,
+        "input_mode": "bundled_numerical_replay" if reviewed_bundle else "source_acquisition",
+        "unbundled_paper_bytes_verified": reviewed_bundle is None,
         "spatial_holdout": {k: v for k, v in holdout.items() if k != "comparisons"},
         "readout_window_fits": [{k: v for k, v in r.items() if k != "predictions"} for r in noise_fit["fits"]],
         "negative_control_model": noise_fit["negative_control_model"],

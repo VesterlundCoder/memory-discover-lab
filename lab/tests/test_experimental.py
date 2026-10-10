@@ -1,5 +1,6 @@
 """Scientific scope, held-out data, source layout and real simulator checks."""
 import copy
+import importlib.util
 import tempfile
 import unittest
 from pathlib import Path
@@ -39,6 +40,7 @@ class ExperimentalScopeTests(unittest.TestCase):
         self.assertAlmostEqual(ch.metrics()["conditional_average_fidelity"], .967)
         self.assertAlmostEqual(ch.metrics()["retrieval_success_probability"], .014)
 
+    @unittest.skipUnless(importlib.util.find_spec('qutip'), 'optional QuTiP not installed')
     def test_point_qutip_choi_and_bell_match(self):
         a, b = [evaluate(point_profile(), [18e-6], backend)[0] for backend in ("analytic", "qutip")]
         np.testing.assert_allclose(choi(a.full_kraus()), choi(b.full_kraus()), atol=1e-12)
@@ -75,6 +77,7 @@ class ExperimentalScopeTests(unittest.TestCase):
 
 
 class SequenceIntegrationTests(unittest.TestCase):
+    @unittest.skipUnless(importlib.util.find_spec('sequence'), 'optional SeQUeNCe not installed')
     def test_nonunital_channel_on_entangled_middle_key_preserves_joint_state(self):
         from sequence.kernel.quantum_manager import QuantumManagerDensity
         manager = QuantumManagerDensity()
@@ -90,6 +93,7 @@ class SequenceIntegrationTests(unittest.TestCase):
         self.assertIs(manager.get(keys[0]), manager.get(keys[2]))
         self.assertAlmostEqual(np.trace(actual).real, 1)
 
+    @unittest.skipUnless(importlib.util.find_spec('sequence'), 'optional SeQUeNCe not installed')
     def test_real_event_workload_preserves_identity_and_repeats_seed(self):
         ch = evaluate(point_profile(), [18e-6])[0]
         ch.success_probability = .8

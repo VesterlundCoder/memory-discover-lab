@@ -89,6 +89,7 @@ def main():
     p = sub.add_parser("assess"); p.add_argument("query"); p.add_argument("--database", default="t2_data/t2.sqlite"); p.add_argument("--out", default="t2_runs/assessment.json")
     p = sub.add_parser("calculate"); p.add_argument("specification"); p.add_argument("--out", default="t2_runs/calculation.json")
     p = sub.add_parser("run"); p.add_argument("--offline", action="store_true"); p.add_argument("--sequence", action="store_true")
+    p.add_argument("--reviewed-bundle", help="Replay licensed PR data; molecular-source collection is not rerun")
     p.add_argument("--root", default="t2_data"); p.add_argument("--out", default="t2_runs/deterministic")
     args = ap.parse_args()
     try:
@@ -107,7 +108,7 @@ def main():
             result = calculate(read_json(args.specification)); write_json(args.out, result)
         elif args.command == "run":
             from .t2workflow import run
-            result = run(args.root, args.out, args.offline, args.sequence)
+            result = run(args.root, args.out, args.offline, args.sequence, args.reviewed_bundle)
         else: result = synthetic_demo(args.out, args.bootstrap)
         print(__import__("json").dumps(result, indent=2, ensure_ascii=False, allow_nan=False))
         if isinstance(result, dict) and result.get("failed_model_fits", 0): return 1

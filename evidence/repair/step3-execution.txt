@@ -1,0 +1,54 @@
+{
+  "step": 3,
+  "status": "pass",
+  "invalid_contract_cases": 7,
+  "blocked_cases": 7,
+  "positive_controls_passed": 7,
+  "unsafe_bypasses_accepted": 7,
+  "unit_conversion_control": {
+    "input_value": 1,
+    "input_unit": "ms",
+    "converted_s": 0.001,
+    "conversion_omitted_age_s": 1,
+    "density_matrix_max_error": 0.13220087620250348
+  },
+  "identity": {
+    "at_utc": "2026-10-10T13:32:09.540095+00:00",
+    "configuration": {
+      "suite": "constructed_contract_faults_v1",
+      "seed": 20261010
+    },
+    "configuration_sha256": "2873ab9cb0e7e3dd01565ede71e1ff3df0324b90b1b930a005de7eef4945e18a",
+    "evaluation_source_sha256": "4c762e6e9c5352d0fa7892b24f0c5fa6fd6c8b6de0259415bfeae42e0a97fbaa",
+    "lab_source_sha256": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
+    "inputs": [],
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+      "packages": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "qutip": null,
+        "pyscf": null,
+        "pycce": null,
+        "ase": null,
+        "maxwellbloch": null,
+        "pynmrstar": null,
+        "openpyxl": null,
+        "sequence": null,
+        "pandas": null
+      },
+      "git_commit": "b4fa295eb0b4a815a157f2dba4dbf6832317d589"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null
+    },
+    "prospectively_preregistered": false,
+    "hardware_experiments": 0
+  },
+  "interpretation": "Constructed fault coverage only; not real-world researcher error incidence or a comparison with other workflow engines",
+  "production_guards_modified": false
+}

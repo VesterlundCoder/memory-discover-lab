@@ -16,3 +16,5 @@ The original dataset DOIs are permanent external identifiers. A fetched page's b
 The ten reference rows were reviewed for primary-text value, unit, observable and reported conditions. They are not independently fitted raw measurements and do not establish a full memory channel. Missing exact sample temperature, field, bath, stretch exponent or isotope distribution remains visible. Duplicate values from a study or multiple secondary-dataset entries are not independent experimental samples.
 
 No generic molecular property, isotope mass, charge change or classical efficiency is converted to T2 without its physical model and required input parameters. Temperature at writing/storage/reading is represented separately in the model, but experimental cryostat setpoints are not asserted to be independent local thermometry.
+
+The unchanged, licensed numerical subset needed for offline system/paper replay is tracked under `data/experimental/`. Its manifest pins each original URL, version and SHA256. Reviewed paper transcriptions remain separate from byte-verified measurement files. The historical molecular source-collection audit is not recreated by offline replay.

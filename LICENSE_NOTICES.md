@@ -2,7 +2,7 @@
 
 The GitHub repository owner's existing MIT LICENSE is preserved for original code. The manuscript and third-party inputs retain their applicable rights. No blanket license applies to third-party content. External packages remain separately installed dependencies governed by their respective licenses; their source distributions are not bundled here.
 
-The Teller and PR2026 Zenodo data records declare **Creative Commons Attribution 4.0**. Figures generated here from those processed datasets identify the original articles and dataset DOIs. The source metadata and per-artifact records are retained.
+The Teller and PR2026 Zenodo data records declare **Creative Commons Attribution 4.0**. Figures generated here from those processed datasets identify the original articles and dataset DOIs. The source metadata and per-artifact records are retained. The unchanged licensed numerical files bundled under `data/experimental/` carry explicit creator/DOI attribution and a CC BY 4.0 license link in `ATTRIBUTION.md`; they are not relicensed under MIT. Primary-paper bytes and unlicensed molecular raw files are not bundled.
 
 The MTD-group molecular repository's retrieved metadata records **repository_license_not_specified** and `redistribution_approved: false`. Its cache is retained in this private, user-requested reproduction bundle from the supplied lab archive. It is excluded from default Git tracking; that cache status does not grant public redistribution rights. The original source URLs and pinned revision permit source retrieval through the lab tools.
 

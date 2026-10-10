@@ -74,6 +74,7 @@ def main():
     p = commands.add_parser("reproduce")
     p.add_argument("config"); p.add_argument("--out", default="baselines/teller2025")
     p.add_argument("--offline", action="store_true")
+    p.add_argument("--reviewed-bundle", help="Replay licensed numerical data; unbundled paper bytes are not reverified")
     p = commands.add_parser("sequence")
     p.add_argument("left"); p.add_argument("right"); p.add_argument("workload")
     p.add_argument("--seed", type=int, default=20261010); p.add_argument("--out", default="runs/sequence.json")
@@ -146,7 +147,7 @@ def main():
             write_json(args.out, result)
         elif args.command == "reproduce":
             from .baseline_workflow import run_baseline
-            result = run_baseline(read_json(args.config), args.out, args.offline)
+            result = run_baseline(read_json(args.config), args.out, args.offline, args.reviewed_bundle)
         elif args.command == "sequence":
             from .sequence_adapter import run_link
             from .network import load_device

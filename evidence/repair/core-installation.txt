@@ -1,0 +1,35 @@
+Using CPython 3.12.14 interpreter at: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python
+Creating virtual environment at: /workspace/scratch/b85c5791ca4a/repair-core-venv
+Using Python 3.12.14 environment at: /workspace/scratch/b85c5791ca4a/repair-core-venv
+Resolved 15 packages in 10.79s
+   Building westquant-memory-lab @ file:///workspace/scratch/b85c5791ca4a/github-public/lab
+Downloading scipy (33.7MiB)
+Downloading reportlab (1.9MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading pillow (6.6MiB)
+Downloading fonttools (5.1MiB)
+Downloading matplotlib (8.3MiB)
+ Downloaded kiwisolver
+ Downloaded reportlab
+ Downloaded fonttools
+ Downloaded pillow
+ Downloaded matplotlib
+ Downloaded scipy
+      Built westquant-memory-lab @ file:///workspace/scratch/b85c5791ca4a/github-public/lab
+Prepared 14 packages in 788ms
+Installed 15 packages in 18ms
+ + charset-normalizer==3.5.2
+ + contourpy==1.4.0
+ + cycler==0.12.1
+ + fonttools==4.66.1
+ + kiwisolver==1.5.1
+ + matplotlib==3.10.8
+ + numpy==2.5.3
+ + packaging==26.3
+ + pillow==12.3.0
+ + pyparsing==3.3.3
+ + python-dateutil==2.9.0.post0
+ + reportlab==4.4.9
+ + scipy==1.18.1
+ + six==1.17.0
+ + westquant-memory-lab==0.6.1 (from file:///workspace/scratch/b85c5791ca4a/github-public/lab)

@@ -181,3 +181,7 @@ make system-paper-pdf
 These commands validate reporting inputs and regenerate tables/PDFs; they do not rerun physics. Numerical commands and source contracts are in `evaluation/README.md`. Fresh output directories are mandatory. The default step-2 physical descriptor returns blocked status and exit 2; this is expected and cannot be counted as a successful physical baseline.
 
 Steps 5 and 6 remain colleague-led full reproduction, scientific review and release/archive decisions. Additional real data, time-resolved write/read validation and solver convergence are required before unknown combinations can be judged experimentally.
+
+## Clean-clone repair revision
+
+The historical selected records above remain attached to their original source fingerprints. Current-code reruns are in `evaluation/results/repaired/`, with a second full confirmation in `evaluation/results/repaired-confirmation/`. See `REPRODUCTION_REPAIR.md` and `evidence/repair/manifest.json`. The current quickstart is offline, constrained to tested dependencies, and needs no private cache. The full repair protocol is also integrated into the main manuscript, Supplement and standalone dossier.

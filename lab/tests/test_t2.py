@@ -45,10 +45,20 @@ class DeterministicT2Tests(unittest.TestCase):
 
     def test_reviewed_tables_and_unreviewed_units(self):
         with tempfile.TemporaryDirectory() as d:
+            # Test the review gate with explicit synthetic observations, not a
+            # private downloaded 201-row cache or a preceding workflow run.
+            root = Path(d)/'inputs'; (root/'processed').mkdir(parents=True)
+            rows = [{'id':f'synthetic:{i}', 'material_id':'synthetic',
+                     'target_definition':'reported_T2_mixed_protocol', 'target_value':i+1,
+                     'target_unit':'source_unspecified', 'features':{'temperature_K':10},
+                     'provenance':[{'test_fixture':True}], 'evidence_kind':'hypothetical',
+                     'review_status':'provisional', 'review_issues':['Synthetic unknown units']} for i in range(2)]
+            (root/'source_lock.json').write_text(json.dumps({'artifacts':[]}))
+            (root/'processed/molecular_rows.json').write_text(json.dumps(rows))
             db = Path(d)/'t2.sqlite'
-            summary = build_database(BASE/'t2_data', BASE/'data/t2_references.json', db)
+            summary = build_database(root, BASE/'data/t2_references.json', db)
             self.assertEqual(summary['reviewed_references'],10)
-            self.assertEqual(summary['provisional_observations'],201)
+            self.assertEqual(summary['provisional_observations'],2)
             query = json.loads((BASE/'examples/t2_reference_query.json').read_text())
             result = assess_database(db,query)
             self.assertEqual(result['status'],'reference_available')
@@ -62,7 +72,7 @@ class DeterministicT2Tests(unittest.TestCase):
             self.assertIsNone(assess_database(db,query)['predicted_new_material_T2_s'])
 
     def test_phase_count_control_recovers_known_time(self):
-        curve=json.loads((BASE/'t2_runs/synthetic_demo/curve.json').read_text())
+        curve=json.loads((BASE/'tests/fixtures/synthetic_phase_counts.json').read_text())
         result=fit_curve(curve,bootstrap=0)
         self.assertEqual(result['status'],'pass')
         self.assertLess(abs(result['identified_T2_s']/curve['synthetic_truth_T2_s']-1),.05)

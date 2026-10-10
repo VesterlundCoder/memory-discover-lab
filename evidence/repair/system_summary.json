@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "steps": {
+    "step1": "pass",
+    "step2": "model_curve_gate_pass",
+    "step3": "pass",
+    "step4": "pass"
+  },
+  "step2_physical_status": "blocked_missing_reviewed_data",
+  "step2_physical_validated": false,
+  "scope": "Software pathway reproduction; no independent experiment or new material validation"
+}

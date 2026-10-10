@@ -7,8 +7,13 @@ from pathlib import Path
 import json
 import math
 import re
+import argparse
 
 ROOT = Path(__file__).resolve().parents[1]
+ap=argparse.ArgumentParser(description=__doc__)
+ap.add_argument("--inputs",type=Path,default=ROOT)
+ap.add_argument("--numerical-replay",action="store_true",help="Exclude the wider molecular acquisition audit")
+args=ap.parse_args();ROOT=args.inputs.resolve()
 claims = []
 
 def read(name):
@@ -50,14 +55,18 @@ assert all(x["identified_T2_s"] is None for x in p["results"])
 record("C5", "Eight apparent classical-decay fits", "evidence/pr2026_curve_summary.json",
        {"mismatch": 6, "inconclusive": 2}, "No homogeneous physical spin T2 identified")
 d = read("evidence/deterministic_summary.json")
-assert (d["database"]["reviewed_references"], d["database"]["provisional_observations"]) == (10, 201)
+assert d["database"]["reviewed_references"] == 10
+expected_provisional = 0 if args.numerical_replay else 201
+assert d["database"]["provisional_observations"] == expected_provisional
+if args.numerical_replay:
+    assert d["preparation"]["molecular_source_audit"].startswith("not_reproduced")
 assert (d["completed_deterministic_calculations"], d["completed_spin_time_evaluations"],
         d["completed_rate_box_corners"]) == (3, 202, 4)
 assert d["ML_training_runs"] == 0 and not d["new_material_T2_verified"]
 assert d["table_assessments"]["unknown"] == "no_applicable_reference"
 record("C6", "Condition-sensitive database and deterministic work counts", "evidence/deterministic_summary.json",
-       {"reviewed": 10, "provisional": 201, "specifications": 3, "bath_evaluations": 202, "corners": 4},
-       "Reference review and specified physics; no new-material prediction validation")
+       {"reviewed": 10, "provisional": expected_provisional, "specifications": 3, "bath_evaluations": 202, "corners": 4},
+       "Reference review and specified physics; molecular acquisition excluded" if args.numerical_replay else "Reference review and specified physics; no new-material prediction validation")
 s = d["synthetic_count_control"]
 near(s["recovered_s"], 0.000979663156865916)
 assert s["interval"][0] < 0.001 < s["interval"][1] and not s["experimental_result"]

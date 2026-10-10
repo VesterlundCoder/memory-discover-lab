@@ -13,7 +13,9 @@ from .units import convert
 def provenance(artifact):
     return [{"artifact_id": artifact["id"], "sha256": artifact["sha256"],
              "source_id": artifact["source_id"], "url": artifact["url"],
-             "source_revision": artifact["source_revision"]}]
+             "source_revision": artifact["source_revision"],
+             **({"bytes_verified":artifact['bytes_verified'],
+                 "record_kind":artifact.get('record_kind','source_bytes')} if 'bytes_verified' in artifact else {})}]
 
 
 def number(value):

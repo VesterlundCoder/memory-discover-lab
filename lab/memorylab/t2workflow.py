@@ -6,10 +6,14 @@ from .t2assessment import build_database, assess_database, calculate
 from .t2lab import prepare, baseline, synthetic_demo
 
 
-def run(root="t2_data", out="t2_runs/deterministic", offline=False, use_sequence=False):
+def run(root="t2_data", out="t2_runs/deterministic", offline=False, use_sequence=False, reviewed_bundle=None):
     base = Path(__file__).resolve().parents[1]
     output = Path(out)
-    preparation = prepare(root, offline=offline, structures=False)
+    if reviewed_bundle is not None:
+        from .bundled import prepare_reviewed
+        preparation = prepare_reviewed(root, reviewed_bundle)
+    else:
+        preparation = prepare(root, offline=offline, structures=False)
     database = Path(root)/"t2.sqlite"
     db_result = build_database(root, base/"data/t2_references.json", database)
     table_results = {}

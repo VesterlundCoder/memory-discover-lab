@@ -1,0 +1,62 @@
+{
+  "step": 2,
+  "status": "blocked_missing_reviewed_data",
+  "required": [
+    "Audited normalized complex pure-dephasing curve with time in seconds and measurement uncertainties",
+    "Reviewed fixed Hamiltonian, tensor frames, field, temperature, isotope composition and pulse sequence",
+    "Separation of population relaxation from pure dephasing",
+    "Independent review of optical write/read channel before network validation"
+  ],
+  "reference": {
+    "doi": "10.1039/C8SC04122A",
+    "role": "molecular-spin candidate reference, not a complete memory channel"
+  },
+  "physical_validation_passed": false,
+  "network_exported": false,
+  "identity": {
+    "at_utc": "2026-10-10T13:34:06.749057+00:00",
+    "configuration": {
+      "status": "awaiting_reviewed_data",
+      "reference": {
+        "doi": "10.1039/C8SC04122A",
+        "role": "molecular-spin candidate reference, not a complete memory channel"
+      },
+      "required": [
+        "Audited normalized complex pure-dephasing curve with time in seconds and measurement uncertainties",
+        "Reviewed fixed Hamiltonian, tensor frames, field, temperature, isotope composition and pulse sequence",
+        "Separation of population relaxation from pure dephasing",
+        "Independent review of optical write/read channel before network validation"
+      ]
+    },
+    "configuration_sha256": "d355edb256a6cb6c8dc91e47d37f355f0a9d4bcff80d03349349df62c3aebdd3",
+    "evaluation_source_sha256": "4c762e6e9c5352d0fa7892b24f0c5fa6fd6c8b6de0259415bfeae42e0a97fbaa",
+    "lab_source_sha256": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
+    "inputs": [],
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+      "packages": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "qutip": null,
+        "pyscf": null,
+        "pycce": null,
+        "ase": null,
+        "maxwellbloch": null,
+        "pynmrstar": null,
+        "openpyxl": null,
+        "sequence": null,
+        "pandas": null
+      },
+      "git_commit": "b4fa295eb0b4a815a157f2dba4dbf6832317d589"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null
+    },
+    "prospectively_preregistered": false,
+    "hardware_experiments": 0
+  }
+}

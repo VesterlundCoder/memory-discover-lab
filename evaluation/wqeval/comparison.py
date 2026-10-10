@@ -28,7 +28,7 @@ def cases(config):
                             "times_s": config["times_s"], "kind": "specified_software_control"})
     return records
 
-def run(config, output):
+def run(config, output, offline=False):
     if config["timing_repeats"] < 1 or len(config["population_rates_s_inv"]) != len(config["detunings_Hz"]) or len(config["population_rates_s_inv"]) != len(config["excited_populations"]):
         raise ValueError("Positive timing repeats and matching parameter array lengths required")
     out = new_output(output)
@@ -48,7 +48,7 @@ def run(config, output):
     csv_rows(out / "channel_comparison.csv", rows)
     write(out / "cases.json", items)
     from .datasets import ensure_teller
-    manifest, cache = ensure_teller()
+    manifest, cache = ensure_teller(offline=offline)
     sources, data_rows = [], []
     for filename, cells, base, labels in [("4.csv", 5, 0, ["X","-X","Y","-Y","0","1"]),
                                          ("8a.csv",10,1,["X","-X","Y","-Y","E","L"])]:

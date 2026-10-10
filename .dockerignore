@@ -6,4 +6,6 @@
 **/*.sqlite*
 **/processed
 **/structures
-evaluation/results
+evaluation/results/*
+!evaluation/results/repaired
+!evaluation/results/repaired/**

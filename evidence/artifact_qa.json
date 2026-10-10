@@ -1,23 +1,28 @@
 {
   "date": "2026-10-10",
-  "main_pages": 17,
-  "supplement_pages": 9,
+  "main_pages": 18,
+  "supplement_pages": 11,
   "all_pages_rendered_and_visually_inspected": true,
   "latex_overfull_boxes": 0,
   "latex_unresolved_references": 0,
   "reproduction_orchestrator": "completed successfully; numerical pipeline, figures, tables and reporting checks",
-  "automated_tests_passed": 82,
+  "automated_tests_passed": 90,
   "new_hardware_experiments": 0,
   "new_material_T2_verified": false,
-  "system_evaluation_dossier_pages": 4,
+  "system_evaluation_dossier_pages": 6,
   "original_tests_passed": 75,
-  "additional_evaluation_tests_passed": 7,
+  "additional_evaluation_tests_passed": 15,
   "core_ci_tests_passed": 7,
   "second_family_physical_validation": false,
   "system_evaluation_scope": "Steps 1, 3 and 4 executed at software scope; step 2 synthetic control executed, second-family experimental validation pending.",
   "pdf_sha256": {
-    "paper.pdf": "b7588bdba851fce23effca508bc6504c4b980b843546faf84741b03101641bd2",
-    "supplement/supplement.pdf": "30bcd3e94ef0d936c36b3a24a76fff3315f1b72daf878cd2a994a95604f6eca1",
-    "evaluation/reports/System_Evaluation_1_4.pdf": "0a967265de3231b7bbad256a62eb46add0181b43ce9ef9dff9c67a99cb0b74b1"
-  }
+    "paper.pdf": "9812129859b8958ec1b6b3915bb1df9206953ed11c55735234fdc66739da4e86",
+    "supplement/supplement.pdf": "29e3ac5ffed15e6c283f99625a46b605485c7a11e9590dee4dab8b6a1794b23d",
+    "evaluation/reports/System_Evaluation_1_4.pdf": "f887174279ff9f113695b6dd6f8a63a3c29b58ba4cd12eeb12ba74057180a0e7"
+  },
+  "repair_full_tests_passed": 90,
+  "repair_core_lab_tests_passed": 68,
+  "repair_core_lab_tests_skipped": 7,
+  "repair_core_evaluation_tests_passed": 15,
+  "original_plus_initial_evaluation_tests": 82
 }

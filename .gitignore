@@ -24,3 +24,8 @@ lab/verification_v05/
 
 # Evaluation downloads stay local; pinned source URLs are tracked.
 evaluation/data/cache/
+
+# Fresh replay trees are distinct from archived article evidence.
+reproductions/
+# Licensed numerical data are intentional tracked inputs.
+!data/experimental/pr2026/*.out

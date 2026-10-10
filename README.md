@@ -26,25 +26,30 @@ It does not report new hardware experiments, a validated new-material lifetime, 
 - Ten primary-text-reviewed coherence references coexist with 201 provisional molecular entries; incomplete records are not promoted to physical predictions.
 - Deterministic Hamiltonian controls and a known-generator count experiment verify specified models. The latter recovers 0.979663 ms from a 1 ms synthetic generator.
 - A calibrated but nonunique fixed-point channel produces 87 retrieved pairs in 400,000 ideal-input SeQUeNCe attempts. These are simulated outcomes under incomplete optical assumptions.
-- All 75 automated tests pass. No new-material superiority is inferred from these software checks.
+- The original 75 tests and seven system tests passed. The repair revision adds eight regression tests: 75 lab tests and 15 evaluation tests pass in the full environment; seven optional tests are skipped in the core environment. No new-material superiority is inferred.
 
 ## Reproduce
 
-See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for environment setup and individual commands. With dependencies installed:
+Use **Linux / Python 3.12** for the tested environment. From a clean clone:
 
 ```bash
-python -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e ./lab
-python scripts/evaluate_system.py step1 --out evaluation/results/my-step1
+python -m pip install -c requirements-lock-core.txt -c lab/constraints-tested.txt -r requirements-paper.txt -e ./lab
+python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired
 python scripts/verify_results.py
 ```
 
-Step 1 automatically fetches its two pinned input files and verifies their SHA256. See [evaluation/README.md](evaluation/README.md) for steps 1–4, optional solver installation and full article reproduction with `python scripts/reproduce.py --online`. The public clone contains source adapters and reporting evidence; full third-party caches are excluded. For a quick check of the archived reporting outputs:
+This runs steps 1–4 without external source downloads, including the explicitly hypothetical step-2 control. The separate physical step-2 descriptor must remain blocked until reviewed experimental inputs are supplied. The licensed, unchanged experimental inputs are tracked under `data/experimental/`, with attribution and checksums. No private cache or previous run is needed.
+
+To rerun the paper's numerical analyses and event simulations offline:
 
 ```bash
-python scripts/verify_results.py
+python -m pip install -c requirements-lock-full.txt -c lab/constraints-tested.txt -r requirements-paper.txt -e './lab[all]'
+python scripts/reproduce.py --out reproductions/my-paper
 ```
+
+This verifies bundled measurement bytes and recomputes fits, channel/network controls, figures and reporting checks in a fresh output tree. It reuses reviewed paper transcriptions and reference tables. It excludes reacquisition of the unlicensed molecular collection and rechecking unbundled primary-paper bytes. `--online` explicitly invokes the wider original source-acquisition workflow and requires those remote servers. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md), [evaluation/README.md](evaluation/README.md) and [REPRODUCTION_REPAIR.md](REPRODUCTION_REPAIR.md) for exact scope and validation.
 
 PDF compilation uses the already included figures and tables. The standalone `.tex` download needs its companion `figures/` directory from this bundle.
 
@@ -54,7 +59,7 @@ The evaluated software archive SHA-256 is `c64b94a573def9d999b65be7201947e9c2ce4
 
 The code and article materials are published at https://github.com/VesterlundCoder/memory-discover-lab. No DOI or peer-review acceptance is asserted. The manuscript draft has not undergone independent scientific review. The private archive preserves the complete historical `lab/` tree; only the selected files in `evidence/` and their detailed underlying outputs are used as this article's fresh result snapshot.
 
-See [DATA_SOURCES.md](DATA_SOURCES.md) and [LICENSE_NOTICES.md](LICENSE_NOTICES.md). Third-party caches are excluded by `.gitignore`; keeping them in this local bundle does not assign a public redistribution license. The repository owner's existing MIT license is preserved; third-party inputs retain their own licenses. AI-assisted coding and drafting are disclosed in the article.
+See [DATA_SOURCES.md](DATA_SOURCES.md) and [LICENSE_NOTICES.md](LICENSE_NOTICES.md). Verified CC BY 4.0 measurement files are bundled with attribution. Other third-party caches are excluded by `.gitignore`; cache possession does not grant redistribution rights. The repository owner's existing MIT license is preserved; third-party inputs retain their own licenses. AI-assisted coding and drafting are disclosed in the article.
 
 ## Additional system-paper evaluations
 

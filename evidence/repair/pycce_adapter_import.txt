@@ -1,0 +1,4 @@
+Exit code: 0
+Adapter import passed 1.1.1
+/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/bath/array.py:1917: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+  all_spins = pd.read_csv(filepath, delim_whitespace=True, header=None, comment='%',

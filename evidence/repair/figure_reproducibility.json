@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "files_compared": 10,
+  "all_figures_byte_identical": true,
+  "metadata_policy": "PDF CreationDate/ModDate removed; tested numeric/plot dependency versions constrained",
+  "sha256": {
+    "teller_fidelities.png": "f6b1847d2cb05c6830d87c06b7413b1b8645b795e59abe385627f9275637a186",
+    "network_control.pdf": "64e55891baaee3d3435d54e1aac4ebe3099436d0566daa1b4b7eac4721ddcc70",
+    "pr_decay_diagnostics.pdf": "500a09e408c398bec2ccabce8c5ed885a42a02c95e656971880bcf8c31967c08",
+    "pr_decay_diagnostics.png": "f800c40541f2ce1f14b315625ff1169fc1a54c9b395072671310c51bbecdc279",
+    "architecture.png": "fbd272dc1d89700f01c94ac1b4cace6c17b3d3cbec25a25aa996e533de4626ea",
+    "teller_fidelities.pdf": "047fabb4a39b923baf0252fb2fa57a4256816f72d89e4e93410d42da3fd870a1",
+    "deterministic_controls.png": "77d647f8785a12c57eabfee68f32f5cf3254e952183d707fdeb94a910f6053ee",
+    "deterministic_controls.pdf": "4b318f00d7a17bc37ac5edba7ac501b6a85d485b897718e7243167edbb2054dc",
+    "network_control.png": "11ecfe8fe58e6b63b8b055a6bc757e851518f3aa704681872a6ed51fc13b4f53",
+    "architecture.pdf": "a63596e533644557d244a18508329b83034e9399392896e11f3b2dd1815d3eb1"
+  }
+}

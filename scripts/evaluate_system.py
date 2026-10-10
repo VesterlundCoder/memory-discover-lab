@@ -13,17 +13,18 @@ def main():
     ap.add_argument('--config',type=Path)
     ap.add_argument('--out',type=Path)
     ap.add_argument('--allow-hypothetical',action='store_true')
+    ap.add_argument('--offline',action='store_true',help='For step1/fetch: use verified bundled/local bytes; never download')
     args=ap.parse_args()
     if args.step == 'fetch':
         from wqeval.datasets import ensure_teller
-        _,cache=ensure_teller(); print(cache); return 0
+        _,cache=ensure_teller(offline=args.offline); print(cache); return 0
     if args.out is None: ap.error('--out must identify a fresh result directory')
     defaults={'step1':'comparison.json','step2':'second_family_pending.json','step3':'ablation.json','step4':'performance.json'}
     path=args.config or ROOT/'evaluation/config'/defaults[args.step]
     config=read(path)
     if args.step == 'step1':
         from wqeval.comparison import run
-        summary=run(config,args.out)
+        summary=run(config,args.out,offline=args.offline)
     elif args.step == 'step2':
         from wqeval.caseflow import run
         summary=run(config,args.out,path.parent,args.allow_hypothetical)

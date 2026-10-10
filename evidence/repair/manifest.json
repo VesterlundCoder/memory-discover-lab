@@ -1,0 +1,43 @@
+{
+  "schema": "westquant_clean_clone_repair_v1",
+  "date": "2026-10-10",
+  "software_version": "0.6.1",
+  "candidate_local_git_commit": "b4fa295eb0b4a815a157f2dba4dbf6832317d589",
+  "external_network_disabled_for_execution": true,
+  "dependency_installation_network_allowed": true,
+  "evaluation_source_sha256": "4c762e6e9c5352d0fa7892b24f0c5fa6fd6c8b6de0259415bfeae42e0a97fbaa",
+  "lab_source_sha256": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
+  "core_tests": {
+    "lab_executed": 75,
+    "lab_passed": 68,
+    "lab_skipped": 7,
+    "evaluation_passed": 15
+  },
+  "full_tests": {
+    "lab_passed": 75,
+    "evaluation_passed": 15,
+    "skipped": 0
+  },
+  "software_pathway_passes": 2,
+  "cold_benchmark_jobs_per_pass": 108,
+  "cold_benchmark_jobs_total": 216,
+  "terminal_checkpoint_reuses_total": 216,
+  "scientific_comparisons_passed": 4,
+  "step1_channel_age_points": 73,
+  "step1_processed_fidelities": 90,
+  "step1_max_full_choi_error": 1.3103013043660781e-14,
+  "step2_physical_validation": false,
+  "step2_physical_status": "blocked_missing_reviewed_data",
+  "figure_files_byte_identical": 10,
+  "paper_reporting_invariants_passed": 10,
+  "offline_molecular_collection_reacquired": false,
+  "unbundled_paper_bytes_reverified": false,
+  "independent_colleague_review": false,
+  "docker_build_executed": false,
+  "pdf_compile_executed": true,
+  "timing_scope": "Repair runs are reproduction controls, with concurrent author-validation tasks; no new performance comparison claimed",
+  "results": "evaluation/results/repaired/",
+  "logs": "evidence/repair/",
+  "all_pdf_pages_rendered_and_visually_inspected": true,
+  "numerical_confirmation_results": "evaluation/results/repaired-confirmation/"
+}

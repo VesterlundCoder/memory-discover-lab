@@ -1,43 +1,54 @@
 # Reproducibility instructions
 
-## Public clone and private archive
+## Tested environment
 
-A fresh GitHub clone omits third-party caches with unverified redistribution permissions. Start with `python scripts/evaluate_system.py step1 --out evaluation/results/new-step1` after the core installation in README.md; its two pinned sources are fetched automatically. Full article reproduction in a fresh clone uses `python scripts/reproduce.py --online`. The offline commands below apply after retrieval or to the original private archive. Figure-only regeneration needs the detailed source/fit outputs produced by full numerical reproduction.
-
-## Environment
-
-The recorded runtime is Linux, Python 3.12.14, NumPy 2.5.3, SciPy 1.18.1, QuTiP 5.3.1, PySCF 2.14.0, PyCCE 1.1.1, ASE 3.29.0, MaxwellBloch 0.12.0, SeQUeNCe 1.2.0 and pandas 2.3.3. Figure generation used Matplotlib 3.10.8. See the environment object in the result summaries for other installed optional packages. Optional software installation may require network access and compatible wheels or compilers.
-
-From the repository root:
+Use Linux and **Python 3.12**. The clean environments tested for the repair used Python 3.12.14, NumPy 2.5.3, SciPy 1.18.1 and Matplotlib 3.10.8. The full environment also uses QuTiP 5.3.1, SeQUeNCe 1.2.0, PyCCE 1.1.1 and PySCF 2.14.0. Complete installed dependency pins are `requirements-lock-core.txt` (14 distributions) and `requirements-lock-full.txt` (131 distributions); the editable project is installed separately. These files describe the tested Linux environment, not universal wheels or a guarantee for untested Python/platform combinations. Python patch versions and OS details are recorded in actual results. No ML library is required.
 
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e './lab[all]'
-python -m pip install numpy==2.5.3 scipy==1.18.1 pandas==2.3.3 matplotlib==3.10.8
+python -m pip install -c requirements-lock-core.txt -c lab/constraints-tested.txt -r requirements-paper.txt -e ./lab
+python -m unittest discover -s lab/tests -v
+python -m unittest discover -s evaluation/tests -v
+python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired
 ```
 
-The package's declared Python support starts at 3.10; the listed study runtime is the actually tested one. No ML packages or training services are required. A PySCF container compatibility fallback reads `/proc/self/statm` page counts if numeric PID paths are inaccessible; it does not change the electronic-structure equations.
+The core suite runs 75 lab tests with seven optional-backend skips, plus 15 evaluation/regression tests without skips. The full installation passes all 90 tests. A skipped test is not a passed backend validation. There are no tests requiring private source-lock files or a previous synthetic-demo run.
 
-## Full numerical reproduction
+## Offline system evaluation
+
+The four-pathway runner verifies unchanged, bundled experimental bytes before use. It runs the matched step-1 comparison, explicitly synthetic step-2 control, seven selected contract faults, and the full 108-job local worker experiment. It also runs the physical step-2 descriptor and requires its `blocked_missing_reviewed_data` status and exit code 2. No second-family experimental result is manufactured.
+
+The repaired reference is `evaluation/results/repaired/step1` through `step4`. Historical outputs remain archived separately. Each run includes its own evaluation and lab source hashes, configuration, UTC timestamp and environment. Compare full scientific output with:
 
 ```bash
-python scripts/reproduce.py
+python scripts/verify_evaluation.py --reference evaluation/results/repaired/step4 --actual reproductions/my-system/step4 --require-same-source
 ```
 
-This runs the following commands from `lab/` and stops on a nonzero exit status:
+Numerical tolerance is 1e-10 absolute and relative. Full channels, model configuration, seeds, counts and evidence gates are checked. Paths, time stamps, wall/CPU times, RSS measurements and source-dependent IDs are execution metadata and are not expected to be byte equal. Step 4's portable channel payload must exist; legacy summary-only records cannot substitute for it. Source/environment provenance is still retained and source fingerprints are reported separately.
+
+## Offline paper numerical replay
 
 ```bash
-python -m memorylab reproduce examples/teller2025_baseline.json --out baselines/teller2025 --offline
-python -m memorylab.t2lab run --offline --sequence
-python -m unittest discover -s tests -v
+python -m pip install -c requirements-lock-full.txt -c lab/constraints-tested.txt -r requirements-paper.txt -e './lab[all]'
+python scripts/reproduce.py --out reproductions/my-paper
 ```
 
-It copies the newly produced result summaries into `evidence/`, regenerates all figures and supplementary tables, and runs reporting invariants. Complete logs go into `evidence/paper_*_reproduction.log` and `evidence/paper_test_results.log`. Reproduction replaces these selected outputs; retain an untouched copy of this bundle if the exact delivered bytes are needed.
+With no flags, the script uses `reproductions/latest`. It refuses a nonempty output tree and checks dependencies/input hashes before running. It recomputes the Teller data consistency/holdout/window analyses, reviewed operating-point channel, QuTiP verification and four seeded SeQUeNCe workloads; the PR2026 classical decay fits; the reviewed reference-table calculations; synthetic spin/count controls; and the hypothetical network workload. It then regenerates figures/tables and checks ten reporting invariants. Fresh logs and a machine-readable scope record are written under the chosen output tree. Archived article evidence is not overwritten.
 
-Offline means no remote source download, not no installed dependencies. It verifies the archived source checksums and fails on missing/corrupted source artifacts. `python scripts/reproduce.py --online` downloads sources through the implemented adapters and may create a different metadata snapshot. The source-lock manifests retain URLs, revisions, licenses and hashes. Do not silently relabel a refreshed snapshot as the original.
+**Scope:** this replays licensed measurement files and retained reviewed transcriptions. It does not reacquire/review primary-paper text, reconstruct original photon counts, repeat hardware experiments or recreate the 201-entry molecular source-collection audit. That historical audit remains attributed to the original source snapshot; offline replay records zero newly acquired molecular observations. The numerical-replay reporting mode explicitly enforces that exclusion.
 
-## Figures and tables only
+## Wider remote source acquisition
+
+```bash
+python scripts/reproduce.py --online --out reproductions/new-source-snapshot
+```
+
+This selects the original acquisition adapters, requiring Zenodo, the pinned molecular GitHub source and primary-paper endpoints. It verifies the pinned dataset locks and retains the newly obtained metadata. Endpoint denial/changed bytes remain explicit failures. Remote source availability is not required by the quickstart or offline CI. Unlicensed source caches and primary-paper copies remain excluded from Git tracking.
+
+## Figures and tables
+
+A clean clone includes the numerical/fit outputs needed for figure-only regeneration. Measurement curves come from the licensed bundle if processed local files are absent:
 
 ```bash
 python scripts/make_figures.py
@@ -45,26 +56,23 @@ python scripts/make_tables.py
 python scripts/verify_results.py
 ```
 
-These reuse existing numerical outputs. They do not rerun physical experiments. The constructive mean-fidelity nonidentifiability example performs direct Kraus propagation and is included in the figure-generation script. The generated CSVs preserve numeric diagnostics; the underlying JSON retains the full precision, issue flags and conditions.
+The figure builder verifies/loads inputs before writing and stages all plots before replacement. A missing input produces an actionable error without replacing `architecture.pdf`. PDF creation/modification timestamps are suppressed. Two runs in the pinned validation environment produced identical bytes for all five PDFs and five PNGs. Cross-version font/plotting equivalence is not assumed. `SHA256SUMS` describes delivered bytes; it is not a claim that noisy measurements, hardware or timing records are reproducible.
 
-## Compile the PDFs
+## Optional-backend compatibility
 
-TeX Live with `pdflatex`, Latin Modern, `microtype`, `amsmath`, `booktabs`, `longtable`, `graphicx` and `hyperref` is sufficient. Build from the repository root:
+PyCCE 1.1.1 directly imports removed NumPy/SciPy names. Use the lab adapter (`memorylab.common.optional_import('pycce')`), which restores the same Unicode dtype alias and SciPy `isintlike` utility before importing PyCCE. A direct `import pycce` in a fresh process may fail in this pinned environment. The compatibility layer does not alter a spin Hamiltonian; the optional single-spin analytical check tests the calculation separately. The Linux PySCF `/proc/self/statm` compatibility fallback preserves RSS/VMS units when numeric PID paths are inaccessible.
+
+## PDFs and container
 
 ```bash
 make pdf
+make system-paper-pdf
 ```
 
-This compiles each source twice to resolve references. No BibTeX run is required because the main source contains its numbered bibliography. Figures must remain in `figures/`; supplementary generated tables must remain in `tables/`. PDF rendering/inspection used Poppler `pdftoppm` and `pdfinfo`. Numerical reproduction and PDF compilation are separate operations.
+PDF compilation requires TeX Live, `pdflatex`, Latin Modern, `microtype`, `amsmath`, `booktabs`, `longtable`, `graphicx`, `hyperref` and `enumitem`. For Debian/Ubuntu, install `texlive-latex-extra lmodern`; Poppler (`poppler-utils`) supports visual inspection. PDFs are already included; numerical replay does not require LaTeX. The separate ReportLab step-1 report also needs `fonts-dejavu-core`.
 
-## Scope and uncertainty
+The Dockerfile pins Python 3.12.14 and installs the core dependency constraints; its default command runs the four software pathways. It needs writable `/results`. Docker was not available in the author validation environment, so the image build is not claimed as executed. The underlying clean Linux commands were executed. The `.dockerignore` preserves bundled measurement inputs and repaired reference evidence.
 
-The Teller holdout assumes independent supplied MC uncertainty widths; shared covariance is not available. Its finite-point channel is an isotropic approximation and cannot be extrapolated to estimate T2. The derived acceptance omits several optical/detection losses. Network intervals describe simulation sampling at fixed parameters.
+## Scientific limitations
 
-The PR2026 fits use released Gaussian-error quantities. Their apparent scales are not spin T2; all eight outputs withhold physical T2. Parametric bootstrap intervals condition on the model and exclude shared systematics/model error. The count-control interval concerns one synthetic instance, not calibrated coverage or prediction error. Deterministic rate-box ranges are bounds under supplied coefficients, not confidence intervals.
-
-Exact counts, seeds and source pointers are in the Supplement and `evidence/claim_result_map.json`. The original article snapshot did not include a runtime/scalability benchmark or second network-simulator cross-validation. The separate evaluation addendum now includes a bounded local worker/checkpoint benchmark; independent environment validation and a second experimental physical case remain pending.
-
-## Evaluation addendum PDF
-
-`python scripts/make_evaluation_report.py` renders the executed evaluation results. It requires ReportLab (`python -m pip install reportlab`) and the DejaVu Sans fonts under `/usr/share/fonts/truetype/dejavu/` (Debian/Ubuntu package `fonts-dejavu-core`). The PDF is already included. This report supplements the original manuscript; it does not relabel a software control as a physical measurement.
+Teller MC widths lack shared covariance; its operating-point channel is nonunique and does not identify T2. PR2026 classical retrieval scales are not homogeneous spin T2. The step-2 control's residual scale and optical interface are hypothetical. Rate-box bounds are conditional deterministic bounds, not prediction confidence intervals. The local performance study covers small models/workers only; timings and machine peaks are not portable scientific outputs. Independent colleague-led reproduction and scientific/release review (steps 5 and 6) remain pending.

@@ -7,28 +7,36 @@ These evaluations extend the original v0.6.0 article snapshot. They do not silen
 From the repository root, with Python 3.12:
 
 ```bash
-python -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate
-python -m pip install -e ./lab
-python scripts/evaluate_system.py step1 --out evaluation/results/my-step1
+python -m pip install -c requirements-lock-core.txt -c lab/constraints-tested.txt -r requirements-paper.txt -e ./lab
+python scripts/evaluate_system.py step1 --offline --out reproductions/my-step1
 python -m unittest discover -s evaluation/tests -v
-python scripts/evaluate_system.py step3 --out evaluation/results/my-step3
-python scripts/evaluate_system.py step4 --out evaluation/results/my-step4
+python scripts/evaluate_system.py step3 --out reproductions/my-step3
+python scripts/evaluate_system.py step4 --out reproductions/my-step4
 ```
 
-The first step-1 run automatically retrieves the two pinned Zenodo files into a local ignored cache. It checks SHA256 before either parser consumes them and fails if bytes change. `python scripts/evaluate_system.py fetch` prefetches them. Source URLs and hashes are in `data/teller_sources.json`; online access to Zenodo is required on a fresh clone. A cached run needs no network. Always choose a fresh output directory. Exit status 2 means a gate failed or a case is blocked; a missing parameter is never a successful reproduction.
+Step 1 copies its two pinned input files from tracked, licensed `data/experimental/teller2025/` into a local ignored cache and checks SHA256 before either parser consumes them. A clean clone needs no Zenodo connection. `--offline` forbids downloads if both bundled and local inputs are missing. Corrupt bytes are rejected; they are never silently replaced. `python scripts/evaluate_system.py fetch --offline` checks/prefills the cache. Always choose a fresh output directory.
 
-Full original article reproduction needs the optional backends and additional online source retrieval:
+One command runs all four software pathways and the separate blocked physical descriptor:
 
 ```bash
-python -m pip install -c lab/constraints-tested.txt -e './lab[all]'
-python scripts/reproduce.py --online
+python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired
+```
+
+Exit status 2 from the standalone physical descriptor is intentional. The one-command runner verifies that exact blocked status; it does not call the case physically validated. The synthetic step-2 configuration is named explicitly below.
+
+Paper numerical replay uses the full tested environment and the bundled licensed measurement files:
+
+```bash
+python -m pip install -c requirements-lock-full.txt -c lab/constraints-tested.txt -r requirements-paper.txt -e './lab[all]'
+python scripts/reproduce.py --out reproductions/my-paper
 make pdf
 ```
 
-This is a first-run retrieval, not independent external validation. Full caches with unverified redistribution permissions are deliberately absent from the public repository. The private archive retains its original inputs. Raw source changes, endpoint availability, and optional solver compatibility can affect reproduction. Record new snapshots separately.
+Replay recomputes the numerical analyses and network controls, using retained reviewed transcriptions/reference tables. The wider unlicensed molecular-source acquisition and unbundled paper-byte verification are outside this offline mode. `python scripts/reproduce.py --online --out reproductions/new-source-snapshot` explicitly selects the original remote acquisition path. Missing/changed remote inputs remain failures.
 
-## Step 1: fair direct-script comparison
+## Step 1: matched direct-script comparison
 
 `wqeval/reference.py` imports NumPy/SciPy, not `memorylab`. It exponentiates a column-vectorized qubit Lindblad generator and constructs a qubit-to-qutrit erasure Choi matrix independently. It uses the same reviewed point, physical conventions and supplied software controls as the lab. Both parsers verify the input hashes. The gate compares full Choi matrices, six Pauli eigenstate outputs, conditional average fidelity, acceptance and processed source values. There is one calibrated experimental operating point and twelve hypothetical Markov profiles, yielding 73 channel-age points. No T2 is inferred from the calibrated point.
 
@@ -109,3 +117,14 @@ The container contains the core NumPy/SciPy lab; optional solvers and LaTeX need
 ## Integrated manuscript and complete execution dossier
 
 The main article and Supplement now include all four system evaluations. [The complete dossier](paper/README.md) lists exact configurations, source fingerprints, run dates, statistical limits and claim pointers. Steps 2 and 3 have confirmations using the same evaluation-source fingerprint as the selected step-1 and step-4 records. The distinct-family physical case remains blocked; its pending run is retained. Regenerate reporting tables with `python scripts/document_system_evaluation.py`, compile the manuscript/Supplement with `make pdf`, and compile the standalone dossier with `make system-paper-pdf`. Core GitHub CI success is retained in `evidence/core_ci_verification.json`; it does not replace colleague-led scientific reproduction.
+
+## Compare fresh scientific results
+
+```bash
+python scripts/verify_evaluation.py --reference evaluation/results/repaired/step3 --actual reproductions/my-system/step3 --require-same-source
+python scripts/verify_evaluation.py --reference evaluation/results/repaired/step4 --actual reproductions/my-system/step4 --require-same-source
+```
+
+The comparator checks full scientific fields, configuration, seeds and input hashes at absolute/relative tolerance 1e-10. Step 4 compares the complete `scientific_results.json` channel/configuration payload. Source-derived run IDs and digests are not portable across code/environment changes, so they are recorded separately. Timestamps, local paths, wall times, RSS/CPU measurements and diagnostic path strings are excluded from numeric equality. Every output retains its original provenance. Source fingerprints are reported and optionally required to match. Historical step-4 summaries alone lack the portable payload and cannot establish cross-version channel equality; use the repaired reference.
+
+The CI core job runs both suites and all four system pathways with external sockets/DNS blocked after dependency installation. The paper job installs the constrained full environment and replays licensed paper numerics with the same denial. These are author-operated clean checkouts, not colleagues' independent scientific review.

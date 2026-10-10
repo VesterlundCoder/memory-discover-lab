@@ -1,0 +1,12 @@
+Exit code: 1
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/__init__.py", line 1, in <module>
+    from . import bath
+  File "/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/bath/__init__.py", line 1, in <module>
+    from .array import *
+  File "/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/bath/array.py", line 8, in <module>
+    from pycce.bath.map import InteractionMap
+  File "/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/pycce/bath/map.py", line 6, in <module>
+    from scipy.sparse.sputils import isintlike
+ImportError: cannot import name 'isintlike' from 'scipy.sparse.sputils' (/workspace/scratch/b85c5791ca4a/repair-full-venv/lib/python3.12/site-packages/scipy/sparse/sputils.py)

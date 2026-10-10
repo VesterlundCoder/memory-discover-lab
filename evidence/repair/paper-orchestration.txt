@@ -1,0 +1,7 @@
+Running: /workspace/scratch/b85c5791ca4a/repair-full-venv/bin/python -m memorylab reproduce /workspace/scratch/b85c5791ca4a/repair-clean-clone/lab/examples/teller2025_baseline.json --out /workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/fresh-full-paper/lab/baselines/teller2025 --offline --reviewed-bundle /workspace/scratch/b85c5791ca4a/repair-clean-clone/data/experimental
+Running: /workspace/scratch/b85c5791ca4a/repair-full-venv/bin/python -m memorylab.t2lab run --sequence --root /workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/fresh-full-paper/lab/t2_data --out /workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/fresh-full-paper/lab/t2_runs/deterministic --offline --reviewed-bundle /workspace/scratch/b85c5791ca4a/repair-clean-clone/data/experimental
+Running: /workspace/scratch/b85c5791ca4a/repair-full-venv/bin/python -m unittest discover -s /workspace/scratch/b85c5791ca4a/repair-clean-clone/lab/tests -v
+Five figures and constructive channel example regenerated
+Three LaTeX tables and CSV counterparts regenerated
+Verified 10 reporting invariants; wrote evidence/claim_result_map.json
+Replay complete: /workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/fresh-full-paper

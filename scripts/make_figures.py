@@ -2,6 +2,9 @@
 from pathlib import Path
 import json
 import sys
+import argparse
+import tempfile
+import os
 import numpy as np
 import matplotlib
 matplotlib.use('Agg')
@@ -12,13 +15,52 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'lab'))
 from memorylab.experimental import parse_indexed_infidelity
 from memorylab.channels import depolarizing, apply, I2, Z
+from memorylab.bundled import verified_group, install_group
+from memorylab.t2data import parse_pr2026
+
+ap=argparse.ArgumentParser(description=__doc__)
+ap.add_argument('--inputs',type=Path,default=ROOT,help='Result tree containing lab/ and evidence/')
+ap.add_argument('--out',type=Path,default=ROOT/'figures')
+args=ap.parse_args(); INPUT=args.inputs.resolve(); OUTPUT=args.out.resolve()
 def load(p): return json.loads(p.read_text())
 def save(fig,name):
-    fig.savefig(ROOT/'figures'/f'{name}.pdf',bbox_inches='tight')
-    fig.savefig(ROOT/'figures'/f'{name}.png',dpi=180,bbox_inches='tight')
+    fig.savefig(OUTPUT/f'{name}.pdf',bbox_inches='tight',metadata={'CreationDate':None,'ModDate':None})
+    fig.savefig(OUTPUT/f'{name}.png',dpi=180,bbox_inches='tight')
     plt.close(fig)
 plt.rcParams.update({'font.size':10,'axes.spines.top':False,'axes.spines.right':False,
                      'pdf.fonttype':42,'font.family':'DejaVu Sans'})
+
+# Resolve, validate and parse every input before replacing any figure.
+try:
+    source_dir = ROOT/'data/experimental'
+    verified = dict((i['original_file_name'], p) for i,p in verified_group(source_dir,'teller2025'))
+    pathvals=parse_indexed_infidelity(verified['4.csv'],5,['X','-X','Y','-Y','0','1'],'basis,cell')
+    timevals=parse_indexed_infidelity(verified['8a.csv'],10,['X','-X','Y','-Y','E','L'],'basis,cell',1)
+    required=['evidence/teller_holdout.json','evidence/teller_summary.json',
+        'lab/t2_runs/deterministic/spin_bath_0pulse.json','lab/t2_runs/deterministic/spin_bath_1pulse.json',
+        'lab/t2_runs/deterministic/synthetic_control/curve.json','lab/t2_runs/deterministic/synthetic_control/fit.json']
+    required += [f'lab/t2_runs/deterministic/experimental_decay/pr2026_{seq}_{model}.json'
+        for seq in ['none','XX','XY4','XY16'] for model in ['exponential','stretched']]
+    for name in required: load(INPUT/name)
+    runs=sorted((INPUT/'lab/baselines/teller2025/sequence_runs').glob('*.json'))
+    if len(runs)!=4: raise ValueError('Expected four Teller network seed results')
+    for path in runs: load(path)
+    curve_files=[INPUT/f'lab/t2_data/processed/curves/pr2026_{seq}.json' for seq in ['none','XX','XY4','XY16']]
+    if all(p.exists() for p in curve_files):
+        curves={load(p)['id']:load(p) for p in curve_files}
+    elif INPUT==ROOT:
+        with tempfile.TemporaryDirectory() as directory:
+            records=install_group(source_dir,'pr2026',Path(directory)/'cache')
+            parsed,_=parse_pr2026(directory,records)
+            curves={c['id']:c for c in parsed}
+    else: raise ValueError('PR curve inputs missing from result tree')
+except (OSError,KeyError,ValueError) as exc:
+    ap.exit(2, f'Figure inputs unavailable or invalid: {exc}. Restore the tracked inputs or run scripts/reproduce.py first. No figure was written.\n')
+# Stage all plots before replacing the delivered figures.
+DESTINATION=OUTPUT
+DESTINATION.parent.mkdir(parents=True,exist_ok=True)
+staging=tempfile.TemporaryDirectory(prefix='.figures-',dir=DESTINATION.parent)
+OUTPUT=Path(staging.name)
 
 # One compact diagram of the implemented data/model boundary.
 fig,ax=plt.subplots(figsize=(9.2,4.2));ax.set_xlim(0,10);ax.set_ylim(0,4.9);ax.axis('off')
@@ -38,11 +80,7 @@ for a,b in [((2.9,4),(3.55,4)),((6.3,4),(6.95,4)),((4.45,3.6),(1.55,2.75)),((4.9
 save(fig,'architecture')
 
 # Experimental processed state fidelities, preserving the distinct encodings.
-cache=ROOT/'lab/baselines/teller2025/cache/raw'
-path=next(cache.rglob('4.csv'));time=next(cache.rglob('8a.csv'))
-pathvals=parse_indexed_infidelity(path,5,['X','-X','Y','-Y','0','1'],'basis,cell')
-timevals=parse_indexed_infidelity(time,10,['X','-X','Y','-Y','E','L'],'basis,cell',1)
-hold=load(ROOT/'evidence/teller_holdout.json')
+hold=load(INPUT/'evidence/teller_holdout.json')
 fig,axes=plt.subplots(1,2,figsize=(9.2,3.4),layout='constrained')
 for ax,vals,labels,title in [(axes[0],pathvals,['1,2','3,4','5,6','7,8','9,10'],'(a) Path encoding'),
                            (axes[1],timevals,[str(i) for i in range(1,11)],'(b) Time-bin encoding')]:
@@ -59,9 +97,9 @@ axes[1].legend(fontsize=8,loc='lower left');save(fig,'teller_fidelities')
 # Four distinct storage-efficiency curves: fit is a diagnostic, not spin T2.
 fig,axes=plt.subplots(2,2,figsize=(9.2,6),layout='constrained')
 for ax,seq in zip(axes.flat,['none','XX','XY4','XY16']):
- c=load(ROOT/f'lab/t2_data/processed/curves/pr2026_{seq}.json')
- e=load(ROOT/f'lab/t2_runs/deterministic/experimental_decay/pr2026_{seq}_exponential.json')
- s=load(ROOT/f'lab/t2_runs/deterministic/experimental_decay/pr2026_{seq}_stretched.json')
+ c=curves[f'pr2026_{seq}']
+ e=load(INPUT/f'lab/t2_runs/deterministic/experimental_decay/pr2026_{seq}_exponential.json')
+ s=load(INPUT/f'lab/t2_runs/deterministic/experimental_decay/pr2026_{seq}_stretched.json')
  t=np.array(c['times_s'])*1000
  ax.errorbar(t,np.array(c['values'])*100,yerr=np.array(c['standard_errors'])*100,fmt='.',ms=3,color='#183b57',alpha=.7,label='Released data')
  ax.plot(t,np.array(e['fitted_values'])*100,lw=1.2,color='#b56b30',label='Exponential')
@@ -72,12 +110,12 @@ axes[0,0].legend(fontsize=8);save(fig,'pr_decay_diagnostics')
 
 fig,axes=plt.subplots(1,2,figsize=(9.2,3.3),layout='constrained')
 for n,label in [(0,'Free induction'),(1,'Ideal Hahn pulse')]:
- r=load(ROOT/f'lab/t2_runs/deterministic/spin_bath_{n}pulse.json')
+ r=load(INPUT/f'lab/t2_runs/deterministic/spin_bath_{n}pulse.json')
  axes[0].plot(np.array(r['times_s'])*1000,r['envelope'],lw=1.7,label=label)
 axes[0].axhline(np.exp(-1),color='gray',ls='--',lw=1,label='1/e')
 axes[0].set(xlabel='Storage time (ms)',ylabel='Coherence magnitude',title='(a) Hypothetical spin-bath control',ylim=(-.02,1.08));axes[0].legend(fontsize=8)
-curve=load(ROOT/'lab/t2_runs/deterministic/synthetic_control/curve.json')
-fit=load(ROOT/'lab/t2_runs/deterministic/synthetic_control/fit.json')
+curve=load(INPUT/'lab/t2_runs/deterministic/synthetic_control/curve.json')
+fit=load(INPUT/'lab/t2_runs/deterministic/synthetic_control/fit.json')
 t=np.array(curve['times_s']);phase=np.array(curve['phases_rad']);k=np.array(curve['counts_plus']);N=np.array(curve['trials']);m=phase==0
 axes[1].errorbar(t[m]*1000,k[m]/N[m],yerr=np.sqrt((k[m]/N[m])*(1-k[m]/N[m])/N[m]),fmt='.',color='#183b57',label='Synthetic phase-0 counts')
 axes[1].plot(t[m]*1000,np.array(fit['fitted_values'])[m],color='#b56b30',label='Count-likelihood fit')
@@ -87,8 +125,8 @@ save(fig,'deterministic_controls')
 
 # Independent seeds quantify MC variation under a fixed, hypothetical loss model.
 from memorylab.network import wilson
-summary=load(ROOT/'evidence/teller_summary.json')
-data=[load(p) for p in sorted((ROOT/'lab/baselines/teller2025/sequence_runs').glob('*.json'))]
+summary=load(INPUT/'evidence/teller_summary.json')
+data=[load(p) for p in runs]
 fig,ax=plt.subplots(figsize=(7.4,3.2),layout='constrained')
 for i,r in enumerate(data):
  v=r['retrieved_pairs']/r['attempts'];lo,hi=wilson(r['retrieved_pairs'],r['attempts'])
@@ -109,5 +147,8 @@ result={'scope':'Constructive mean-fidelity nonidentifiability example; not two 
  'Bell_fidelity_phase_flip':bellf(phase),'mean_fidelity_phase_flip':1-2*q/3,
  'difference':bellf(phase)-bellf(dep)}
 assert abs(result['mean_fidelity_phase_flip']-f)<1e-13
-(ROOT/'evidence/mean_fidelity_nonidentifiability.json').write_text(json.dumps(result,indent=2)+'\n')
+(INPUT/'evidence/mean_fidelity_nonidentifiability.json').write_text(json.dumps(result,indent=2)+'\n')
+DESTINATION.mkdir(parents=True,exist_ok=True)
+for path in OUTPUT.iterdir():os.replace(path,DESTINATION/path.name)
+staging.cleanup()
 print('Five figures and constructive channel example regenerated')

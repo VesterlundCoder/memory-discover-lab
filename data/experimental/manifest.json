@@ -1,0 +1,146 @@
+{
+  "schema": "westquant_bundled_experimental_inputs_v1",
+  "attribution": "See data/experimental/ATTRIBUTION.md. Files are unchanged copies of the cited released measurement data.",
+  "groups": {
+    "teller2025": [
+      {
+        "path": "teller2025/4.csv",
+        "sha256": "15a1bffab4bba9900afb588d92cbfd345134ad4de81c2601fb4835e2d41cb803",
+        "url": "https://zenodo.org/api/records/14929997/files/4.csv/content",
+        "revision": "14929997:v1",
+        "license": "CC-BY-4.0",
+        "original_file_name": "4.csv"
+      },
+      {
+        "path": "teller2025/8a.csv",
+        "sha256": "5dabe5c2aba00dce1c2b177b1340a5bf4262110ed4cdba5c78b172b8d0b71c5a",
+        "url": "https://zenodo.org/api/records/14929997/files/8a.csv/content",
+        "revision": "14929997:v1",
+        "license": "CC-BY-4.0",
+        "original_file_name": "8a.csv"
+      },
+      {
+        "path": "teller2025/8b_F.csv",
+        "sha256": "f4748d46dcaafdeb34c678089a52404d8b435742ab2c0ffbff7e9d9148d2ad2f",
+        "url": "https://zenodo.org/api/records/14929997/files/8b_F.csv/content",
+        "revision": "14929997:v1",
+        "license": "CC-BY-4.0",
+        "original_file_name": "8b_F.csv"
+      },
+      {
+        "path": "teller2025/8b_Fmin.csv",
+        "sha256": "bed2c683ddbe2fa7642a10b8c28c68722b83150ce2aeab585ee1801758ca9cc0",
+        "url": "https://zenodo.org/api/records/14929997/files/8b_Fmin.csv/content",
+        "revision": "14929997:v1",
+        "license": "CC-BY-4.0",
+        "original_file_name": "8b_Fmin.csv"
+      },
+      {
+        "path": "teller2025/8b_Fmaxn.csv",
+        "sha256": "50ba79ac1cdc8835d30677d691142f6aa5fb0e7b39976bb132c2bd8d8d0720d5",
+        "url": "https://zenodo.org/api/records/14929997/files/8b_Fmaxn.csv/content",
+        "revision": "14929997:v1",
+        "license": "CC-BY-4.0",
+        "original_file_name": "8b_Fmaxn.csv"
+      },
+      {
+        "path": "teller2025/5_xaxis.csv",
+        "sha256": "c37fcd957b35ac3fcac9902fcd6ed819583ed27b3306f7cac41fa8a1905a7fbb",
+        "url": "https://zenodo.org/api/records/14929997/files/5_xaxis.csv/content",
+        "revision": "14929997:v1",
+        "license": "CC-BY-4.0",
+        "original_file_name": "5_xaxis.csv"
+      },
+      {
+        "path": "teller2025/5_yaxis2_F.csv",
+        "sha256": "35e1c0b4053e3cc5357787b497024155d692d3c80a2279bac378063bda811bd7",
+        "url": "https://zenodo.org/api/records/14929997/files/5_yaxis2_F.csv/content",
+        "revision": "14929997:v1",
+        "license": "CC-BY-4.0",
+        "original_file_name": "5_yaxis2_F.csv"
+      },
+      {
+        "path": "teller2025/5_yaxis2_Fmin.csv",
+        "sha256": "af2d36b0f550f2d6476e841b936b31ea2c470b33396bff3c17760246d3a1b463",
+        "url": "https://zenodo.org/api/records/14929997/files/5_yaxis2_Fmin.csv/content",
+        "revision": "14929997:v1",
+        "license": "CC-BY-4.0",
+        "original_file_name": "5_yaxis2_Fmin.csv"
+      },
+      {
+        "path": "teller2025/5_yaxis2_Fmax.csv",
+        "sha256": "52fe8aee8aa063db66e643c0d8da37a3be22107ce5b30465f6ca4f00ec25eb6d",
+        "url": "https://zenodo.org/api/records/14929997/files/5_yaxis2_Fmax.csv/content",
+        "revision": "14929997:v1",
+        "license": "CC-BY-4.0",
+        "original_file_name": "5_yaxis2_Fmax.csv"
+      },
+      {
+        "path": "teller2025/3b.csv",
+        "sha256": "dc401705fb2d473ea975257b8499b5adefc36b989d0182dc0a14b898efc0246a",
+        "url": "https://zenodo.org/api/records/14929997/files/3b.csv/content",
+        "revision": "14929997:v1",
+        "license": "CC-BY-4.0",
+        "original_file_name": "3b.csv"
+      }
+    ],
+    "pr2026": [
+      {
+        "path": "pr2026/fig2a_histo.npz",
+        "sha256": "e3e9a3e220d2268ff051202b259591479210153484c39c884a77556cc36db777",
+        "url": "https://zenodo.org/api/records/21532904/files/fig2a_histo.npz/content",
+        "revision": "21532904",
+        "license": "CC-BY-4.0",
+        "original_file_name": "fig2a_histo.npz"
+      },
+      {
+        "path": "pr2026/fig3.npz",
+        "sha256": "110cbe3846f1068ea099902b3d834fad5992025dd7d8f9608f49d7eb68cb951f",
+        "url": "https://zenodo.org/api/records/21532904/files/fig3.npz/content",
+        "revision": "21532904",
+        "license": "CC-BY-4.0",
+        "original_file_name": "fig3.npz"
+      },
+      {
+        "path": "pr2026/fig2b_histo.npz",
+        "sha256": "247051902441470a35fb02a020a35d1abf2ddf3e29d25eb7393fd3e8ac5733f6",
+        "url": "https://zenodo.org/api/records/21532904/files/fig2b_histo.npz/content",
+        "revision": "21532904",
+        "license": "CC-BY-4.0",
+        "original_file_name": "fig2b_histo.npz"
+      },
+      {
+        "path": "pr2026/fig1_XY4.out",
+        "sha256": "786ce75cbf53d947a826e83a84a6a27bff304ba407f365213d86c94a6c076d4c",
+        "url": "https://zenodo.org/api/records/21532904/files/fig1_XY4.out/content",
+        "revision": "21532904",
+        "license": "CC-BY-4.0",
+        "original_file_name": "fig1_XY4.out"
+      },
+      {
+        "path": "pr2026/fig1_norf.out",
+        "sha256": "99ba3ad206b95e03eecff24f8dad5da64b00cb3aa46d266915c6b5324a677950",
+        "url": "https://zenodo.org/api/records/21532904/files/fig1_norf.out/content",
+        "revision": "21532904",
+        "license": "CC-BY-4.0",
+        "original_file_name": "fig1_norf.out"
+      },
+      {
+        "path": "pr2026/fig1_XY16.out",
+        "sha256": "6712c0a885a360bd9b95f880559731ef95bb07b46a0b8f6ca0ead7a4841bf643",
+        "url": "https://zenodo.org/api/records/21532904/files/fig1_XY16.out/content",
+        "revision": "21532904",
+        "license": "CC-BY-4.0",
+        "original_file_name": "fig1_XY16.out"
+      },
+      {
+        "path": "pr2026/fig1_XX.out",
+        "sha256": "e59444a43a48e35a26f9bd7632ad53691d140b19af88679a921d0f1df39f44a2",
+        "url": "https://zenodo.org/api/records/21532904/files/fig1_XX.out/content",
+        "revision": "21532904",
+        "license": "CC-BY-4.0",
+        "original_file_name": "fig1_XX.out"
+      }
+    ]
+  }
+}
