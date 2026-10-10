@@ -16,6 +16,7 @@ spin = ["pycce==1.1.1", "pandas>=2.2,<3"]
 propagation = ["maxwellbloch==0.12.0"]
 datasets = ["openpyxl>=3.1,<4", "pynmrstar>=3.3,<4"]
 network = ["sequence==1.2.0", "pandas>=2.3.3,<3"]
+second-network = ["qunetsim==0.1.2", "qutip==5.3.1", "qutip-qip==0.4.2"]
 all = ["qutip==5.3.1", "pyscf==2.14.0", "ase==3.29.0", "pycce==1.1.1", "pandas>=2.2,<3",
        "maxwellbloch==0.12.0", "openpyxl>=3.1,<4", "pynmrstar>=3.3,<4",
        "sequence==1.2.0", "pandas>=2.3.3,<3"]

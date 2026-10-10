@@ -1,0 +1,41 @@
+test_constructed_faults (test_evaluation.EvaluationTests.test_constructed_faults) ... ok
+test_control_and_evidence_gate (test_evaluation.EvaluationTests.test_control_and_evidence_gate) ... ok
+test_independent_complex_liouvillian (test_evaluation.EvaluationTests.test_independent_complex_liouvillian) ... ok
+test_integrity_and_condition_mismatch (test_evaluation.EvaluationTests.test_integrity_and_condition_mismatch) ... ok
+test_mismatch_blocks_export (test_evaluation.EvaluationTests.test_mismatch_blocks_export) ... ok
+test_pending_is_not_validation (test_evaluation.EvaluationTests.test_pending_is_not_validation) ... ok
+test_strict_json_and_occupied_output (test_evaluation.EvaluationTests.test_strict_json_and_occupied_output) ... ok
+test_channel_against_density_matrix_hamiltonian (test_experimental_observables.ExperimentalObservableTests.test_channel_against_density_matrix_hamiltonian) ... ok
+test_counts_guard (test_experimental_observables.ExperimentalObservableTests.test_counts_guard) ... ok
+test_heldout_values_cannot_influence_calibration (test_experimental_observables.ExperimentalObservableTests.test_heldout_values_cannot_influence_calibration) ... ok
+test_integrity_conditions_and_false_evidence_rejected (test_experimental_observables.ExperimentalObservableTests.test_integrity_conditions_and_false_evidence_rejected) ... ok
+test_real_case_preserves_fail_and_export_block (test_experimental_observables.ExperimentalObservableTests.test_real_case_preserves_fail_and_export_block) ... ok
+test_changed_conditional_map_is_rejected_with_identical_metrics (test_reproducibility.ReproducibilityTests.test_changed_conditional_map_is_rejected_with_identical_metrics) ... ok
+test_changed_full_operators_cannot_hide_behind_stored_choi (test_reproducibility.ReproducibilityTests.test_changed_full_operators_cannot_hide_behind_stored_choi) ... ok
+test_comparison_ignores_execution_metadata (test_reproducibility.ReproducibilityTests.test_comparison_ignores_execution_metadata) ... ok
+test_comparison_rejects_scientific_change (test_reproducibility.ReproducibilityTests.test_comparison_rejects_scientific_change) ... ok
+test_corrupt_bundled_source_is_not_replaced_online (test_reproducibility.ReproducibilityTests.test_corrupt_bundled_source_is_not_replaced_online) ... ok
+test_group_validation_precedes_cache_writes (test_reproducibility.ReproducibilityTests.test_group_validation_precedes_cache_writes) ... ok
+test_kraus_unitary_gauge_preserves_channel_comparison (test_reproducibility.ReproducibilityTests.test_kraus_unitary_gauge_preserves_channel_comparison) ... ok
+test_missing_figure_inputs_preserve_existing_output (test_reproducibility.ReproducibilityTests.test_missing_figure_inputs_preserve_existing_output) ... ok
+test_nested_channel_change_not_discarded (test_reproducibility.ReproducibilityTests.test_nested_channel_change_not_discarded) ... ok
+test_offline_pinned_sources_without_legacy_cache_or_network (test_reproducibility.ReproducibilityTests.test_offline_pinned_sources_without_legacy_cache_or_network) ... ok
+test_source_mismatch_reported_and_strict_mode_rejects (test_reproducibility.ReproducibilityTests.test_source_mismatch_reported_and_strict_mode_rejects) ... ok
+test_certificate_identity_and_window_are_enforced (test_validation_extension.ConvergenceTests.test_certificate_identity_and_window_are_enforced) ... ok
+test_material_request_blocked_without_evidence (test_validation_extension.ConvergenceTests.test_material_request_blocked_without_evidence) ... ok
+test_noncommuting_spectral_and_control_resolution (test_validation_extension.ConvergenceTests.test_noncommuting_spectral_and_control_resolution) ... ok
+test_pycce_explicit_pairs_match_exact_and_are_not_ignored (test_validation_extension.ConvergenceTests.test_pycce_explicit_pairs_match_exact_and_are_not_ignored) ... /workspace/scratch/782f777bb441/memory-discover-lab/.venv/lib/python3.12/site-packages/pycce/bath/array.py:1917: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+  all_spins = pd.read_csv(filepath, delim_whitespace=True, header=None, comment='%',
+ok
+test_double_counting_and_unsupported_click_model_rejected (test_validation_extension.JointProtocolTests.test_double_counting_and_unsupported_click_model_rejected) ... ok
+test_full_loss_has_no_conditional_fidelity (test_validation_extension.JointProtocolTests.test_full_loss_has_no_conditional_fidelity) ... ok
+test_full_signal_excludes_false_clicks (test_validation_extension.JointProtocolTests.test_full_signal_excludes_false_clicks) ... ok
+test_no_signal_background_is_not_signal_efficiency (test_validation_extension.JointProtocolTests.test_no_signal_background_is_not_signal_efficiency) ... ok
+test_photon_correlation_cannot_pass_full_protocol_audit (test_validation_extension.JointProtocolTests.test_photon_correlation_cannot_pass_full_protocol_audit) ... ok
+test_custom_backend_preserves_nonadjacent_joint_state_and_consumes_qubits (test_validation_extension.PairedTraceTests.test_custom_backend_preserves_nonadjacent_joint_state_and_consumes_qubits) ... ok
+test_reproducible_independent_streams_and_full_loss (test_validation_extension.PairedTraceTests.test_reproducible_independent_streams_and_full_loss) ... ok
+
+----------------------------------------------------------------------
+Ran 34 tests in 1.707s
+
+OK

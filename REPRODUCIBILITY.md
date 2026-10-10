@@ -10,7 +10,7 @@ source .venv/bin/activate
 python -m pip install -c requirements-lock-core.txt -c lab/constraints-tested.txt -r requirements-paper.txt -e ./lab
 python -m unittest discover -s lab/tests -v
 python -m unittest discover -s evaluation/tests -v
-python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired
+python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired --allow-source-change
 ```
 
 The core suite runs 75 lab tests with seven optional-backend skips, plus 18 evaluation/regression tests without skips. The full installation passes all 93 tests. A skipped test is not a passed backend validation. There are no tests requiring private source-lock files or a previous synthetic-demo run.

@@ -1,4 +1,5 @@
 .venv/
+.venv-extension/
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -32,3 +33,8 @@ reproductions/
 
 # Retain the executed Bradley observable-case test logs.
 !evidence/bradley2022/*.log
+
+# Native run records and RNG traces are retained in the checked ZIP archives.
+evaluation/results/validation_extension/selected/*/runs/
+evaluation/results/validation_extension/selected/*/traces/
+!evidence/validation_extension/*.log

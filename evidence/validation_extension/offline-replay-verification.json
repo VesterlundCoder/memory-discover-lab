@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "compared": {
+    "json_records": 359,
+    "random_trace_arrays": 11
+  },
+  "absolute_and_relative_tolerance": 1e-10,
+  "source_and_configuration_fingerprints_equal": true,
+  "scope": "same-machine replay; runtime, timestamp/platform provenance and archive container bytes excluded from scientific equality"
+}

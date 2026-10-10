@@ -1,0 +1,133 @@
+{
+  "status": "pass",
+  "comparisons": {
+    "step1": {
+      "status": "pass",
+      "step": 1,
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-10,
+      "source_fingerprints": {
+        "evaluation_source_sha256": {
+          "reference": "254b1bbb8a1d3c95d28b63e69d40c3a7afcbc2aa76b4b14a2bf8a727c9ead1e9",
+          "actual": "ecc4ea6d77ca774a7f9cd3ed6f91285a5d5632a041ecdaa79ff829a5464cc373",
+          "matches": false
+        },
+        "lab_source_sha256": {
+          "reference": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
+          "actual": "3852565376c2a529bb33bc9394cf96061eeee147e19b4f4bbc2da724cf224f5a",
+          "matches": false
+        }
+      },
+      "same_source_required": false,
+      "reference_summary_sha256": "956d04d5ac84d8cd36cf78d5069aa254769cc1dde516c9f084cb13f83400ec1e",
+      "actual_summary_sha256": "b5c41f8d15d6330e6976fd22123bafa2d5742e2e832e3ad7c790aecccc7b9a82",
+      "excluded_from_numeric_equality": [
+        "UTC timestamps",
+        "input/output/temp path strings",
+        "environment versions (reported separately)",
+        "timing/order-arm measurements",
+        "RSS/CPU measurements",
+        "source-dependent run IDs and scientific digests (portable payload compared)",
+        "exception diagnostic path text"
+      ],
+      "channel_equality": "Full and conditional Choi matrices reconstructed from Kraus operators; stored full Choi consistency checked; Kraus gauge is not compared",
+      "scope": "Scientific/configuration equality at specified tolerances, not equal performance or independent physical validation"
+    },
+    "step2": {
+      "status": "pass",
+      "step": 2,
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-10,
+      "source_fingerprints": {
+        "evaluation_source_sha256": {
+          "reference": "254b1bbb8a1d3c95d28b63e69d40c3a7afcbc2aa76b4b14a2bf8a727c9ead1e9",
+          "actual": "ecc4ea6d77ca774a7f9cd3ed6f91285a5d5632a041ecdaa79ff829a5464cc373",
+          "matches": false
+        },
+        "lab_source_sha256": {
+          "reference": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
+          "actual": "3852565376c2a529bb33bc9394cf96061eeee147e19b4f4bbc2da724cf224f5a",
+          "matches": false
+        }
+      },
+      "same_source_required": false,
+      "reference_summary_sha256": "32521cbaa4bf994e1ee92b511d2ac3b3d5bf17d5eda8d23d7a7b6f65409ef6c9",
+      "actual_summary_sha256": "25edca247975f095a46d41f69e064b13581f06f227fdb073846065e2969dcd73",
+      "excluded_from_numeric_equality": [
+        "UTC timestamps",
+        "input/output/temp path strings",
+        "environment versions (reported separately)",
+        "timing/order-arm measurements",
+        "RSS/CPU measurements",
+        "source-dependent run IDs and scientific digests (portable payload compared)",
+        "exception diagnostic path text"
+      ],
+      "channel_equality": "Full and conditional Choi matrices reconstructed from Kraus operators; stored full Choi consistency checked; Kraus gauge is not compared",
+      "scope": "Scientific/configuration equality at specified tolerances, not equal performance or independent physical validation"
+    },
+    "step3": {
+      "status": "pass",
+      "step": 3,
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-10,
+      "source_fingerprints": {
+        "evaluation_source_sha256": {
+          "reference": "254b1bbb8a1d3c95d28b63e69d40c3a7afcbc2aa76b4b14a2bf8a727c9ead1e9",
+          "actual": "ecc4ea6d77ca774a7f9cd3ed6f91285a5d5632a041ecdaa79ff829a5464cc373",
+          "matches": false
+        },
+        "lab_source_sha256": {
+          "reference": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
+          "actual": "3852565376c2a529bb33bc9394cf96061eeee147e19b4f4bbc2da724cf224f5a",
+          "matches": false
+        }
+      },
+      "same_source_required": false,
+      "reference_summary_sha256": "6e6b8fc31fafdac193d72934d263696b8e7ceed6d8019635cdd179404d99636c",
+      "actual_summary_sha256": "9e01be97da0aaf6d1f4ee5d2c843f9bc286eddb6c953a8528fc0f4ec506e80ea",
+      "excluded_from_numeric_equality": [
+        "UTC timestamps",
+        "input/output/temp path strings",
+        "environment versions (reported separately)",
+        "timing/order-arm measurements",
+        "RSS/CPU measurements",
+        "source-dependent run IDs and scientific digests (portable payload compared)",
+        "exception diagnostic path text"
+      ],
+      "channel_equality": "Full and conditional Choi matrices reconstructed from Kraus operators; stored full Choi consistency checked; Kraus gauge is not compared",
+      "scope": "Scientific/configuration equality at specified tolerances, not equal performance or independent physical validation"
+    },
+    "step4": {
+      "status": "pass",
+      "step": 4,
+      "absolute_tolerance": 1e-10,
+      "relative_tolerance": 1e-10,
+      "source_fingerprints": {
+        "evaluation_source_sha256": {
+          "reference": "254b1bbb8a1d3c95d28b63e69d40c3a7afcbc2aa76b4b14a2bf8a727c9ead1e9",
+          "actual": "ecc4ea6d77ca774a7f9cd3ed6f91285a5d5632a041ecdaa79ff829a5464cc373",
+          "matches": false
+        },
+        "lab_source_sha256": {
+          "reference": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
+          "actual": "3852565376c2a529bb33bc9394cf96061eeee147e19b4f4bbc2da724cf224f5a",
+          "matches": false
+        }
+      },
+      "same_source_required": false,
+      "reference_summary_sha256": "02c5b0b60758393db8d40cc40866b6e4bb866512e68ed874bd59c9be5523e542",
+      "actual_summary_sha256": "71bcc7dd214d999b82bb30aeaa00071342a238498dd41d76c10af5dae2184470",
+      "excluded_from_numeric_equality": [
+        "UTC timestamps",
+        "input/output/temp path strings",
+        "environment versions (reported separately)",
+        "timing/order-arm measurements",
+        "RSS/CPU measurements",
+        "source-dependent run IDs and scientific digests (portable payload compared)",
+        "exception diagnostic path text"
+      ],
+      "channel_equality": "Full and conditional Choi matrices reconstructed from Kraus operators; stored full Choi consistency checked; Kraus gauge is not compared",
+      "scope": "Scientific/configuration equality at specified tolerances, not equal performance or independent physical validation"
+    }
+  }
+}

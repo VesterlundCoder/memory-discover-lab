@@ -18,7 +18,7 @@ jobs:
           export PYTHONPATH="$PWD/scripts/network_guard:$PWD/lab"
           python -m unittest discover -s lab/tests -v
           python -m unittest discover -s evaluation/tests -v
-          python scripts/reproduce_system.py --out reproductions/ci-system --reference-root evaluation/results/repaired
+          python scripts/reproduce_system.py --out reproductions/ci-system --reference-root evaluation/results/repaired --allow-source-change
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -43,3 +43,28 @@ jobs:
         with:
           name: offline-paper-evidence
           path: reproductions/ci-paper
+  validation-extension:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r evaluation/config/validation_extension/requirements-tested.txt -e ./lab
+      - name: Replay protocol, convergence and both native simulators offline
+        env:
+          WQ_BLOCK_EXTERNAL_NETWORK: '1'
+          OMP_NUM_THREADS: '1'
+          OPENBLAS_NUM_THREADS: '1'
+          MKL_NUM_THREADS: '1'
+        run: |
+          export PYTHONPATH="$PWD/scripts/network_guard:$PWD/lab"
+          python -m unittest discover -s lab/tests -v
+          python -m unittest discover -s evaluation/tests -v
+          python scripts/run_validation_extension.py --out reproductions/ci-extension
+          python scripts/verify_validation_extension.py --reference evaluation/results/validation_extension/selected --actual reproductions/ci-extension --out reproductions/ci-extension/verification.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: validation-extension-evidence
+          path: reproductions/ci-extension

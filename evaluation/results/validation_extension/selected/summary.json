@@ -1,0 +1,36 @@
+{
+  "status": "numerical_validation_passed_experimental_inconclusive",
+  "executed_stages": [
+    "protocol",
+    "convergence",
+    "pilot",
+    "larger"
+  ],
+  "stage_status": {
+    "protocol": "pass",
+    "convergence": "pass",
+    "pilot": "pass",
+    "larger": "pass"
+  },
+  "planned_counts": {
+    "protocol_channel_age_points": 56,
+    "protocol_state_probes": 336,
+    "convergence_solver_calls": 69,
+    "pilot": {
+      "paired_cases": 48,
+      "arm_runs": 96,
+      "attempts_per_arm_run": 32,
+      "attempts_all_arms": 3072
+    },
+    "larger": {
+      "paired_cases": 128,
+      "arm_runs": 256,
+      "attempts_per_arm_run": 512,
+      "attempts_all_arms": 131072
+    }
+  },
+  "joint_experimental_validation_passed": false,
+  "material_prediction_authorized": false,
+  "network_timing_equivalence_claimed": false,
+  "hardware_experiments": 0
+}

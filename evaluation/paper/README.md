@@ -189,3 +189,7 @@ Steps 5 and 6 remain colleague-led full reproduction, scientific review and rele
 ## Clean-clone repair revision
 
 The historical selected records above remain attached to their original source fingerprints. Current-code reruns are in `evaluation/results/repaired/`, with a second full confirmation in `evaluation/results/repaired-confirmation/`. See `REPRODUCTION_REPAIR.md` and `evidence/repair/manifest.json`. The current quickstart is offline, constrained to tested dependencies, and needs no private cache. The full repair protocol is also integrated into the main manuscript, Supplement and standalone dossier.
+
+## Subsequent validation extension
+
+The new [Swedish report](../results/validation_extension/REPORT_SV.md) records numerical joint-protocol checks, six-axis spin-bath convergence and native SeQUeNCe/QuNetSim pilot and larger studies. These results are separate from this compiled dossier. Joint experimental fidelity/efficiency/noise validation remains inconclusive and no material prediction is authorized.

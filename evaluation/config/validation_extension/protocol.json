@@ -1,0 +1,178 @@
+{
+  "study_id": "complete_protocol_joint_validation_v1",
+  "evidence_kind": "hypothetical",
+  "profile": {
+    "path": "../../../lab/examples/defect_spin_profile.json",
+    "sha256": "d87d94a295dc837d8d8deacc1839c7a77c54b3462696c87e0b01505c78f99c58"
+  },
+  "times_s": [
+    0,
+    0.0001,
+    0.0005,
+    0.001,
+    0.005,
+    0.01,
+    0.03,
+    0.1
+  ],
+  "tolerance": 1e-10,
+  "detector": {
+    "event_model": "exclusive_signal_then_background",
+    "independent_of_signal_noise": true,
+    "noise_source_id": "readout_background",
+    "window_s": 1e-05,
+    "base_rate_s_inv": 0,
+    "age_rate_s_inv_per_s": 0,
+    "background_excited_population": 0.5
+  },
+  "cases": [
+    {
+      "id": "identity",
+      "rates_s_inv": {
+        "population": 0,
+        "pure_dephasing": 0,
+        "erasure": 0
+      },
+      "io": {
+        "eta_write": 1,
+        "eta_read": 1,
+        "write_depolarizing_p": 0,
+        "read_depolarizing_p": 0
+      },
+      "equilibrium_population": 0,
+      "detuning_Hz": 0,
+      "detector": {
+        "base_rate_s_inv": 0,
+        "age_rate_s_inv_per_s": 0,
+        "background_excited_population": 0.5
+      }
+    },
+    {
+      "id": "full_loss",
+      "rates_s_inv": {
+        "population": 0,
+        "pure_dephasing": 0,
+        "erasure": 0
+      },
+      "io": {
+        "eta_write": 0,
+        "eta_read": 1,
+        "write_depolarizing_p": 0,
+        "read_depolarizing_p": 0
+      },
+      "equilibrium_population": 0,
+      "detuning_Hz": 0,
+      "detector": {
+        "base_rate_s_inv": 0,
+        "age_rate_s_inv_per_s": 0,
+        "background_excited_population": 0.5
+      }
+    },
+    {
+      "id": "background_only",
+      "rates_s_inv": {
+        "population": 0,
+        "pure_dephasing": 0,
+        "erasure": 0
+      },
+      "io": {
+        "eta_write": 0,
+        "eta_read": 1,
+        "write_depolarizing_p": 0,
+        "read_depolarizing_p": 0
+      },
+      "equilibrium_population": 0,
+      "detuning_Hz": 0,
+      "detector": {
+        "base_rate_s_inv": 5000,
+        "age_rate_s_inv_per_s": 0,
+        "background_excited_population": 0.5
+      }
+    },
+    {
+      "id": "dephasing_loss",
+      "rates_s_inv": {
+        "population": 0,
+        "pure_dephasing": 80,
+        "erasure": 12
+      },
+      "io": {
+        "eta_write": 0.8,
+        "eta_read": 0.7,
+        "write_depolarizing_p": 0.01,
+        "read_depolarizing_p": 0.02
+      },
+      "equilibrium_population": 0,
+      "detuning_Hz": 0,
+      "detector": {
+        "base_rate_s_inv": 0,
+        "age_rate_s_inv_per_s": 0,
+        "background_excited_population": 0.5
+      }
+    },
+    {
+      "id": "thermal_background",
+      "rates_s_inv": {
+        "population": 30,
+        "pure_dephasing": 80,
+        "erasure": 12
+      },
+      "io": {
+        "eta_write": 0.8,
+        "eta_read": 0.7,
+        "write_depolarizing_p": 0.01,
+        "read_depolarizing_p": 0.02
+      },
+      "equilibrium_population": 0.2,
+      "detuning_Hz": 17,
+      "detector": {
+        "base_rate_s_inv": 1000,
+        "age_rate_s_inv_per_s": 50000,
+        "background_excited_population": 0.5
+      }
+    },
+    {
+      "id": "biased_background",
+      "rates_s_inv": {
+        "population": 40,
+        "pure_dephasing": 10,
+        "erasure": 5
+      },
+      "io": {
+        "eta_write": 0.6,
+        "eta_read": 0.7,
+        "write_depolarizing_p": 0.01,
+        "read_depolarizing_p": 0.02
+      },
+      "equilibrium_population": 0,
+      "detuning_Hz": -11,
+      "detector": {
+        "base_rate_s_inv": 2000,
+        "age_rate_s_inv_per_s": 30000,
+        "background_excited_population": 0.8
+      }
+    },
+    {
+      "id": "noise_dominated",
+      "rates_s_inv": {
+        "population": 70,
+        "pure_dephasing": 200,
+        "erasure": 40
+      },
+      "io": {
+        "eta_write": 0.05,
+        "eta_read": 0.7,
+        "write_depolarizing_p": 0.01,
+        "read_depolarizing_p": 0.02
+      },
+      "equilibrium_population": 0,
+      "detuning_Hz": 0,
+      "detector": {
+        "base_rate_s_inv": 10000,
+        "age_rate_s_inv_per_s": 100000,
+        "background_excited_population": 0.5
+      }
+    }
+  ],
+  "prospectively_preregistered": false
+}

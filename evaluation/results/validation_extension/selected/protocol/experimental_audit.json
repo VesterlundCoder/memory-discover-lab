@@ -1,0 +1,115 @@
+{
+  "status": "inconclusive_missing_matched_fidelity_and_clock_review",
+  "joint_experimental_validation_passed": false,
+  "hardware_experiments": 0,
+  "measured_time_points": 9,
+  "measured_scalar_values": 27,
+  "source_sha256": "110cbe3846f1068ea099902b3d834fad5992025dd7d8f9608f49d7eb68cb951f",
+  "doi": "10.5281/zenodo.21532904",
+  "observations": [
+    {
+      "source_time_us": 100.0,
+      "signal_efficiency_percent": 1.9596198564505691,
+      "signal_efficiency_error_percent": 0.12251205381492392,
+      "noise_percent_per_herald": 0.23063323690131793,
+      "noise_error_percent_per_herald": 0.009004715055856224,
+      "signal_idler_g2": 4.68205574912892,
+      "g2_error": 0.36793788567243096,
+      "qubit_fidelity": null
+    },
+    {
+      "source_time_us": 120.0,
+      "signal_efficiency_percent": 1.4415668251715772,
+      "signal_efficiency_error_percent": 0.09441386702263342,
+      "noise_percent_per_herald": 0.22303079949135834,
+      "noise_error_percent_per_herald": 0.008622868881382948,
+      "signal_idler_g2": 3.800982276318599,
+      "g2_error": 0.32056380887383457,
+      "qubit_fidelity": null
+    },
+    {
+      "source_time_us": 140.0,
+      "signal_efficiency_percent": 1.7443248824890907,
+      "signal_efficiency_error_percent": 0.18430495089347382,
+      "noise_percent_per_herald": 0.2416239153841282,
+      "noise_error_percent_per_herald": 0.01636483650352046,
+      "signal_idler_g2": 4.128440366972477,
+      "g2_error": 0.5905282171004724,
+      "qubit_fidelity": null
+    },
+    {
+      "source_time_us": 160.0,
+      "signal_efficiency_percent": 1.2987736019424057,
+      "signal_efficiency_error_percent": 0.07725267561736023,
+      "noise_percent_per_herald": 0.3515120436172941,
+      "noise_error_percent_per_herald": 0.010910421597247224,
+      "signal_idler_g2": 2.601156069364162,
+      "g2_error": 0.2057117568217242,
+      "qubit_fidelity": null
+    },
+    {
+      "source_time_us": 180.0,
+      "signal_efficiency_percent": 0.9814049155899565,
+      "signal_efficiency_error_percent": 0.07363255898694006,
+      "noise_percent_per_herald": 0.38996552134110096,
+      "noise_error_percent_per_herald": 0.015225595618672809,
+      "signal_idler_g2": 2.0905923344947737,
+      "g2_error": 0.22844977662131974,
+      "qubit_fidelity": null
+    },
+    {
+      "source_time_us": 260.0,
+      "signal_efficiency_percent": 0.07282413426737235,
+      "signal_efficiency_error_percent": 0.00373675972605211,
+      "noise_percent_per_herald": 0.6325890301156533,
+      "noise_error_percent_per_herald": 0.014241578032894968,
+      "signal_idler_g2": 1.0498877706176235,
+      "g2_error": 0.09033547055136829,
+      "qubit_fidelity": null
+    },
+    {
+      "source_time_us": 340.0,
+      "signal_efficiency_percent": 0.0,
+      "signal_efficiency_error_percent": 0.005566676366161363,
+      "noise_percent_per_herald": 0.9595923347448504,
+      "noise_error_percent_per_herald": 0.018556927400915663,
+      "signal_idler_g2": 0.9456138476332941,
+      "g2_error": 0.07339138734893055,
+      "qubit_fidelity": null
+    },
+    {
+      "source_time_us": 420.0,
+      "signal_efficiency_percent": 0.10284781826400101,
+      "signal_efficiency_error_percent": 0.004452448051913174,
+      "noise_percent_per_herald": 1.1010832942586857,
+      "noise_error_percent_per_herald": 0.019302403913329044,
+      "signal_idler_g2": 1.0404776538765477,
+      "g2_error": 0.07000430277443806,
+      "qubit_fidelity": null
+    },
+    {
+      "source_time_us": 500.0,
+      "signal_efficiency_percent": 0.0,
+      "signal_efficiency_error_percent": 0.010525700798454045,
+      "noise_percent_per_herald": 1.2874427800820958,
+      "noise_error_percent_per_herald": 0.019681436477184507,
+      "signal_idler_g2": 0.9114279037158215,
+      "g2_error": 0.056894591095754926,
+      "qubit_fidelity": null
+    }
+  ],
+  "gaps": [
+    "g2 is signal-idler correlation, not qubit fidelity",
+    "0.9 us source/article total-time offset is unresolved",
+    "noise per herald is not automatically a per-vacuum false-click probability",
+    "Teller fixed optical point cannot identify time dependence",
+    "Bradley NV0 Bloch/X curves have no optical efficiency/noise series"
+  ],
+  "required_data": [
+    "Matched qubit state/tomography counts and background-only counts at each storage time",
+    "Input photon regime, trial denominators, detector window and herald semantics",
+    "Common clock and identical write/read, field, temperature and pulse conditions",
+    "Calibration/heldout split and error/covariance definition"
+  ],
+  "scope": "source audit only; no fidelity inferred from correlation or imported from another experiment"
+}

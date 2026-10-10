@@ -45,6 +45,19 @@ def pycce_coherence(spec, times_s, pulses, simulation_seed):
         bath["xyz"][i] = nucleus["position_angstrom"]
         bath["A"][i] = np.asarray(nucleus["hyperfine_Hz"], float)/1000
         bath["Q"][i] = np.asarray(nucleus.get("quadrupole_Hz", np.zeros((3, 3))), float)/1000
+    for pair in spec.get("pairs", []):
+        i, j = pair["sites"]
+        if i == j or min(i, j) < 0 or max(i, j) >= len(bath):
+            raise ValueError("Invalid explicitly supplied PyCCE pair")
+        tensor = np.asarray(pair["coupling_Hz"], float)
+        if tensor.shape != (3, 3) or not np.isfinite(tensor).all():
+            raise ValueError("Invalid explicitly supplied PyCCE pair tensor")
+        bath.add_interaction(i, j, tensor/1000)
+    if spec.get("require_explicit_zeeman_match"):
+        for i, nucleus in enumerate(spec["nuclei"]):
+            expected = -float(bath.gyro[i])*np.asarray(spec["magnetic_field_T"])*1e7/(2*np.pi)
+            if not np.allclose(expected, nucleus["zeeman_vector_Hz"], atol=1e-5, rtol=1e-9):
+                raise UnsupportedPhysics("Explicit Zeeman vector does not match PyCCE field/isotope conventions")
     # PyCCE: time ms, hyperfine/ZFS kHz, field G, gyro rad/ms/G.
     center = spec["center"]
     simulator = pc.Simulator(center["spin_S"], position=center["position_angstrom"],
