@@ -84,6 +84,11 @@ def exact_coherence(spec, times_s, temperature_K, pulses=0):
         weights = np.exp(-h*(eigenvalues-eigenvalues.min())/(k*temperature))
     weights /= weights.sum()
     rho_bath = (vectors*weights) @ vectors.conj().T
+    initialization = spec.get("bath_initialization", "thermal")
+    if initialization == "maximally_mixed":
+        rho_bath = np.eye(len(H), dtype=complex)/len(H)
+    elif initialization != "thermal":
+        raise UnsupportedPhysics("Bath initialization must be thermal or maximally_mixed")
     if not isinstance(pulses, int) or isinstance(pulses, bool) or pulses < 0:
         raise ValueError("pulses is the integer number of ideal CPMG pi pulses")
     result = []

@@ -36,7 +36,7 @@ Use **Linux / Python 3.12** for the tested environment. From a clean clone:
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -c requirements-lock-core.txt -c lab/constraints-tested.txt -r requirements-paper.txt -e ./lab
-python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired
+python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired --allow-source-change
 python scripts/verify_results.py
 ```
 
@@ -64,3 +64,9 @@ See [DATA_SOURCES.md](DATA_SOURCES.md) and [LICENSE_NOTICES.md](LICENSE_NOTICES.
 ## Additional system-paper evaluations
 
 The runnable evaluation package implements steps 1–4. Step 1 has been executed on 73 channel-age points and 90 processed fidelities: maximum full-Choi discrepancy is below 2e-14. A second-family software control, seven constructed-fault ablations and the local performance/robustness experiment also pass (108 cold jobs across workers 1, 2 and 4). A [second measured observable case: Bradley 2022 NV0 Ramsey](evaluation/results/bradley2022-nv0/report_sv.md) has now been executed on 24 experimental points with an explicit effective Hamiltonian and matched conditions. Its heldout envelope diagnostic passes, but its fixed-frequency X diagnostic fails; the strict microscopic physical-validation task and independent external reproduction remain pending. See [evaluation/README.md](evaluation/README.md) and the retained [step-1 report](evaluation/results/step1-executed/report.md). The original steps 1–4 are integrated into the main manuscript and Supplement; the new measured-observable case is documented separately, with a complete execution dossier in evaluation/paper/. The original numerical snapshot and initial system records remain traceable.
+
+## New executed validation extension (10 October 2026)
+
+The [Swedish result report](evaluation/results/validation_extension/REPORT_SV.md) and [extension reproduction instructions](evaluation/README.md#protocol-convergence-and-second-network-simulator) document joint time-dependent protocol checks, spin-bath convergence and native SeQUeNCe/QuNetSim executions. Numerical results: 56 channel-age points, 336 state probes, 69 coherence calls and a larger 256-run paired simulator study with 131,072 attempts. All 128 larger paired comparisons passed. A fresh offline replay compared every archived native run and RNG trace.
+
+Joint experimental validation remains inconclusive because matched fidelity data are missing. The converged baths are synthetic; no material prediction is authorized. QuNetSim uses a custom QuTiP density backend and shared external logical time, so physical network timing is not cross-validated. These new results are separate from the existing article PDFs.

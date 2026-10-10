@@ -1,0 +1,27 @@
+Running: protocol
+Running: convergence
+/workspace/scratch/782f777bb441/memory-discover-lab/.venv/lib/python3.12/site-packages/pycce/bath/array.py:1917: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+  all_spins = pd.read_csv(filepath, delim_whitespace=True, header=None, comment='%',
+Set of clusters of order 3 is empty!
+Set of clusters of order 4 is empty!
+Set of clusters of order 4 is empty!
+Set of clusters of order 3 is empty!
+Set of clusters of order 4 is empty!
+Set of clusters of order 4 is empty!
+Set of clusters of order 3 is empty!
+Set of clusters of order 4 is empty!
+Set of clusters of order 4 is empty!
+Running: pilot
+Cross-simulator seed 1101 complete; 32 arm runs retained
+Cross-simulator seed 1102 complete; 64 arm runs retained
+Cross-simulator seed 1103 complete; 96 arm runs retained
+Running: larger
+Cross-simulator seed 2101 complete; 32 arm runs retained
+Cross-simulator seed 2102 complete; 64 arm runs retained
+Cross-simulator seed 2103 complete; 96 arm runs retained
+Cross-simulator seed 2104 complete; 128 arm runs retained
+Cross-simulator seed 2105 complete; 160 arm runs retained
+Cross-simulator seed 2106 complete; 192 arm runs retained
+Cross-simulator seed 2107 complete; 224 arm runs retained
+Cross-simulator seed 2108 complete; 256 arm runs retained
+numerical_validation_passed_experimental_inconclusive

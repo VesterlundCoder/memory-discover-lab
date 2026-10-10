@@ -7,6 +7,7 @@ from wqeval.verification import compare
 ap=argparse.ArgumentParser(description=__doc__)
 ap.add_argument('--out',type=Path,required=True)
 ap.add_argument('--reference-root',type=Path,help='Directory containing step1/ through step4/ for comparison')
+ap.add_argument('--allow-source-change',action='store_true',help='Compare full scientific payloads across revisions; report both source fingerprints')
 args=ap.parse_args();out=args.out.resolve()
 if out.exists() and any(out.iterdir()):ap.error('Choose a fresh output directory')
 out.mkdir(parents=True,exist_ok=True);results={}
@@ -15,7 +16,7 @@ for name,extras in [('step1',['--offline']),('step2',['--config',str(ROOT/'evalu
     print('Running:',name,flush=True)
     with (out/(name+'.log')).open('w') as log:subprocess.run(command,stdout=log,stderr=subprocess.STDOUT,check=True)
     results[name]=read(out/name/'summary.json')['status']
-    if args.reference_root:write(out/(name+'-comparison.json'),compare(args.reference_root/name,out/name,require_same_source=True))
+    if args.reference_root:write(out/(name+'-comparison.json'),compare(args.reference_root/name,out/name,require_same_source=not args.allow_source_change))
 with (out/'step2-physical-pending.log').open('w') as log:
     result=subprocess.run([sys.executable,str(ROOT/'scripts/evaluate_system.py'),'step2','--out',str(out/'step2-physical-pending')],stdout=log,stderr=subprocess.STDOUT)
 pending=read(out/'step2-physical-pending/summary.json')

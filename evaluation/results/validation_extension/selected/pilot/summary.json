@@ -1,0 +1,126 @@
+{
+  "status": "pass",
+  "planned_arm_runs": 96,
+  "attempted_arm_runs": 96,
+  "successful_arm_runs": 96,
+  "failed_arm_runs": 0,
+  "paired_comparisons": 48,
+  "attempts_per_arm_run": 32,
+  "total_attempts_all_arms": 3072,
+  "maximum_mean_density_error": 1.9539925233402757e-15,
+  "all_counts_and_logical_traces_identical": true,
+  "total_retrieved_pairs_all_arms": 504,
+  "native_SeQUeNCe_events": 2272,
+  "native_QuNetSim_quantum_packet_transfers": 736,
+  "simulator_versions": {
+    "sequence": "1.2.0",
+    "qunetsim": "0.1.2",
+    "qutip": "5.3.1"
+  },
+  "hardware_validated": false,
+  "evidence_kind": "hypothetical",
+  "network_timing_equivalence_claimed": false,
+  "scope": "single-slot two-node transport and memory instruments; native protocol stacks, shared external logical clock",
+  "limitations": [
+    "QuNetSim uses a custom QuTiP density backend, not its stock EQSN backend",
+    "Native QuNetSim wall-clock scheduling is not a physical clock",
+    "No routing, swapping, contention, finite fiber propagation, or detector double clicks",
+    "Goodput uses the model ensemble fidelity gate, not hidden per-trial signal labels"
+  ],
+  "prerequisite_configuration_hashes": [
+    "f74570f92a0fc82f473b56a64dcbfb14c6f7cc02e7b1cea42a858c40f8e690b7",
+    "bb64d4fd80707521f75bc68739319ec92a034c92bab70434dd24438494979ae6"
+  ],
+  "provenance": {
+    "at_utc": "2026-10-10T18:59:55.994398+00:00",
+    "configuration": {
+      "study_id": "sequence_qunetsim_pilot_v1",
+      "profile": {
+        "path": "../../../lab/examples/defect_spin_profile.json",
+        "sha256": "d87d94a295dc837d8d8deacc1839c7a77c54b3462696c87e0b01505c78f99c58"
+      },
+      "background_rates_s_inv": [
+        0,
+        5000
+      ],
+      "storage_ages_s": [
+        0,
+        0.001,
+        0.01,
+        0.03
+      ],
+      "herald_probabilities": [
+        0.25,
+        0.75
+      ],
+      "seeds": [
+        1101,
+        1102,
+        1103
+      ],
+      "master_seed": 20261010,
+      "attempts": 32,
+      "attempt_interval_s": 0.04,
+      "minimum_Bell_fidelity": 0.8,
+      "density_tolerance": 1e-10,
+      "detuning_Hz": 7,
+      "rates_s_inv": {
+        "population": 30,
+        "pure_dephasing": 50,
+        "erasure": 12
+      },
+      "io": {
+        "eta_write": 0.8,
+        "eta_read": 0.7,
+        "write_depolarizing_p": 0.01,
+        "read_depolarizing_p": 0.02
+      },
+      "detector": {
+        "event_model": "exclusive_signal_then_background",
+        "independent_of_signal_noise": true,
+        "noise_source_id": "readout_background",
+        "window_s": 1e-05,
+        "base_rate_s_inv": 0,
+        "age_rate_s_inv_per_s": 50000,
+        "background_excited_population": 0.5
+      },
+      "prospectively_preregistered": false
+    },
+    "configuration_sha256": "88a291525197b239278c40f6291038e7e6064bb70c8355c3951a65f47c4ee2d4",
+    "evaluation_source_sha256": "ecc4ea6d77ca774a7f9cd3ed6f91285a5d5632a041ecdaa79ff829a5464cc373",
+    "lab_source_sha256": "3852565376c2a529bb33bc9394cf96061eeee147e19b4f4bbc2da724cf224f5a",
+    "inputs": [
+      {
+        "path": "/workspace/scratch/782f777bb441/memory-discover-lab/lab/examples/defect_spin_profile.json",
+        "sha256": "d87d94a295dc837d8d8deacc1839c7a77c54b3462696c87e0b01505c78f99c58"
+      }
+    ],
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": "1.16.3",
+        "qutip": "5.3.1",
+        "pyscf": null,
+        "pycce": "1.1.1",
+        "ase": "3.29.0",
+        "maxwellbloch": null,
+        "pynmrstar": null,
+        "openpyxl": null,
+        "sequence": "1.2.0",
+        "pandas": "2.3.3"
+      },
+      "git_commit": "985c8fe0c7dac3830e187e8c74cd0a6eecf225f7"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": null
+    },
+    "prospectively_preregistered": false,
+    "hardware_experiments": 0
+  },
+  "raw_archive_sha256": "a4c175cf7b45ff1b0391d1f3a709f9f0e2bede93860095d5021ba481fb4ef3c9"
+}

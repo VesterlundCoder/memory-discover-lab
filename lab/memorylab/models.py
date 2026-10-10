@@ -77,6 +77,9 @@ def validate(spec):
         if io.get(key) is not None:
             finite(io[key], key, 1e-30)
     noise = spec["noise_budget"]
+    if spec.get("prediction_purpose") == "material_prediction":
+        from .convergence_guard import require_material_convergence
+        require_material_convergence(spec)
     if len(noise) != len(set(noise)):
         raise ValueError("Duplicate noise sources would be double counted")
     if storage in ("exact_spin_bath", "pycce", "coherence_table"):
@@ -156,6 +159,9 @@ def evaluate(spec, times_s, backend="analytic"):
     times = [finite(t, "storage age_s", 0) for t in times_s]
     if not times or sorted(set(times)) != times:
         raise ValueError("Time grid must be nonempty, unique and increasing")
+    if spec.get("prediction_purpose") == "material_prediction":
+        from .convergence_guard import require_material_convergence
+        require_material_convergence(spec, times)
     L = extra_coherence(spec, times)
     io = spec["io"]
     write = compose(depolarizing(io["write_depolarizing_p"]),

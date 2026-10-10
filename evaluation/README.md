@@ -21,7 +21,7 @@ Step 1 copies its two pinned input files from tracked, licensed `data/experiment
 One command runs all four software pathways and the separate blocked physical descriptor:
 
 ```bash
-python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired
+python scripts/reproduce_system.py --out reproductions/my-system --reference-root evaluation/results/repaired --allow-source-change
 ```
 
 Exit status 2 from the standalone physical descriptor is intentional. The one-command runner verifies that exact blocked status; it does not call the case physically validated. The synthetic step-2 configuration is named explicitly below.
@@ -141,3 +141,25 @@ python scripts/verify_evaluation.py --reference evaluation/results/repaired/step
 The comparator checks full scientific fields, configuration, seeds and input hashes at absolute/relative tolerance 1e-10. Step 4 compares the complete `scientific_results.json` channel/configuration payload. Source-derived run IDs and digests are not portable across code/environment changes, so they are recorded separately. Timestamps, local paths, wall times, RSS/CPU measurements and diagnostic path strings are excluded from numeric equality. Every output retains its original provenance. Source fingerprints are reported and optionally required to match. Historical step-4 summaries alone lack the portable payload and cannot establish cross-version channel equality; use the repaired reference.
 
 The CI core job runs both suites and all four system pathways with external sockets/DNS blocked after dependency installation. The paper job installs the constrained full environment and replays licensed paper numerics with the same denial. These are author-operated clean checkouts, not colleagues' independent scientific review.
+
+## Protocol, convergence and second network simulator
+
+The executed extension and its limits are documented in [REPORT_SV.md](results/validation_extension/REPORT_SV.md). Its selected result tree is `results/validation_extension/selected/`; all native per-run JSON and shared RNG arrays are retained inside each cross-simulator stage's SHA256-checked ZIP archive. The uncompressed duplicates are ignored by git.
+
+Use a separate Python 3.12 environment for the pinned extension snapshot:
+
+```bash
+python3.12 -m venv .venv-extension
+source .venv-extension/bin/activate
+python -m pip install -r evaluation/config/validation_extension/requirements-tested.txt -e ./lab
+export OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1
+export WQ_BLOCK_EXTERNAL_NETWORK=1
+export PYTHONPATH="$PWD/scripts/network_guard:$PWD/lab"
+python scripts/run_validation_extension.py --count
+python scripts/run_validation_extension.py --out reproductions/my-extension
+python scripts/verify_validation_extension.py --reference evaluation/results/validation_extension/selected --actual reproductions/my-extension
+```
+
+Stages run in order: protocol, convergence, pilot, larger. Each native network stage uses a fresh child process. `--stage protocol` runs the instrument checks alone; `--stage larger` includes its prerequisites. `--resume` rejects changed configuration or source fingerprints. The experimental audit is inconclusive and cannot be promoted by numerical success. The material gate is applied to profiles explicitly declaring `prediction_purpose: material_prediction`.
+
+For a regression against older archived system results, use `scripts/reproduce_system.py --out reproductions/my-historical-regression --reference-root evaluation/results/repaired --allow-source-change`. This explicitly permits different source hashes while comparing full scientific fields and reporting both revisions. Without the flag, comparison requires identical source. The new extension verifier always requires identical lab/evaluation/configuration fingerprints.

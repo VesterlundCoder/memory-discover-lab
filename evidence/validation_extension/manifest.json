@@ -1,0 +1,49 @@
+{
+  "status": "numerical_validation_passed_experimental_inconclusive",
+  "execution_git_base": "985c8fe0c7dac3830e187e8c74cd0a6eecf225f7",
+  "extension_sources_were_uncommitted_during_execution": true,
+  "lab_source_sha256": "3852565376c2a529bb33bc9394cf96061eeee147e19b4f4bbc2da724cf224f5a",
+  "evaluation_source_sha256": "ecc4ea6d77ca774a7f9cd3ed6f91285a5d5632a041ecdaa79ff829a5464cc373",
+  "hardware_experiments": 0,
+  "test_suites": {
+    "evaluation": {
+      "run": 34,
+      "pass": 34,
+      "skip": 0
+    },
+    "lab": {
+      "run": 75,
+      "pass": 73,
+      "skip": 2
+    }
+  },
+  "offline_replay": {
+    "status": "pass",
+    "compared": {
+      "json_records": 359,
+      "random_trace_arrays": 11
+    },
+    "absolute_and_relative_tolerance": 1e-10,
+    "source_and_configuration_fingerprints_equal": true,
+    "scope": "same-machine replay; runtime, timestamp/platform provenance and archive container bytes excluded from scientific equality"
+  },
+  "historical_scientific_regression_status": "pass",
+  "delivered_result_file_sha256": {
+    "evaluation/results/validation_extension/selected/convergence/convergence.csv": "649ed01720a72dc291f8c3dd68589c14e206246194e16fcb691fc69516da290a",
+    "evaluation/results/validation_extension/selected/convergence/curves.json": "923e508631e2d36999bc86c4fa1af8cb5ebc0d18f3f0cf670a3a3a3eb7be8421",
+    "evaluation/results/validation_extension/selected/convergence/summary.json": "86793509e7a72f47ae04b72745cdb6b0fb301175c63f3861dae4eb5ff8ea554d",
+    "evaluation/results/validation_extension/selected/larger/failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "evaluation/results/validation_extension/selected/larger/paired_comparison.csv": "b39f34386c029d3104b688dbce7cf982e669e64e72fe58b77dba294dea00233f",
+    "evaluation/results/validation_extension/selected/larger/raw_runs_and_traces.zip": "3445166297d079c56645280885bbe964dc3e482334da104f9f1601efd82a1b0a",
+    "evaluation/results/validation_extension/selected/larger/summary.json": "342900fc66b9d17cf6a92bb0f7bf9587a3e74e7e42896743906ba67db26d3f8e",
+    "evaluation/results/validation_extension/selected/pilot/failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "evaluation/results/validation_extension/selected/pilot/paired_comparison.csv": "afdcd31c930457113866940be65cbbf3c5f45b5d8150f62d01e9130bbca89d83",
+    "evaluation/results/validation_extension/selected/pilot/raw_runs_and_traces.zip": "a4c175cf7b45ff1b0391d1f3a709f9f0e2bede93860095d5021ba481fb4ef3c9",
+    "evaluation/results/validation_extension/selected/pilot/summary.json": "aa551bbc091e1da32ab6158207996fd800bc1788d9ec9336e0cdabaa0892a1a1",
+    "evaluation/results/validation_extension/selected/protocol/channels.json": "5a9635036c94684c34c3402832fa5333435f2fb40016fe3f38a422deb0bbfc61",
+    "evaluation/results/validation_extension/selected/protocol/experimental_audit.json": "9d1d3193e5c5bcae768ef97f2a1956ebbd93ca5b6c97c14de578b64aa661c1f5",
+    "evaluation/results/validation_extension/selected/protocol/protocol_metrics.csv": "2ae46e5325bc893173cdace8548f74a2068e22781d16faee01ccc45a12faecfa",
+    "evaluation/results/validation_extension/selected/protocol/summary.json": "a1ca62246de2ef876e557999cbb288213ae010954194449dd0259e2c601fa30e",
+    "evaluation/results/validation_extension/selected/summary.json": "c9efc31bf7260dd403d0ea02021dd56e55f072a72d09117df0a9d8407297f743"
+  }
+}
