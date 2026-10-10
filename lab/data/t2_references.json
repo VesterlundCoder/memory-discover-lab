@@ -1,0 +1,310 @@
+[
+  {
+    "id": "ortu2022:XX",
+    "material_id": "ortu2022:151Eu3+:YSO",
+    "material_name": "151Eu3+:Y2SiO5",
+    "family": "rare_earth_solid",
+    "definition": "T2_spin_DD_Mims",
+    "value_s": 0.07,
+    "reported_interval_s": [
+      0.068,
+      0.07200000000000001
+    ],
+    "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+    "conditions": {
+      "temperature_K": 4,
+      "temperature_qualifier": "approximately; cryostat",
+      "isotope_id": "Eu-151",
+      "charge_e": 3,
+      "host": "Y2SiO5",
+      "field_T": 0.00135,
+      "field_direction": "D1",
+      "pulse_sequence": "XX",
+      "pulse_count": 2
+    },
+    "source": "https://doi.org/10.1038/s41534-022-00541-3",
+    "source_location": "Main text, Characterization with bright pulses; Fig. 2",
+    "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+    "missing_conditions": [
+      "Local temperature under RF heating",
+      "Full hyperfine bath and pulse imperfections",
+      "Mims exponent for each sequence"
+    ],
+    "full_memory_channel_validated": false
+  },
+  {
+    "id": "ortu2022:XY4",
+    "material_id": "ortu2022:151Eu3+:YSO",
+    "material_name": "151Eu3+:Y2SiO5",
+    "family": "rare_earth_solid",
+    "definition": "T2_spin_DD_Mims",
+    "value_s": 0.106,
+    "reported_interval_s": [
+      0.097,
+      0.11499999999999999
+    ],
+    "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+    "conditions": {
+      "temperature_K": 4,
+      "temperature_qualifier": "approximately; cryostat",
+      "isotope_id": "Eu-151",
+      "charge_e": 3,
+      "host": "Y2SiO5",
+      "field_T": 0.00135,
+      "field_direction": "D1",
+      "pulse_sequence": "XY4",
+      "pulse_count": 4
+    },
+    "source": "https://doi.org/10.1038/s41534-022-00541-3",
+    "source_location": "Main text, Characterization with bright pulses; Fig. 2",
+    "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+    "missing_conditions": [
+      "Local temperature under RF heating",
+      "Full hyperfine bath and pulse imperfections",
+      "Mims exponent for each sequence"
+    ],
+    "full_memory_channel_validated": false
+  },
+  {
+    "id": "ortu2022:XY8",
+    "material_id": "ortu2022:151Eu3+:YSO",
+    "material_name": "151Eu3+:Y2SiO5",
+    "family": "rare_earth_solid",
+    "definition": "T2_spin_DD_Mims",
+    "value_s": 0.154,
+    "reported_interval_s": [
+      0.143,
+      0.165
+    ],
+    "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+    "conditions": {
+      "temperature_K": 4,
+      "temperature_qualifier": "approximately; cryostat",
+      "isotope_id": "Eu-151",
+      "charge_e": 3,
+      "host": "Y2SiO5",
+      "field_T": 0.00135,
+      "field_direction": "D1",
+      "pulse_sequence": "XY8",
+      "pulse_count": 8
+    },
+    "source": "https://doi.org/10.1038/s41534-022-00541-3",
+    "source_location": "Main text, Characterization with bright pulses; Fig. 2",
+    "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+    "missing_conditions": [
+      "Local temperature under RF heating",
+      "Full hyperfine bath and pulse imperfections",
+      "Mims exponent for each sequence"
+    ],
+    "full_memory_channel_validated": false
+  },
+  {
+    "id": "ortu2022:XY16",
+    "material_id": "ortu2022:151Eu3+:YSO",
+    "material_name": "151Eu3+:Y2SiO5",
+    "family": "rare_earth_solid",
+    "definition": "T2_spin_DD_Mims",
+    "value_s": 0.23,
+    "reported_interval_s": [
+      0.2,
+      0.26
+    ],
+    "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+    "conditions": {
+      "temperature_K": 4,
+      "temperature_qualifier": "approximately; cryostat",
+      "isotope_id": "Eu-151",
+      "charge_e": 3,
+      "host": "Y2SiO5",
+      "field_T": 0.00135,
+      "field_direction": "D1",
+      "pulse_sequence": "XY16",
+      "pulse_count": 16
+    },
+    "source": "https://doi.org/10.1038/s41534-022-00541-3",
+    "source_location": "Main text, Characterization with bright pulses; Fig. 2",
+    "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+    "missing_conditions": [
+      "Local temperature under RF heating",
+      "Full hyperfine bath and pulse imperfections",
+      "Mims exponent for each sequence"
+    ],
+    "full_memory_channel_validated": false
+  },
+  {
+    "id": "ortu2022:AFC",
+    "material_id": "ortu2022:151Eu3+:YSO",
+    "material_name": "151Eu3+:Y2SiO5",
+    "family": "rare_earth_solid",
+    "definition": "T2_AFC_effective",
+    "value_s": 0.00024,
+    "reported_interval_s": [
+      0.00021,
+      0.00027
+    ],
+    "interval_convention": "Reported 95% confidence intervals, Fig. 1 caption",
+    "conditions": {
+      "temperature_K": 4,
+      "temperature_qualifier": "approximately; cryostat",
+      "isotope_id": "Eu-151",
+      "charge_e": 3,
+      "host": "Y2SiO5",
+      "field_T": 0.00135,
+      "field_direction": "D1",
+      "pulse_sequence": "AFC_optical"
+    },
+    "source": "https://doi.org/10.1038/s41534-022-00541-3",
+    "source_location": "Spin-wave AFC; Fig. 1e; efficiency exponent factor 4",
+    "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+    "missing_conditions": [
+      "Local sample temperature",
+      "Complete optical line structure"
+    ],
+    "full_memory_channel_validated": false
+  },
+  {
+    "id": "lin2019:1:5K",
+    "material_id": "lin2019:complex1",
+    "material_name": "(Et3NH)2[V(C6H4O2)3]",
+    "family": "molecular_spin",
+    "definition": "Tm_Hahn_stretched",
+    "value_s": 2.04e-06,
+    "reported_interval_s": [
+      1.99e-06,
+      2.09e-06
+    ],
+    "interval_convention": "Uncertainty convention not verified; reported plus/minus only",
+    "conditions": {
+      "temperature_K": 5,
+      "host": "o-terphenyl glass",
+      "pulse_sequence": "Hahn",
+      "counterion": "Et3NH",
+      "microwave_band": "X-band approximately 9.4 GHz"
+    },
+    "source": "https://doi.org/10.1039/C8SC04122A",
+    "source_location": "Results and discussion; temperature-dependent phase-memory paragraph, Fig. 6/7",
+    "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+    "missing_conditions": [
+      "Exact selected magnetic field at 5 K",
+      "Isotope distribution by site",
+      "Sample concentration checked against supplementary methods pending",
+      "Stretch exponent at exact operating point"
+    ],
+    "full_memory_channel_validated": false
+  },
+  {
+    "id": "lin2019:2:5K",
+    "material_id": "lin2019:complex2",
+    "material_name": "(n-Bu3NH)2[V(C6H4O2)3]",
+    "family": "molecular_spin",
+    "definition": "Tm_Hahn_stretched",
+    "value_s": 4.1100000000000005e-06,
+    "reported_interval_s": [
+      4.080000000000001e-06,
+      4.14e-06
+    ],
+    "interval_convention": "Uncertainty convention not verified; reported plus/minus only",
+    "conditions": {
+      "temperature_K": 5,
+      "host": "o-terphenyl glass",
+      "pulse_sequence": "Hahn",
+      "counterion": "n-Bu3NH",
+      "microwave_band": "X-band approximately 9.4 GHz"
+    },
+    "source": "https://doi.org/10.1039/C8SC04122A",
+    "source_location": "Results and discussion; temperature-dependent phase-memory paragraph, Fig. 6/7",
+    "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+    "missing_conditions": [
+      "Exact selected magnetic field at 5 K",
+      "Isotope distribution by site",
+      "Sample concentration checked against supplementary methods pending",
+      "Stretch exponent at exact operating point"
+    ],
+    "full_memory_channel_validated": false
+  },
+  {
+    "id": "lin2019:3:5K",
+    "material_id": "lin2019:complex3",
+    "material_name": "(n-Hex3NH)2[V(C6H4O2)3]",
+    "family": "molecular_spin",
+    "definition": "Tm_Hahn_stretched",
+    "value_s": 4.42e-06,
+    "reported_interval_s": [
+      4.4e-06,
+      4.44e-06
+    ],
+    "interval_convention": "Uncertainty convention not verified; reported plus/minus only",
+    "conditions": {
+      "temperature_K": 5,
+      "host": "o-terphenyl glass",
+      "pulse_sequence": "Hahn",
+      "counterion": "n-Hex3NH",
+      "microwave_band": "X-band approximately 9.4 GHz"
+    },
+    "source": "https://doi.org/10.1039/C8SC04122A",
+    "source_location": "Results and discussion; temperature-dependent phase-memory paragraph, Fig. 6/7",
+    "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+    "missing_conditions": [
+      "Exact selected magnetic field at 5 K",
+      "Isotope distribution by site",
+      "Sample concentration checked against supplementary methods pending",
+      "Stretch exponent at exact operating point"
+    ],
+    "full_memory_channel_validated": false
+  },
+  {
+    "id": "hu2024:PL6:Hahn",
+    "material_id": "hu2024:PL6:4H-SiCOI",
+    "material_name": "PL6 divacancy in 4H-SiC-on-insulator waveguide",
+    "family": "defect_spin",
+    "definition": "T2_Hahn",
+    "value_s": 4.62e-06,
+    "reported_interval_s": [
+      2.9699999999999995e-06,
+      6.27e-06
+    ],
+    "interval_convention": "Uncertainty convention not verified; reported plus/minus only",
+    "conditions": {
+      "temperature_qualifier": "room temperature; numeric value not reported",
+      "host": "4H-SiCOI waveguide",
+      "pulse_sequence": "Hahn",
+      "isotope_composition": "natural abundance"
+    },
+    "source": "https://doi.org/10.1038/s41467-024-54606-2",
+    "source_location": "Coherent electron-spin control; Supplementary Fig. 4",
+    "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+    "missing_conditions": [
+      "Numeric sample temperature",
+      "Exact field for coherence measurement",
+      "Surface/implantation noise parameters"
+    ],
+    "full_memory_channel_validated": false
+  },
+  {
+    "id": "hu2024:PL6:Ramsey",
+    "material_id": "hu2024:PL6:4H-SiCOI",
+    "material_name": "PL6 divacancy in 4H-SiC-on-insulator waveguide",
+    "family": "defect_spin",
+    "definition": "T2_star_Ramsey",
+    "value_s": 4.6e-07,
+    "reported_interval_s": [
+      4.25e-07,
+      4.95e-07
+    ],
+    "interval_convention": "Uncertainty convention not verified; reported plus/minus only",
+    "conditions": {
+      "temperature_qualifier": "room temperature; numeric value not reported",
+      "host": "4H-SiCOI waveguide",
+      "pulse_sequence": "Ramsey",
+      "isotope_composition": "natural abundance"
+    },
+    "source": "https://doi.org/10.1038/s41467-024-54606-2",
+    "source_location": "Coherent electron-spin control; Ramsey paragraph",
+    "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+    "missing_conditions": [
+      "Numeric sample temperature",
+      "Exact field for coherence measurement"
+    ],
+    "full_memory_channel_validated": false
+  }
+]

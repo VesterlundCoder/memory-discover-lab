@@ -1,0 +1,10 @@
+{
+  "scope": "Constructive mean-fidelity nonidentifiability example; not two fits to all experimental states",
+  "mean_fidelity": 0.9671968088636844,
+  "depolarizing_p": 0.06560638227263116,
+  "phase_flip_q": 0.04920478670447337,
+  "Bell_fidelity_depolarizing": 0.90481857463723,
+  "Bell_fidelity_phase_flip": 0.9064326486603184,
+  "mean_fidelity_phase_flip": 0.9671968088636844,
+  "difference": 0.00161407402308833
+}

@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Cite the accompanying draft manuscript; no public software DOI has been assigned."
+type: software
+title: "WestQuant Memory Discovery Lab: An Evidence-Aware Framework from Experimental Data to Quantum-Memory Simulation"
+version: 0.6.0
+date-released: 2026-10-10
+authors:
+  - family-names: Vesterlund
+    given-names: David
+    affiliation: "WestQuant, Vesterlund Ventures, Sweden"
+abstract: "Evidence-aware source-to-model workflow with experimental-data reanalysis, deterministic controls and scoped network simulation."
+keywords:
+  - quantum memories
+  - spin coherence
+  - reproducible simulation
+  - quantum networks
+repository-code: "https://github.com/VesterlundCoder/memory-discover-lab"

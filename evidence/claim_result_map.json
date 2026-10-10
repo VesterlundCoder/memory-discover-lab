@@ -1,0 +1,101 @@
+{
+  "schema": "westquant_article_claim_map_v1",
+  "claims": [
+    {
+      "id": "C1",
+      "claim": "Processed state means reproduced",
+      "source": "evidence/teller_summary.json#/experimental_reanalysis",
+      "value": [
+        0.9510824228990328,
+        0.9140479475068066
+      ],
+      "scope": "Processed-data reanalysis, not raw-trial replication"
+    },
+    {
+      "id": "C2",
+      "claim": "Spatial holdout diagnostic",
+      "source": "evidence/teller_holdout.json",
+      "value": 2.3417323109381942,
+      "scope": "Within one time-bin dataset; approximate uncorrelated MC errors"
+    },
+    {
+      "id": "C3",
+      "claim": "Ideal-input event-simulator integration",
+      "source": "evidence/teller_summary.json",
+      "value": {
+        "attempts": 400000,
+        "pairs": 87,
+        "Bell_fidelity": 0.9048185746372305
+      },
+      "scope": "Simulation at a calibrated but nonunique operating-point channel"
+    },
+    {
+      "id": "C4",
+      "claim": "Constant readout-window diagnostic mismatches",
+      "source": "evidence/teller_summary.json#/negative_control_model",
+      "value": [
+        5.547306261015132,
+        5.279383179539702,
+        4.118886775962112
+      ],
+      "scope": "Nested-window pointwise diagnostics; no lifetime inference"
+    },
+    {
+      "id": "C5",
+      "claim": "Eight apparent classical-decay fits",
+      "source": "evidence/pr2026_curve_summary.json",
+      "value": {
+        "mismatch": 6,
+        "inconclusive": 2
+      },
+      "scope": "No homogeneous physical spin T2 identified"
+    },
+    {
+      "id": "C6",
+      "claim": "Condition-sensitive database and deterministic work counts",
+      "source": "evidence/deterministic_summary.json",
+      "value": {
+        "reviewed": 10,
+        "provisional": 201,
+        "specifications": 3,
+        "bath_evaluations": 202,
+        "corners": 4
+      },
+      "scope": "Reference review and specified physics; no new-material prediction validation"
+    },
+    {
+      "id": "C7",
+      "claim": "Known-generator count recovery",
+      "source": "lab/t2_runs/deterministic/synthetic_control/fit.json",
+      "value": {
+        "recovered_s": 0.000979663156865916,
+        "interval_s": [
+          0.0009502149602035785,
+          0.001007737189825788
+        ]
+      },
+      "scope": "One synthetic instance; not coverage or physical accuracy"
+    },
+    {
+      "id": "C8",
+      "claim": "Equal means admit different Bell outputs",
+      "source": "evidence/mean_fidelity_nonidentifiability.json",
+      "value": 0.00161407402308833,
+      "scope": "Constructive mean-only example; not two fits to every experimental state"
+    },
+    {
+      "id": "C9",
+      "claim": "Separate hypothetical network control",
+      "source": "evidence/hypothetical_sequence.json",
+      "value": 321,
+      "scope": "Supplied uncalibrated IO parameters; numerical verification"
+    },
+    {
+      "id": "C10",
+      "claim": "Automated suite passes",
+      "source": "evidence/paper_test_results.log",
+      "value": 75,
+      "scope": "Software tests; no new hardware experiments"
+    }
+  ]
+}

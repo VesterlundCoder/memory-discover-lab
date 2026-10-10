@@ -1,0 +1,8 @@
+{
+  "basis": "sto-3g",
+  "method": "HF",
+  "threads": 1,
+  "memory_MB": 1024,
+  "conv_tol": 1e-10,
+  "excited_states": 1
+}

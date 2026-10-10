@@ -1,0 +1,21 @@
+{
+  "record_doi": "10.5281/zenodo.14929997",
+  "artifacts": {
+    "4.csv": {
+      "url": "https://zenodo.org/api/records/14929997/files/4.csv/content",
+      "sha256": "15a1bffab4bba9900afb588d92cbfd345134ad4de81c2601fb4835e2d41cb803",
+      "license": {
+        "id": "cc-by-4.0"
+      },
+      "source_revision": "14929997:v1"
+    },
+    "8a.csv": {
+      "url": "https://zenodo.org/api/records/14929997/files/8a.csv/content",
+      "sha256": "5dabe5c2aba00dce1c2b177b1340a5bf4262110ed4cdba5c78b172b8d0b71c5a",
+      "license": {
+        "id": "cc-by-4.0"
+      },
+      "source_revision": "14929997:v1"
+    }
+  }
+}

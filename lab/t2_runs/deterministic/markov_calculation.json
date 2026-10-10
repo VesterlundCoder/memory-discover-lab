@@ -1,0 +1,32 @@
+{
+  "method": "markov",
+  "input_hash": "62561182a2b1bc7dcffd51cb54456570b558cfc52a976564d3f1057f250b46d3",
+  "input_evidence_kind": "hypothetical",
+  "provenance": [
+    {
+      "kind": "explicit_software_test_parameters",
+      "not_a_material_prediction": true
+    }
+  ],
+  "full_memory_channel_validated": false,
+  "uncertainty_kind": "conditional_model_or_parameter_range_not_prediction_confidence",
+  "conditions": {
+    "temperature_K": 4.2,
+    "logical_system": "hypothetical effective qubit",
+    "pulse_sequence": "stationary Markov model"
+  },
+  "T2_s": 0.04,
+  "total_coherence_rate_s_inv": 25.0,
+  "status": "conditional_model_value",
+  "parameter_box": {
+    "T2_range_s": [
+      0.03571428571428571,
+      0.045454545454545456
+    ],
+    "upper_unbounded": false,
+    "completed_corner_evaluations": 4,
+    "assumption": "Every combination in supplied independent parameter box is admissible"
+  },
+  "equation": "1/T2 = population_rate/2 + independent_pure_dephasing_rate",
+  "scope": "Independent stationary Markov noise only; temperature dependence must be supplied separately"
+}

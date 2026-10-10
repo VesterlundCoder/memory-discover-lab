@@ -1,0 +1,25 @@
+{
+  "review_date": "2026-10-10",
+  "method": "Manual primary-text verification; no independent raw-curve reproduction for these ten reference values",
+  "reviewed_records": 10,
+  "source_text_snapshots": [
+    {
+      "file": "vanadium_paper.html",
+      "sha256": "95050def04f3b6165b9c5ed92aa5dd890510c3f3afb01151da985cdeb5ba1480",
+      "bytes": 190302
+    },
+    {
+      "file": "sic_paper.html",
+      "sha256": "a9a1d60351cfed13dd6874551a65cac0d02cee8630c9069a16f9008f48a6d509",
+      "bytes": 226431
+    }
+  ],
+  "reference_file_sha256": "7f2633cb4e692402845eaa076425598a92a07b1819fcf2baad66e857fd8d077d",
+  "rejected_assumptions": [
+    "No units guessed for MTD CSV",
+    "No numeric room temperature invented",
+    "No approximate 20 K molecular maximum promoted to exact temperature",
+    "No Tm re-labelled as pure T2",
+    "No optical coherence re-labelled as spin coherence"
+  ]
+}

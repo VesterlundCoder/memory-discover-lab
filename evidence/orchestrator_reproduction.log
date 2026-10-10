@@ -1,0 +1,7 @@
+Running: /workspace/scratch/b85c5791ca4a/WestQuant_Paper_Repository/../.venv/bin/python -m memorylab reproduce examples/teller2025_baseline.json --out baselines/teller2025 --offline
+Running: /workspace/scratch/b85c5791ca4a/WestQuant_Paper_Repository/../.venv/bin/python -m memorylab.t2lab run --sequence --offline
+Running: /workspace/scratch/b85c5791ca4a/WestQuant_Paper_Repository/../.venv/bin/python -m unittest discover -s tests -v
+Five figures and constructive channel example regenerated
+Three LaTeX tables and CSV counterparts regenerated
+Verified 10 reporting invariants; wrote evidence/claim_result_map.json
+Reproduction complete. Compile paper PDFs with make pdf.

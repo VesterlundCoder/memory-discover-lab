@@ -1,0 +1,6 @@
+{
+  "keywords": "PBE def2-SVP TightSCF",
+  "binary": null,
+  "timeout_s": 600,
+  "blocks": "%pal nprocs 1 end"
+}

@@ -1,0 +1,164 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,booktabs,array,longtable,graphicx}
+\usepackage[margin=23mm]{geometry}
+\usepackage{microtype,xcolor,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black,pdftitle={WestQuant Memory Discovery Lab: Supplementary Information},pdfauthor={David Vesterlund}}
+\setlength{\emergencystretch}{3em}
+\setlength{\parskip}{3pt}
+\newcommand{\code}[1]{\texttt{#1}}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\title{Supplementary Information\\\large WestQuant Memory Discovery Lab: An Evidence-Aware Framework from Experimental Data to Quantum-Memory Simulation}
+\author{David Vesterlund\\\small WestQuant, Vesterlund Ventures, Sweden}
+\date{10 October 2026}
+\begin{document}
+\maketitle
+\noindent This Supplement describes the executed software and data analyses accompanying the manuscript. Experimental reanalysis, internal diagnostics, synthetic controls and numerical verification are identified separately. No new hardware experiment, independently verified new-material lifetime, or machine-learning training result is reported. Tables are generated from the archived JSON outputs where applicable.
+
+\section{Executable interfaces and conventions}
+The package \code{memorylab} provides candidate/source records, a catalog, memory profiles, model dispatch, quantum channels, deterministic $T_2$ assessment and network export. Source identities are content hashes with source metadata. The evaluated source is version 0.6.0; its archive identity is recorded in Section S8.
+
+{\small
+\begin{longtable}{p{.26\linewidth}p{.65\linewidth}}
+\toprule Component & Input contract and interpretation\\\midrule\endhead
+Candidate & Composition, integer charge, electronic spin $2S$, supplied geometry, optional host and site-resolved isotope substitutions. Electron/spin parity is checked; stability is not established.\\
+Observation & Quantity, unit, conditions, source location and evidence kind. Unknown units and unresolved observable definitions remain unresolved.\\
+Reviewed reference & Material identity, coherence definition, positive seconds, reported uncertainty convention, conditions and unresolved conditions. Matching is conditional on reported information; no reference-query interpolation.\\
+Memory profile & Family, logical states, writing/storage/reading temperatures and durations, explicit relaxation/dephasing definitions, IO acceptance and optional independently specified bath/table coherence.\\
+Exact bath & Nuclear $I$, Zeeman vectors and coupling tensors in Hz; dimension bounded; time in seconds; ideal pulse sequence; bath Gibbs initialization at specified temperature.\\
+PyCCE & Conventional CCE pure coherence; backend milliseconds, kHz and gauss; explicit conversion from the common SI interface. Density elements from generalized CCE are not silently substituted.\\
+Electronic adapters & Molecular PySCF geometry in angstrom, charge and $2S$; external coupling imports require units, site mapping and tensor-frame alignment. Periodic crystals are not molecular PySCF inputs.\\
+Optical propagation & Separate MaxwellBloch multi-level recipe. Propagation fields do not by themselves identify a single-photon instrument.\\
+Channel & Conditional logical CPTP map and state-independent acceptance; full qubit-to-qutrit erasure map; unnormalized column-vectorized Choi matrix.\\
+Network device & Explicit age samples, exact requested temperature/protocol, retrieval from original input once. Missing age or unsupported intervention is an error.\\
+\bottomrule
+\caption{Common interface conventions and inference boundaries.}
+\end{longtable}
+}
+
+The implemented family labels are atomic ensemble, trapped atom/ion, rare-earth solid, defect spin, molecular spin and negative ion. Their availability is not six independent experimental validations. The negative-ion branch requires an environment-overlap parameter; it does not deduce coherence from neutralization. Temperature ramps, state-dependent acceptance and a complete structure-to-spin--phonon-to-optical-instrument chain are outside the evaluated contract.
+
+Channel compression retains Choi eigenvalues above $10^{-14}$ and rejects eigenvalues below $-10^{-9}$. Default CPTP checks use $10^{-9}$ tolerance; the QuTiP Markov comparison permits $2\times10^{-8}$. State-validity checks use $10^{-9}$. Recorded maximum discrepancies, rather than merely boolean checks, are retained. Numerical agreement is verification of the specified equations, not evidence that omitted experimental physics is negligible.
+
+\section{Source audit and reviewed coherence values}
+The main experimental sources are Zenodo records \href{https://doi.org/10.5281/zenodo.14929997}{14929997} and \href{https://doi.org/10.5281/zenodo.21532904}{21532904}, associated with papers \href{https://doi.org/10.1103/z6lc-qw2d}{10.1103/z6lc-qw2d} and \href{https://doi.org/10.1103/ftkb-pkvp}{10.1103/ftkb-pkvp}. Both data records declare CC BY 4.0. Fourteen Teller artifacts are recorded, including processed figures and reference-source snapshots. The deterministic data branch has eleven artifacts: the PR record metadata and seven measurement files, plus three pinned molecular-repository artifacts. All seven PR measurement-file MD5 values are checked against the record metadata, and each cached artifact also has a SHA-256 digest.
+
+The molecular data are pinned to the MTD-group molecular-qubit repository revision
+\begin{center}\small\texttt{5263b1d86b39243e7405dde5bf7c58bbd8fcd677}.\end{center}
+Positive entries are provisional because a uniform unit, pulse definition and operating conditions have not been reviewed. There are 201 such entries across 123 source rows and 40 paper links. The repository license is not specified in the retrieved source metadata. These cached files are present for the local reproducibility bundle and excluded from default Git tracking. Their presence does not confer a license for public redistribution.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{p{.35\linewidth}p{.22\linewidth}p{.28\linewidth}}
+\toprule Material / source & Observable / protocol & Reported time\\\midrule
+$^{151}$Eu$^{3+}$:YSO; Ortu et al. & Spin DD, XX & $70\pm2$ ms\\
+Same & Spin DD, XY4 & $106\pm9$ ms\\
+Same & Spin DD, XY8 & $154\pm11$ ms\\
+Same & Spin DD, XY16 & $230\pm30$ ms\\
+Same & Effective optical AFC & $240\pm30$ $\mu$s\\
+V(IV) complex 1; Lin et al. & Hahn stretched $T_m$ & $2.04\pm0.05$ $\mu$s\\
+V(IV) complex 2; Lin et al. & Hahn stretched $T_m$ & $4.11\pm0.03$ $\mu$s\\
+V(IV) complex 3; Lin et al. & Hahn stretched $T_m$ & $4.42\pm0.02$ $\mu$s\\
+PL6 in 4H-SiCOI; Hu et al. & Hahn $T_2$ & $4.62\pm1.65$ $\mu$s\\
+Same & Ramsey $T_2^*$ & $460\pm35$ ns\\\bottomrule
+\end{tabular}
+\caption{Ten reviewed primary-text values. These are different definitions, not a common material ranking, and are not fresh fits to raw trials. The Eu intervals are reported 95\% confidence intervals. The uncertainty conventions for the other studies have not been verified.}
+\end{table}
+
+The Eu references use an approximately 4 K cryostat and 1.35 mT along $D_1$. Local RF heating, the detailed bath and sequence-specific stretch exponents remain unresolved. The optical AFC expression has exponent factor four, distinct from the spin efficiency expression. See \href{https://doi.org/10.1038/s41534-022-00541-3}{Ortu et al., npj Quantum Information 8, 29 (2022)}.
+
+The molecular references apply at 5 K in an o-terphenyl glass at X-band, approximately 9.4 GHz. Complexes 1--3 have Et$_3$NH, $n$-Bu$_3$NH and $n$-Hex$_3$NH counterions, respectively, with [V(C$_6$H$_4$O$_2$)$_3$] core. Exact selected fields, site isotope distributions and fully reviewed concentrations are unavailable in the current reference table. See \href{https://doi.org/10.1039/C8SC04122A}{Lin et al., Chemical Science 10, 548--555 (2019)}. The PL6 references apply to a natural-abundance 4H-SiC-on-insulator waveguide at reported room temperature; a numeric temperature and exact coherence-measurement field remain missing. See \href{https://doi.org/10.1038/s41467-024-54606-2}{Hu et al., Nature Communications 15, 10256 (2024)}. None of these ten records validates an entire optical quantum-memory channel.
+
+\section{Teller data reanalysis and internal diagnostics}
+The parser handles source indices explicitly. For \code{4.csv}, rows encode basis and zero-based cell; the six labels are X, $-$X, Y, $-$Y, 0, 1. For \code{8a.csv}, the basis precedes a one-based cell index; its labels are X, $-$X, Y, $-$Y, E, L. Original headers alone would give an incorrect interpretation. Uniform means of the processed state fidelities reproduce the released figure summaries. These numerical identity checks use neither inferred raw counts nor independent experimental replication.
+
+The spatial holdout uses odd cells for inverse-variance calibration and even cells for comparison. The fitted mean is 0.9224361066 and approximate uncertainty 0.0038483763. Covariances are unavailable; the uncertainty widths are supplied MC quantities, not asserted to be standard errors of independent sample means.
+\input{tables/holdout.tex}
+
+The path-point calibration is separate: pair 5,6, a 270 ns detection window, 3 K cryostat, and 18 $\mu$s total optical age comprising 10 $\mu$s AFC rephasing and 8 $\mu$s spin storage. Its conditional mean is 0.9671968089 with supplied MC uncertainty 0.0051670280. Neither the window width nor a delay in an ambiguous figure is substituted for the total optical age. A query at another storage time is rejected; no $T_1$ or $T_2$ is supplied at this point.
+
+The acceptance model multiplies 0.16 AFC efficiency, 0.42 two-way optical transfer, 0.50 demultiplexing and 0.42 temporal acceptance. The first three reported component uncertainty widths are 0.01, 0.02 and 0.04. Under independent errors and exact last factor,
+\[
+\sigma_\eta=\eta\sqrt{(0.01/0.16)^2+(0.02/0.42)^2+(0.04/0.50)^2}
+=0.0015824218.
+\]
+Temporal-acceptance uncertainty, cross-component covariance, fiber/filter/detector losses and false heralds are not included. Network Monte Carlo intervals condition on the nominal acceptance.
+
+Readout-window diagnostics calibrate on 80 widths at or below 600 ns and assess 91 widths at or above 800 ns; 40 intermediate widths are unused. Three signal-plus-background fits have maximum pointwise discrepancies 1.728745, 2.638455 and 0.722965 for pairs 1,2; 5,6; and 9,10. Their corresponding constant-fidelity discrepancies are 5.547306, 5.279383 and 4.118887. The pair 5,6 fit reaches signal-fidelity upper bound one. Window measurements share nested counts and lack covariance, so these screens are not calibrated global hypothesis tests or $T_2$ estimates.
+
+\section{Mean fidelity does not uniquely determine a channel}
+This is a constructive mathematical example, not a second fit to all released experimental states. For the same six-state mean $F_0$, define $p=2(1-F_0)$ and $q=3p/4$. Depolarizing Kraus operators are
+\[
+K_0=\sqrt{1-3p/4}\,I,\quad
+K_x=\sqrt{p/4}\,X,\quad K_y=\sqrt{p/4}\,Y,\quad K_z=\sqrt{p/4}\,Z.
+\]
+Phase-flip operators are $M_0=\sqrt{1-q}I$ and $M_1=\sqrt qZ$. The latter leaves the two Z-axis states unchanged and gives fidelity $1-q$ for each of the four transverse states. Its six-state mean is $1-2q/3=1-p/2=F_0$.
+
+For identical independent maps on the two halves of a Bell pair,
+\begin{align*}
+F_B^{\rm dep}&=1-\tfrac32p+\tfrac34p^2,\\
+F_B^{\rm phase}&=(1-q)^2+q^2=1-\tfrac32p+\tfrac98p^2,\\
+F_B^{\rm phase}-F_B^{\rm dep}&=\tfrac38p^2.
+\end{align*}
+At $F_0=0.9671968088636844$, $p=0.06560638227263116$ and $q=0.04920478670447337$. Direct Kraus propagation gives $F_B^{\rm dep}=0.9048185746372300$ and $F_B^{\rm phase}=0.9064326486603184$, a difference of 0.0016140740230883. The matrices and values are regenerated by \code{scripts/make\_figures.py}. More extensive tomography and a conditioning model are needed to discriminate experimentally compatible channels.
+
+\section{PR2026 curve diagnostics and negative outcomes}
+Four released classical-efficiency curves have 15, 70, 70 and 70 observations for no RF, XX, XY4 and XY16. Efficiencies and their supplied SEM quantities are converted consistently; reported total delays are converted from microseconds to seconds. The fit factor is explicitly one, defining an apparent retrieval-decay scale. No result is converted to homogeneous spin $T_2$.
+
+The Gaussian model is $b+A\exp[-(t/\tau)^\beta]$, with exponential $\beta=1$ or stretched $0.25\leq\beta\leq4$. The implementation uses three starts and bounded log-$\tau$. Every fourth sorted unique time group, using zero-based group indices congruent to three modulo four, is withheld. Thirty parametric bootstrap draws are requested per full-data fit. Status includes the full-data approximate Gaussian goodness diagnostic, holdout residuals, boundaries, observed-time range, reviewed observable mapping and bootstrap stability.
+\input{tables/decay.tex}
+\input{tables/bootstrap.tex}
+
+All six RF fits are model mismatches. The no-RF exponential scale lies outside the observed window; the no-RF stretched bootstrap yields only 28 of 30 accepted draws and is inconclusive under the implemented requirement. A zero stored $p$ is numerical underflow, not an exact zero probability. Tiny Gaussian probabilities are conditional on supplied uncertainties and independence; unmodeled correlation/systematics limit the physical interpretation. The source experiment already reports nonexponential behavior. Thus the retained negative results diagnose the tested envelopes, rather than demonstrating that the experimental memory itself fails.
+
+The separate heralded-photon arrays are not qubit process tomography. The source value \code{st}=100 $\mu$s and the article's 100.9 $\mu$s value are retained as an unresolved clock mapping. The paper's nominal spin coherence quoted from other work is not a new lifetime measured from these arrays. Neither $g^{(2)}$ nor extended classical storage is substituted for time-resolved qubit fidelity.
+
+\section{Deterministic and synthetic verification}
+The Markov case supplies $\Gamma_1=10$ and $\Gamma_\phi=20$ s$^{-1}$ at hypothetical 4.2 K conditions, giving 40 ms. Rate-box corners use $\Gamma_1\in[8,12]$ and $\Gamma_\phi\in[18,22]$ s$^{-1}$. Their range [35.714286,45.454545] ms is deterministic parameter uncertainty; its $-10.7143\%/+13.6364\%$ deviations are not prediction-error margins.
+
+The finite-bath case has one $^{13}$C spin $I=1/2$, logical projections $m=\pm1/2$, laboratory Zeeman $\omega_z=214163.9829$ Hz and hyperfine $A_{zz}=4000$ Hz at 4.2 K. Other couplings vanish. In the unpolarized limit, the longitudinal model gives $L(t)=\cos(\pi A_{zz}t)$; the finite-temperature implementation uses its exact Gibbs state. Each of free evolution and ideal one-pulse Hahn control evaluates 101 times over 0--1 ms. Free evolution has a first sampled $1/e$ crossing bracket [90,100] $\mu$s and revivals. Hahn control swaps the commuting branches and has no sampled crossing over this finite window. These parameters are specified controls, not inferred properties of a molecular candidate.
+
+The synthetic likelihood control uses $A=0.8$, $b=0$, $\tau=1$ ms, exponential factor one and four known phases $0,\pi/2,\pi,3\pi/2$. Ages are zero plus 20 geometric points from 10 $\mu$s to 4 ms. At every age and phase, 4000 binomial trials are generated with seed 20261010: 84 count observations and 336,000 Bernoulli trials. Group holdout retains all four phases at each withheld age together. Five ages (20 observations) are held out; 64 observations calibrate the holdout fit. The reported full-data fit uses all 84 counts. Sixty requested bootstrap draws all succeed. Recovery is 0.9796631569 ms with conditional 95\% interval [0.9502149602,1.0077371898] ms, held-out Pearson RMSE 0.8632951 and approximate goodness $p=0.9528551$. One recovered generator instance is not a coverage study.
+
+\section{Network controls and work counts}
+The Teller integration control uses the actual SeQUeNCe 1.2.0 event kernel and density manager. Each attempt loads an ideal Bell state, schedules retrieval at 18 $\mu$s and applies the calibrated map once. Two nodes have nominal acceptance 0.014112, independent losses and ideal link/herald probability one. Four seeds 20261010--20261013 each have 100,000 attempts at a 1 ms interval. Counts 20, 32, 24 and 11 sum to 87. The fixed-loss expectation is 79.6594176 pairs. The pooled Wilson interval is [0.000176350196,0.000268249181]. Conditional Bell fidelity is 0.9048185746, and the maximum joint-density discrepancy is $1.11\times10^{-16}$. The simulated attempt clock, totaling 400 s, is not wall-clock runtime or a physical network benchmark.
+
+The separate hypothetical profile has write/read acceptance 0.8/0.7, depolarization parameters 0.01/0.02, write/read durations 100/200 $\mu$s and constant 4.2 K stages. It exports ages 0, 100 and 500 $\mu$s; retrieval uses 500 $\mu$s, ideal link/herald factor 0.5, 2000 attempts and 1 ms interval. It produces 321 pairs and Bell fidelity 0.9559176317. Its maximum channel Choi discrepancy is $4.00\times10^{-15}$ and joint-density discrepancy $5.55\times10^{-17}$. These supplied parameters have no experimental calibration in this study.
+
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{lr}
+\toprule Executed/recorded unit & Count\\\midrule
+Processed Teller state-fidelity values & 90\\
+Spatial held-out cells & 5\\
+Primary window fits / constant diagnostics & 3 / 3\\
+PR classical curve observations & 225\\
+Primary PR curve-model fits & 8\\
+Requested PR bootstrap replicates & 240\\
+Deterministic model specifications & 3\\
+Exact spin-bath time evaluations & 202\\
+Markov parameter-box corners & 4\\
+Synthetic count observations / Bernoulli trials & 84 / 336,000\\
+Synthetic requested bootstrap replicates & 60\\
+Teller network seeds / attempts & 4 / 400,000\\
+Hypothetical network attempts & 2000\\
+Automated tests passing & 75\\
+New hardware experiments / ML training runs & 0 / 0\\\bottomrule
+\end{tabular}
+\caption{Different work units are reported separately. Optimizer function evaluations, three starting points, holdout refits and bootstrap refits are not counted as eight additional primary experiments. Runtime/scalability was not benchmarked.}
+\end{table}
+
+\section{Reproduction and claim traceability}
+The source archive used for this study has SHA-256
+\begin{center}\small\texttt{c64b94a573def9d999b65be7201947e9c}\\\texttt{2ce4e496aaf201650d7c1e3d44733aa}.\end{center}
+There is no public Git commit or software DOI for this study. A local archive hash is not presented as a public publication identifier.
+The repository root contains \code{paper.tex}, \code{supplement/supplement.tex}, \code{figures/}, \code{tables/}, \code{evidence/}, \code{scripts/} and evaluated source in \code{lab/}. \code{REPRODUCIBILITY.md} supplies dependency and LaTeX setup. From the root, a Python environment with the stated packages executes \code{python scripts/reproduce.py}. The script invokes, from \code{lab/}, the experimental baseline command, the offline deterministic command with SeQUeNCe enabled, and all unit tests, then refreshes evidence, figures and tables and checks the headline invariants. An online variant explicitly refreshes remote data and may change metadata bytes; the archived offline path reproduces the pinned study.
+
+\code{scripts/verify\_results.py} checks the reanalysis values, count controls, model statuses and simulated counts, and emits a claim-to-result JSON map. These checks protect the reporting pipeline; they are not extra experimental measurements. Every headline claim links to an executed result or log. Detailed fit outputs retain status, seed, bootstrap success, conditions and limitations. Files predating this article remain under \code{lab/} as historical source outputs and are not all fresh experimental validations. The \code{evidence/} directory is the article's selected result snapshot.
+
+The complete manuscript can be built using \code{make pdf}. Numerical reproduction does not require LaTeX; PDF compilation does not require running the simulator. Figures require Matplotlib. No ML libraries are needed. The software test logs record Python 3.12.14, NumPy 2.5.3, SciPy 1.18.1, QuTiP 5.3.1, PySCF 2.14.0, PyCCE 1.1.1 and SeQUeNCe 1.2.0. Optional-adapter test execution does not replace application-specific physical validation.
+
+Future candidate evaluation should retain these distinctions: independently review units, definitions and conditions; anchor Hamiltonian and noise parameters; establish numerical convergence; reproduce time-resolved optical fidelity, success and noise; and assess any proposed improvement under matched operating conditions. The present study supplies the workflow and controls for such work without claiming those future outcomes.
+\end{document}

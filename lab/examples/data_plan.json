@@ -1,0 +1,42 @@
+{
+  "download": {
+    "max_bytes": 50000000,
+    "timeout_s": 25,
+    "retries": 2
+  },
+  "max_total_bytes": 150000000,
+  "sources": [
+    {
+      "id": "molecular_qubit_dataset",
+      "kind": "github",
+      "repository": "MTD-group/Molecular_Qubit_Dataset",
+      "ref": "main",
+      "include": [
+        "Relaxation_time_data_08_02_24.csv"
+      ],
+      "max_files": 1,
+      "importer": "molecular_csv",
+      "license": "not_verified"
+    },
+    {
+      "id": "cr_host_matrix_2022",
+      "kind": "zenodo",
+      "record_id": 6828667,
+      "include": [
+        "fig_3b_1.txt",
+        "fig_3d_1.txt"
+      ],
+      "max_files": 2
+    },
+    {
+      "id": "ciaaw_isotopes",
+      "kind": "http",
+      "revision": "live_table_retrieval",
+      "urls": [
+        "https://www.ciaaw.org/isotopic-abundances.htm"
+      ],
+      "max_files": 1,
+      "importer": "ciaaw_abundances"
+    }
+  ]
+}

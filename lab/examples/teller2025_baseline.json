@@ -1,0 +1,173 @@
+{
+  "schema": "westquant_reviewed_baseline_config_v1",
+  "id": "teller2025_pr_yso_fixed_optical_point",
+  "paper_doi": "10.1103/z6lc-qw2d",
+  "download_files": [
+    "4.csv",
+    "8a.csv",
+    "8b_F.csv",
+    "8b_Fmin.csv",
+    "8b_Fmaxn.csv",
+    "5_xaxis.csv",
+    "5_yaxis2_F.csv",
+    "5_yaxis2_Fmin.csv",
+    "5_yaxis2_Fmax.csv",
+    "3b.csv",
+    "3a.csv"
+  ],
+  "source_lock": {
+    "record_id": 14929997,
+    "version": "v1",
+    "files": {
+      "4.csv": {
+        "sha256": "15a1bffab4bba9900afb588d92cbfd345134ad4de81c2601fb4835e2d41cb803",
+        "archive_checksum": "md5:08ee49ae82d00d74ad08a741924471bf"
+      },
+      "8a.csv": {
+        "sha256": "5dabe5c2aba00dce1c2b177b1340a5bf4262110ed4cdba5c78b172b8d0b71c5a",
+        "archive_checksum": "md5:3942d7f8cfcccee164703ab80277ad91"
+      },
+      "8b_F.csv": {
+        "sha256": "f4748d46dcaafdeb34c678089a52404d8b435742ab2c0ffbff7e9d9148d2ad2f",
+        "archive_checksum": "md5:52778e98d3efdb29d95cc246de27c4b5"
+      },
+      "8b_Fmin.csv": {
+        "sha256": "bed2c683ddbe2fa7642a10b8c28c68722b83150ce2aeab585ee1801758ca9cc0",
+        "archive_checksum": "md5:934a433da6528b4d663483dffff5ec57"
+      },
+      "8b_Fmaxn.csv": {
+        "sha256": "50ba79ac1cdc8835d30677d691142f6aa5fb0e7b39976bb132c2bd8d8d0720d5",
+        "archive_checksum": "md5:2b1da08a0e5eee68fecbff5b0400ad9a"
+      },
+      "5_xaxis.csv": {
+        "sha256": "c37fcd957b35ac3fcac9902fcd6ed819583ed27b3306f7cac41fa8a1905a7fbb",
+        "archive_checksum": "md5:f60381353f6b57fd066169bd805c8adc"
+      },
+      "5_yaxis2_F.csv": {
+        "sha256": "35e1c0b4053e3cc5357787b497024155d692d3c80a2279bac378063bda811bd7",
+        "archive_checksum": "md5:8054e097596e3ad0819d3fad80e7b641"
+      },
+      "5_yaxis2_Fmin.csv": {
+        "sha256": "af2d36b0f550f2d6476e841b936b31ea2c470b33396bff3c17760246d3a1b463",
+        "archive_checksum": "md5:898823b8f21da184a41c162fa037321b"
+      },
+      "5_yaxis2_Fmax.csv": {
+        "sha256": "52fe8aee8aa063db66e643c0d8da37a3be22107ce5b30465f6ca4f00ec25eb6d",
+        "archive_checksum": "md5:76b587a179459a7ca182d54aedbde3fb"
+      },
+      "3b.csv": {
+        "sha256": "dc401705fb2d473ea975257b8499b5adefc36b989d0182dc0a14b898efc0246a",
+        "archive_checksum": "md5:390e43c41b7718f0d2aeade2c4951f54"
+      },
+      "3a.csv": {
+        "sha256": "55dc44d8d69a45fbe86ae350ff5e1690b21d155ae619f297e91565c958e26d33",
+        "archive_checksum": "md5:67d8c240b8a5487b59cdefc12fcb0e2d"
+      }
+    }
+  },
+  "paper_sources": [
+    {
+      "id": "teller2025_paper",
+      "filename": "paper.pdf",
+      "url": "https://upcommons.upc.edu/server/api/core/bitstreams/42b57e3e-5b2c-4e4e-bd3a-5d546597259c/content",
+      "sha256": "121af611cb1db493abfabfcb8dd8bcc935074f10ee81a15c167e8cd203cf0ab5"
+    },
+    {
+      "id": "teller2025_supplement",
+      "filename": "supplement.pdf",
+      "url": "https://journals.aps.org/prx/supplemental/10.1103/z6lc-qw2d/supplementary.pdf",
+      "sha256": "778e217c83011126afb310dfc0a8140dea683d4b6bc1783c39699334a4d7cc9d"
+    }
+  ],
+  "reviewed_point": {
+    "temperature_K": 3,
+    "isotope_assay": null,
+    "encoding": "path",
+    "pair": [
+      5,
+      6
+    ],
+    "end_to_end_storage_s": 1.8e-05,
+    "spin_storage_s": 8e-06,
+    "afc_rephasing_s": 1e-05,
+    "detection_window_s": 2.7e-07,
+    "photon_window_fraction": 0.42,
+    "classical_efficiency_components": [
+      {
+        "name": "AFC",
+        "value": 0.16,
+        "standard_error": 0.01
+      },
+      {
+        "name": "two_way_optical_transfer",
+        "value": 0.42,
+        "standard_error": 0.02
+      },
+      {
+        "name": "demultiplexing_AOD",
+        "value": 0.5,
+        "standard_error": 0.04
+      }
+    ],
+    "review_sources": [
+      "Main article sec II: 3 K, 606 nm",
+      "Main article sec III: spin 8 us, total 18 us, 270 ns, photon fraction 42 percent",
+      "Supplement Table I: pair 5,6 classical AFC/two-way/AOD efficiencies",
+      "Supplement assessment of fidelity: M=5000, endpoints F_MC +/- std"
+    ],
+    "not_measured": [
+      "separate write/read efficiency",
+      "T2",
+      "full accepted single-photon signal-plus-noise instrument",
+      "independent stage temperature",
+      "variance of photon-window fraction"
+    ]
+  },
+  "source_mapping_notes": [
+    "Figure 4: rows infidelity,basis,pair; 30 entries",
+    "Figure 8a header is misleading: actual rows infidelity,basis 0..5,cell 1..10; verified by exact reconstruction of Figure 8b",
+    "5_yaxis2_Fmin/max header lists five pairs but actual shape is 3x211; mapping 1,2 / 5,6 / 9,10 verified against Figure 4 averages at 270 ns",
+    "8b_Fmaxn.csv is the actual released filename, despite description saying Fmax",
+    "3a.csv says seconds in metadata but abscissa ranges 0.070..1183.278, with no header; quarantined from physical timing/noise inference until author unit clarification",
+    "T2 must remain null; window width is not storage duration"
+  ],
+  "hypotheses": [
+    {
+      "id": "H0_summary",
+      "statement": "Released state fidelities reproduce the published averaged fidelities within rounded published errors"
+    },
+    {
+      "id": "H1_spatial",
+      "statement": "A common conditional isotropic channel fitted on odd time-bin cells predicts even cells within three combined std"
+    },
+    {
+      "id": "H2_window",
+      "statement": "Finite-pulse plus uniform background model fitted on windows <=600 ns is pointwise adequate at >=800 ns; shared-count covariance prevents independent-validation claim"
+    }
+  ],
+  "network_seeds": [
+    20261010,
+    20261011,
+    20261012,
+    20261013
+  ],
+  "network_workload": {
+    "attempts": 100000,
+    "link_herald_probability": 1.0,
+    "attempt_interval_s": 0.001,
+    "storage_age_s": 1.8e-05,
+    "minimum_Bell_fidelity": 0.8
+  },
+  "run_counts": {
+    "measured_operating_point_backend_runs": 2,
+    "network_replicates": 4,
+    "network_attempts_total": 400000,
+    "window_model_fits": 3
+  },
+  "pre_registration": "Retrospective fixed analysis contract; not prospectively preregistered",
+  "discovery_release_requires": [
+    "time-resolved fidelity and retrieval together",
+    "SPAM and false-herald/noise audit",
+    "measured thermal operating range"
+  ]
+}

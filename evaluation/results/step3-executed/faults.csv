@@ -1,0 +1,8 @@
+fault,protected_blocked,protected_reason,positive_control_passed,unsafe_bypass_accepted,impact,impact_unit,guard_location
+measured_point_age_extrapolation,True,MissingData: Only the measured end-to-end age is supported; T2 is unidentified,True,True,10.0,unsupported_age_factor,existing_lab
+measured_point_temperature_extrapolation,True,MissingData: No temperature interpolation or thermal-ramp model available,True,True,1.0,unsupported_temperature_delta_K,existing_lab
+total_T2_double_counting,True,ValueError: Specify independent population and pure-dephasing rates; total T2 must not be reused as pure dephasing,True,True,16.666666666666675,T2_relative_error_percent,existing_lab
+unreviewed_noise_independence,True,UnsupportedPhysics: Declare independence to compose a spin/table coherence with Markov noise,True,True,1.0,unsupported_independence_declarations,existing_lab
+hypothetical_network_promotion,True,MissingData: Hypothetical/unknown-evidence network use requires explicit opt-in,True,True,2.0,synthetic_age_samples_promoted,existing_lab
+absolute_age_as_increment,True,UnsupportedOperation: Age tables may be non-Markovian; preserve input and apply at final retrieval,True,True,0.09724673286508415,density_matrix_max_error,existing_lab
+source_bytes_modified,True,ValueError: Source SHA256 mismatch: /tmp/tmp0pc6li6p/source.json,True,True,1000.0,forged_T2_factor,new_evaluation_source_contract
