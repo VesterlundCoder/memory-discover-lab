@@ -1,0 +1,15 @@
+{
+  "article_doi": "10.1038/s41534-022-00637-w",
+  "data_doi": "10.4121/16887658.v3",
+  "license": "CC BY 4.0",
+  "attribution": "C. E. Bradley et al., Robust quantum-network memory based on spin qubits in isotopically engineered diamond (2022)",
+  "archive_url": "https://ndownloader.figshare.com/files/36162189",
+  "archive_md5": "0e1fb4500688659f9dcca3123831e4f3",
+  "files": {
+    "research_data.zip": "6b819990773d5b309556cbc86d27ae9a14d2e18037930de96d683aa4e4ff56e2",
+    "DataAnalysis_RobustMemory.ipynb": "87ce8af36c40a8f260da61006aebd0885741f1d78cb0fa8f7a453314c75c1767",
+    "data_3b.json": "5c9bc957cc3b5d322a0c394dd0e153fffe267f0dbc045d70dad43521dd6605d8"
+  },
+  "retrieved_utc_date": "2026-10-10",
+  "extraction": "research_data.zip -> Shared Data.zip -> Shared Data/data_3b.json; outer notebook cell Fig. 3b maps six arrays"
+}

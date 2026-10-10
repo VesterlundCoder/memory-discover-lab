@@ -44,6 +44,19 @@ Timings randomize arm order with a fixed seed, warm up both arms and record five
 
 ## Step 2: another family's audited physical baseline
 
+### Executed measured-observable companion case
+
+The [Swedish case report](results/bradley2022-nv0/report_sv.md) documents Bradley et al. 2022, Fig. 3b: C-13 Ramsey storage in heralded NV0 at 4 K. Licensed original source bytes are bundled under `data/experimental/bradley2022/`. The companion workflow compares transverse Bloch length and signed X directly, without fabricating normalized complex coherence. It uses a calibrated stretched envelope and a fixed effective Hamiltonian frequency from the separate NMR measurement, with matching field, isotope, pulse and charge-selection conditions.
+
+```bash
+python -m pip install -r evaluation/data/bradley2022_nv0/requirements-tested.txt -e ./lab
+python scripts/evaluate_bradley_nv0.py --out reproductions/bradley-nv0 --plot
+```
+
+Use a separate environment for this tested dependency snapshot. There are 24 measured points: 14 calibration and 10 heldout, across two separate series. The maximum heldout residual divided by the reported error is 2.428 for Bloch length (passes threshold 3) and 3.158 for X (fails). Exit code 2 is expected and retains both results. The split is retrospective; source error bars do not include our calibration uncertainty. The same-machine offline confirmation matches the full scientific summary and CSV exactly. This case does not validate a microscopic spin bath, isolate population relaxation, or supply an optical interface. Physical validation and network export remain false. Independent scientific review remains pending.
+
+### Original strict physical contract (still pending)
+
 Run the pending descriptor:
 
 ```bash

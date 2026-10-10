@@ -9,6 +9,10 @@ This dossier and its LaTeX/PDF counterpart are integrated into the main manuscri
 | 3 | Seven constructed invalid contracts with seven valid positive controls; isolated unsafe bypasses | All selected faults rejected and all positive controls pass | Not real-world error incidence or material-prediction accuracy |
 | 4 | Nine bounded local cold studies, 108 cold jobs, 108 checkpoint reuses | Identical scientific digests across workers 1, 2, 4; robustness probes pass | One environment and small models; no cluster-scale claim |
 
+## Additional measured-observable case (separate from this article snapshot)
+
+The [Bradley 2022 NV0 report](../results/bradley2022-nv0/report_sv.md) adds a second experimentally anchored family with an explicit effective Hamiltonian, matched conditions and 24 original observations. The heldout envelope diagnostic passes; the fixed-frequency X diagnostic fails. This is a calibrated, retrospective observable comparison, not the strict step-2 microscopic model validation. The historical blocked record and article claims remain unchanged. The new case is not yet integrated into the compiled manuscript or dossier PDFs.
+
 ## Manuscript artifacts
 
 - `paper.tex` / `paper.pdf`: full model, original experimental analyses and integrated system evaluation section.

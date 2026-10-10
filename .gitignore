@@ -29,3 +29,6 @@ evaluation/data/cache/
 reproductions/
 # Licensed numerical data are intentional tracked inputs.
 !data/experimental/pr2026/*.out
+
+# Retain the executed Bradley observable-case test logs.
+!evidence/bradley2022/*.log
