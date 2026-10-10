@@ -1,0 +1,2 @@
+# Preserve source hashes across platforms; no automatic line-ending conversion.
+* -text
