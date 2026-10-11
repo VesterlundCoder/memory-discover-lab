@@ -1,186 +1,262 @@
-# WestQuant Memory Discovery Lab — v0.6
+# WestQuant Memory Discovery Lab
 
-## Nytt: T₂ från granskade tabeller och deterministiska beräkningar
+**Evidence-aware quantum-memory modelling and network integration.**
 
-ML är ett eget projekt. Läs [T2_BEDOMNINGAR.md](T2_BEDOMNINGAR.md) för
-källgranskning, tabelluppslag, spinnbad, temperaturvillkor och körda resultat.
+[![PyPI version](https://badge.fury.io/py/westquant-memory-lab.svg)](https://pypi.org/project/westquant-memory-lab/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
-```bash
-python -m memorylab.t2lab run --offline --sequence
-```
+WestQuant connects versioned experimental source data to typed observations, condition-matched coherence references, explicit quantum channels (Kraus operators with erasure), and native network-simulator adapters (SeQUeNCe and QuNetSim). Its contribution is an executable evidence contract across these interfaces, with retained failure outcomes and reproducible study identities.
 
-Tio granskade referensvärden och 201 preliminära molekylposter ingår.
-Den öppna klassiska Pr-baslinjen används även som negativ modellkontroll.
-Nya kombinationer får inte ett T₂-värde utan tillräckligt fysikunderlag.
-Deterministiska kontrollfall och nätverkskanalen är uttryckligen hypotetiska.
+**Latest release: v0.7.0** — available on [PyPI](https://pypi.org/project/westquant-memory-lab/0.7.0/) and the [v0.7.0 git tag](https://github.com/VesterlundCoder/memory-discover-lab/tree/release/v0.7.0).
 
-## Nytt: experimentdata till verkliga simulatorer
+> **Software verification is not hardware validation.** The framework preserves distinctions between experimental observations, curated observations, evaluated references, computed results, hypothetical controls, and unknown evidence. It does not claim universal simulator validation, new material discovery, or improved hardware performance.
 
-Den första öppna baslinjen är Teller et al., PRX 15, 031053 (2025),
-DOI 10.1103/z6lc-qw2d, data DOI 10.5281/zenodo.14929997.
-Läs [BASELINE.md](BASELINE.md) för granskade parametrar, osäkerheter,
-detektionsfönster, negativa modellresultat och vetenskapliga begränsningar.
+## Installation
 
 ```bash
-python3.12 -m venv .venv
-source .venv/bin/activate
-python -m pip install -c constraints-tested.txt -e '.[quantum,network]'
-python -m memorylab reproduce examples/teller2025_baseline.json --out baselines/teller2025
+pip install westquant-memory-lab
 ```
 
-Det kommandot hämtar låsta öppna data, granskar kontrollsummor, reproducerar
-experimentella medelfideliteter, gör ett spatialt holdout-test, bygger en
-fysisk effektiv qubit-kanal och kör både QuTiP och fyra SeQUeNCe-försök.
-Alla hämtade källfiler och utförda baslinjeresultat ingår i arkivet.
-För en helt lokal omkörning lägger du till `--offline`; flaggan förbjuder
-nätåtkomst i baslinjehämtningen. En ofullständig cache ger ett fel.
-
-Baslinjen är en **ändlig driftpunkt**, inte ett uppmätt T2 eller en
-mikroskopisk materialmodell. `discovery_gate.json` blockerar jämförelser
-om bättre nya material tills tidsberoende fidelity, effektivitet och
-brus är validerade tillsammans. De äldre minnesscenarierna nedan är
-fortfarande uttryckligen syntetiska programtester.
-
-Körbart Pythonlabb för datahämtning, materialinventering, fysikmodeller,
-kalibrering, systematiska körningar och export till kvantnätverk.
-Basfunktioner: Python 3.10+. SeQUeNCe 1.2 och det fullständiga flödet
-kräver Python 3.12+. Verifierat i Linux; Mac-installation
-ingår inte i den utförda verifieringen.
-
-## Börja här
-
-Packa upp arkivet, öppna westquant-memory-lab i VS Code och kör:
+For the full quantum-memory workflow with all backends:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -e '.[all]'
-python -m memorylab doctor
-python -m unittest discover -s tests -v
-python -m memorylab pipeline examples/pipeline_full.json --out runs/my_lab
+pip install "westquant-memory-lab[all]"
 ```
 
-Det sista kommandot hämtar data, importerar observationer, genererar 16
-isotop/laddningskombinationer, gör två begränsade PySCF-beräkningar,
-kör 36 minnesscenarier och exporterar 36 kanalsamlingar.
-Minnesscenarierna är **hypotetiska programtester**. De påstår inte att H2
-eller någon hämtad molekyl har de angivna optiska minnesegenskaperna.
+Optional extras (install only what you need):
 
-Mindre installation: python -m pip install -e . och examples/pipeline.json.
-Det flödet använder NumPy/SciPy utan PySCF. Installera valfri extra
-quantum, chemistry, spin, propagation eller datasets när du behöver den.
+| Extra | Packages | Use case |
+|---|---|---|
+| `quantum` | QuTiP 5.3.1 | Open-system evolution, channel verification |
+| `chemistry` | PySCF 2.14.0, ASE 3.29.0 | Electronic structure calculations |
+| `spin` | PyCCE 1.1.1, pandas | Spin-bath dynamics, cluster expansion |
+| `propagation` | MaxwellBloch 0.12.0 | Optical propagation |
+| `datasets` | openpyxl, pynmrstar | Dataset importers |
+| `network` | SeQUeNCe 1.2.0, pandas | Native network simulation |
+| `all` | All of the above | Complete workflow |
 
-## Gemensamt flöde
+**Requirements:** Python 3.10+. The full workflow with SeQUeNCe requires Python 3.12+.
 
-1. Data-planen väljer källor, filer och budgetar.
-2. Råfiler och versionsmanifest sparas; importadaptrar fyller SQLite.
-3. Kandidatgeneratorn varierar laddning, 2S, värd och isotop per atomplats.
-4. Elektronstruktur och kopplingar beräknas/importeras med separat cache.
-5. Familjmodellen ger koherens och full skriv–lagra–läs-kanal.
-6. Runnern varierar parametrar, separerar seeds och checkpointar.
-7. Nätverksadaptern exporterar Kraus/Choi, förlust, latens och fidelity.
+## Quick start
 
-Importen gör inte molekylfingeravtryck eller isotopmassa till ett T2.
-En saknad optisk gränsyta eller okänd enhet förblir saknad.
-
-## Kör delarna separat
+New to WestQuant? See the **[Getting Started guide](docs/GETTING_STARTED.md)** — from install to your first verified channel in 5 commands.
 
 ```bash
-python -m memorylab datasets examples/data_plan.json
-python -m memorylab catalog data/catalog.sqlite
-python -m memorylab catalog data/catalog.sqlite --table observations --out data/observations.json
-python -m memorylab generate examples/new_combinations.json
-python -m memorylab generate examples/all_elements.json --out data/all_elements.json
-python -m memorylab run examples/study.json --dry-run
-python -m memorylab run examples/study.json --out runs/study
-python -m memorylab run examples/cross_backend_study.json --out runs/cross
-python -m memorylab electronic examples/h2_candidate.json examples/pyscf_recipe.json
-python -m memorylab simulate examples/pycce_profile.json --times 0,0.00005,0.0001 --out runs/pycce.json
-python -m memorylab propagate examples/lambda_eit.json
-python -m memorylab external orca examples/h2_candidate.json examples/orca_recipe.json
+# Check your environment
+wqml doctor
+
+# Run the bundled Teller et al. baseline (open data)
+wqml reproduce examples/teller2025_baseline.json --out baselines/teller2025
+
+# Or run a full pipeline
+wqml pipeline examples/pipeline_full.json --out runs/my_lab
 ```
 
-Samma run-kommando mot samma mapp återupptar checkpointade jobb.
-ORCA/QE-exekvering kräver --execute och en lokalt installerad binär.
-QE behöver periodisk cell, input_data, pseudopotentials och kpts.
-couplings orca/qe output_file importerar kopplingsdata genom PyCCE.
+### Example: `wqml doctor` output
 
-## Koppla till nätverk
+```json
+{
+  "environment": {
+    "python": "3.14.8",
+    "platform": "macOS-26.6.2-arm64",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "qutip": "5.3.1",
+      "pyscf": "2.14.0",
+      "pycce": "1.1.1",
+      "ase": "3.29.0",
+      "sequence": "1.2.0"
+    }
+  },
+  "capabilities": {
+    "numpy": {"import_ok": true, "version": "2.5.4"},
+    "scipy": {"import_ok": true, "version": "1.18.1"},
+    "qutip": {"import_ok": true, "version": "5.3.1"},
+    "pyscf": {"import_ok": true, "version": "2.14.0"},
+    "pycce": {"import_ok": true, "version": "1.1.1"},
+    "ase": {"import_ok": true, "version": "3.29.0"},
+    "sequence": {"import_ok": true, "version": "1.2.0"}
+  }
+}
+```
+
+Optional backends not installed report `{"import_ok": false, "error": "Install the corresponding optional extra."}` — this is expected, not a failure.
+
+### Example: `wqml simulate` output
 
 ```bash
-python -m memorylab simulate examples/trapped_atom_ion_profile.json --times 0,0.01,1 --out runs/samples.json
-python -m memorylab export runs/samples.json --allow-hypothetical --out runs/device.json
-python -m memorylab network runs/device.json runs/device.json examples/network_workload.json --allow-hypothetical
+wqml simulate examples/atomic_ensemble_profile.json --times 0,0.001,0.01,0.1,1 --out samples.json
 ```
 
-API för nätverkets händelsehanterare:
+```json
+{
+  "samples": 5,
+  "output": "samples.json"
+}
+```
+
+Each sample contains Kraus operators, a Choi matrix, CPTP validation, and metrics:
+
+```
+Sample 0: age=     0.0 ms  fidelity=0.985094  acceptance=0.559998  CPTP_error=9.99e-16
+Sample 1: age=     1.0 ms  fidelity=0.985073  acceptance=0.559993  CPTP_error=3.97e-16
+Sample 2: age=    10.0 ms  fidelity=0.984886  acceptance=0.559942  CPTP_error=1.55e-15
+Sample 3: age=   100.0 ms  fidelity=0.983020  acceptance=0.559439  CPTP_error=1.55e-15
+Sample 4: age=  1000.0 ms  fidelity=0.964753  acceptance=0.554426  CPTP_error=6.66e-16
+```
+
+- **Fidelity** — conditional average fidelity given successful retrieval
+- **Acceptance** — retrieval success probability (complement is erasure)
+- **CPTP error** — trace preservation error; values below 1e-15 confirm complete positivity and trace preservation
+
+## Key features
+
+### Evidence-aware data contracts
+
+Every observation retains its evidence kind: `experimental`, `curated_experimental`, `fit_to_experiment`, `evaluated_reference`, `computed`, `hypothetical`, or `unknown`. The framework never promotes a computed result to an experimental measurement, and never converts a bare formula or isotope mass into a coherence time.
+
+### Condition-matched reference queries
+
+Coherence references require material identity, coherence definition, and condition matching (temperature, protocol, isotope, host). No interpolation or extrapolation across missing conditions.
+
+### Explicit quantum channels
+
+The write-store-read channel is constructed as a CPTP map with erasure:
+
+```
+E_t(rho) = eta(t) * Phi_t(rho) + (1 - eta(t)) * Tr(rho) |e><e|
+```
+
+Kraus operators, Choi matrices, and numerical validity (complete positivity, trace preservation) are checked at each step.
+
+### Native network-simulator adapters
+
+- **SeQUeNCe**: Event-driven simulation with native density-matrix manager
+- **QuNetSim**: Layered quantum-network framework with QuTiP density backend
+
+The adapters apply sampled absolute-age channels once to the original input and reject missing age samples — no interpolation or extrapolation.
+
+### Reproducible execution
+
+- SQLite catalog with immutable record identities
+- Content hashes for source artifacts
+- Configuration and source fingerprints for every run
+- Checkpoint and resume logic
+- 124 passing tests, 1 skipped (v0.7.0)
+
+## Architecture
+
+```
+memorylab/
+    catalog.py          # SQLite catalog with typed observations
+    channels.py         # Kraus operators, Choi matrices, erasure channels
+    models.py           # Markov dynamics, finite baths, model dispatch
+    spin.py             # Nuclear spin-bath evolution, CPMG, CCE
+    network.py          # Network device export and retrieval
+    sequence_adapter.py # SeQUeNCe native adapter
+    runner.py            # Bounded worker processes, checkpoints
+    calibration.py      # Observation binding and condition matching
+    t2assessment.py     # T2 inference gates and diagnostics
+    t2curves.py         # Curve fitting and model mismatch detection
+    experimental.py     # Experimental data reanalysis
+    datasets.py         # Source synchronization and verification
+    pipeline.py         # Full pipeline orchestration
+    cli.py              # Command-line interface (wqml)
+    screening/          # Candidate screening and nuclear data
+```
+
+## Command reference
+
+```bash
+wqml doctor                                    # Check environment and capabilities
+wqml datasets <plan.json>                       # Synchronize data sources
+wqml catalog <catalog.sqlite>                   # Inspect the SQLite catalog
+wqml generate <plan.json>                       # Generate candidate combinations
+wqml run <study.json> --out <dir>               # Run a parameter study
+wqml simulate <profile.json> --times <list>     # Simulate channel samples
+wqml export <samples.json> --out <device.json>  # Export network device
+wqml network <device.json> <device.json> <workload.json>  # Run network workload
+wqml reproduce <baseline.json> --out <dir>      # Reproduce a bundled baseline
+wqml pipeline <plan.json> --out <dir>           # Run the full pipeline
+```
+
+## Python API
 
 ```python
 import numpy as np
 from memorylab.network import load_device
 
+# Load an exported memory device
 device = load_device("runs/device.json", allow_hypothetical=True)
+
+# Retrieve at a specific storage age
 input_state = np.array([[0.5, 0.5], [0.5, 0.5]], dtype=complex)
 result = device.retrieve(input_state, age_s=0.01, rng=np.random.default_rng(17))
+
 if result["success"]:
     retrieved_state = result["density_matrix"]
 ```
 
-För sammanflätade tvåqubitsystem: gemensam 4×4 täthetsmatris och
-subsystem=0 eller 1. Använd ursprungstillståndet vid slutlig läsning;
-applicera inte ålderskanalen på nytt vid varje tick.
+## Evidence model
 
-Detta är ett fungerande gemensamt API och en tvånodsbenchmark.
-Versionsspecifika SeQUeNCe/NetSquid/WestQuant-Network-klasser ingår inte.
+The framework distinguishes seven evidence kinds and enforces their boundaries:
 
-## Kalibrering och baslinjer
+| Evidence kind | Description | Example |
+|---|---|---|
+| `experimental` | Directly measured | Teller et al. state fidelities |
+| `curated_experimental` | Processed from raw experimental data | Inverse-variance calibrated means |
+| `fit_to_experiment` | Model fitted to experimental data | Pr decay curve fits |
+| `evaluated_reference` | Reviewed reference value | Ortu et al. 230 ms Eu/YSO |
+| `computed` | Numerical result | QuTiP channel evolution |
+| `hypothetical` | Synthetic control | Markov profile with declared rates |
+| `unknown` | Unresolved evidence | Molecular entry without reviewed curve |
 
-fit tar JSON med times_s, pure_coherence_amplitude, standard_errors,
-conditions och provenance. Den testar en normaliserad exponentiell modell,
-rapporterar chi2 och parameterosäkerhet och avvisar tydliga revivals.
+## Validated scope
 
-baseline jämför modellrecept med uppmätta optiska driftpunkter vid samma
-temperaturer, kontroll och protokoll. Spinn-T2 validerar inte en full
-nätverkskanal. Rapportens pass/fail gäller de angivna driftpunkterna.
+The v0.7.0 release validates:
 
-discovery-steg kräver baseline_reproduction med pass-status, rapportens
-sökväg och SHA-256. exploration är scenarioforskning före baslinjegaten.
-Medföljande konfigurationer använder software_smoke.
+- 336 state probes across 56 channel-age points (numerical agreement below 10^-15)
+- 128 paired SeQUeNCe/QuNetSim comparisons (below 10^-10 tolerance)
+- 124 passing tests, 1 skipped
+- 359 JSON records and 11 exact random-trace arrays checked in replay
+- Open rare-earth (Pr³⁺:Y₂SiO₅) and diamond-spin (¹³C/NV) dataset reanalysis
 
-Parameterbindning från katalogen finns i calibration.bind_observations
-och pipeline. Bindningen behöver mängd, verifierad enhet, urvalsvillkor,
-transform och uttrycklig modellmotivering. Se docs/DATA_SOURCES.md.
+## Limitations
 
-## Resultat och reproducerbarhet
+- Matched experimental protocol tomography, material-specific bath validation, and native physical-latency comparison remain explicit requirements for broader predictions
+- NetSquid and QuISP adapters are not evaluated in this release
+- The framework does not claim universal simulator validation
+- No new material or improved hardware performance is claimed
 
-Varje run-id bygger på konfiguration, backendversioner och källkodshash.
-Jobbet får job.json, result.json, worker.log och vid framgång channels.json.
-Seeds för spinnbad, parameterosäkerhet och nätverk separeras.
-Osäkerhetsströmmen är reserverad; automatisk Monte Carlo över
-parameterosäkerhet är inte implementerad. Deterministiska replikat
-ger därför inte empiriska konfidensintervall.
+## Documentation
 
-Statusar: success, timeout, invalid_config, missing_data,
-unsupported_physics, backend_unavailable, numerical_failure, runtime_error.
-Gate-fail kan förekomma i en tekniskt lyckad körning.
-Terminala jobb återanvänds; ändrad konfiguration får nytt id.
-Undvik två samtidiga runnerprocesser mot samma output-mapp.
+- [Getting Started](docs/GETTING_STARTED.md) — From install to first channel in 5 commands
+- [Quickstart](docs/QUICKSTART.md) — 5-minute guide to the core workflow
+- [Tutorial](docs/TUTORIAL.md) — Full walkthrough from data import to network simulation
+- [Model Contract](docs/MODEL_CONTRACT.md) — Physical model definitions and inference boundaries
+- [Data Sources](docs/DATA_SOURCES.md) — Source data provenance and licensing
+- [Extending](docs/EXTENDING.md) — How to add new model families and adapters
 
-verification/ innehåller tester, miljöversioner, datahämtningens manifest,
-kanaljämförelse och körsammanfattningar. scripts/verify_lab.py återskapar
-verifieringen. Råfiler och den nya rådatakatalogen ingår inte i kodarkivet;
-de återskapas med data-planen.
+## Citation
 
-Ingen ny kandidat har visats slå SOTA och ingen experimentell
-fullminnesbaslinje har reproducerats i denna leverans.
+If you use WestQuant in your research, please cite:
 
-## Nästa grundforskningssteg
+```bibtex
+@software{vesterlund2026westquant,
+  author = {Vesterlund, David},
+  title = {{WestQuant Memory Discovery Lab}},
+  version = {0.7.0},
+  year = {2026},
+  url = {https://github.com/VesterlundCoder/memory-discover-lab}
+}
+```
 
-Granska art/laddning/isotop/nivåer, optisk koppling, T1/ren defasning,
-kopplingstensorer, temperaturförlopp, skriv/läsbrus och retrieval.
-Reproducera en experimentell baslinje och gör solver- och
-parameterkonvergens innan resultaten används som materialprediktioner.
+## License
 
-Läs docs/MODEL_CONTRACT.md och docs/DATA_SOURCES.md.
-v0.3:s forskningsregister, negativa resultat och lab.py bevaras som
-tidigare underlag. Deras äldre versionsbeskrivningar är historik.
+MIT License. Copyright (c) 2026 David Vesterlund.
+
+## Acknowledgements
+
+WestQuant builds on PySCF, PyCCE, QuTiP, MaxwellBloch, SeQUeNCe, and QuNetSim. The author thanks the cited experimental-data and open-source software contributors for making their work available.

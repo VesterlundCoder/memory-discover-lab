@@ -2,9 +2,9 @@
 
 **David Vesterlund — WestQuant, Vesterlund Ventures, Sweden. 10 October 2026.**
 
-This repository accompanies *WestQuant Memory Discovery Lab: An Evidence-Aware Framework from Experimental Data to Quantum-Memory Simulation*. Its contribution is an executable source-to-model workflow with explicit physical and evidence boundaries. It is an English scientific manuscript based on actual reruns of version 0.6.0, with analytical verification, processed experimental-data reanalysis, retained negative diagnostics and event-simulator integration.
+This repository accompanies *WestQuant Memory Discovery Lab: An Evidence-Aware Framework from Experimental Data to Quantum-Memory Simulation*. Its contribution is an executable source-to-model workflow with explicit physical and evidence boundaries. It is an English scientific manuscript based on actual reruns of version 0.7.0, with analytical verification, processed experimental-data reanalysis, retained negative diagnostics and event-simulator integration.
 
-It does not report new hardware experiments, a validated new-material lifetime, or better-than-SOTA performance. ML for T2 is a separate project; no ML training is performed here.
+It does not report new hardware experiments, a validated new-material lifetime, or better-than-SOTA performance.
 
 ## Files
 
@@ -26,7 +26,7 @@ It does not report new hardware experiments, a validated new-material lifetime, 
 - Ten primary-text-reviewed coherence references coexist with 201 provisional molecular entries; incomplete records are not promoted to physical predictions.
 - Deterministic Hamiltonian controls and a known-generator count experiment verify specified models. The latter recovers 0.979663 ms from a 1 ms synthetic generator.
 - A calibrated but nonunique fixed-point channel produces 87 retrieved pairs in 400,000 ideal-input SeQUeNCe attempts. These are simulated outcomes under incomplete optical assumptions.
-- All 75 automated tests pass. No new-material superiority is inferred from these software checks.
+- All 124 automated tests pass. No new-material superiority is inferred from these software checks.
 
 ## Reproduce
 

@@ -1,13 +1,54 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "westquant-memory-lab"
-version = "0.6.0"
-description = "Provenance-aware quantum memory discovery and network channel laboratory"
+version = "0.7.0"
+description = "Evidence-aware quantum-memory modelling and network integration framework"
+readme = "README.md"
 requires-python = ">=3.10"
-dependencies = ["numpy>=2,<3", "scipy>=1.12,!=1.16.0,!=1.17.0,<2"]
+license = {text = "MIT"}
+authors = [
+    {name = "David Vesterlund", email = "david@vesterlundventures.se"}
+]
+maintainers = [
+    {name = "David Vesterlund", email = "david@vesterlundventures.se"}
+]
+keywords = [
+    "quantum memory",
+    "quantum networks",
+    "quantum simulation",
+    "reproducible research",
+    "provenance",
+    "spin coherence",
+    "quantum channels",
+    "SeQUeNCe",
+    "QuNetSim",
+    "rare-earth",
+    "NV center",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Quantum Computing",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "numpy>=2,<3",
+    "scipy>=1.12,!=1.16.0,!=1.17.0,<2",
+]
 
 [project.optional-dependencies]
 quantum = ["qutip==5.3.1"]
@@ -16,12 +57,34 @@ spin = ["pycce==1.1.1", "pandas>=2.2,<3"]
 propagation = ["maxwellbloch==0.12.0"]
 datasets = ["openpyxl>=3.1,<4", "pynmrstar>=3.3,<4"]
 network = ["sequence==1.2.0", "pandas>=2.3.3,<3"]
-all = ["qutip==5.3.1", "pyscf==2.14.0", "ase==3.29.0", "pycce==1.1.1", "pandas>=2.2,<3",
-       "maxwellbloch==0.12.0", "openpyxl>=3.1,<4", "pynmrstar>=3.3,<4",
-       "sequence==1.2.0", "pandas>=2.3.3,<3"]
+all = [
+    "qutip==5.3.1",
+    "pyscf==2.14.0",
+    "ase==3.29.0",
+    "pycce==1.1.1",
+    "pandas>=2.2,<3",
+    "maxwellbloch==0.12.0",
+    "openpyxl>=3.1,<4",
+    "pynmrstar>=3.3,<4",
+    "sequence==1.2.0",
+    "pandas>=2.3.3,<3",
+]
 
 [project.scripts]
 wqml = "memorylab.cli:main"
 
+[project.urls]
+Homepage = "https://github.com/VesterlundCoder/memory-discover-lab"
+Documentation = "https://github.com/VesterlundCoder/memory-discover-lab/blob/release/v0.7.0/docs/MODEL_CONTRACT.md"
+Repository = "https://github.com/VesterlundCoder/memory-discover-lab"
+"Bug Tracker" = "https://github.com/VesterlundCoder/memory-discover-lab/issues"
+"Release v0.7.0" = "https://github.com/VesterlundCoder/memory-discover-lab/tree/release/v0.7.0"
+
 [tool.setuptools]
-packages = ["memorylab"]
+packages = [
+    "memorylab",
+    "memorylab.screening",
+]
+
+[tool.setuptools.package-data]
+memorylab = ["screening/configs/*.json"]
