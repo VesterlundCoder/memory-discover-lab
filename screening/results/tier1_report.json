@@ -1,0 +1,42 @@
+{
+  "schema": "westquant_screening_tier1_report_v1",
+  "created_at": "2026-10-11T09:25:42.086356+00:00",
+  "total_candidates": 2508,
+  "total_combinations": 7298,
+  "total_feature_rows": 3183,
+  "status_counts": {
+    "missing_data": 1985,
+    "blocked": 472,
+    "success": 726
+  },
+  "family_counts": {
+    "molecular_spin": 135,
+    "rare_earth_solid": 8,
+    "defect_spin": 5,
+    "trapped_atom_ion": 2360
+  },
+  "isotope_patterns": [
+    "natural",
+    "perdeuterated",
+    "C13_depleted_99.99",
+    "N15",
+    "deut+C13dep",
+    "deut+C13dep+N15"
+  ],
+  "fields_T": [
+    0.35,
+    1.2
+  ],
+  "protocols": [
+    "Hahn",
+    "CPMG-2",
+    "CPMG-8"
+  ],
+  "notes": [
+    "Every candidate × combination gets a feature row",
+    "Nothing is filtered silently — blocked candidates keep their row",
+    "Non-natural isotope patterns marked evidence_kind: hypothetical",
+    "Atoms/ions: Tier 1 only (NIST ASD levels not in project)",
+    "Negative ions: blocked (electron affinity data unavailable)"
+  ]
+}

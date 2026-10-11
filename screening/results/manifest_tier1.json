@@ -1,0 +1,7 @@
+{
+  "phase": "tier1",
+  "created_at": "2026-10-11T09:25:42.086913+00:00",
+  "config_hash": "55e03889732b70be1e2ff110a149a39e4964e73ece7c7c0026fd4d3f3b702b4d",
+  "report_path": "screening/results/tier1_report.json",
+  "features_path": "screening/results/tier1_features.json"
+}
