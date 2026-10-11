@@ -1,0 +1,85 @@
+{
+  "schema": "westquant_import_queue_v0.3",
+  "status": "located_not_downloaded",
+  "checked_on": "2026-10-09",
+  "batches": [
+    {
+      "priority": 1,
+      "source_id": "D15",
+      "targets": [
+        "Relaxation_time_data_08_02_24.csv",
+        "cifs_of_molecules.zip"
+      ],
+      "gate": "Verifiera enheter, extraktionsmetod och originalpapper; börja med Cr/V/Cu och lanthanidkomplex."
+    },
+    {
+      "priority": 1,
+      "source_id": "D17",
+      "targets": [
+        "Fig1.xlsx: Fig1J (T1), Fig1K (T2 echo)",
+        "Fig2.xlsx: Fig.2K (in-cell T1), Fig.2L (in-cell T2 echo)",
+        "FigS3.xlsx: replikat"
+      ],
+      "gate": "Håll data och fitkolumner isär; koppla temperatur och isotopvariant från artikelns metoder."
+    },
+    {
+      "priority": 1,
+      "source_id": "D16",
+      "targets": [
+        "Data.zip: EPR/PulseEPRdata/",
+        "Data.zip: TRFE/"
+      ],
+      "gate": "Behåll temperatur-, fält- och lösningsmedelsmetadata; sammanfoga inte optiska och EPR-villkor."
+    },
+    {
+      "priority": 2,
+      "source_id": "D01",
+      "targets": [
+        "INDC(NDS)-0915 Rev.2",
+        "INDC(NDS)-0833"
+      ],
+      "gate": "Matcha isotop och kärntillstånd; behåll rekommendation, originalmätning och osäkerhet separat."
+    },
+    {
+      "priority": 2,
+      "source_id": "D08",
+      "targets": [
+        "NMR-STAR/NMReDATA för utvalda läkemedelsfragment"
+      ],
+      "gate": "Mätfält, lösningsmedel och fitmodell ska finnas; simulerade fältanpassade spektra märks computed."
+    },
+    {
+      "priority": 2,
+      "source_id": "D10",
+      "targets": [
+        "spintrap_data.zip"
+      ],
+      "gate": "Identifiera radikaladdukt och kopplingskonvention; kontrollera originalreferenser."
+    },
+    {
+      "priority": 3,
+      "source_id": "D18",
+      "targets": [
+        "10.5281/zenodo.6828667"
+      ],
+      "gate": "Inspektera filförteckning och licens när åtkomst fungerar."
+    },
+    {
+      "priority": 3,
+      "source_id": "D19",
+      "targets": [
+        "10.24433/CO.4566380.v1"
+      ],
+      "gate": "Inspektera kapsel, data och kod innan körbar reproduktion påstås."
+    },
+    {
+      "priority": 3,
+      "source_id": "D20",
+      "targets": [
+        "La−, Ni−, Pt−, Ir−, Bi−, P−/As−/Sb−",
+        "OH−/OD−, CH−, C60−/C70−, biologiska kromoforanjoner"
+      ],
+      "gate": "Publikationsspår verifierade; rådata kräver tillgänglighetskontroll eller begäran, utan kontakt i denna körning."
+    }
+  ]
+}

@@ -1,0 +1,3217 @@
+{
+  "samples": [
+    {
+      "schema": "westquant_memory_channel_v1",
+      "basis_input": [
+        "0",
+        "1"
+      ],
+      "basis_output": [
+        "0",
+        "1",
+        "erasure"
+      ],
+      "vectorization": "column",
+      "kraus": [
+        {
+          "real": [
+            [
+              -5.428236352170175e-12,
+              1.0922866097680836e-14
+            ],
+            [
+              0.09134521075708962,
+              5.428302573072011e-12
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.06459968461357839,
+              3.978169123001909e-14
+            ],
+            [
+              7.677825332203243e-12,
+              -0.06460017237776168
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -2.8139493039417348e-14,
+              0.09139010888628432
+            ],
+            [
+              -1.0938381260825085e-14,
+              2.8140028898768296e-14
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.7399197613404368,
+              2.618237724203937e-18
+            ],
+            [
+              3.48521415433989e-16,
+              -0.7399141745696155
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.663326224415619,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.663326224415619
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "conditional_kraus": [
+        {
+          "real": [
+            [
+              -7.253796825062924e-12,
+              1.4596315687003595e-14
+            ],
+            [
+              0.12206535544635547,
+              7.253885316597987e-12
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.08632508917241612,
+              5.3160600758398855e-14
+            ],
+            [
+              1.0259941057256599e-11,
+              -0.08632574097570075
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -3.760303568701474e-14,
+              0.12212535318519259
+            ],
+            [
+              -1.4617048726955162e-14,
+              3.7603751760266974e-14
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.988760854797119,
+              3.4987725771184494e-18
+            ],
+            [
+              4.657320302073409e-16,
+              -0.9887533891493806
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "choi": {
+        "real": [
+          [
+            0.5516543724742627,
+            -1.1617653233752012e-16,
+            0.0,
+            -3.723911914517984e-18,
+            0.5433039686983699,
+            0.0
+          ],
+          [
+            -1.1617653233752012e-16,
+            0.008343947528257121,
+            0.0,
+            -1.908348396934619e-18,
+            -3.972732915809911e-16,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.4400016799974801,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -3.723911914517984e-18,
+            -1.908348396934619e-18,
+            0.0,
+            0.008352152002246904,
+            -1.2107696174004208e-19,
+            0.0
+          ],
+          [
+            0.5433039686983699,
+            -3.972732915809911e-16,
+            0.0,
+            -1.2107696174004208e-19,
+            0.551646168000272,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.4400016799974801
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "metrics": {
+        "conditional_average_fidelity": 0.9850937641686203,
+        "conditional_entanglement_fidelity": 0.9776406462529303,
+        "retrieval_success_probability": 0.5599983200025199,
+        "unconditional_target_overlap": 0.5516508529793859,
+        "state_independent_heralding_assumed": true
+      },
+      "cptp": {
+        "input_dimension": 2,
+        "output_dimension": 3,
+        "tp_max_error": 9.992007221626409e-16,
+        "choi_min_eigenvalue": 0.008343947528257149
+      },
+      "metadata": {
+        "family": "atomic_ensemble",
+        "storage_model": "markov",
+        "storage_age_s": 0.0,
+        "total_write_store_read_s": 0.00030000000000000003,
+        "temperatures_K": {
+          "write": 4.2,
+          "storage": 10,
+          "read": 4.2
+        },
+        "control": {},
+        "network_activity": {
+          "attempt_rate_Hz": 0,
+          "coherence_loss_per_attempt": 0
+        },
+        "input_evidence_kind": "hypothetical",
+        "result_evidence_kind": "computed",
+        "provenance": [
+          {
+            "kind": "chosen_software_test_parameters",
+            "not_a_material_prediction": true
+          }
+        ],
+        "noise_budget": [
+          "phenomenological_relaxation",
+          "independent_markov_dephasing",
+          "write_depolarization",
+          "read_depolarization",
+          "independent_erasure"
+        ],
+        "optical_interface": {
+          "eta_write": 0.8,
+          "eta_read": 0.7,
+          "write_depolarizing_p": 0.01,
+          "read_depolarizing_p": 0.02,
+          "write_duration_s": 0.0001,
+          "read_duration_s": 0.0002,
+          "thermal_transition_s": 0,
+          "logical_encoding": "abstract_qubit",
+          "protocol": "supplied_effective_write_read_channel",
+          "bandwidth_Hz": null,
+          "wavelength_nm": null,
+          "modes": 1
+        },
+        "backend": "analytic",
+        "additional_pure_coherence": [
+          1.0,
+          0.0
+        ],
+        "scope": "parameterized qubit write-store-read model; hardware validation pending",
+        "age_semantics": "apply complete channel once to the original input state",
+        "assumptions": [
+          "state-independent heralding",
+          "independent specified noise sources",
+          "constant temperature within each stage",
+          "no unmodeled thermal transitions"
+        ]
+      },
+      "validated_for_hardware": false
+    },
+    {
+      "schema": "westquant_memory_channel_v1",
+      "basis_input": [
+        "0",
+        "1"
+      ],
+      "basis_output": [
+        "0",
+        "1",
+        "erasure"
+      ],
+      "vectorization": "column",
+      "kraus": [
+        {
+          "real": [
+            [
+              -3.6418669141377695e-12,
+              4.2229200909512074e-14
+            ],
+            [
+              0.09134508998594379,
+              3.641928390028213e-12
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.06460398593342297,
+              3.261969460401081e-14
+            ],
+            [
+              5.151515531463258e-12,
+              -0.06460463687496976
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -2.3075599286384445e-14,
+              0.09140499916015155
+            ],
+            [
+              -4.228734114105622e-14,
+              2.3076168183541932e-14
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.7399190222865302,
+              2.7230361129220495e-18
+            ],
+            [
+              3.4852062726713435e-16,
+              -0.7399115670316728
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.6633266465290838,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.6633266465290838
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "conditional_kraus": [
+        {
+          "real": [
+            [
+              -4.866659105069621e-12,
+              5.6431256262627055e-14
+            ],
+            [
+              0.12206525509149355,
+              4.8667412558480605e-12
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.08633088022688488,
+              4.3589987633247776e-14
+            ],
+            [
+              6.884015961368221e-12,
+              -0.08633175008585564
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -3.083612828795771e-14,
+              0.12214531225311127
+            ],
+            [
+              -5.650894957045134e-14,
+              3.08368885102823e-14
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.98876036157337,
+              3.638817344187049e-18
+            ],
+            [
+              4.657312098390456e-16,
+              -0.9887503990500852
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "choi": {
+        "real": [
+          [
+            0.5516538345399405,
+            -1.1610110005695948e-16,
+            0.0,
+            -3.8776684140134855e-18,
+            0.5433009262046654,
+            0.0
+          ],
+          [
+            -1.1610110005695948e-16,
+            0.008343925464540169,
+            0.0,
+            -7.844224201364884e-18,
+            -3.97388199925159e-16,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.4400022399955201,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -3.8776684140134855e-18,
+            -7.844224201364884e-18,
+            0.0,
+            0.008354873871467305,
+            -1.211971919630321e-19,
+            0.0
+          ],
+          [
+            0.5433009262046654,
+            -3.97388199925159e-16,
+            0.0,
+            -1.211971919630321e-19,
+            0.5516428861330124,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.4400022399955201
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "metrics": {
+        "conditional_average_fidelity": 0.9850914680637187,
+        "conditional_entanglement_fidelity": 0.9776372020955783,
+        "retrieval_success_probability": 0.55999776000448,
+        "unconditional_target_overlap": 0.5516490155152072,
+        "state_independent_heralding_assumed": true
+      },
+      "cptp": {
+        "input_dimension": 2,
+        "output_dimension": 3,
+        "tp_max_error": 8.881784197001252e-16,
+        "choi_min_eigenvalue": 0.0083439254645401
+      },
+      "metadata": {
+        "family": "atomic_ensemble",
+        "storage_model": "markov",
+        "storage_age_s": 0.0001,
+        "total_write_store_read_s": 0.0004,
+        "temperatures_K": {
+          "write": 4.2,
+          "storage": 10,
+          "read": 4.2
+        },
+        "control": {},
+        "network_activity": {
+          "attempt_rate_Hz": 0,
+          "coherence_loss_per_attempt": 0
+        },
+        "input_evidence_kind": "hypothetical",
+        "result_evidence_kind": "computed",
+        "provenance": [
+          {
+            "kind": "chosen_software_test_parameters",
+            "not_a_material_prediction": true
+          }
+        ],
+        "noise_budget": [
+          "phenomenological_relaxation",
+          "independent_markov_dephasing",
+          "write_depolarization",
+          "read_depolarization",
+          "independent_erasure"
+        ],
+        "optical_interface": {
+          "eta_write": 0.8,
+          "eta_read": 0.7,
+          "write_depolarizing_p": 0.01,
+          "read_depolarizing_p": 0.02,
+          "write_duration_s": 0.0001,
+          "read_duration_s": 0.0002,
+          "thermal_transition_s": 0,
+          "logical_encoding": "abstract_qubit",
+          "protocol": "supplied_effective_write_read_channel",
+          "bandwidth_Hz": null,
+          "wavelength_nm": null,
+          "modes": 1
+        },
+        "backend": "analytic",
+        "additional_pure_coherence": [
+          1.0,
+          0.0
+        ],
+        "scope": "parameterized qubit write-store-read model; hardware validation pending",
+        "age_semantics": "apply complete channel once to the original input state",
+        "assumptions": [
+          "state-independent heralding",
+          "independent specified noise sources",
+          "constant temperature within each stage",
+          "no unmodeled thermal transitions"
+        ]
+      },
+      "validated_for_hardware": false
+    },
+    {
+      "schema": "westquant_memory_channel_v1",
+      "basis_input": [
+        "0",
+        "1"
+      ],
+      "basis_output": [
+        "0",
+        "1",
+        "erasure"
+      ],
+      "vectorization": "column",
+      "kraus": [
+        {
+          "real": [
+            [
+              -1.532091233457088e-12,
+              6.1466579298561835e-15
+            ],
+            [
+              0.09134400306415566,
+              1.532196597037297e-12
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.06464268210430461,
+              1.8316791650993157e-14
+            ],
+            [
+              2.1685774759416468e-12,
+              -0.06464480266860578
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -1.2968271137925843e-14,
+              0.09153889793319153
+            ],
+            [
+              -6.149609802339028e-15,
+              1.2969257514436011e-14
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.7399123710290948,
+              4.5341135647275464e-18
+            ],
+            [
+              4.64684711872142e-16,
+              -0.739888099445066
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.6633304455191849,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.6633304455191849
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "conditional_kraus": [
+        {
+          "real": [
+            [
+              -2.0473563366573354e-12,
+              8.213870549706131e-15
+            ],
+            [
+              0.12206435191660156,
+              2.0474971355790203e-12
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.08638297898627109,
+              2.447700152247061e-14
+            ],
+            [
+              2.897902383321649e-12,
+              -0.08638581272793378
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -1.7329693891539756e-14,
+              0.12232479283316644
+            ],
+            [
+              -8.217815180874811e-15,
+              1.7331012001162943e-14
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.9887559228306231,
+              6.059003494799988e-18
+            ],
+            [
+              6.209651022233754e-16,
+              -0.988723488351346
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "choi": {
+        "real": [
+          [
+            0.551648993151535,
+            -1.0850789456132579e-16,
+            0.0,
+            -6.4095549262258335e-18,
+            0.5432735445280072,
+            0.0
+          ],
+          [
+            -1.0850789456132579e-16,
+            0.008343726895784479,
+            0.0,
+            -1.4681632064450917e-18,
+            -5.741070374755543e-16,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.44000727995268024,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -6.4095549262258335e-18,
+            -1.4681632064450917e-18,
+            0.0,
+            0.008379369834823257,
+            -2.485785758397278e-19,
+            0.0
+          ],
+          [
+            0.5432735445280072,
+            -5.741070374755543e-16,
+            0.0,
+            -2.485785758397278e-19,
+            0.5516133502124948,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.44000727995268024
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "metrics": {
+        "conditional_average_fidelity": 0.9850708036094362,
+        "conditional_entanglement_fidelity": 0.9776062054141543,
+        "retrieval_success_probability": 0.5599927200473197,
+        "unconditional_target_overlap": 0.5516324787524473,
+        "state_independent_heralding_assumed": true
+      },
+      "cptp": {
+        "input_dimension": 2,
+        "output_dimension": 3,
+        "tp_max_error": 1.7763568394002505e-15,
+        "choi_min_eigenvalue": 0.008343726895784437
+      },
+      "metadata": {
+        "family": "atomic_ensemble",
+        "storage_model": "markov",
+        "storage_age_s": 0.001,
+        "total_write_store_read_s": 0.0013000000000000002,
+        "temperatures_K": {
+          "write": 4.2,
+          "storage": 10,
+          "read": 4.2
+        },
+        "control": {},
+        "network_activity": {
+          "attempt_rate_Hz": 0,
+          "coherence_loss_per_attempt": 0
+        },
+        "input_evidence_kind": "hypothetical",
+        "result_evidence_kind": "computed",
+        "provenance": [
+          {
+            "kind": "chosen_software_test_parameters",
+            "not_a_material_prediction": true
+          }
+        ],
+        "noise_budget": [
+          "phenomenological_relaxation",
+          "independent_markov_dephasing",
+          "write_depolarization",
+          "read_depolarization",
+          "independent_erasure"
+        ],
+        "optical_interface": {
+          "eta_write": 0.8,
+          "eta_read": 0.7,
+          "write_depolarizing_p": 0.01,
+          "read_depolarizing_p": 0.02,
+          "write_duration_s": 0.0001,
+          "read_duration_s": 0.0002,
+          "thermal_transition_s": 0,
+          "logical_encoding": "abstract_qubit",
+          "protocol": "supplied_effective_write_read_channel",
+          "bandwidth_Hz": null,
+          "wavelength_nm": null,
+          "modes": 1
+        },
+        "backend": "analytic",
+        "additional_pure_coherence": [
+          1.0,
+          0.0
+        ],
+        "scope": "parameterized qubit write-store-read model; hardware validation pending",
+        "age_semantics": "apply complete channel once to the original input state",
+        "assumptions": [
+          "state-independent heralding",
+          "independent specified noise sources",
+          "constant temperature within each stage",
+          "no unmodeled thermal transitions"
+        ]
+      },
+      "validated_for_hardware": false
+    },
+    {
+      "schema": "westquant_memory_channel_v1",
+      "basis_input": [
+        "0",
+        "1"
+      ],
+      "basis_output": [
+        "0",
+        "1",
+        "erasure"
+      ],
+      "vectorization": "column",
+      "kraus": [
+        {
+          "real": [
+            [
+              -1.4462227999538375e-13,
+              2.9718349978939854e-15
+            ],
+            [
+              0.09133313568006945,
+              1.4469801425438419e-13
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.06502809906509997,
+              1.7999680515746542e-15
+            ],
+            [
+              2.0602401655160587e-13,
+              -0.06504501712238656
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -1.2847181370265153e-15,
+              0.0928668099090711
+            ],
+            [
+              -3.0732897537629284e-15,
+              1.2854868259123826e-15
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.7398458809976876,
+              3.4602487482139295e-18
+            ],
+            [
+              3.484426140009326e-16,
+              -0.7396534488091555
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.6633684323432808,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.6633684323432808
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "conditional_kraus": [
+        {
+          "real": [
+            [
+              -1.9326960392717015e-13,
+              3.971486087746691e-15
+            ],
+            [
+              0.12205532203528359,
+              1.9337081329989751e-13
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.08690192791076047,
+              2.405432360909382e-15
+            ],
+            [
+              2.753253515273344e-13,
+              -0.08692453678009304
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -1.7168652403287516e-15,
+              0.12410488598076916
+            ],
+            [
+              -4.1070676902767035e-15,
+              1.7178924969625117e-15
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.9887115622304908,
+              4.6241900285221534e-18
+            ],
+            [
+              4.656500091234741e-16,
+              -0.9884544006585559
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "choi": {
+        "real": [
+          [
+            0.551600581297265,
+            -6.924999580440915e-17,
+            0.0,
+            -4.819225030189025e-18,
+            0.542999803650062,
+            0.0
+          ],
+          [
+            -6.924999580440915e-17,
+            0.008341741673153977,
+            0.0,
+            -1.397960627639672e-17,
+            -4.4283909684763124e-16,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.44005767702958193,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -4.819225030189025e-18,
+            -1.397960627639672e-17,
+            0.0,
+            0.008624244382687548,
+            -2.592769517257142e-19,
+            0.0
+          ],
+          [
+            0.542999803650062,
+            -4.4283909684763124e-16,
+            0.0,
+            -2.592769517257142e-19,
+            0.5513180785877295,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.44005767702958193
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "metrics": {
+        "conditional_average_fidelity": 0.9848642075530222,
+        "conditional_entanglement_fidelity": 0.9772963113295331,
+        "retrieval_success_probability": 0.559942322970418,
+        "unconditional_target_overlap": 0.5514671521876592,
+        "state_independent_heralding_assumed": true
+      },
+      "cptp": {
+        "input_dimension": 2,
+        "output_dimension": 3,
+        "tp_max_error": 8.881784197001252e-16,
+        "choi_min_eigenvalue": 0.008341741673154074
+      },
+      "metadata": {
+        "family": "atomic_ensemble",
+        "storage_model": "markov",
+        "storage_age_s": 0.01,
+        "total_write_store_read_s": 0.0103,
+        "temperatures_K": {
+          "write": 4.2,
+          "storage": 10,
+          "read": 4.2
+        },
+        "control": {},
+        "network_activity": {
+          "attempt_rate_Hz": 0,
+          "coherence_loss_per_attempt": 0
+        },
+        "input_evidence_kind": "hypothetical",
+        "result_evidence_kind": "computed",
+        "provenance": [
+          {
+            "kind": "chosen_software_test_parameters",
+            "not_a_material_prediction": true
+          }
+        ],
+        "noise_budget": [
+          "phenomenological_relaxation",
+          "independent_markov_dephasing",
+          "write_depolarization",
+          "read_depolarization",
+          "independent_erasure"
+        ],
+        "optical_interface": {
+          "eta_write": 0.8,
+          "eta_read": 0.7,
+          "write_depolarizing_p": 0.01,
+          "read_depolarizing_p": 0.02,
+          "write_duration_s": 0.0001,
+          "read_duration_s": 0.0002,
+          "thermal_transition_s": 0,
+          "logical_encoding": "abstract_qubit",
+          "protocol": "supplied_effective_write_read_channel",
+          "bandwidth_Hz": null,
+          "wavelength_nm": null,
+          "modes": 1
+        },
+        "backend": "analytic",
+        "additional_pure_coherence": [
+          1.0,
+          0.0
+        ],
+        "scope": "parameterized qubit write-store-read model; hardware validation pending",
+        "age_semantics": "apply complete channel once to the original input state",
+        "assumptions": [
+          "state-independent heralding",
+          "independent specified noise sources",
+          "constant temperature within each stage",
+          "no unmodeled thermal transitions"
+        ]
+      },
+      "validated_for_hardware": false
+    },
+    {
+      "schema": "westquant_memory_channel_v1",
+      "basis_input": [
+        "0",
+        "1"
+      ],
+      "basis_output": [
+        "0",
+        "1",
+        "erasure"
+      ],
+      "vectorization": "column",
+      "kraus": [
+        {
+          "real": [
+            [
+              -1.2285613747783028e-14,
+              1.5269677754403866e-16
+            ],
+            [
+              0.09122464497529947,
+              1.2345995584183152e-14
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.06873728620211494,
+              1.884565211157834e-16
+            ],
+            [
+              1.8597318505218723e-14,
+              -0.06891197254109675
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -1.435938023981316e-16,
+              0.10518792077953994
+            ],
+            [
+              -1.877474739808845e-16,
+              1.4443210597818262e-16
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.7391832325094145,
+              3.3181314542873407e-18
+            ],
+            [
+              3.4773478679313626e-16,
+              -0.7373094621330579
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.6637479931507382,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.6637479931507382
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "conditional_kraus": [
+        {
+          "real": [
+            [
+              -1.6425577301271243e-14,
+              2.0415200857647223e-16
+            ],
+            [
+              0.12196520976359038,
+              1.650630639969027e-14
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.09190013874530154,
+              2.5196194663653243e-16
+            ],
+            [
+              2.4864178459049757e-14,
+              -0.09213369028153956
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -1.9198154440591917e-16,
+              0.14063378186833442
+            ],
+            [
+              -2.5101396725482443e-16,
+              1.9310233662181847e-16
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.9882706370756538,
+              4.436263895079019e-18
+            ],
+            [
+              4.649132504139188e-16,
+              -0.985765450050119
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "choi": {
+        "real": [
+          [
+            0.5511166657374986,
+            -9.946127151777981e-17,
+            0.0,
+            -4.603050816770213e-18,
+            0.5402699695999819,
+            0.0
+          ],
+          [
+            -9.946127151777981e-17,
+            0.008321935850869431,
+            0.0,
+            -5.819057099329301e-18,
+            -4.11706986751341e-16,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.4405613984116324,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -4.603050816770213e-18,
+            -5.819057099329301e-18,
+            0.0,
+            0.011064498677922769,
+            -2.4088740451179126e-19,
+            0.0
+          ],
+          [
+            0.5402699695999819,
+            -4.11706986751341e-16,
+            0.0,
+            -2.4088740451179126e-19,
+            0.5483741029104441,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.4405613984116324
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "metrics": {
+        "conditional_average_fidelity": 0.982803087970192,
+        "conditional_entanglement_fidelity": 0.9742046319552878,
+        "retrieval_success_probability": 0.5594386015883677,
+        "unconditional_target_overlap": 0.5498179851707737,
+        "state_independent_heralding_assumed": true
+      },
+      "cptp": {
+        "input_dimension": 2,
+        "output_dimension": 3,
+        "tp_max_error": 8.881784197001252e-16,
+        "choi_min_eigenvalue": 0.008321935850869513
+      },
+      "metadata": {
+        "family": "atomic_ensemble",
+        "storage_model": "markov",
+        "storage_age_s": 0.1,
+        "total_write_store_read_s": 0.10030000000000001,
+        "temperatures_K": {
+          "write": 4.2,
+          "storage": 10,
+          "read": 4.2
+        },
+        "control": {},
+        "network_activity": {
+          "attempt_rate_Hz": 0,
+          "coherence_loss_per_attempt": 0
+        },
+        "input_evidence_kind": "hypothetical",
+        "result_evidence_kind": "computed",
+        "provenance": [
+          {
+            "kind": "chosen_software_test_parameters",
+            "not_a_material_prediction": true
+          }
+        ],
+        "noise_budget": [
+          "phenomenological_relaxation",
+          "independent_markov_dephasing",
+          "write_depolarization",
+          "read_depolarization",
+          "independent_erasure"
+        ],
+        "optical_interface": {
+          "eta_write": 0.8,
+          "eta_read": 0.7,
+          "write_depolarizing_p": 0.01,
+          "read_depolarizing_p": 0.02,
+          "write_duration_s": 0.0001,
+          "read_duration_s": 0.0002,
+          "thermal_transition_s": 0,
+          "logical_encoding": "abstract_qubit",
+          "protocol": "supplied_effective_write_read_channel",
+          "bandwidth_Hz": null,
+          "wavelength_nm": null,
+          "modes": 1
+        },
+        "backend": "analytic",
+        "additional_pure_coherence": [
+          1.0,
+          0.0
+        ],
+        "scope": "parameterized qubit write-store-read model; hardware validation pending",
+        "age_semantics": "apply complete channel once to the original input state",
+        "assumptions": [
+          "state-independent heralding",
+          "independent specified noise sources",
+          "constant temperature within each stage",
+          "no unmodeled thermal transitions"
+        ]
+      },
+      "validated_for_hardware": false
+    },
+    {
+      "schema": "westquant_memory_channel_v1",
+      "basis_input": [
+        "0",
+        "1"
+      ],
+      "basis_output": [
+        "0",
+        "1",
+        "erasure"
+      ],
+      "vectorization": "column",
+      "kraus": [
+        {
+          "real": [
+            [
+              -1.741688241160449e-15,
+              6.196829150741857e-17
+            ],
+            [
+              0.09015781009947076,
+              1.801714979199867e-15
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.09660306232450797,
+              5.975886743396677e-17
+            ],
+            [
+              3.887858339970657e-15,
+              -0.09912746299932954
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -5.493328820171148e-17,
+              0.18610494522785084
+            ],
+            [
+              -2.5188656485558626e-16,
+              5.865878850218867e-17
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.7327794083118763,
+              8.787147471490716e-18
+            ],
+            [
+              4.543904216256075e-16,
+              -0.7141182948639275
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.6675131132657184,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.6675131132657184
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "conditional_kraus": [
+        {
+          "real": [
+            [
+              -2.3390986058971545e-15,
+              8.322381747163561e-17
+            ],
+            [
+              0.12108252380110367,
+              2.419714904466757e-15
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.12973853934852173,
+              8.025654660885286e-17
+            ],
+            [
+              5.221418970419068e-15,
+              -0.13312882583014068
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              -0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -7.377576239726859e-17,
+              0.24994014867034378
+            ],
+            [
+              -3.3828529054393925e-16,
+              7.877913346746052e-17
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.9841274987712048,
+              1.1801196054858793e-17
+            ],
+            [
+              6.102492837922106e-16,
+              -0.9590655023593198
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "choi": {
+        "real": [
+          [
+            0.5462978128963762,
+            -1.1441572047537816e-16,
+            0.0,
+            -1.0889507721708032e-17,
+            0.5137151650888803,
+            0.0
+          ],
+          [
+            -1.1441572047537816e-16,
+            0.008128430721932232,
+            0.0,
+            -4.1290409898165645e-17,
+            -5.474433698877824e-16,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.4455737563816918,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -1.0889507721708032e-17,
+            -4.1290409898165645e-17,
+            0.0,
+            0.03463505063826136,
+            -1.2821170681691806e-18,
+            0.0
+          ],
+          [
+            0.5137151650888803,
+            -5.474433698877824e-16,
+            0.0,
+            -1.2821170681691806e-18,
+            0.5197911929800468,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.4455737563816918
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "metrics": {
+        "conditional_average_fidelity": 0.962668422280847,
+        "conditional_entanglement_fidelity": 0.9440026334212706,
+        "retrieval_success_probability": 0.5544262436183083,
+        "unconditional_target_overlap": 0.5337286372151334,
+        "state_independent_heralding_assumed": true
+      },
+      "cptp": {
+        "input_dimension": 2,
+        "output_dimension": 3,
+        "tp_max_error": 5.583328776094906e-16,
+        "choi_min_eigenvalue": 0.008128430721932228
+      },
+      "metadata": {
+        "family": "atomic_ensemble",
+        "storage_model": "markov",
+        "storage_age_s": 1.0,
+        "total_write_store_read_s": 1.0003,
+        "temperatures_K": {
+          "write": 4.2,
+          "storage": 10,
+          "read": 4.2
+        },
+        "control": {},
+        "network_activity": {
+          "attempt_rate_Hz": 0,
+          "coherence_loss_per_attempt": 0
+        },
+        "input_evidence_kind": "hypothetical",
+        "result_evidence_kind": "computed",
+        "provenance": [
+          {
+            "kind": "chosen_software_test_parameters",
+            "not_a_material_prediction": true
+          }
+        ],
+        "noise_budget": [
+          "phenomenological_relaxation",
+          "independent_markov_dephasing",
+          "write_depolarization",
+          "read_depolarization",
+          "independent_erasure"
+        ],
+        "optical_interface": {
+          "eta_write": 0.8,
+          "eta_read": 0.7,
+          "write_depolarizing_p": 0.01,
+          "read_depolarizing_p": 0.02,
+          "write_duration_s": 0.0001,
+          "read_duration_s": 0.0002,
+          "thermal_transition_s": 0,
+          "logical_encoding": "abstract_qubit",
+          "protocol": "supplied_effective_write_read_channel",
+          "bandwidth_Hz": null,
+          "wavelength_nm": null,
+          "modes": 1
+        },
+        "backend": "analytic",
+        "additional_pure_coherence": [
+          1.0,
+          0.0
+        ],
+        "scope": "parameterized qubit write-store-read model; hardware validation pending",
+        "age_semantics": "apply complete channel once to the original input state",
+        "assumptions": [
+          "state-independent heralding",
+          "independent specified noise sources",
+          "constant temperature within each stage",
+          "no unmodeled thermal transitions"
+        ]
+      },
+      "validated_for_hardware": false
+    },
+    {
+      "schema": "westquant_memory_channel_v1",
+      "basis_input": [
+        "0",
+        "1"
+      ],
+      "basis_output": [
+        "0",
+        "1",
+        "erasure"
+      ],
+      "vectorization": "column",
+      "kraus": [
+        {
+          "real": [
+            [
+              -5.566570978896451e-17,
+              2.1753595169793305e-17
+            ],
+            [
+              0.08107400256627387,
+              9.001022434759626e-17
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.1642226960602057,
+              -5.617589287186741e-17
+            ],
+            [
+              -3.6989260385421095e-16,
+              0.22386521374427998
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              1.9936289646063312e-17,
+              -0.4494038935886898
+            ],
+            [
+              2.2037075832259132e-16,
+              -9.814688660125087e-17
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.6878701521233179,
+              7.968778266071848e-17
+            ],
+            [
+              9.471401616582018e-17,
+              -0.5046067186216486
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.7023478952943796,
+              0.0
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.7023478952943796
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "conditional_kraus": [
+        {
+          "real": [
+            [
+              -7.820042495999827e-17,
+              3.0559933451577873e-17
+            ],
+            [
+              0.11389455874947794,
+              1.2644836150319296e-16
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.2307036893748663,
+              -7.891714148156355e-17
+            ],
+            [
+              -5.196333419733741e-16,
+              0.3144908223560297
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              2.8006942305383756e-17,
+              -0.6313325670425648
+            ],
+            [
+              3.0958173379835543e-16,
+              -1.3787892528121758e-16
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        },
+        {
+          "real": [
+            [
+              -0.9663352612815531,
+              1.1194716625033602e-16
+            ],
+            [
+              1.330563526795023e-16,
+              -0.7088827212207051
+            ]
+          ],
+          "imag": [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      ],
+      "choi": {
+        "real": [
+          [
+            0.5001344400834392,
+            -8.919225948808921e-18,
+            0.0,
+            -5.454893679084369e-17,
+            0.3103401513455419,
+            0.0
+          ],
+          [
+            -8.919225948808921e-18,
+            0.006572993892116181,
+            0.0,
+            -9.727182579264317e-17,
+            -1.2330192656941565e-16,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.49329256602444477,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            -5.454893679084369e-17,
+            -9.727182579264317e-17,
+            0.0,
+            0.20196385957267443,
+            -8.67922580548688e-18,
+            0.0
+          ],
+          [
+            0.3103401513455419,
+            -1.2330192656941565e-16,
+            0.0,
+            -8.67922580548688e-18,
+            0.3047435744028798,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.49329256602444477
+          ]
+        ],
+        "imag": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ]
+      },
+      "metrics": {
+        "conditional_average_fidelity": 0.8022292620920233,
+        "conditional_entanglement_fidelity": 0.7033438931380348,
+        "retrieval_success_probability": 0.5067074339755552,
+        "unconditional_target_overlap": 0.4064955308547522,
+        "state_independent_heralding_assumed": true
+      },
+      "cptp": {
+        "input_dimension": 2,
+        "output_dimension": 3,
+        "tp_max_error": 1.1102230246251565e-15,
+        "choi_min_eigenvalue": 0.006572993892116241
+      },
+      "metadata": {
+        "family": "atomic_ensemble",
+        "storage_model": "markov",
+        "storage_age_s": 10.0,
+        "total_write_store_read_s": 10.0003,
+        "temperatures_K": {
+          "write": 4.2,
+          "storage": 10,
+          "read": 4.2
+        },
+        "control": {},
+        "network_activity": {
+          "attempt_rate_Hz": 0,
+          "coherence_loss_per_attempt": 0
+        },
+        "input_evidence_kind": "hypothetical",
+        "result_evidence_kind": "computed",
+        "provenance": [
+          {
+            "kind": "chosen_software_test_parameters",
+            "not_a_material_prediction": true
+          }
+        ],
+        "noise_budget": [
+          "phenomenological_relaxation",
+          "independent_markov_dephasing",
+          "write_depolarization",
+          "read_depolarization",
+          "independent_erasure"
+        ],
+        "optical_interface": {
+          "eta_write": 0.8,
+          "eta_read": 0.7,
+          "write_depolarizing_p": 0.01,
+          "read_depolarizing_p": 0.02,
+          "write_duration_s": 0.0001,
+          "read_duration_s": 0.0002,
+          "thermal_transition_s": 0,
+          "logical_encoding": "abstract_qubit",
+          "protocol": "supplied_effective_write_read_channel",
+          "bandwidth_Hz": null,
+          "wavelength_nm": null,
+          "modes": 1
+        },
+        "backend": "analytic",
+        "additional_pure_coherence": [
+          1.0,
+          0.0
+        ],
+        "scope": "parameterized qubit write-store-read model; hardware validation pending",
+        "age_semantics": "apply complete channel once to the original input state",
+        "assumptions": [
+          "state-independent heralding",
+          "independent specified noise sources",
+          "constant temperature within each stage",
+          "no unmodeled thermal transitions"
+        ]
+      },
+      "validated_for_hardware": false
+    }
+  ]
+}

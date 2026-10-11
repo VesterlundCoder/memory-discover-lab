@@ -1,0 +1,340 @@
+{
+  "schema": "westquant_evidence_v0.2",
+  "search_date": "2026-10-09",
+  "scope": "Seven pilot evidence records; not exhaustive SOTA map or approved network profiles",
+  "records": [
+    {
+      "id": "Eu151_YSO_AFC_20ms",
+      "species": "151Eu3+:Y2SiO5",
+      "source": {
+        "url": "https://arxiv.org/abs/2109.06669",
+        "doi": "10.1038/s41534-022-00541-3",
+        "publication_status": "peer_reviewed",
+        "review_status": "abstract_reviewed_only"
+      },
+      "conditions": {
+        "write_temperature_K": null,
+        "storage_temperature_K": null,
+        "read_temperature_K": null,
+        "thermal_transition": null,
+        "photon_input": "around one photon per mode; mu_in=0.92 +/- 0.04 per qubit",
+        "readout_mode": "AFC spin-wave readout; arbitrary-time capability not audited",
+        "network_activity": "not established by reviewed abstract"
+      },
+      "measurements": [
+        {
+          "quantity": "memory_output_qubit_fidelity",
+          "value": 0.85,
+          "unit": "dimensionless",
+          "uncertainty": 0.02,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Abstract",
+          "storage_time_s": 0.02
+        },
+        {
+          "quantity": "qubit_storage_time",
+          "value": 0.02,
+          "unit": "s",
+          "uncertainty": null,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Abstract"
+        }
+      ],
+      "limitations": [
+        "Storage of modes at 50/100 ms does not establish same qubit fidelity there",
+        "Temperature and efficiency need full paper/supplement review"
+      ]
+    },
+    {
+      "id": "Eu151_YSO_NLPE_5p6s",
+      "species": "151Eu3+:Y2SiO5",
+      "source": {
+        "url": "https://arxiv.org/html/2511.12537v2",
+        "doi": null,
+        "publication_status": "preprint",
+        "review_status": "main_text_and_selected_supplement_reviewed",
+        "source_version": "arXiv:2511.12537v2, 2025-12-01"
+      },
+      "conditions": {
+        "write_temperature_K": 1.65,
+        "storage_temperature_K": 1.65,
+        "read_temperature_K": 1.65,
+        "temperature_evidence": "Common memory-crystal cryostat setpoint; not separate temperature measurements for each pulse",
+        "thermal_transition": "no temperature change reported in reviewed setup",
+        "photon_input": "weak coherent pulses at single-photon level; not a heralded Fock-state input claim",
+        "readout_mode": "NLPE with DD; scheduling constraints require supplementary audit",
+        "network_activity": "not tested as concurrent repeater workload"
+      },
+      "measurements": [
+        {
+          "quantity": "memory_output_qubit_fidelity",
+          "value": 0.88,
+          "unit": "dimensionless",
+          "uncertainty": 0.021,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Abstract and main text: time-bin experiment",
+          "storage_time_s": 5.6
+        },
+        {
+          "quantity": "retrieval_efficiency",
+          "value": 0.082,
+          "unit": "dimensionless",
+          "uncertainty": 0.005,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "v2 main text, 5.600032 s readout",
+          "storage_time_s": 5.6
+        },
+        {
+          "quantity": "storage_intensity_1e_lifetime",
+          "value": 27.6,
+          "unit": "s",
+          "uncertainty": 0.5,
+          "evidence_kind": "reported_fit_to_experiment",
+          "source_location": "v2, Fig. 2d fit; m=1.70"
+        },
+        {
+          "quantity": "hahn_echo_T2",
+          "value": 18.7,
+          "unit": "s",
+          "uncertainty": 0.7,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "v2 main text, Fig. 2c and caption"
+        },
+        {
+          "quantity": "temperature",
+          "value": 1.65,
+          "unit": "K",
+          "uncertainty": null,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Main text experimental setup"
+        }
+      ],
+      "limitations": [
+        "No qubit-fidelity measurement at 27.6 s inferred",
+        "No full channel reconstructed",
+        "Preprint status; independent replication not verified",
+        "v1 superseded in this catalog; use v2-specific Hahn and lifetime fit values"
+      ]
+    },
+    {
+      "id": "Er167_YSO_single_nuclear_readout",
+      "species": "167Er3+:Y2SiO5",
+      "source": {
+        "url": "https://www.nature.com/articles/s41467-026-77060-8",
+        "doi": "10.1038/s41467-026-77060-8",
+        "publication_status": "peer_reviewed",
+        "review_status": "abstract_and_selected_main_text_reviewed"
+      },
+      "conditions": {
+        "write_temperature_K": null,
+        "storage_temperature_K": null,
+        "read_temperature_K": null,
+        "reported_temperature_upper_bound_K": 1.8,
+        "temperature_evidence": "Main text gives <1.8 K; exact stage temperatures remain unknown",
+        "thermal_transition": "no phase-specific transition reviewed",
+        "photon_input": "optical initialization/control/readout; incoming photonic qubit storage not established",
+        "readout_mode": "single-shot nuclear spin measurement; not coherent photon retrieval",
+        "network_activity": "multiplexed optical addressing; active repeater workload not established"
+      },
+      "measurements": [
+        {
+          "quantity": "single_shot_readout_fidelity",
+          "value": 0.91,
+          "unit": "dimensionless",
+          "uncertainty": 0.02,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Abstract"
+        },
+        {
+          "quantity": "reported_spin_coherence_lower_bound",
+          "value": 0.2,
+          "unit": "s",
+          "uncertainty": null,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Abstract; protocol details need full audit"
+        },
+        {
+          "quantity": "magnetic_field",
+          "value": 6.8,
+          "unit": "T",
+          "uncertainty": null,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Main text Results"
+        },
+        {
+          "quantity": "nuclear_spin_I",
+          "value": 3.5,
+          "unit": "dimensionless",
+          "uncertainty": null,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Main text Results, level structure",
+          "parameter_scope": "isotope-specific spin quantum number"
+        }
+      ],
+      "limitations": [
+        "Readout fidelity is not a memory-process fidelity",
+        "No eta_write or photon retrieval efficiency inferred"
+      ]
+    },
+    {
+      "id": "NV_13C_host_specific_hyperfine",
+      "species": "NV centre with one 13C nuclear spin in isotope-engineered diamond",
+      "source": {
+        "url": "https://www.nature.com/articles/s41534-022-00637-w",
+        "doi": "10.1038/s41534-022-00637-w",
+        "publication_status": "peer_reviewed",
+        "review_status": "selected_main_text_reviewed"
+      },
+      "conditions": {
+        "write_temperature_K": 4,
+        "storage_temperature_K": 4,
+        "read_temperature_K": 4,
+        "temperature_evidence": "Common reported setup temperature, not separate stage measurements",
+        "thermal_transition": "none reported in reviewed setup",
+        "photon_input": "network entangling primitive; not incoming-photon storage",
+        "readout_mode": "repetitive nuclear spin readout via NV",
+        "network_activity": "single-node repeated remote-entanglement primitive; optical pi pulses omitted"
+      },
+      "measurements": [
+        {
+          "quantity": "hyperfine_A_parallel_over_2pi",
+          "value": 80,
+          "unit": "Hz",
+          "uncertainty": 1,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Main text System overview",
+          "parameter_scope": "specific NV-nuclear-spin pair, NOT universal 13C constant"
+        },
+        {
+          "quantity": "hyperfine_A_perpendicular_over_2pi",
+          "value": 271,
+          "unit": "Hz",
+          "uncertainty": 4,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Main text System overview",
+          "parameter_scope": "specific NV-nuclear-spin pair, NOT universal 13C constant"
+        },
+        {
+          "quantity": "temperature",
+          "value": 4,
+          "unit": "K",
+          "uncertainty": null,
+          "evidence_kind": "reported_experimental_measurement",
+          "source_location": "Main text System overview"
+        }
+      ],
+      "limitations": [
+        "Selected parameters can constrain Hamiltonian for this specific sample",
+        "Not transferable unchanged to a different host/site or nuclear position",
+        "Activity protocol omission must be modeled when comparing full repeater operation"
+      ]
+    },
+    {
+      "id": "Eu_molecular_ODNMR_2026",
+      "species": "Eu-based molecular crystal",
+      "source": {
+        "url": "https://www.nature.com/articles/s41563-026-02539-0",
+        "doi": "10.1038/s41563-026-02539-0",
+        "publication_status": "peer_reviewed",
+        "review_status": "indexed_main_text_and_supplement_reviewed"
+      },
+      "conditions": {
+        "write_temperature_K": null,
+        "storage_temperature_K": null,
+        "read_temperature_K": null,
+        "reported_experiment_temperature_K": 4.2,
+        "temperature_evidence": "Experiment setup value; do not reinterpret as separately measured memory stage temperatures.",
+        "thermal_transition": null,
+        "photon_input": "not an incoming photonic-qubit storage demonstration",
+        "readout_mode": "optically detected nuclear spin echo; not coherent photon retrieval",
+        "network_activity": "not established in reviewed material"
+      },
+      "measurements": [
+        {
+          "quantity": "nuclear_hahn_echo_T2",
+          "value": 0.00061,
+          "unit": "s",
+          "uncertainty": 4e-05,
+          "evidence_kind": "reported_fit_to_experiment",
+          "source_location": "Fig. 3d / main text"
+        }
+      ],
+      "limitations": [
+        "Temperature from second-crystal setup in supplementary material; first crystal has other conditions.",
+        "No eta_write, photon retrieval efficiency or photonic qubit fidelity inferred."
+      ]
+    },
+    {
+      "id": "La_anion_population_lifetime_2025",
+      "species": "La-; 3F3e bound excited state",
+      "source": {
+        "url": "https://journals.aps.org/pra/abstract/10.1103/6641-mdhr",
+        "doi": "10.1103/6641-mdhr",
+        "publication_status": "peer_reviewed",
+        "review_status": "abstract_reviewed_only"
+      },
+      "conditions": {
+        "write_temperature_K": null,
+        "storage_temperature_K": null,
+        "read_temperature_K": null,
+        "reported_experiment_temperature_K": null,
+        "temperature_evidence": "Experiment setup value; do not reinterpret as separately measured memory stage temperatures.",
+        "thermal_transition": null,
+        "photon_input": "not an incoming photonic-qubit storage demonstration",
+        "readout_mode": "state-selective destructive photodetachment",
+        "network_activity": "not established in reviewed material"
+      },
+      "measurements": [
+        {
+          "quantity": "excited_state_population_lifetime",
+          "value": 132,
+          "unit": "s",
+          "uncertainty": 20,
+          "evidence_kind": "reported_fit_to_experiment",
+          "source_location": "Abstract, 3F3e"
+        }
+      ],
+      "limitations": [
+        "Population lifetime is not T2.",
+        "Beam storage up to 800 s is not a qubit-memory lifetime.",
+        "Isotope and precise thermal conditions not assigned from abstract."
+      ]
+    },
+    {
+      "id": "Pr_YSO_heralded_XY4_2026",
+      "species": "Pr3+:Y2SiO5",
+      "source": {
+        "url": "https://journals.aps.org/prl/abstract/10.1103/ftkb-pkvp",
+        "doi": "10.1103/ftkb-pkvp",
+        "publication_status": "peer_reviewed",
+        "review_status": "published_abstract_and_arxiv_end_matter_reviewed"
+      },
+      "conditions": {
+        "write_temperature_K": null,
+        "storage_temperature_K": null,
+        "read_temperature_K": null,
+        "reported_experiment_temperature_K": 3,
+        "temperature_evidence": "Experiment setup value; do not reinterpret as separately measured memory stage temperatures.",
+        "thermal_transition": null,
+        "photon_input": "telecom-heralded single photons",
+        "readout_mode": "conditional spin-wave AFC with XY4",
+        "network_activity": "not established in reviewed material"
+      },
+      "measurements": [
+        {
+          "quantity": "max_observed_nonclassical_crosscorrelation_storage_time",
+          "value": 0.00018,
+          "unit": "s",
+          "uncertainty": null,
+          "evidence_kind": "reported_experimental_observation",
+          "source_location": "Abstract; main text Fig. 3"
+        }
+      ],
+      "limitations": [
+        "Not a qubit fidelity.",
+        "3 ms is classical echo duration, not heralded single-photon duration.",
+        "Exact efficiency curve and reference plane not extracted here."
+      ]
+    }
+  ]
+}

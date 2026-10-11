@@ -1,0 +1,45 @@
+{
+  "config_hash": "174621795624b53a9dc2119b040070ca54f322c12b236df58e350df9541dad97",
+  "output": "v06logs/pipeline_full",
+  "steps": {
+    "datasets": {
+      "schema": "westquant_data_sync_v1",
+      "at": "2026-10-10T13:41:54.751644+00:00",
+      "sources": [
+        {
+          "source_id": "molecular_qubit_dataset",
+          "status": "failed",
+          "artifacts": [],
+          "imports": [],
+          "error": "DownloadError: molecular_qubit_dataset: HTTPError: HTTP Error 403: Forbidden"
+        },
+        {
+          "source_id": "cr_host_matrix_2022",
+          "status": "failed",
+          "artifacts": [],
+          "imports": [],
+          "error": "DownloadError: cr_host_matrix_2022: URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+        },
+        {
+          "source_id": "ciaaw_isotopes",
+          "status": "failed",
+          "artifacts": [],
+          "imports": [],
+          "error": "DownloadError: ciaaw_isotopes: URLError: <urlopen error Tunnel connection failed: 403 Forbidden>"
+        }
+      ],
+      "all_success": false,
+      "catalog": {
+        "artifacts": 0,
+        "candidates": 0,
+        "observations": 0
+      },
+      "accounted_bytes": 0
+    }
+  },
+  "status": "dataset_failure"
+}
+
+real	0m8.520s
+user	0m0.691s
+sys	0m0.067s

@@ -1,0 +1,97 @@
+{
+  "id": "teller2025_path_pair_5_6_270ns",
+  "family": "rare_earth_solid",
+  "storage_model": "measured_operating_point",
+  "evidence_kind": "fit_to_experiment",
+  "temperatures_K": {
+    "write": 3,
+    "storage": 3,
+    "read": 3
+  },
+  "temperature_note": "Single reported cryostat setpoint; no independent stage thermometry",
+  "provenance": [
+    {
+      "artifact_id": "6f140391419e7b974b1af95e032b115f32ea58097e9407b71306f4c45637aaef",
+      "sha256": "35e1c0b4053e3cc5357787b497024155d692d3c80a2279bac378063bda811bd7",
+      "source_id": "teller2025",
+      "url": "https://zenodo.org/api/records/14929997/files/5_yaxis2_F.csv/content",
+      "source_revision": "14929997:v1"
+    },
+    {
+      "artifact_id": "53b58b2095238ce2e9b92f4dda9e99ecb7e97ee19477fefc667ccd073472f691",
+      "sha256": "af2d36b0f550f2d6476e841b936b31ea2c470b33396bff3c17760246d3a1b463",
+      "source_id": "teller2025",
+      "url": "https://zenodo.org/api/records/14929997/files/5_yaxis2_Fmin.csv/content",
+      "source_revision": "14929997:v1"
+    },
+    {
+      "artifact_id": "0b5f5d248bc80c5fc328b409e92484d528ab1a07b61a1a2a701d6e99829d36d1",
+      "sha256": "52fe8aee8aa063db66e643c0d8da37a3be22107ce5b30465f6ca4f00ec25eb6d",
+      "source_id": "teller2025",
+      "url": "https://zenodo.org/api/records/14929997/files/5_yaxis2_Fmax.csv/content",
+      "source_revision": "14929997:v1"
+    },
+    {
+      "artifact_id": "c2f75e2a5da71157d0e19ad00b11aadbda9ffea20f5a2d8e0a994b36bc362725",
+      "sha256": "121af611cb1db493abfabfcb8dd8bcc935074f10ee81a15c167e8cd203cf0ab5",
+      "source_id": "teller2025_paper",
+      "url": "https://upcommons.upc.edu/server/api/core/bitstreams/42b57e3e-5b2c-4e4e-bd3a-5d546597259c/content",
+      "source_revision": null
+    },
+    {
+      "artifact_id": "29409878b9fe437b4cf9277a45387ad130ea0186e27cc069298d2778b9bab4b6",
+      "sha256": "778e217c83011126afb310dfc0a8140dea683d4b6bc1783c39699334a4d7cc9d",
+      "source_id": "teller2025_supplement",
+      "url": "https://journals.aps.org/prx/supplemental/10.1103/z6lc-qw2d/supplementary.pdf",
+      "source_revision": null
+    }
+  ],
+  "control": {
+    "optical_control_pulses": 2,
+    "radiofrequency_decoupling": false
+  },
+  "io": {
+    "protocol": "AFC_spin_wave_path_qubit",
+    "logical_encoding": "path",
+    "read_duration_s": 0,
+    "write_duration_s": 0,
+    "duration_note": "Whole 18 us point includes optical read; no extra latency supplied",
+    "wavelength_nm": 606,
+    "filter_bandwidth_Hz": 2000000.0,
+    "memory_bandwidth_Hz": null,
+    "modes": 2
+  },
+  "point": {
+    "temperature_K": 3,
+    "end_to_end_age_s": 1.8e-05,
+    "spin_storage_s": 8e-06,
+    "afc_rephasing_s": 1e-05,
+    "detection_window_s": 2.7e-07,
+    "conditional_average_fidelity": 0.9671968088636844,
+    "fidelity_standard_error": 0.0051670279683248554,
+    "signal_retrieval_probability": 0.014111999999999998,
+    "retrieval_standard_error_conditional_on_window_fraction": 0.0015824217774032304,
+    "photon_window_fraction": 0.42,
+    "window_fraction_uncertainty": null,
+    "retrieval_uncertainty_assumptions": "Independent component errors; temporal-acceptance uncertainty and covariance absent",
+    "loss_scope": "AFC x two-way optical transfer x demultiplexing AOD x temporal acceptance; excludes fiber coupling, filters, detector and analysis success",
+    "loss_is_direct_single_photon_measurement": false,
+    "efficiency_components": [
+      {
+        "name": "AFC",
+        "value": 0.16,
+        "standard_error": 0.01
+      },
+      {
+        "name": "two_way_optical_transfer",
+        "value": 0.42,
+        "standard_error": 0.02
+      },
+      {
+        "name": "demultiplexing_AOD",
+        "value": 0.5,
+        "standard_error": 0.04
+      }
+    ]
+  }
+}

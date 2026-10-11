@@ -1,0 +1,8 @@
+archive sha256: c64b94a573def9d999b65be7201947e9c2ce4e496aaf201650d7c1e3d44733aa
+archive files: 457
+public repo commit: de52b32f0c34a05cf4f6a0c01bca6ee087e6cb67
+Linux 6.18.44-fc-v114 x86_64
+cpus: 2
+ldd (Ubuntu GLIBC 2.39-0ubuntu8.9) 2.39
+Python 3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]
+Python 3.12.13 (main, Jul 18 2026, 17:02:19) [Clang 22.1.3 ]

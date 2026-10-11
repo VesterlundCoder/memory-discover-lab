@@ -1,0 +1,110 @@
+{
+  "schema": "westquant_data_sync_v1",
+  "at": "2026-10-10T08:29:43.889439+00:00",
+  "sources": [
+    {
+      "source_id": "molecular_qubit_dataset",
+      "status": "success",
+      "artifacts": [
+        {
+          "id": "2fdf058738313159dc65c3f7ea97d340f548c90ceba2e7d56977e60420a79764",
+          "source_id": "molecular_qubit_dataset",
+          "url": "https://raw.githubusercontent.com/MTD-group/Molecular_Qubit_Dataset/5263b1d86b39243e7405dde5bf7c58bbd8fcd677/Relaxation_time_data_08_02_24.csv",
+          "resolved_url": "https://raw.githubusercontent.com/MTD-group/Molecular_Qubit_Dataset/5263b1d86b39243e7405dde5bf7c58bbd8fcd677/Relaxation_time_data_08_02_24.csv",
+          "source_revision": "5263b1d86b39243e7405dde5bf7c58bbd8fcd677",
+          "sha256": "5c5e98b82f2e987b287ff2548dce1e3c992b3937cd17ceb928e337fd6182e91f",
+          "size_bytes": 47562,
+          "mime_type": "text/plain",
+          "fetched_at": "2026-10-10T08:20:00.392930+00:00",
+          "relative_path": "raw/5c5e98b82f2e987b287ff2548dce1e3c992b3937cd17ceb928e337fd6182e91f/Relaxation_time_data_08_02_24.csv",
+          "file_name": "Relaxation_time_data_08_02_24.csv",
+          "license": "not_verified",
+          "redistribution_approved": false
+        }
+      ],
+      "imports": [
+        {
+          "candidates": 149,
+          "observations": 421,
+          "observations_with_unverified_units": 421
+        }
+      ]
+    },
+    {
+      "source_id": "cr_host_matrix_2022",
+      "status": "success",
+      "artifacts": [
+        {
+          "id": "e833ff3a90dab10e7d4b6f8b48f5f36fbbbcaec41ae26f1322cc1560f808a203",
+          "source_id": "cr_host_matrix_2022",
+          "url": "https://zenodo.org/api/records/6828667/files/fig_3b_1.txt/content",
+          "resolved_url": "https://zenodo.org/api/records/6828667/files/fig_3b_1.txt/content",
+          "source_revision": "6828667",
+          "sha256": "dda414bd73caee357218a494c26e0086d6e728481ed953f9cd31594fe82b4d7b",
+          "size_bytes": 5032,
+          "mime_type": "text/plain",
+          "fetched_at": "2026-10-10T08:20:19.493620+00:00",
+          "relative_path": "raw/dda414bd73caee357218a494c26e0086d6e728481ed953f9cd31594fe82b4d7b/fig_3b_1.txt",
+          "file_name": "fig_3b_1.txt",
+          "license": {
+            "id": "cc-by-4.0"
+          },
+          "redistribution_approved": false
+        },
+        {
+          "id": "ebe4ead356fadcea11e637a6965a8b6d2c5ff0c86693b3603a0d63665d792026",
+          "source_id": "cr_host_matrix_2022",
+          "url": "https://zenodo.org/api/records/6828667/files/fig_3d_1.txt/content",
+          "resolved_url": "https://zenodo.org/api/records/6828667/files/fig_3d_1.txt/content",
+          "source_revision": "6828667",
+          "sha256": "05146dc024b56f7fd8edcf884a0ebfa37493ef788cbaf18b04c30c8addc1c556",
+          "size_bytes": 450,
+          "mime_type": "text/plain",
+          "fetched_at": "2026-10-10T08:20:26.665718+00:00",
+          "relative_path": "raw/05146dc024b56f7fd8edcf884a0ebfa37493ef788cbaf18b04c30c8addc1c556/fig_3d_1.txt",
+          "file_name": "fig_3d_1.txt",
+          "license": {
+            "id": "cc-by-4.0"
+          },
+          "redistribution_approved": false
+        }
+      ],
+      "imports": []
+    },
+    {
+      "source_id": "ciaaw_isotopes",
+      "status": "success",
+      "artifacts": [
+        {
+          "id": "530c5e8ee19117c9f0339b0caca055b8006c94e3708d6e048d8afedccd93b198",
+          "source_id": "ciaaw_isotopes",
+          "url": "https://www.ciaaw.org/isotopic-abundances.htm",
+          "resolved_url": "https://www.ciaaw.org/isotopic-abundances.htm",
+          "source_revision": "live_table_retrieval",
+          "sha256": "1ab770a48bb539d26ad2992a94b4c60d51743058b67f106796b754cd5035423b",
+          "size_bytes": 35125,
+          "mime_type": "text/html",
+          "fetched_at": "2026-10-10T08:20:32.292511+00:00",
+          "relative_path": "raw/1ab770a48bb539d26ad2992a94b4c60d51743058b67f106796b754cd5035423b/isotopic-abundances.htm",
+          "file_name": "isotopic-abundances.htm",
+          "license": "not_verified",
+          "redistribution_approved": false
+        }
+      ],
+      "imports": [
+        {
+          "isotopes": 289,
+          "elements": 84,
+          "observations": 289
+        }
+      ]
+    }
+  ],
+  "all_success": true,
+  "catalog": {
+    "artifacts": 7,
+    "candidates": 165,
+    "observations": 710
+  },
+  "accounted_bytes": 114935
+}

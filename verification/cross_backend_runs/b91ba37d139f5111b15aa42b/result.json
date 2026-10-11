@@ -1,0 +1,119 @@
+{
+  "run_id": "b91ba37d139f5111b15aa42b",
+  "config_hash": "b91ba37d139f5111b15aa42bf974bad54cf3d53ea20b031554d4721e0e6a7ec1",
+  "method": "analytic",
+  "model_id": "negative_ion_synthetic",
+  "parameters": {
+    "temperatures_K.storage": 80
+  },
+  "seeds": {
+    "bath": 1690287444703182395,
+    "parameter_uncertainty": 16281535851612481246,
+    "network": 14762796835233956546
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "qutip": "5.3.1",
+      "pyscf": "2.14.0",
+      "pycce": "1.1.1",
+      "ase": "3.29.0",
+      "maxwellbloch": "0.12.0",
+      "pynmrstar": "3.6.2",
+      "openpyxl": "3.1.5"
+    },
+    "git_commit": null
+  },
+  "source_sha256": "41570583e8b1b548eb739df8d37fd9b988c37ef6a007b080ef0044cb5d01b228",
+  "status": "success",
+  "metrics": [
+    {
+      "storage_age_s": 0.0,
+      "conditional_average_fidelity": 0.9527541452035769,
+      "conditional_entanglement_fidelity": 0.9291312178053655,
+      "retrieval_success_probability": 0.5599983200025199,
+      "unconditional_target_overlap": 0.53354072068944,
+      "state_independent_heralding_assumed": true
+    },
+    {
+      "storage_age_s": 0.0001,
+      "conditional_average_fidelity": 0.952735088042845,
+      "conditional_entanglement_fidelity": 0.9291026320642674,
+      "retrieval_success_probability": 0.55999776000448,
+      "unconditional_target_overlap": 0.5335295151816642,
+      "state_independent_heralding_assumed": true
+    },
+    {
+      "storage_age_s": 0.001,
+      "conditional_average_fidelity": 0.9525636252565839,
+      "conditional_entanglement_fidelity": 0.9288454378848758,
+      "retrieval_success_probability": 0.5599927200473197,
+      "unconditional_target_overlap": 0.5334286955255702,
+      "state_independent_heralding_assumed": true
+    },
+    {
+      "storage_age_s": 0.01,
+      "conditional_average_fidelity": 0.9508541011274169,
+      "conditional_entanglement_fidelity": 0.9262811516911253,
+      "retrieval_success_probability": 0.559942322970418,
+      "unconditional_target_overlap": 0.5324234541912346,
+      "state_independent_heralding_assumed": true
+    },
+    {
+      "storage_age_s": 0.1,
+      "conditional_average_fidelity": 0.934258770019512,
+      "conditional_entanglement_fidelity": 0.9013881550292681,
+      "retrieval_success_probability": 0.5594386015883677,
+      "unconditional_target_overlap": 0.5226604198213841,
+      "state_independent_heralding_assumed": true
+    },
+    {
+      "storage_age_s": 1.0,
+      "conditional_average_fidelity": 0.8092915752204822,
+      "conditional_entanglement_fidelity": 0.7139373628307232,
+      "retrieval_success_probability": 0.5544262436183083,
+      "unconditional_target_overlap": 0.4486924880414355,
+      "state_independent_heralding_assumed": true
+    },
+    {
+      "storage_age_s": 10.0,
+      "conditional_average_fidelity": 0.5986252821088327,
+      "conditional_entanglement_fidelity": 0.39793792316324905,
+      "retrieval_success_probability": 0.5067074339755552,
+      "unconditional_target_overlap": 0.30332788061025945,
+      "state_independent_heralding_assumed": true
+    }
+  ],
+  "raw_path": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/verification/cross_backend_runs/b91ba37d139f5111b15aa42b",
+  "gates": {
+    "all_grid_points_pass": false,
+    "last_passing_prefix_grid_age_s": 1,
+    "continuous_horizon_certified": false,
+    "right_censored": false
+  },
+  "network": {
+    "attempts": 2000,
+    "heralded": 401,
+    "retrieved_pairs": 114,
+    "quality_qualified_pairs": 114,
+    "conditional_Bell_fidelity": 0.8615419311105723,
+    "retrieved_fraction_95CI": [
+      0.047662768878229574,
+      0.06803573501296051
+    ],
+    "qualified_rate_per_s": 57.0,
+    "mean_success_probability_per_attempt": 0.06270708101070159,
+    "readout_latency_s": 0.0002,
+    "assumptions": [
+      "independent trials",
+      "no queue/capacity contention",
+      "fixed age after heralding",
+      "independent two-node memories"
+    ],
+    "workload_scope": "two-node channel benchmark, not SeQUeNCe/NetSquid"
+  },
+  "runtime_s": 0.037826343000233464
+}

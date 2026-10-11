@@ -1,0 +1,10 @@
+Saving MBSolve to /workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/propagation/propagation.qu
+{
+  "backend": "maxwellbloch",
+  "output": "runs/propagation/fields.npz",
+  "quantity": "semiclassical_Rabi_field_amplitude",
+  "evidence_kind": "computed",
+  "qubit_fidelity": null,
+  "native_frequency_unit": "2pi_Gamma",
+  "requires_quantum_noise_model_for_memory_channel": true
+}

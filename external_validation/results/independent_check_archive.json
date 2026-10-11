@@ -1,0 +1,231 @@
+{
+ "n_checks": 25,
+ "n_pass": 25,
+ "rows": [
+  {
+   "check": "raw source files match their SHA-256 directory names",
+   "independent": 14,
+   "lab": 14,
+   "abs_diff": 0,
+   "tolerance": 0,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "path qubits: mean of 30 state fidelities",
+   "independent": 0.9510824228990328,
+   "lab": 0.9510824228990328,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "Fig. 4 six-state mean vs Fig. 5 at 270 ns, pair (1,2)",
+   "independent": 0.9559608517940652,
+   "lab": 0.9559608517940651,
+   "abs_diff": 1.1102230246251565e-16,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": "data-consistency check inside one data set"
+  },
+  {
+   "check": "Fig. 4 six-state mean vs Fig. 5 at 270 ns, pair (5,6)",
+   "independent": 0.9671968088636844,
+   "lab": 0.9671968088636844,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": "data-consistency check inside one data set"
+  },
+  {
+   "check": "Fig. 4 six-state mean vs Fig. 5 at 270 ns, pair (9,10)",
+   "independent": 0.9227993011646175,
+   "lab": 0.9227993011646177,
+   "abs_diff": 2.220446049250313e-16,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": "data-consistency check inside one data set"
+  },
+  {
+   "check": "operating point: conditional average fidelity, pair (5,6), 270 ns",
+   "independent": 0.9671968088636844,
+   "lab": 0.9671968088636844,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "operating point: fidelity uncertainty (Fmax - Fmin)/2",
+   "independent": 0.0051670279683248554,
+   "lab": 0.0051670279683248554,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "time-bin qubits: mean of 60 state fidelities",
+   "independent": 0.9140479475068066,
+   "lab": 0.9140479475068066,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "Fig. 8a per-cell means vs Fig. 8b, worst cell",
+   "independent": 0.0,
+   "lab": 0.0,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": "data-consistency check inside one data set"
+  },
+  {
+   "check": "Fig. 3b density matrix: fidelity with |X>",
+   "independent": 0.9576996482999998,
+   "lab": 0.9576996482999998,
+   "abs_diff": 0.0,
+   "tolerance": 1e-09,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "Fig. 3b fidelity vs Fig. 4 X state of pair (5,6)",
+   "independent": 0.9576996482999998,
+   "lab": 0.9576996482973021,
+   "abs_diff": 2.6976199052342054e-12,
+   "tolerance": 1e-09,
+   "pass": true,
+   "note": "released matrix has 10 decimals"
+  },
+  {
+   "check": "hold-out: inverse-variance mean of cells 1,3,5,7,9",
+   "independent": 0.9224361065664543,
+   "lab": 0.9224361065664543,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "hold-out: standard error of that mean",
+   "independent": 0.003848376293699419,
+   "lab": 0.003848376293699419,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "hold-out: largest |z| over cells 2,4,6,8,10",
+   "independent": 2.3417323109381942,
+   "lab": 2.3417323109381942,
+   "abs_diff": 0.0,
+   "tolerance": 1e-09,
+   "pass": true,
+   "note": "threshold 3"
+  },
+  {
+   "check": "isotropic channel: six-state average fidelity returns the input",
+   "independent": 0.9671968088636843,
+   "lab": 0.9671968088636844,
+   "abs_diff": 1.1102230246251565e-16,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": "self-consistency of the construction"
+  },
+  {
+   "check": "entanglement fidelity (3F - 1)/2",
+   "independent": 0.9507952132955266,
+   "lab": 0.9507952132955266,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "two memories on a Bell pair: conditional Bell fidelity",
+   "independent": 0.90481857463723,
+   "lab": 0.9048185746372305,
+   "abs_diff": 4.440892098500626e-16,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "signal acceptance eta_AFC * eta_TW * eta_AOD * eta_D",
+   "independent": 0.014111999999999998,
+   "lab": 0.014111999999999998,
+   "abs_diff": 0.0,
+   "tolerance": 1e-15,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "its propagated standard error (independent components)",
+   "independent": 0.0015824217774032304,
+   "lab": 0.0015824217774032304,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "two-memory success probability eta^2",
+   "independent": 0.00019914854399999993,
+   "lab": 0.00019914854399999993,
+   "abs_diff": 0.0,
+   "tolerance": 1e-15,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "lab Choi matrix: trace equals input dimension",
+   "independent": 1.9999999999999998,
+   "lab": 2.0,
+   "abs_diff": 2.220446049250313e-16,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "lab Choi matrix: smallest eigenvalue is non-negative",
+   "independent": 0.00046291863331568244,
+   "lab": 0.00046291863331568244,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "lab Choi matrix vs matrix rebuilt from scratch, largest element difference",
+   "independent": 0.0,
+   "lab": 0.0,
+   "abs_diff": 0.0,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  },
+  {
+   "check": "SeQUeNCe: retrieved pairs against binomial expectation",
+   "independent": 79.65941759999997,
+   "lab": 87,
+   "abs_diff": 7.340582400000031,
+   "tolerance": null,
+   "pass": true,
+   "note": "87 of 400000 attempts; two-sided exact binomial p = 0.400; per seed [20, 32, 24, 11]"
+  },
+  {
+   "check": "SeQUeNCe: observed conditional Bell fidelity, worst seed",
+   "independent": 3.3306690738754696e-16,
+   "lab": 0.0,
+   "abs_diff": 3.3306690738754696e-16,
+   "tolerance": 1e-12,
+   "pass": true,
+   "note": ""
+  }
+ ]
+}

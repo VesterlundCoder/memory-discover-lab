@@ -1,0 +1,201 @@
+v06env13/lib/python3.12/site-packages/qutip/core/coefficient.py:199: FutureWarning: The signature f(t, args) is deprecated and will be removed in QuTiP 5.5. Please update your function to the pythonic signature f(t, **kwargs) to maintain compatibility.
+  op = FunctionCoefficient(base, args.copy(), style=function_style)
+Saving MBSolve to /tmp/tmpa72pppbn/propagation.qu
+v06env13/lib/python3.12/site-packages/pycce/bath/array.py:1917: FutureWarning: The 'delim_whitespace' keyword in pd.read_csv is deprecated and will be removed in a future version. Use ``sep='\s+'`` instead
+  all_spins = pd.read_csv(filepath, delim_whitespace=True, header=None, comment='%',
+{
+  "at": "2026-10-10T13:43:33.739308+00:00",
+  "source_sha256": "9c4490acf2e5a42e8e10007989eeb94b5e406b17f5d187ca310847581ee2edb7",
+  "tests_run": 86,
+  "successful": true,
+  "skipped": 0,
+  "scope": "software/solver tests; synthetic fixtures are not experimental baselines",
+  "hardware_validated": false,
+  "cross_backend_runs": {
+    "study_id": "analytic_qutip_conformance_v1",
+    "enumerated_run_count": 36,
+    "completed_runs": 36,
+    "statuses": {
+      "success": 36
+    },
+    "all_success": true,
+    "resumed_runs": 0,
+    "gate_pass_runs": 20,
+    "hardware_validated": false,
+    "output": "verify_lab/cross_backend_runs"
+  },
+  "cross_backend_comparison": {
+    "operating_point_pairs": 18,
+    "maximum_choi_difference": 3.9968028886505635e-15,
+    "tolerance": 1e-08,
+    "all_pass": true,
+    "comparisons": [
+      {
+        "model_id": "atomic_ensemble_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 4.2
+        },
+        "replicate": 0,
+        "max_choi_difference": 3.9968028886505635e-15,
+        "pass": true
+      },
+      {
+        "model_id": "atomic_ensemble_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 10
+        },
+        "replicate": 0,
+        "max_choi_difference": 2.220446049250313e-15,
+        "pass": true
+      },
+      {
+        "model_id": "atomic_ensemble_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 80
+        },
+        "replicate": 0,
+        "max_choi_difference": 3.9968028886505635e-15,
+        "pass": true
+      },
+      {
+        "model_id": "trapped_atom_ion_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 4.2
+        },
+        "replicate": 0,
+        "max_choi_difference": 3.9968028886505635e-15,
+        "pass": true
+      },
+      {
+        "model_id": "trapped_atom_ion_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 10
+        },
+        "replicate": 0,
+        "max_choi_difference": 2.220446049250313e-15,
+        "pass": true
+      },
+      {
+        "model_id": "trapped_atom_ion_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 80
+        },
+        "replicate": 0,
+        "max_choi_difference": 3.9968028886505635e-15,
+        "pass": true
+      },
+      {
+        "model_id": "rare_earth_solid_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 4.2
+        },
+        "replicate": 0,
+        "max_choi_difference": 3.9968028886505635e-15,
+        "pass": true
+      },
+      {
+        "model_id": "rare_earth_solid_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 10
+        },
+        "replicate": 0,
+        "max_choi_difference": 2.220446049250313e-15,
+        "pass": true
+      },
+      {
+        "model_id": "rare_earth_solid_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 80
+        },
+        "replicate": 0,
+        "max_choi_difference": 3.9968028886505635e-15,
+        "pass": true
+      },
+      {
+        "model_id": "defect_spin_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 4.2
+        },
+        "replicate": 0,
+        "max_choi_difference": 3.9968028886505635e-15,
+        "pass": true
+      },
+      {
+        "model_id": "defect_spin_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 10
+        },
+        "replicate": 0,
+        "max_choi_difference": 2.7755575615628914e-15,
+        "pass": true
+      },
+      {
+        "model_id": "defect_spin_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 80
+        },
+        "replicate": 0,
+        "max_choi_difference": 2.6645352591003757e-15,
+        "pass": true
+      },
+      {
+        "model_id": "molecular_spin_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 4.2
+        },
+        "replicate": 0,
+        "max_choi_difference": 3.9968028886505635e-15,
+        "pass": true
+      },
+      {
+        "model_id": "molecular_spin_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 10
+        },
+        "replicate": 0,
+        "max_choi_difference": 2.7755575615628914e-15,
+        "pass": true
+      },
+      {
+        "model_id": "molecular_spin_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 80
+        },
+        "replicate": 0,
+        "max_choi_difference": 2.6645352591003757e-15,
+        "pass": true
+      },
+      {
+        "model_id": "negative_ion_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 4.2
+        },
+        "replicate": 0,
+        "max_choi_difference": 3.3306690738754696e-15,
+        "pass": true
+      },
+      {
+        "model_id": "negative_ion_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 10
+        },
+        "replicate": 0,
+        "max_choi_difference": 2.9976021664879227e-15,
+        "pass": true
+      },
+      {
+        "model_id": "negative_ion_synthetic",
+        "parameters": {
+          "temperatures_K.storage": 80
+        },
+        "replicate": 0,
+        "max_choi_difference": 3.774758283725532e-15,
+        "pass": true
+      }
+    ]
+  }
+}
+
+real	0m22.084s
+user	0m35.614s
+sys	0m2.478s

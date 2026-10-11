@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-10",
+  "main_pages": 15,
+  "supplement_pages": 6,
+  "all_pages_rendered_and_visually_inspected": true,
+  "latex_overfull_boxes": 0,
+  "latex_unresolved_references": 0,
+  "reproduction_orchestrator": "completed successfully; numerical pipeline, figures, tables and reporting checks",
+  "automated_tests_passed": 75,
+  "new_hardware_experiments": 0,
+  "new_material_T2_verified": false
+}

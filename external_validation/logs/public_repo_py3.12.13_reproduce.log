@@ -1,0 +1,11 @@
+Running: repoenv/bin/python -m memorylab reproduce examples/teller2025_baseline.json --out baselines/teller2025 --offline
+Running: repoenv/bin/python -m memorylab.t2lab run --sequence --offline
+Running: repoenv/bin/python -m unittest discover -s tests -v
+Five figures and constructive channel example regenerated
+Three LaTeX tables and CSV counterparts regenerated
+Verified 10 reporting invariants; wrote evidence/claim_result_map.json
+Reproduction complete. Compile paper PDFs with make pdf.
+
+real	1m2.799s
+user	0m59.640s
+sys	0m1.240s

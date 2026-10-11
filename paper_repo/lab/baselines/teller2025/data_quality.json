@@ -1,0 +1,18 @@
+{
+  "reviewed_mapping_notes": [
+    "Figure 4: rows infidelity,basis,pair; 30 entries",
+    "Figure 8a header is misleading: actual rows infidelity,basis 0..5,cell 1..10; verified by exact reconstruction of Figure 8b",
+    "5_yaxis2_Fmin/max header lists five pairs but actual shape is 3x211; mapping 1,2 / 5,6 / 9,10 verified against Figure 4 averages at 270 ns",
+    "8b_Fmaxn.csv is the actual released filename, despite description saying Fmax",
+    "3a.csv says seconds in metadata but abscissa ranges 0.070..1183.278, with no header; quarantined from physical timing/noise inference until author unit clarification",
+    "T2 must remain null; window width is not storage duration"
+  ],
+  "excluded_from_physical_inference": [
+    {
+      "file": "3a.csv",
+      "reason": "Unclear abscissa unit: metadata says seconds; numeric extent is 0.070..1183.278 with no header",
+      "action": "retained with checksum, not used to estimate storage lifetime or pulse shape"
+    }
+  ],
+  "review_status": "computational source audit; external domain-expert signoff pending"
+}

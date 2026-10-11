@@ -1,0 +1,291 @@
+[
+ {
+  "file": "baselines/teller2025/catalog.sqlite",
+  "status": "differs (non-JSON)",
+  "size": [
+   1515520,
+   1515520
+  ]
+ },
+ {
+  "file": "baselines/teller2025/channel_samples.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/data_quality.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/discovery_gate.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/experimental_reanalysis.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/fetch_manifest.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/measured_point_profile.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/network_device.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/observations.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/qutip_channel_samples.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/qutip_two_node.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/readout_window_noise_fit.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/report.html",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/sequence_runs/seed_20261010.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/sequence_runs/seed_20261011.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/sequence_runs/seed_20261012.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/sequence_runs/seed_20261013.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/spatial_holdout.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "baselines/teller2025/summary.json",
+  "status": "differs",
+  "n_numeric": 0,
+  "max_abs": 0.0,
+  "max_rel": 0.0,
+  "worst": null,
+  "non_numeric_paths": [
+   "/environment/platform",
+   "/environment/python",
+   "/source_sha256"
+  ],
+  "n_non_numeric": 3
+ },
+ {
+  "file": "t2_runs/baseline/pr2026_XX_exponential.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/baseline/pr2026_XX_stretched.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/baseline/pr2026_XY16_exponential.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/baseline/pr2026_XY16_stretched.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/baseline/pr2026_XY4_exponential.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/baseline/pr2026_XY4_stretched.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/baseline/pr2026_none_exponential.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/baseline/pr2026_none_stretched.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/baseline/summary.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/baseline.log",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/experimental_decay/pr2026_XX_exponential.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/experimental_decay/pr2026_XX_stretched.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/experimental_decay/pr2026_XY16_exponential.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/experimental_decay/pr2026_XY16_stretched.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/experimental_decay/pr2026_XY4_exponential.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/experimental_decay/pr2026_XY4_stretched.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/experimental_decay/pr2026_none_exponential.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/experimental_decay/pr2026_none_stretched.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/experimental_decay/summary.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/hypothetical_network.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/hypothetical_network_device.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/hypothetical_sequence.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/markov_calculation.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/spin_bath_0pulse.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/spin_bath_1pulse.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/summary.json",
+  "status": "differs",
+  "n_numeric": 0,
+  "max_abs": 0.0,
+  "max_rel": 0.0,
+  "worst": null,
+  "non_numeric_paths": [
+   "/environment/platform",
+   "/environment/python"
+  ],
+  "n_non_numeric": 2
+ },
+ {
+  "file": "t2_runs/deterministic/synthetic_control/curve.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/synthetic_control/fit.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/table_reference.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic/table_unknown.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/deterministic_run.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/synthetic_demo/curve.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/synthetic_demo/fit.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/synthetic_demo_run.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_runs/tests_v06.log",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_data/mtd_commit.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_data/pr2026_metadata.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_data/processed/audit.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_data/processed/curves/pr2026_XX.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_data/processed/curves/pr2026_XY16.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_data/processed/curves/pr2026_XY4.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_data/processed/curves/pr2026_none.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_data/processed/molecular_rows.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_data/processed/quantum_readout.json",
+  "status": "differs",
+  "n_numeric": 0,
+  "max_abs": 0.0,
+  "max_rel": 0.0,
+  "worst": null,
+  "non_numeric_paths": [],
+  "n_non_numeric": 0
+ },
+ {
+  "file": "t2_data/source_lock.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "t2_data/t2.sqlite",
+  "status": "identical bytes"
+ }
+]

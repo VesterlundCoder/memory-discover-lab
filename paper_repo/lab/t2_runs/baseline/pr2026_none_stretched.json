@@ -1,0 +1,81 @@
+{
+  "schema": "westquant_t2_fit_v1",
+  "curve_hash": "67499544e799fb6600f745e9453191ecc4c13983d97fb0e86f47d10581fde870",
+  "status": "inconclusive",
+  "issues": [
+    "bootstrap_unstable"
+  ],
+  "target_definition": "apparent_retrieval_decay_scale",
+  "model": "stretched",
+  "apparent_decay_scale_s": 2.8876197091909554e-05,
+  "identified_T2_s": null,
+  "beta": 2.086612980232332,
+  "amplitude": 0.11759419574148783,
+  "background": 0.0007078252229760129,
+  "decay_factor": 1,
+  "conditional_bootstrap_95_interval_s": null,
+  "bootstrap_requested": 30,
+  "bootstrap_success": 28,
+  "seed": 20261010,
+  "goodness_statistic": 2.2133717613922226,
+  "degrees_of_freedom": 11,
+  "goodness_p_approx": 0.9975948908794151,
+  "heldout_standardized_rmse": 0.46751745251552307,
+  "times_s": [
+    2.3699999999999997e-05,
+    2.52e-05,
+    2.67e-05,
+    2.8199999999999998e-05,
+    2.9699999999999997e-05,
+    3.12e-05,
+    3.27e-05,
+    3.4200000000000005e-05,
+    3.57e-05,
+    3.72e-05,
+    3.87e-05,
+    4.02e-05,
+    4.1700000000000004e-05,
+    4.32e-05,
+    4.47e-05
+  ],
+  "fitted_values": [
+    0.06135326727962436,
+    0.05610782932507712,
+    0.051011020183352275,
+    0.046106407921340936,
+    0.04143060757123735,
+    0.0370130458986863,
+    0.03287595506082805,
+    0.029034574239185453,
+    0.02549753193888528,
+    0.022267377094931203,
+    0.019341224486675815,
+    0.016711479181740905,
+    0.014366605654795948,
+    0.012291909616486607,
+    0.01047030414704082
+  ],
+  "conditions": {
+    "material": "Pr3+:Y2SiO5",
+    "family": "rare_earth_solid",
+    "temperature_K": 3,
+    "temperature_scope": "cryostat stage setpoint",
+    "pulse_sequence": "none",
+    "field_T": null,
+    "field_note": "Residual field suspected; not quantitatively measured",
+    "input_regime": "classical_bright_pulses",
+    "wavelength_nm": 606
+  },
+  "provenance": [
+    {
+      "artifact_sha256": "99ba3ad206b95e03eecff24f8dad5da64b00cb3aa46d266915c6b5324a677950",
+      "url": "https://zenodo.org/api/records/21532904/files/fig1_norf.out/content",
+      "paper_doi": "10.1103/ftkb-pkvp"
+    }
+  ],
+  "limitations": [
+    "Gaussian errors/binomial trials and independence are model assumptions",
+    "Parametric bootstrap does not include shared systematics or model uncertainty",
+    "No T1, retrieval fidelity, or full quantum channel inferred from an envelope"
+  ]
+}

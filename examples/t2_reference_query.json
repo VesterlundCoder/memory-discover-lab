@@ -1,0 +1,15 @@
+{
+  "material_id": "ortu2022:151Eu3+:YSO",
+  "definition": "T2_spin_DD_Mims",
+  "conditions": {
+    "temperature_K": 4,
+    "temperature_qualifier": "approximately; cryostat",
+    "isotope_id": "Eu-151",
+    "charge_e": 3,
+    "host": "Y2SiO5",
+    "field_T": 0.00135,
+    "field_direction": "D1",
+    "pulse_sequence": "XY16",
+    "pulse_count": 16
+  }
+}

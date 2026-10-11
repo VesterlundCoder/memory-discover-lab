@@ -1,0 +1,7 @@
+{
+  "attempts": 100000,
+  "link_herald_probability": 1.0,
+  "attempt_interval_s": 0.001,
+  "storage_age_s": 1.8e-05,
+  "minimum_Bell_fidelity": 0.8
+}

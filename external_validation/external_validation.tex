@@ -1,0 +1,85 @@
+% External re-execution and independent recomputation.
+% Add to paper.tex with \input{external_validation}. Uses only packages the paper already loads.
+\section{External re-execution and independent recomputation}
+\label{sec:external}
+
+\paragraph{Scope.}
+The delivered archive (\code{WestQuant\_Memory\_Discovery\_Lab\_v0.6.zip}, 457 files, SHA-256 \code{c64b94a5\ldots d44733aa}) and the public repository (commit \code{de52b32}) were re-executed on 10~October 2026 in a separately provisioned cloud environment. The work was carried out at the author's request by an AI assistant (Claude, Anthropic), which had no part in writing the lab and no access to the author's machine. It tests whether the computation is reproducible and whether its numbers follow from the released data. It is not a replication by an independent research group, it involves no hardware, and it uses the same released data as Section~\ref{sec:results-teller}. % adjust the label to the paper's own
+
+\paragraph{Protocol.}
+The archive was unpacked twice into fresh directories; a third copy was kept untouched as the reference. Two virtual environments were built from \code{constraints-tested.txt}: all fifteen pinned packages installed at exactly the pinned versions under CPython~3.12.3 (GCC~13.3) and CPython~3.12.13 (Clang~22.1), on Linux~6.18.44, x86\_64, glibc~2.39, two CPU cores. The recorded author runtime is CPython~3.12.14. In each environment four commands were run without network access to the data sources:
+\begin{itemize}[leftmargin=*,itemsep=0pt,topsep=2pt]
+\item \code{python -m unittest discover -s tests -v}
+\item \code{python -m memorylab reproduce examples/teller2025\_baseline.json -{}-offline}
+\item \code{python -m memorylab.t2lab run -{}-offline -{}-sequence}
+\item \code{python scripts/verify\_lab.py -{}-cross-backend}
+\end{itemize}
+Every output file under \code{baselines}, \code{t2\_runs} and \code{t2\_data} (caches excluded) was then compared with the archived file, first by SHA-256 and, where bytes differed, value by value. Separately, the Teller et~al.\ operating point was recomputed from the released CSV files by a script that uses NumPy and SciPy only and imports nothing from the lab.
+
+\begin{table}[tbp]
+\centering\small
+\begin{tabular}{p{.40\linewidth}p{.24\linewidth}p{.24\linewidth}}
+\toprule Step & CPython 3.12.3 & CPython 3.12.13 \\
+\midrule
+Automated tests & 75 of 75 pass & 75 of 75 pass \\
+Teller baseline, offline & completes & completes \\
+$T_2$ workflow, offline & completes & completes \\
+Output files compared & 65 & 65 \\
+\quad byte-identical to the archive & 61 & 62 \\
+\quad numerical values that differ & 0 & 0 \\
+\code{verify\_lab.py -{}-cross-backend} & fails at import & 86 tests pass; max.\ Choi difference $4.0\times10^{-15}$ over 18 pairs \\
+\bottomrule
+\end{tabular}
+\caption{Re-execution of the archive in two environments. The files that are not byte-identical differ only in interpreter and platform strings, in a recorded source fingerprint, in the key order of one JSON file, and (first environment) in the page layout of an SQLite file whose three tables have identical contents.}
+\label{tab:external-rerun}
+\end{table}
+
+\paragraph{Re-execution result.}
+No numerical value differs from the archive in either environment (Table~\ref{tab:external-rerun}). The four SeQUeNCe result files are byte-identical, so the event simulation is deterministic for a given seed across the two interpreters. The maximum analytic--QuTiP Choi difference, $3.9968\times10^{-15}$, equals the archived value.
+
+The public repository was then completed with the archive's cached sources and \nolinkurl{scripts/reproduce.py} was run offline under CPython~3.12.13. It finished in 63~s. Of the 186 files listed in \nolinkurl{SHA256SUMS}, 176 were unchanged. The ten that changed are two result summaries (interpreter and platform strings only), three logs, and five figure PDFs whose pages render identically at 80~dpi and differ in the embedded creation date. Evaluation step~1 passed with the archived headline numbers (73 channel-age points, 90 processed fidelities, maximum full-Choi discrepancy $1.3\times10^{-14}$); five of its eight output files are byte-identical and the other three differ in timestamps, absolute paths and timings.
+
+\paragraph{Independent recomputation.}
+Twenty-five quantities were recomputed without the lab's code and compared with the lab's reported values; all agree, the largest difference being $2.7\times10^{-12}$, set by the ten printed decimals of the released density matrix (Table~\ref{tab:external-independent}). The qubit-plus-erasure Choi matrix was rebuilt from the four isotropic Kraus operators and two erasure operators with column vectorisation and equals the lab's matrix element by element.
+
+\begin{table}[tbp]
+\centering\small
+\begin{tabular}{p{.50\linewidth}p{.20\linewidth}p{.18\linewidth}}
+\toprule Quantity & Recomputed & $|\Delta|$ to lab \\
+\midrule
+Path qubits, mean of 30 state fidelities & 0.951082 & 0 \\
+Time-bin qubits, mean of 60 state fidelities & 0.914048 & 0 \\
+Pair $\{5,6\}$, 270~ns: conditional average fidelity & 0.967197 & 0 \\
+Its uncertainty $(F_{\max}-F_{\min})/2$ & 0.005167 & 0 \\
+Fig.~4 means against Fig.~5 at 270~ns, three pairs & -- & $\le 2.2\times10^{-16}$ \\
+Fig.~8a cell means against Fig.~8b, ten cells & -- & 0 \\
+Hold-out fit, cells 1,3,5,7,9 & $0.92244\pm0.00385$ & 0 \\
+Largest $|z|$ on cells 2,4,6,8,10 (threshold 3) & 2.342 & 0 \\
+Entanglement fidelity $(3F-1)/2$ & 0.950795 & 0 \\
+Two-memory conditional Bell fidelity & 0.904819 & $4.4\times10^{-16}$ \\
+Acceptance $\eta_{\mathrm{AFC}}\eta_{\mathrm{TW}}\eta_{\mathrm{AOD}}\eta_{D}$ & $0.014112\pm0.001582$ & 0 \\
+Choi matrix, largest element difference & -- & 0 \\
+\bottomrule
+\end{tabular}
+\caption{Selected independent recomputations for the Teller et~al.\ operating point. Values are rounded for display; differences are computed at full precision. The complete list of 25 checks is in \nolinkurl{results/independent_check_archive.json}.}
+\label{tab:external-independent}
+\end{table}
+
+\paragraph{Audit against the article text.}
+The reviewed parameters were checked against the text of the cached article and supplement. The abstract gives average fidelities of $95^{+2}_{-2}\,\%$ for path qubits and $91^{+2}_{-2}\,\%$ for time-bin qubits; the recomputed means are 95.1\,\% and 91.4\,\%. Supplement Table~I lists, for pair $\{5,6\}$, $\eta_{\mathrm{AFC}}=16(1)\,\%$, $\eta_{\mathrm{TW}}=42(2)\,\%$ and $\eta_{\mathrm{AOD}}=50(4)\,\%$, and defines $\eta_{\mathrm{tot}}=\eta_{\mathrm{AFC}}\eta_{\mathrm{TW}}\eta_{\mathrm{AOD}}\eta_D$ with $\eta_D$ the fraction of the photon inside the detection window; the article states that a 270~ns window contains 42\,\% of the photon. The article also gives 8~$\mu$s spin-wave storage, 18~$\mu$s total storage, a 10~$\mu$s atomic-frequency comb, 3~K and 606~nm. The product $\eta_{\mathrm{AFC}}\eta_{\mathrm{TW}}$ is 6.7\,\% for pair $\{5,6\}$ and 1.7\,\% for pair $\{9,10\}$, matching the range $1.7(2)$--$6.7(5)\,\%$ quoted in the article. All values used by the lab agree with the text.
+
+\paragraph{Additional network seeds.}
+The four archived seeds returned 20, 32, 24 and 11 pairs per $10^5$ attempts against an expectation of 19.9, a spread that a homogeneity test puts at $p=0.015$. To see whether the simulation is over-dispersed, the unchanged workload was run for forty further seeds. They returned 790 pairs against 796.6 expected (exact binomial $p=0.83$), with a variance-to-mean ratio of 0.96 and a homogeneity $p$ of 0.54. The spread of the original four seeds is therefore consistent with chance.
+
+\paragraph{Defects found.}
+\begin{enumerate}[leftmargin=*,itemsep=1pt]
+\item The archived Teller summary records the source fingerprint \code{98def86d\ldots}, while the shipped source, which is identical to the public repository's, hashes to \code{9c4490ac\ldots}. The archived result was therefore written by an earlier revision of the code. Its numbers are reproduced exactly by the shipped code, but the recorded provenance does not match.
+\item \nolinkurl{t2_data/processed/quantum_readout.json} is written with a key order that changes between runs.
+\item \code{scripts/verify\_lab.py} fails under CPython~3.12.3 with ``Start directory is not importable'' because it reuses the default test loader for two start directories. It runs under 3.12.13.
+\item The full pipeline example, \nolinkurl{examples/pipeline_full.json}, needs network access to its data sources and stops with \code{dataset\_failure} without it; with \code{-{}-skip-fetch} it completes and generates 16 candidates.
+\item A fresh public clone cannot run the offline reproduction, the figure script or two tests because the source caches are not tracked.
+\item Figure PDFs are not byte-reproducible because of embedded creation dates.
+\end{enumerate}
+
+\paragraph{What this does and does not establish.}
+The computation is reproducible to the last bit of every reported number in two environments that the author did not control, and the reported values for the memory-array experiment follow from the released data by an independent route. It does not test the physical assumptions: the isotropic-channel hypothesis, state-independent acceptance, and the use of classically measured efficiencies remain as stated in Section~\ref{sec:results-teller}. The recomputation relies on the same reading of the released file layouts, which is supported by the exact figure-to-figure agreements but not by the data's authors. Article values were read from extracted PDF text. No coherence time is identified, and the PDFs of this paper were not rebuilt.

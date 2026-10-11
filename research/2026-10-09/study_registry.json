@@ -1,0 +1,248 @@
+{
+  "schema": "westquant_studies_v0.3",
+  "search_date": "2026-10-09",
+  "scope": "14 studier med varierande granskningsdjup; ingen global SOTA-rangordning.",
+  "studies": [
+    {
+      "id": "S01",
+      "title": "Minute-Scale Photonic Quantum Memory",
+      "species": "151Eu3+:Y2SiO5",
+      "url": "https://arxiv.org/html/2511.12537v2",
+      "doi": null,
+      "year": 2025,
+      "publication_status": "preprint_v2_2025-12-01",
+      "demonstrated_task": "Time-bin-kvantbitar i svaga koherenta pulser på enfotonnivå; NLPE och DD.",
+      "finding": "Efter 5,6 s: fidelity 88,0 ± 2,1 %, effektivitet 8,2 %. Separat 1/e-lagringstid 27,6 ± 0,5 s; Hahn-T2 18,7 ± 0,7 s.",
+      "experiment_temperature": "1,65 K, kryostatinställning för minneskristallen; RF-uppvärmning diskuteras.",
+      "dataset_source_ids": [],
+      "review_status": "main_text_and_selected_supplement_reviewed",
+      "remaining_gap": "Ingen visad 88 % qubitfidelity vid 27,6 eller 42 s. Ingen oberoende replikation granskad. Versionsspecifika värden.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S02",
+      "title": "Long-Lived Telecom-Heralded Single-Photon Storage in an Absorptive Spin-Rephased Quantum Memory",
+      "species": "Pr3+:Y2SiO5",
+      "url": "https://journals.aps.org/prl/abstract/10.1103/ftkb-pkvp",
+      "doi": "10.1103/ftkb-pkvp",
+      "year": 2026,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "AFC-spinnvågslagring av härolderade fotoner med XY4.",
+      "finding": "Klassiska ekon upp till cirka 3 ms; icke-klassiska korrelationer med härolderade fotoner upp till 180 µs.",
+      "experiment_temperature": "3 K för minneskristallen; separat metadata behövs för filter och fotonkälla.",
+      "dataset_source_ids": [],
+      "review_status": "published_abstract_and_arxiv_main_text_end_matter_reviewed",
+      "remaining_gap": "Korrelation och g2 är inte en uppmätt qubitprocessfidelity.",
+      "checked_on": "2026-10-09",
+      "additional_links": [
+        "https://arxiv.org/html/2609.02579v1"
+      ]
+    },
+    {
+      "id": "S03",
+      "title": "Enhancing Spin Coherence in Optically Addressable Molecular Qubits through Host-Matrix Control",
+      "species": "Fyra Cr(IV)-baserade molekylsystem",
+      "url": "https://journals.aps.org/prx/abstract/10.1103/PhysRevX.12.031028",
+      "doi": "10.1103/PhysRevX.12.031028",
+      "year": 2022,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Optiskt adresserbara molekylspinn och värdmatriskontroll.",
+      "finding": "En icke-isostrukturell värd ger brusokänsliga clock transitions som saknas i den isostrukturella kontrollen.",
+      "experiment_temperature": "Ej fullständigt extraherad här; temperaturserie ska granskas i datasetet.",
+      "dataset_source_ids": [
+        "D18"
+      ],
+      "review_status": "abstract_or_selected_text_reviewed",
+      "remaining_gap": "Ingen full fotonisk minneskanal demonstrerad i det granskade underlaget.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S04",
+      "title": "Optically detected nuclear magnetic resonance of coherent spins in a molecular complex",
+      "species": "Eu-baserad molekylkristall",
+      "url": "https://www.nature.com/articles/s41563-026-02539-0",
+      "doi": "10.1038/s41563-026-02539-0",
+      "year": 2026,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Optisk initiering/avläsning och koherent kärnspinnskontroll.",
+      "finding": "Hahn-T2,s 0,61 ± 0,04 ms; CPMG-8 når cirka 2 ms.",
+      "experiment_temperature": "4,2 K för spinnförsöken på den andra kristallen enligt supplementet.",
+      "dataset_source_ids": [
+        "D19"
+      ],
+      "review_status": "publisher_indexed_main_text_data_statement_and_supplement_reviewed",
+      "remaining_gap": "Optisk spinnavläsning bevisar inte lagring och återemission av en inkommande fotonkvantbit.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S05",
+      "title": "A high-resolution molecular spin-photon interface at telecommunications wavelengths",
+      "species": "Organoerbiumkomplex",
+      "url": "https://arxiv.org/abs/2505.17195",
+      "doi": "10.1126/science.ady8677",
+      "year": 2025,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Telekomövergångar, optisk spinnpolarisering och tillstånds-/platsselektiv åtkomst.",
+      "finding": "Molekylär spinn–fotonkoppling vid telekomvåglängder med upplösta optiska övergångar.",
+      "experiment_temperature": "Ej extraherad i detta register.",
+      "dataset_source_ids": [],
+      "review_status": "arxiv_abstract_and_publisher_metadata_reviewed",
+      "remaining_gap": "Rådatarepository och full skriv–lagra–läs-prestanda ej verifierade.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S06",
+      "title": "Molecular quantum nanosensors functioning in living cells",
+      "species": "Pentacen i p-terfenyl med Pluronic F127",
+      "url": "https://doi.org/10.1126/sciadv.aeb5422",
+      "doi": "10.1126/sciadv.aeb5422",
+      "year": 2026,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Molekylär spinnbaserad kvantgivare med optisk avläsning.",
+      "finding": "Datasetet ger T1/T2-kurvor både utanför och inne i celler.",
+      "experiment_temperature": "Fysiologiska villkor; exakt temperatur knyts till varje kurva vid import.",
+      "dataset_source_ids": [
+        "D17"
+      ],
+      "review_status": "dataset_readme_and_paper_metadata_reviewed",
+      "remaining_gap": "Givardemonstration, inte validerad kvantnätverksminnesfunktion.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S07",
+      "title": "Ultrafast all-optical coherence of molecular electron spins in room-temperature water solution",
+      "species": "K2IrCl6 / IrCl6-baserade spinn i vatten",
+      "url": "https://arxiv.org/abs/2407.19032",
+      "doi": "10.1126/science.ads0512",
+      "year": 2024,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Pump–probe-initiering och tidsupplöst optisk spinnkoherens.",
+      "finding": "Optiska och EPR-data kan jämföras över flera försöksvillkor.",
+      "experiment_temperature": "Optiska rumstemperaturförsök och separat temperaturberoende puls-EPR; blanda inte villkoren.",
+      "dataset_source_ids": [
+        "D16"
+      ],
+      "review_status": "dataset_readme_and_publication_metadata_reviewed",
+      "remaining_gap": "Ultrasnabb koherens är inte ett långlivat fotoniskt minne.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S08",
+      "title": "Lifetimes of bound excited states of the lanthanum negative ion and implications for laser cooling: Experiment and theory",
+      "species": "La−",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/6641-mdhr",
+      "doi": "10.1103/6641-mdhr",
+      "year": 2025,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Radiativa populationslivslängder via tillståndsselektiv fotodetachment.",
+      "finding": "3F3e: 132 ± 20 s. För 3F4e är livslängden ungefär fyra gånger kortare än beräknat.",
+      "experiment_temperature": "Kryogen DESIREE-anläggning; exakt prov-/stråltemperatur ej extraherad från fulltext.",
+      "dataset_source_ids": [
+        "D20"
+      ],
+      "review_status": "abstract_or_selected_text_reviewed",
+      "remaining_gap": "Livslängd för population, inte koherens-T2 eller minnesfidelity.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S09",
+      "title": "Initial-state control in mutual neutralization of Si− with Na+ or K+ revealing strong violations of Wigner’s spin-conservation rule",
+      "species": "Si− + Na+ / K+",
+      "url": "https://journals.aps.org/pra/abstract/10.1103/dpy6-pbz2",
+      "doi": "10.1103/dpy6-pbz2",
+      "year": 2026,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Tillståndsupplösta neutralisationsreaktioner vid låg kollisionsenergi.",
+      "finding": "Experimenten visar bidrag från spinnförbjudna reaktionskanaler.",
+      "experiment_temperature": "Kryogen lagringsring; reaktionsenergi är separat variabel.",
+      "dataset_source_ids": [
+        "D20"
+      ],
+      "review_status": "abstract_or_selected_text_reviewed",
+      "remaining_gap": "Kollisionsneutralisation är en annan process än fotodetachment; resultatet avgör inte fotonhypotesen.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S10",
+      "title": "Quantum coherence in a processable vanadyl complex: new tools for the search of molecular spin qubits",
+      "species": "VO(dpm)2",
+      "url": "https://doi.org/10.1039/C5SC04295J",
+      "doi": "10.1039/C5SC04295J",
+      "year": 2016,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Puls-EPR och AC-susceptometri för elektronspinn.",
+      "finding": "Temperatur, spinnrelaxation och processbarhet undersöks tillsammans.",
+      "experiment_temperature": "Temperaturserie; fulltext/supplement behöver granskas före numerisk import.",
+      "dataset_source_ids": [
+        "D15"
+      ],
+      "review_status": "abstract_reviewed_only",
+      "remaining_gap": "Specifika icke-observationer och temperaturgränser har inte verifierats här.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S11",
+      "title": "Long optical and electron spin coherence times for erbium ions in silicon",
+      "species": "Er i Si",
+      "url": "https://www.nature.com/articles/s41534-025-01008-x",
+      "doi": "10.1038/s41534-025-01008-x",
+      "year": 2025,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Optisk och elektronspinnspektroskopi i halvledarvärd.",
+      "finding": "Relevant värdmaterialspår för optiska telekomgränssnitt.",
+      "experiment_temperature": "Ej extraherad här.",
+      "dataset_source_ids": [],
+      "review_status": "publisher_metadata_reviewed_only",
+      "remaining_gap": "Numeriska värden och rådata behöver fortsatt granskning.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S12",
+      "title": "Room-Temperature Storage of Entanglement in a Silicon Carbide Quantum Node",
+      "species": "PL6 i 4H-SiC med 29Si; även 29Si/13C-register",
+      "url": "https://arxiv.org/abs/2609.13744",
+      "doi": null,
+      "year": 2026,
+      "publication_status": "preprint_2026-09-12",
+      "demonstrated_task": "SWAP av elektron–kärnspinnsentanglement till kärnspinnsminnen.",
+      "finding": "Ett experimentellt spår för hybridminnen vid rumstemperatur.",
+      "experiment_temperature": "Rumstemperatur; exakt K-värde ej granskat.",
+      "dataset_source_ids": [],
+      "review_status": "abstract_reviewed_only",
+      "remaining_gap": "Lokal entanglementöverföring; inkommande telekomfoton och fotonisk återhämtning är inte visade av abstraktet.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S13",
+      "title": "Robust quantum-network memory based on spin qubits in isotopically engineered diamond",
+      "species": "NV och 13C i isotopkontrollerad diamant",
+      "url": "https://www.nature.com/articles/s41534-022-00637-w",
+      "doi": "10.1038/s41534-022-00637-w",
+      "year": 2022,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Kärnspinnsminne under upprepade nätverksprimitiver.",
+      "finding": "Laddningsinstabilitet är en begränsning i det aktiva protokollet.",
+      "experiment_temperature": "4 K, gemensamt setupvärde.",
+      "dataset_source_ids": [],
+      "review_status": "selected_main_text_reviewed",
+      "remaining_gap": "Optiska pi-pulser saknas i den testade primitiven; jämförelsen måste följa detta.",
+      "checked_on": "2026-10-09"
+    },
+    {
+      "id": "S14",
+      "title": "Molecular Diradical Spin Qubits in a Crystalline Host as a Platform for Quantum Sensing",
+      "species": "m(TTM)2 i m(HTTM)2",
+      "url": "https://pubs.acs.org/doi/10.1021/acscentsci.6c00525",
+      "doi": "10.1021/acscentsci.6c00525",
+      "year": 2026,
+      "publication_status": "peer_reviewed",
+      "demonstrated_task": "Luminescenta molekylära diradikaler och Hahn-eko via ODMR.",
+      "finding": "Nytt organiskt spinnspår med experimentellt studerat kristallvärdmaterial.",
+      "experiment_temperature": "Ej extraherad här.",
+      "dataset_source_ids": [],
+      "review_status": "publisher_indexed_selected_text_reviewed",
+      "remaining_gap": "Rådata, temperaturserie och minnesfunktion behöver granskas.",
+      "checked_on": "2026-10-09"
+    }
+  ]
+}

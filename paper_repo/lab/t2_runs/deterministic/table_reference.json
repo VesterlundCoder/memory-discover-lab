@@ -1,0 +1,226 @@
+{
+  "method": "reviewed_table_lookup",
+  "query": {
+    "material_id": "ortu2022:151Eu3+:YSO",
+    "definition": "T2_spin_DD_Mims",
+    "conditions": {
+      "temperature_K": 4,
+      "temperature_qualifier": "approximately; cryostat",
+      "isotope_id": "Eu-151",
+      "charge_e": 3,
+      "host": "Y2SiO5",
+      "field_T": 0.00135,
+      "field_direction": "D1",
+      "pulse_sequence": "XY16",
+      "pulse_count": 16
+    }
+  },
+  "results": [
+    {
+      "reference_id": "ortu2022:XX",
+      "status": "condition_mismatch",
+      "missing_query_conditions": [],
+      "mismatched_conditions": [
+        "pulse_count",
+        "pulse_sequence"
+      ],
+      "unverifiable_query_conditions": [],
+      "reference_value_s": 0.07,
+      "applicable_reference_value_s": null,
+      "reported_interval_s": [
+        0.068,
+        0.07200000000000001
+      ],
+      "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+      "reference": {
+        "conditions": {
+          "charge_e": 3,
+          "field_T": 0.00135,
+          "field_direction": "D1",
+          "host": "Y2SiO5",
+          "isotope_id": "Eu-151",
+          "pulse_count": 2,
+          "pulse_sequence": "XX",
+          "temperature_K": 4,
+          "temperature_qualifier": "approximately; cryostat"
+        },
+        "definition": "T2_spin_DD_Mims",
+        "family": "rare_earth_solid",
+        "full_memory_channel_validated": false,
+        "id": "ortu2022:XX",
+        "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+        "material_id": "ortu2022:151Eu3+:YSO",
+        "material_name": "151Eu3+:Y2SiO5",
+        "missing_conditions": [
+          "Local temperature under RF heating",
+          "Full hyperfine bath and pulse imperfections",
+          "Mims exponent for each sequence"
+        ],
+        "reported_interval_s": [
+          0.068,
+          0.07200000000000001
+        ],
+        "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+        "source": "https://doi.org/10.1038/s41534-022-00541-3",
+        "source_location": "Main text, Characterization with bright pulses; Fig. 2",
+        "value_s": 0.07
+      }
+    },
+    {
+      "reference_id": "ortu2022:XY16",
+      "status": "reported_conditions_match",
+      "missing_query_conditions": [],
+      "mismatched_conditions": [],
+      "unverifiable_query_conditions": [],
+      "reference_value_s": 0.23,
+      "applicable_reference_value_s": 0.23,
+      "reported_interval_s": [
+        0.2,
+        0.26
+      ],
+      "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+      "reference": {
+        "conditions": {
+          "charge_e": 3,
+          "field_T": 0.00135,
+          "field_direction": "D1",
+          "host": "Y2SiO5",
+          "isotope_id": "Eu-151",
+          "pulse_count": 16,
+          "pulse_sequence": "XY16",
+          "temperature_K": 4,
+          "temperature_qualifier": "approximately; cryostat"
+        },
+        "definition": "T2_spin_DD_Mims",
+        "family": "rare_earth_solid",
+        "full_memory_channel_validated": false,
+        "id": "ortu2022:XY16",
+        "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+        "material_id": "ortu2022:151Eu3+:YSO",
+        "material_name": "151Eu3+:Y2SiO5",
+        "missing_conditions": [
+          "Local temperature under RF heating",
+          "Full hyperfine bath and pulse imperfections",
+          "Mims exponent for each sequence"
+        ],
+        "reported_interval_s": [
+          0.2,
+          0.26
+        ],
+        "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+        "source": "https://doi.org/10.1038/s41534-022-00541-3",
+        "source_location": "Main text, Characterization with bright pulses; Fig. 2",
+        "value_s": 0.23
+      }
+    },
+    {
+      "reference_id": "ortu2022:XY4",
+      "status": "condition_mismatch",
+      "missing_query_conditions": [],
+      "mismatched_conditions": [
+        "pulse_count",
+        "pulse_sequence"
+      ],
+      "unverifiable_query_conditions": [],
+      "reference_value_s": 0.106,
+      "applicable_reference_value_s": null,
+      "reported_interval_s": [
+        0.097,
+        0.11499999999999999
+      ],
+      "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+      "reference": {
+        "conditions": {
+          "charge_e": 3,
+          "field_T": 0.00135,
+          "field_direction": "D1",
+          "host": "Y2SiO5",
+          "isotope_id": "Eu-151",
+          "pulse_count": 4,
+          "pulse_sequence": "XY4",
+          "temperature_K": 4,
+          "temperature_qualifier": "approximately; cryostat"
+        },
+        "definition": "T2_spin_DD_Mims",
+        "family": "rare_earth_solid",
+        "full_memory_channel_validated": false,
+        "id": "ortu2022:XY4",
+        "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+        "material_id": "ortu2022:151Eu3+:YSO",
+        "material_name": "151Eu3+:Y2SiO5",
+        "missing_conditions": [
+          "Local temperature under RF heating",
+          "Full hyperfine bath and pulse imperfections",
+          "Mims exponent for each sequence"
+        ],
+        "reported_interval_s": [
+          0.097,
+          0.11499999999999999
+        ],
+        "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+        "source": "https://doi.org/10.1038/s41534-022-00541-3",
+        "source_location": "Main text, Characterization with bright pulses; Fig. 2",
+        "value_s": 0.106
+      }
+    },
+    {
+      "reference_id": "ortu2022:XY8",
+      "status": "condition_mismatch",
+      "missing_query_conditions": [],
+      "mismatched_conditions": [
+        "pulse_count",
+        "pulse_sequence"
+      ],
+      "unverifiable_query_conditions": [],
+      "reference_value_s": 0.154,
+      "applicable_reference_value_s": null,
+      "reported_interval_s": [
+        0.143,
+        0.165
+      ],
+      "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+      "reference": {
+        "conditions": {
+          "charge_e": 3,
+          "field_T": 0.00135,
+          "field_direction": "D1",
+          "host": "Y2SiO5",
+          "isotope_id": "Eu-151",
+          "pulse_count": 8,
+          "pulse_sequence": "XY8",
+          "temperature_K": 4,
+          "temperature_qualifier": "approximately; cryostat"
+        },
+        "definition": "T2_spin_DD_Mims",
+        "family": "rare_earth_solid",
+        "full_memory_channel_validated": false,
+        "id": "ortu2022:XY8",
+        "interval_convention": "Reported 95% confidence intervals, Fig. 2 caption",
+        "material_id": "ortu2022:151Eu3+:YSO",
+        "material_name": "151Eu3+:Y2SiO5",
+        "missing_conditions": [
+          "Local temperature under RF heating",
+          "Full hyperfine bath and pulse imperfections",
+          "Mims exponent for each sequence"
+        ],
+        "reported_interval_s": [
+          0.143,
+          0.165
+        ],
+        "review_scope": "Primary text checked for value, unit, observable and reported conditions; microscopic parameters and full memory channel not validated",
+        "source": "https://doi.org/10.1038/s41534-022-00541-3",
+        "source_location": "Main text, Characterization with bright pulses; Fig. 2",
+        "value_s": 0.154
+      }
+    }
+  ],
+  "status": "reference_available",
+  "predicted_new_material_T2_s": null,
+  "full_memory_channel_validated": false,
+  "limitations": [
+    "Only supplied and reported conditions can be checked",
+    "Unreported conditions remain gaps even when reported conditions match",
+    "No interpolation across temperature, isotope, charge, host or pulse protocol",
+    "A T2 reference alone does not specify write/read fidelity, noise or efficiency"
+  ]
+}

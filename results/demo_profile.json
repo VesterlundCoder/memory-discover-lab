@@ -1,0 +1,17 @@
+{
+  "id": "SYNTHETIC_NOT_A_MATERIAL",
+  "model": "markov_amplitude_damping_plus_dephasing",
+  "T1_s": 100,
+  "T2_s": 10,
+  "retention_s": 200,
+  "eta_write": 0.8,
+  "eta_read": 0.7,
+  "evidence": "hypothetical",
+  "conditions": {
+    "temperature_K": "unspecified; synthetic demo",
+    "control": "none"
+  },
+  "provenance": [
+    "Chosen for software demonstration, no material association"
+  ]
+}

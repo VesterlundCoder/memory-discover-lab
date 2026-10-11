@@ -1,0 +1,10 @@
+{
+  "author": "David Vesterlund",
+  "study_date": "2026-10-10",
+  "software_archive_sha256": "c64b94a573def9d999b65be7201947e9c2ce4e496aaf201650d7c1e3d44733aa",
+  "software_library_version": 3,
+  "validation": "fresh offline reruns of Teller pipeline, deterministic T2 pipeline and 75 tests",
+  "prospectively_preregistered": false,
+  "new_hardware_experiments": 0,
+  "ML_training_runs": 0
+}

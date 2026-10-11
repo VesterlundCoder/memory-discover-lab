@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "python": "3.12.14",
+  "config_sha256": "9edf5e625c9e0f418d6f5db42c8f3403e85c672946dfbb0ade5f3b2293ca5d15",
+  "evidence": "hypothetical",
+  "solver": "analytic",
+  "limitations": [
+    "No write/read process noise modeled beyond independent erasure",
+    "Storage fidelities exclude conversion, gates and detectors",
+    "Independent Markov noise only; not an atomistic prediction"
+  ]
+}

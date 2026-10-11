@@ -1,0 +1,27 @@
+{
+  "schema": "westquant_baseline_gate_v2",
+  "status": "blocked_for_discovery",
+  "single_point_data_reanalysis": "pass",
+  "spatial_holdout_conditional_fidelity": "pass",
+  "simulator_consistency": "pass",
+  "T2_identified": false,
+  "time_resolved_fidelity_and_efficiency_validated": false,
+  "independent_raw_count_reconstruction": false,
+  "full_network_optical_loss_and_false_herald_model_validated": false,
+  "missing": [
+    "storage-time sweep with conditional fidelity AND retrieval efficiency",
+    "raw counts/trial numbers and covariance",
+    "single-photon loss and noise instrument",
+    "temperature sweep or independent thermometry"
+  ],
+  "allowed": [
+    "reproduce published fidelity summaries",
+    "finite-point qubit-channel simulations",
+    "clearly scoped ideal-heralding network workload"
+  ],
+  "prohibited_claims": [
+    "inferred T2",
+    "temperature extrapolation",
+    "better-than-SOTA material ranking"
+  ]
+}

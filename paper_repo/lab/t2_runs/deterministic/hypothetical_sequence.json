@@ -1,0 +1,135 @@
+{
+  "schema": "westquant_sequence_workload_v1",
+  "status": "success",
+  "simulator": "SeQUeNCe",
+  "version": "1.2.0",
+  "seed": 20261010,
+  "attempts": 2000,
+  "events_executed": 3018,
+  "heralded": 1018,
+  "retrieved_pairs": 321,
+  "quality_qualified_pairs": 321,
+  "analytic_conditional_Bell_fidelity": 0.9559176317211332,
+  "observed_conditional_Bell_fidelity": 0.9559176317211332,
+  "max_density_error_against_analytic": 5.551115123125783e-17,
+  "retrieved_fraction_95CI": [
+    0.14506587373687918,
+    0.1772358013670915
+  ],
+  "expected_success_probability": 0.1567974912200703,
+  "qualified_rate_per_s": 160.5,
+  "attempt_interval_s": 0.001,
+  "storage_age_s": 0.0005,
+  "sample_events": [
+    {
+      "attempt": 1,
+      "readout_time_ps": 1500000000,
+      "success": true
+    },
+    {
+      "attempt": 3,
+      "readout_time_ps": 3500000000,
+      "success": true
+    },
+    {
+      "attempt": 4,
+      "readout_time_ps": 4500000000,
+      "success": true
+    },
+    {
+      "attempt": 5,
+      "readout_time_ps": 5500000000,
+      "success": false
+    },
+    {
+      "attempt": 8,
+      "readout_time_ps": 8500000000,
+      "success": false
+    },
+    {
+      "attempt": 9,
+      "readout_time_ps": 9500000000,
+      "success": false
+    },
+    {
+      "attempt": 10,
+      "readout_time_ps": 10500000000,
+      "success": false
+    },
+    {
+      "attempt": 14,
+      "readout_time_ps": 14500000000,
+      "success": false
+    },
+    {
+      "attempt": 16,
+      "readout_time_ps": 16500000000,
+      "success": false
+    },
+    {
+      "attempt": 17,
+      "readout_time_ps": 17500000000,
+      "success": false
+    },
+    {
+      "attempt": 19,
+      "readout_time_ps": 19500000000,
+      "success": false
+    },
+    {
+      "attempt": 21,
+      "readout_time_ps": 21500000000,
+      "success": false
+    },
+    {
+      "attempt": 23,
+      "readout_time_ps": 23500000000,
+      "success": false
+    },
+    {
+      "attempt": 26,
+      "readout_time_ps": 26500000000,
+      "success": true
+    },
+    {
+      "attempt": 27,
+      "readout_time_ps": 27500000000,
+      "success": true
+    },
+    {
+      "attempt": 29,
+      "readout_time_ps": 29500000000,
+      "success": true
+    },
+    {
+      "attempt": 31,
+      "readout_time_ps": 31500000000,
+      "success": true
+    },
+    {
+      "attempt": 32,
+      "readout_time_ps": 32500000000,
+      "success": false
+    },
+    {
+      "attempt": 33,
+      "readout_time_ps": 33500000000,
+      "success": false
+    },
+    {
+      "attempt": 34,
+      "readout_time_ps": 34500000000,
+      "success": false
+    }
+  ],
+  "scope": "two local channels on an ideal loaded Bell pair; event-kernel integration",
+  "network_assumptions": [
+    "ideal input Bell pair and independent nodes",
+    "ideal heralded signal loss; fluorescence false positives not modeled",
+    "no fiber/filter/detector loss beyond supplied interface",
+    "single memory slot per node",
+    "no routing, entanglement swap, dead time, or preparation overhead"
+  ],
+  "measured_network_performance": false,
+  "max_choi_difference_qutip_analytic": 3.9968028886505635e-15
+}

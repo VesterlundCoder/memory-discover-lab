@@ -1,0 +1,102 @@
+[
+  {
+    "candidate_id": "73830cd6533f886d0200187f",
+    "result": {
+      "schema": "westquant_electronic_v1",
+      "cache_key": "c0e1919aa1a51e20e1924aa5c0acfcfa5d72382c83f7b20c0f2cfd433bc10af7",
+      "backend": "pyscf",
+      "backend_version": "2.14.0",
+      "cache_hit": true,
+      "energy_hartree": -0.44561581548217344,
+      "converged": true,
+      "charge_e": -1,
+      "spin_2S": 1,
+      "geometry_angstrom": [
+        [
+          "H",
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          "H",
+          [
+            0,
+            0,
+            0.74
+          ]
+        ]
+      ],
+      "geometry_optimized": false,
+      "recipe": {
+        "basis": "sto-3g",
+        "method": "HF",
+        "threads": 1,
+        "memory_MB": 1024,
+        "max_cycle": 100,
+        "conv_tol": 1e-09
+      },
+      "evidence_kind": "computed",
+      "T1_s": null,
+      "T2_s": null,
+      "bound_state_proven": false,
+      "limitations": [
+        "Born-Oppenheimer electrons at fixed geometry",
+        "No isotope-resolved spin/phonon dynamics",
+        "A finite-basis energy is not proof of an anion bound state"
+      ]
+    }
+  },
+  {
+    "candidate_id": "d5a4ca4c481c0c4da9743a61",
+    "result": {
+      "schema": "westquant_electronic_v1",
+      "cache_key": "b55fa19af39f9156d4ca98590568f2291dd5d63c2ebc4462a39ac7cca6c3fa24",
+      "backend": "pyscf",
+      "backend_version": "2.14.0",
+      "cache_hit": true,
+      "energy_hartree": -1.1167593073964255,
+      "converged": true,
+      "charge_e": 0,
+      "spin_2S": 0,
+      "geometry_angstrom": [
+        [
+          "H",
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          "H",
+          [
+            0,
+            0,
+            0.74
+          ]
+        ]
+      ],
+      "geometry_optimized": false,
+      "recipe": {
+        "basis": "sto-3g",
+        "method": "HF",
+        "threads": 1,
+        "memory_MB": 1024,
+        "max_cycle": 100,
+        "conv_tol": 1e-09
+      },
+      "evidence_kind": "computed",
+      "T1_s": null,
+      "T2_s": null,
+      "bound_state_proven": false,
+      "limitations": [
+        "Born-Oppenheimer electrons at fixed geometry",
+        "No isotope-resolved spin/phonon dynamics",
+        "A finite-basis energy is not proof of an anion bound state"
+      ]
+    }
+  }
+]

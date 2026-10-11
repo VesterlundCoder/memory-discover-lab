@@ -1,0 +1,15 @@
+WestQuant Memory Discovery Lab v0.4
+Source SHA-256: 41570583e8b1b548eb739df8d37fd9b988c37ef6a007b080ef0044cb5d01b228
+Tests: 71 passed, 0 skipped
+Analytic/QuTiP: 36 runs / 18 paired operating points / 7 ages
+Maximum Choi difference: 3.9968028886505635e-15
+Complete pipeline: live data -> catalog -> 16 unassessed variants -> 2 PySCF calculations -> 36 scenario jobs -> 36 network bundles
+Live imports: 149 molecular rows, 421 reported relaxation values (units unverified), 289 isotope fractions for 84 elements
+All-element inventory: 118 elements, 1167 charge/spin combinations, unassessed
+Verified optional backends: QuTiP, PySCF, PyCCE, MaxwellBloch
+ORCA: input generation/mock execution tested; no real binary present
+QE: adapter implemented; no real binary present
+Other live dataset endpoints: not verified in this release
+Third-party network simulator hooks: not integrated; provider-neutral API supplied
+No experimental photonic-memory baseline reproduced; no SOTA superiority claimed
+Raw external datasets excluded from release archive; download plans and manifests supplied

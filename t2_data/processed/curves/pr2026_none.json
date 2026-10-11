@@ -1,0 +1,83 @@
+{
+  "id": "pr2026_none",
+  "times_s": [
+    2.3699999999999997e-05,
+    2.52e-05,
+    2.67e-05,
+    2.8199999999999998e-05,
+    2.9699999999999997e-05,
+    3.12e-05,
+    3.27e-05,
+    3.4200000000000005e-05,
+    3.57e-05,
+    3.72e-05,
+    3.87e-05,
+    4.02e-05,
+    4.1700000000000004e-05,
+    4.32e-05,
+    4.47e-05
+  ],
+  "values": [
+    0.061908679211243774,
+    0.05549687382773909,
+    0.051003928383798774,
+    0.04621587018148088,
+    0.04115673460833028,
+    0.03754327534516411,
+    0.03303256461477757,
+    0.028596050080725365,
+    0.025277076565826933,
+    0.02262586881793734,
+    0.019487056207940813,
+    0.01645044624585269,
+    0.0149015222711101,
+    0.011730732145510346,
+    0.011268625694538029
+  ],
+  "standard_errors": [
+    0.0017587254068300421,
+    0.001462824858774975,
+    0.0014980935847976108,
+    0.001231462771832786,
+    0.0020923871005978554,
+    0.001625948161019409,
+    0.0011689993258848371,
+    0.0010646831271333378,
+    0.0011657403296631637,
+    0.0008046489682679049,
+    0.0009831323024428657,
+    0.0007144867859316806,
+    0.0009899586647889092,
+    0.0007774105317985389,
+    0.001235622266782378
+  ],
+  "quantity": "classical_retrieval_efficiency",
+  "likelihood": "gaussian",
+  "time_definition": "Figure 1c total storage time; optical AFC interval not subtracted",
+  "decay_factor": 1,
+  "target_definition": "apparent_retrieval_decay_scale",
+  "mapping_review": {
+    "status": "reviewed",
+    "source": "10.1103/ftkb-pkvp, Figure 1c and main text",
+    "scope": "Measured total-time efficiency curve; cannot uniquely identify spin T2"
+  },
+  "conditions": {
+    "material": "Pr3+:Y2SiO5",
+    "family": "rare_earth_solid",
+    "temperature_K": 3,
+    "temperature_scope": "cryostat stage setpoint",
+    "pulse_sequence": "none",
+    "field_T": null,
+    "field_note": "Residual field suspected; not quantitatively measured",
+    "input_regime": "classical_bright_pulses",
+    "wavelength_nm": 606
+  },
+  "provenance": [
+    {
+      "artifact_sha256": "99ba3ad206b95e03eecff24f8dad5da64b00cb3aa46d266915c6b5324a677950",
+      "url": "https://zenodo.org/api/records/21532904/files/fig1_norf.out/content",
+      "paper_doi": "10.1103/ftkb-pkvp"
+    }
+  ],
+  "homogeneous_T2_label_allowed": false
+}

@@ -1,0 +1,17 @@
+\begin{table}[htbp]
+\centering\small
+\begin{tabular}{llrrll}
+\toprule
+Sequence & Model & $\tau$ (ms) & Held RMSE & Approx. $p$ & Status \\
+\midrule
+XX & Exp. & 0.69686 & 3.582 & 5.8e-90 & Mismatch \\
+XX & Stretch. & 0.0129498 & 2.853 & 1.16e-41 & Mismatch \\
+XY16 & Exp. & 348.25 & 1.983 & 2.42e-87 & Mismatch \\
+XY16 & Stretch. & 2.39489 & 1.417 & 8.34e-59 & Mismatch \\
+XY4 & Exp. & 1.16409 & 3.786 & $<10^{-300}$ (underflow) & Mismatch \\
+XY4 & Stretch. & 0.0954074 & 3.434 & $<10^{-300}$ (underflow) & Mismatch \\
+none & Exp. & 0.0188799 & 0.622 & 0.995 & Inconclusive \\
+none & Stretch. & 0.0288762 & 0.468 & 0.998 & Inconclusive \\
+\bottomrule\end{tabular}
+\caption{Apparent classical retrieval scales and diagnostics; none identifies physical spin $T_2$. Extremely small probabilities depend on the Gaussian independence model.}
+\end{table}

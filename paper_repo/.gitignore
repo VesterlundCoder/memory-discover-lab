@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+qa/
+# Cache bytes are included locally for offline reproduction, not tracked by default.
+lab/**/cache/
+lab/t2_data/raw/
+lab/**/raw/
+lab/**/structures/
+lab/**/*.sqlite*
+lab/**/processed/
+lab/research/
+lab/verification/
+lab/verification_v05/
+*.aux
+*.out
+*.log
+*.fls
+*.fdb_latexmk
+# Keep the article's actual executed logs trackable.
+!evidence/*.log

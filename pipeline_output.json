@@ -1,0 +1,288 @@
+{
+  "config_hash": "174621795624b53a9dc2119b040070ca54f322c12b236df58e350df9541dad97",
+  "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab",
+  "steps": {
+    "datasets": {
+      "schema": "westquant_data_sync_v1",
+      "at": "2026-10-10T08:20:32.307044+00:00",
+      "sources": [
+        {
+          "source_id": "molecular_qubit_dataset",
+          "status": "success",
+          "artifacts": [
+            {
+              "id": "2fdf058738313159dc65c3f7ea97d340f548c90ceba2e7d56977e60420a79764",
+              "source_id": "molecular_qubit_dataset",
+              "url": "https://raw.githubusercontent.com/MTD-group/Molecular_Qubit_Dataset/5263b1d86b39243e7405dde5bf7c58bbd8fcd677/Relaxation_time_data_08_02_24.csv",
+              "resolved_url": "https://raw.githubusercontent.com/MTD-group/Molecular_Qubit_Dataset/5263b1d86b39243e7405dde5bf7c58bbd8fcd677/Relaxation_time_data_08_02_24.csv",
+              "source_revision": "5263b1d86b39243e7405dde5bf7c58bbd8fcd677",
+              "sha256": "5c5e98b82f2e987b287ff2548dce1e3c992b3937cd17ceb928e337fd6182e91f",
+              "size_bytes": 47562,
+              "mime_type": "text/plain",
+              "fetched_at": "2026-10-10T08:20:00.392930+00:00",
+              "relative_path": "raw/5c5e98b82f2e987b287ff2548dce1e3c992b3937cd17ceb928e337fd6182e91f/Relaxation_time_data_08_02_24.csv",
+              "file_name": "Relaxation_time_data_08_02_24.csv",
+              "license": "not_verified",
+              "redistribution_approved": false
+            }
+          ],
+          "imports": [
+            {
+              "candidates": 149,
+              "observations": 421,
+              "observations_with_unverified_units": 421
+            }
+          ]
+        },
+        {
+          "source_id": "cr_host_matrix_2022",
+          "status": "success",
+          "artifacts": [
+            {
+              "id": "e833ff3a90dab10e7d4b6f8b48f5f36fbbbcaec41ae26f1322cc1560f808a203",
+              "source_id": "cr_host_matrix_2022",
+              "url": "https://zenodo.org/api/records/6828667/files/fig_3b_1.txt/content",
+              "resolved_url": "https://zenodo.org/api/records/6828667/files/fig_3b_1.txt/content",
+              "source_revision": "6828667",
+              "sha256": "dda414bd73caee357218a494c26e0086d6e728481ed953f9cd31594fe82b4d7b",
+              "size_bytes": 5032,
+              "mime_type": "text/plain",
+              "fetched_at": "2026-10-10T08:20:19.493620+00:00",
+              "relative_path": "raw/dda414bd73caee357218a494c26e0086d6e728481ed953f9cd31594fe82b4d7b/fig_3b_1.txt",
+              "file_name": "fig_3b_1.txt",
+              "license": {
+                "id": "cc-by-4.0"
+              },
+              "redistribution_approved": false
+            },
+            {
+              "id": "ebe4ead356fadcea11e637a6965a8b6d2c5ff0c86693b3603a0d63665d792026",
+              "source_id": "cr_host_matrix_2022",
+              "url": "https://zenodo.org/api/records/6828667/files/fig_3d_1.txt/content",
+              "resolved_url": "https://zenodo.org/api/records/6828667/files/fig_3d_1.txt/content",
+              "source_revision": "6828667",
+              "sha256": "05146dc024b56f7fd8edcf884a0ebfa37493ef788cbaf18b04c30c8addc1c556",
+              "size_bytes": 450,
+              "mime_type": "text/plain",
+              "fetched_at": "2026-10-10T08:20:26.665718+00:00",
+              "relative_path": "raw/05146dc024b56f7fd8edcf884a0ebfa37493ef788cbaf18b04c30c8addc1c556/fig_3d_1.txt",
+              "file_name": "fig_3d_1.txt",
+              "license": {
+                "id": "cc-by-4.0"
+              },
+              "redistribution_approved": false
+            }
+          ],
+          "imports": []
+        },
+        {
+          "source_id": "ciaaw_isotopes",
+          "status": "success",
+          "artifacts": [
+            {
+              "id": "530c5e8ee19117c9f0339b0caca055b8006c94e3708d6e048d8afedccd93b198",
+              "source_id": "ciaaw_isotopes",
+              "url": "https://www.ciaaw.org/isotopic-abundances.htm",
+              "resolved_url": "https://www.ciaaw.org/isotopic-abundances.htm",
+              "source_revision": "live_table_retrieval",
+              "sha256": "1ab770a48bb539d26ad2992a94b4c60d51743058b67f106796b754cd5035423b",
+              "size_bytes": 35125,
+              "mime_type": "text/html",
+              "fetched_at": "2026-10-10T08:20:32.292511+00:00",
+              "relative_path": "raw/1ab770a48bb539d26ad2992a94b4c60d51743058b67f106796b754cd5035423b/isotopic-abundances.htm",
+              "file_name": "isotopic-abundances.htm",
+              "license": "not_verified",
+              "redistribution_approved": false
+            }
+          ],
+          "imports": [
+            {
+              "isotopes": 289,
+              "elements": 84,
+              "observations": 289
+            }
+          ]
+        }
+      ],
+      "all_success": true,
+      "catalog": {
+        "artifacts": 7,
+        "candidates": 149,
+        "observations": 710
+      },
+      "accounted_bytes": 114935
+    },
+    "candidates": {
+      "generated": 16
+    },
+    "electronic": {
+      "calculated": 2,
+      "remaining_uncomputed": 14
+    },
+    "study": {
+      "study_id": "six_family_software_smoke_v1",
+      "enumerated_run_count": 36,
+      "completed_runs": 36,
+      "statuses": {
+        "success": 36
+      },
+      "all_success": true,
+      "resumed_runs": 0,
+      "gate_pass_runs": 20,
+      "hardware_validated": false,
+      "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/runs"
+    },
+    "network_exports": [
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/050d413b8d3df99aedd54b31.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/096067b83723eac4051cff82.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/0d187d9f106db33e877bccef.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/1587424976a09e731d1088de.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/1e2adc784a8581da25604efe.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/24ea68e57a9bb531b653bd4f.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/2f7998928d14f54d2491afbb.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/348da9cd7b63055fa991560f.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/38b812df1b2eb184ef80d353.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/4ea3fd3316c46afbe3dd1597.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/55c73cec5b3a537f2550da90.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/570542788663ec826cccf789.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/575927db9f4a255572ef0d31.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/5f7d4c53bd11702ac8ac1820.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/6f749e0fc0791d983ffe0b25.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/7059e8898015ff62efdef99b.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/7318b51ad0cb927d5b689f67.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/74e41bf9610e3b1a06f84241.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/843d8e52318ad821816dbacf.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/872f2f79fce4a9ad280a4b13.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/991b3692b34f27fbe887427e.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/9adc9fe859fa92e9878e64b7.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/a06d62d6b99e70d32b257c7f.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/a4278a119871e2d7374a7da1.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/a42b31f303ce7b9a90305970.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/ac7595e497a9e0b043f41d4c.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/aedcb0b31b48f886bb451094.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/cd5cb92b5efc767c8b3dda5e.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/d6f8e69dc63eb1bc381bdc51.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/d8c9fd4aedab39cfe9279323.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/ddd2dca5947d83d89c47d530.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/e332c7c512ff7a36f0775d26.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/e5bbf72f72e8ef4f962fceed.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/e6e931df63a3c639601449e7.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/ebcbf95f56e53329ff711066.json",
+        "samples": 7
+      },
+      {
+        "output": "/workspace/scratch/b85c5791ca4a/westquant-memory-lab/runs/full_lab/network/f9ab9327f218570ed944f877.json",
+        "samples": 7
+      }
+    ],
+    "catalog": {
+      "artifacts": 7,
+      "candidates": 165,
+      "observations": 710
+    }
+  },
+  "status": "success"
+}

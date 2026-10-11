@@ -1,0 +1,182 @@
+{
+  "config_hash": "174621795624b53a9dc2119b040070ca54f322c12b236df58e350df9541dad97",
+  "output": "v06logs/pipeline_full_sf",
+  "steps": {
+    "candidates": {
+      "generated": 16
+    },
+    "electronic": {
+      "calculated": 2,
+      "remaining_uncomputed": 14
+    },
+    "study": {
+      "study_id": "six_family_software_smoke_v1",
+      "enumerated_run_count": 36,
+      "completed_runs": 36,
+      "statuses": {
+        "success": 36
+      },
+      "all_success": true,
+      "resumed_runs": 0,
+      "gate_pass_runs": 20,
+      "hardware_validated": false,
+      "output": "v06logs/pipeline_full_sf/runs"
+    },
+    "network_exports": [
+      {
+        "output": "v06logs/pipeline_full_sf/network/bdc1b722efc87c8773520e71.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/bbc8907c4c3c80035d71b3b9.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/ee3378a793c07912d8d31e84.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/712e398b3e4234e101fa0930.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/116d58869b7d349165803ae6.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/83ddb325747ed44a671caf9a.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/14c831eeb7a86c063572607e.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/89fc8c9c0a03388ccfc38ccf.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/f1c055c4687630b273cd72e1.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/11cdc5179c4824e2f7a3e919.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/dd612c0db552be9755b92d85.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/9ef496c5214f37cd8b25ca79.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/10ecd4e4d22e9a70f9e59c66.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/b900e45e34799ebe96c5161c.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/7e78845105cf79c1c5f5d182.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/0bb830bf64983af458dffb93.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/be64e4e6347dca4a69bc47eb.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/ba31a62dac4ba1aa7ee4b0e6.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/c22f6f619e8b4fae5eefe6aa.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/63d81181c6dd62ab43e9236b.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/ebe433c78142ebb3785e6fc2.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/0d5ead01e09c02b172d2188c.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/7e7545594421e550f13e9908.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/5a378d807801152cc604c4df.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/8f7fe2ecf946656d65df1133.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/9e2ca87d44bdd3f8f977c1e6.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/b9b53783cde0776211c418c8.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/3d562112e106e3eb6fdd6fcd.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/187d40a87c612f5e1550159b.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/35309a6fcdf6091cbe5b7650.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/78784492e2c11ed61a30b6cb.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/f4c7d0f231a91eeb41399693.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/0c3859a5d0f211a322e06895.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/a945574db98589154358f741.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/944fe00488c85328fb5f2f29.json",
+        "samples": 7
+      },
+      {
+        "output": "v06logs/pipeline_full_sf/network/ac8dce0d573dc4d05ec3fa2c.json",
+        "samples": 7
+      }
+    ],
+    "catalog": {
+      "artifacts": 0,
+      "candidates": 16,
+      "observations": 0
+    }
+  },
+  "status": "success"
+}
+
+real	0m9.520s
+user	0m15.547s
+sys	0m1.380s

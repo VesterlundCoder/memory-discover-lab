@@ -1,0 +1,8 @@
+{
+  "material_id": "unknown:new_molecular_combination",
+  "definition": "T2_Hahn",
+  "conditions": {
+    "temperature_K": 300,
+    "pulse_sequence": "Hahn"
+  }
+}

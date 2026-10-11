@@ -1,0 +1,21 @@
+{
+  "method": "reviewed_table_lookup",
+  "query": {
+    "material_id": "unknown:new_molecular_combination",
+    "definition": "T2_Hahn",
+    "conditions": {
+      "temperature_K": 300,
+      "pulse_sequence": "Hahn"
+    }
+  },
+  "results": [],
+  "status": "no_applicable_reference",
+  "predicted_new_material_T2_s": null,
+  "full_memory_channel_validated": false,
+  "limitations": [
+    "Only supplied and reported conditions can be checked",
+    "Unreported conditions remain gaps even when reported conditions match",
+    "No interpolation across temperature, isotope, charge, host or pulse protocol",
+    "A T2 reference alone does not specify write/read fidelity, noise or efficiency"
+  ]
+}

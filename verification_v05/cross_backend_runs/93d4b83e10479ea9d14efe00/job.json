@@ -1,0 +1,145 @@
+{
+  "run_id": "93d4b83e10479ea9d14efe00",
+  "config_hash": "93d4b83e10479ea9d14efe00ae29c7ed42ffbb3a80e9a8e7651f8569dce94646",
+  "config": {
+    "study_id": "analytic_qutip_conformance_v1",
+    "stage": "software_smoke",
+    "model_id": "negative_ion_synthetic",
+    "profile": {
+      "name": "SYNTHETIC_SOFTWARE_SCENARIO_NOT_A_MEASURED_MATERIAL",
+      "family": "negative_ion",
+      "storage_model": "markov",
+      "evidence_kind": "hypothetical",
+      "provenance": [
+        {
+          "kind": "chosen_software_test_parameters",
+          "not_a_material_prediction": true
+        }
+      ],
+      "temperatures_K": {
+        "write": 4.2,
+        "storage": 4.2,
+        "read": 4.2
+      },
+      "rates": {
+        "population": {
+          "kind": "constant",
+          "rate_s_inv": 0.05,
+          "valid_temperature_K": [
+            1,
+            300
+          ]
+        },
+        "pure_dephasing": {
+          "kind": "phenomenological_temperature",
+          "base_s_inv": 0.01,
+          "direct_s_inv_K_inv": 0.001,
+          "reference_K": 10,
+          "raman_at_reference_s_inv": 0.001,
+          "raman_exponent": 3,
+          "valid_temperature_K": [
+            1,
+            300
+          ]
+        },
+        "erasure": {
+          "kind": "constant",
+          "rate_s_inv": 0.01,
+          "valid_temperature_K": [
+            1,
+            300
+          ]
+        }
+      },
+      "io": {
+        "eta_write": 0.8,
+        "eta_read": 0.7,
+        "write_depolarizing_p": 0.01,
+        "read_depolarizing_p": 0.02,
+        "write_duration_s": 0.0001,
+        "read_duration_s": 0.0002,
+        "thermal_transition_s": 0,
+        "logical_encoding": "abstract_qubit",
+        "protocol": "supplied_effective_write_read_channel",
+        "bandwidth_Hz": null,
+        "wavelength_nm": null,
+        "modes": 1
+      },
+      "noise_budget": [
+        "phenomenological_relaxation",
+        "independent_markov_dephasing",
+        "write_depolarization",
+        "read_depolarization",
+        "independent_erasure",
+        "electron_record_distinguishability"
+      ],
+      "network_activity": {
+        "attempt_rate_Hz": 0,
+        "coherence_loss_per_attempt": 0
+      },
+      "control": {},
+      "detuning_Hz": 0,
+      "equilibrium_excited_population": 0,
+      "candidate": {
+        "charge_e": -1
+      },
+      "optical_process": "photodetachment",
+      "electron_record_overlap": [
+        0.9,
+        0
+      ],
+      "simulation_seed": 2833747633255638133
+    },
+    "parameters": {
+      "temperatures_K.storage": 4.2
+    },
+    "times_s": [
+      0,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1,
+      10
+    ],
+    "replicate": 0,
+    "backend": "qutip",
+    "seeds": {
+      "bath": 2833747633255638133,
+      "parameter_uncertainty": 2115778053699499210,
+      "network": 6635660555880707274
+    },
+    "gates": {
+      "minimum_fidelity": 0.8,
+      "minimum_success": 0.1
+    },
+    "network_workload": {
+      "attempts": 2000,
+      "link_herald_probability": 0.2,
+      "attempt_interval_s": 0.001,
+      "storage_age_s": 0.01,
+      "minimum_Bell_fidelity": 0.7
+    },
+    "software_version": "0.5.0",
+    "source_sha256": "e5f1cfa6de29406b8a7f84f07e6e7b945b81a79789f574418f9596167dd93578",
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+      "packages": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "qutip": "5.3.1",
+        "pyscf": "2.14.0",
+        "pycce": "1.1.1",
+        "ase": "3.29.0",
+        "maxwellbloch": "0.12.0",
+        "pynmrstar": "3.6.2",
+        "openpyxl": "3.1.5",
+        "sequence": "1.2.0",
+        "pandas": "2.3.3"
+      },
+      "git_commit": null
+    }
+  },
+  "timeout_s": 90
+}

@@ -1,0 +1,128 @@
+[
+ {
+  "file": "evidence/artifact_qa.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/claim_result_map.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/deterministic_summary.json",
+  "status": "differs",
+  "n_numeric": 0,
+  "max_abs": 0.0,
+  "max_rel": 0.0,
+  "worst": null,
+  "non_numeric_paths": [
+   "/environment/platform",
+   "/environment/python"
+  ],
+  "n_non_numeric": 2
+ },
+ {
+  "file": "evidence/hypothetical_sequence.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/mean_fidelity_nonidentifiability.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/orchestrator_reproduction.log",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/paper_t2_reproduction.log",
+  "status": "differs (non-JSON)",
+  "size": [
+   2046,
+   2054
+  ]
+ },
+ {
+  "file": "evidence/paper_teller_reproduction.log",
+  "status": "differs (non-JSON)",
+  "size": [
+   8064,
+   8072
+  ]
+ },
+ {
+  "file": "evidence/paper_test_results.log",
+  "status": "differs (non-JSON)",
+  "size": [
+   9660,
+   11210
+  ]
+ },
+ {
+  "file": "evidence/pr2026_curve_summary.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/study_manifest.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/system_evaluation_tests.log",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/system_native_tests.log",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/system_step1.log",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/system_step4.log",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/teller_holdout.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "evidence/teller_summary.json",
+  "status": "differs",
+  "n_numeric": 0,
+  "max_abs": 0.0,
+  "max_rel": 0.0,
+  "worst": null,
+  "non_numeric_paths": [
+   "/environment/platform",
+   "/environment/python"
+  ],
+  "n_non_numeric": 2
+ },
+ {
+  "file": "evidence/teller_window_fits.json",
+  "status": "identical bytes"
+ },
+ {
+  "file": "tables/bootstrap.csv",
+  "status": "identical bytes"
+ },
+ {
+  "file": "tables/bootstrap.tex",
+  "status": "identical bytes"
+ },
+ {
+  "file": "tables/decay.csv",
+  "status": "identical bytes"
+ },
+ {
+  "file": "tables/decay.tex",
+  "status": "identical bytes"
+ },
+ {
+  "file": "tables/holdout.csv",
+  "status": "identical bytes"
+ },
+ {
+  "file": "tables/holdout.tex",
+  "status": "identical bytes"
+ }
+]
