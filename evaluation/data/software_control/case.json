@@ -1,0 +1,44 @@
+{
+  "observable": "complex_pure_dephasing_coherence",
+  "includes_population_relaxation": false,
+  "evidence_kind": "hypothetical",
+  "curve": {
+    "path": "curve.csv",
+    "sha256": "a81c91ccf8bb1c862ab730420a0a4cc4d95003825de999bd5b7c400807adb40a"
+  },
+  "model": {
+    "path": "model.json",
+    "sha256": "4a964e5d2f2463816d2fa4db02fb10126536a61054d704b5a90cf8f6f262c46c"
+  },
+  "review": {
+    "reviewer": "software_control_generator",
+    "source_location": "scripts/make_second_family_control.py",
+    "normalization": "L(0)=1",
+    "observable_mapping": "closed-form pure-dephasing FID; no experimental observations"
+  },
+  "conditions": {
+    "temperature_K": 4.2,
+    "control": {
+      "cpmg_pulses": 0
+    },
+    "field_and_frame": "specified nuclear Zeeman vector in lab frame",
+    "composition_and_isotopes": "one explicitly hypothetical C-13 spin"
+  },
+  "gate": {
+    "kind": "max_complex_residual_over_sem",
+    "threshold": 3
+  },
+  "optical_interface_review": {
+    "reviewer": "software_control_generator",
+    "source_location": "chosen example profile",
+    "evidence_kind": "hypothetical"
+  },
+  "network_workload": {
+    "attempts": 10000,
+    "link_herald_probability": 0.1,
+    "attempt_interval_s": 0.001,
+    "storage_age_s": 0.0005,
+    "minimum_Bell_fidelity": 0.8
+  },
+  "seed": 20261010
+}

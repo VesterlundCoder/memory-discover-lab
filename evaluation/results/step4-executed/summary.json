@@ -1,0 +1,405 @@
+{
+  "step": 4,
+  "status": "pass",
+  "worker_invariant_scientific_results": true,
+  "robustness": {
+    "missing_parameter_status": "missing_data",
+    "timeout_status": "timeout",
+    "partial_checkpoint_precompleted_status": "success",
+    "restored_summary": {
+      "study_id": "system_performance_control_v1",
+      "enumerated_run_count": 12,
+      "completed_runs": 12,
+      "statuses": {
+        "success": 12
+      },
+      "all_success": true,
+      "resumed_runs": 1,
+      "gate_pass_runs": 12,
+      "hardware_validated": false,
+      "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/robustness_partial_checkpoint"
+    },
+    "scope": "Resume after one normally completed checkpoint; no forced crash, power-loss or filesystem corruption experiment"
+  },
+  "measurements": [
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w1_r0"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w1_r0"
+      },
+      "cold_s": 3.8089025509998464,
+      "warm_s": 0.015755024000100093,
+      "parent_peak_rss_bytes": 36257792,
+      "largest_terminated_child_peak_rss_bytes": 69599232,
+      "child_cpu_s": 3.2859599999999998,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b4c522e67ef54f2dcda6ef9ca7638be97f1dcbcd00f371311f4aec1a7f06aee4"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w4_r0"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w4_r0"
+      },
+      "cold_s": 1.1298667289993318,
+      "warm_s": 0.018171937999795773,
+      "parent_peak_rss_bytes": 38748160,
+      "largest_terminated_child_peak_rss_bytes": 66310144,
+      "child_cpu_s": 3.925572,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b4c522e67ef54f2dcda6ef9ca7638be97f1dcbcd00f371311f4aec1a7f06aee4"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w2_r0"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w2_r0"
+      },
+      "cold_s": 2.0665386319997197,
+      "warm_s": 0.017410086000381853,
+      "parent_peak_rss_bytes": 38748160,
+      "largest_terminated_child_peak_rss_bytes": 66678784,
+      "child_cpu_s": 3.6038889999999997,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b4c522e67ef54f2dcda6ef9ca7638be97f1dcbcd00f371311f4aec1a7f06aee4"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w1_r1"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w1_r1"
+      },
+      "cold_s": 3.867439714000284,
+      "warm_s": 0.018433105000440264,
+      "parent_peak_rss_bytes": 38879232,
+      "largest_terminated_child_peak_rss_bytes": 66392064,
+      "child_cpu_s": 3.503845,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b4c522e67ef54f2dcda6ef9ca7638be97f1dcbcd00f371311f4aec1a7f06aee4"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w4_r1"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w4_r1"
+      },
+      "cold_s": 1.2286032249994605,
+      "warm_s": 0.01982279600088077,
+      "parent_peak_rss_bytes": 38879232,
+      "largest_terminated_child_peak_rss_bytes": 66576384,
+      "child_cpu_s": 3.9048659999999997,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b4c522e67ef54f2dcda6ef9ca7638be97f1dcbcd00f371311f4aec1a7f06aee4"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w2_r1"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w2_r1"
+      },
+      "cold_s": 1.9165459590003593,
+      "warm_s": 0.017621139999391744,
+      "parent_peak_rss_bytes": 38879232,
+      "largest_terminated_child_peak_rss_bytes": 66719744,
+      "child_cpu_s": 3.355133,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b4c522e67ef54f2dcda6ef9ca7638be97f1dcbcd00f371311f4aec1a7f06aee4"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w4_r2"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w4_r2"
+      },
+      "cold_s": 1.1781673369987402,
+      "warm_s": 0.017868429000373,
+      "parent_peak_rss_bytes": 38879232,
+      "largest_terminated_child_peak_rss_bytes": 66686976,
+      "child_cpu_s": 3.792211,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b4c522e67ef54f2dcda6ef9ca7638be97f1dcbcd00f371311f4aec1a7f06aee4"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w1_r2"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w1_r2"
+      },
+      "cold_s": 3.910057745000813,
+      "warm_s": 0.018142117000024882,
+      "parent_peak_rss_bytes": 38879232,
+      "largest_terminated_child_peak_rss_bytes": 69640192,
+      "child_cpu_s": 3.5607879999999996,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b4c522e67ef54f2dcda6ef9ca7638be97f1dcbcd00f371311f4aec1a7f06aee4"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w2_r2"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/evaluation-current/WestQuant_Paper_Repository/evaluation/results/step4-executed/w2_r2"
+      },
+      "cold_s": 1.9780951530010498,
+      "warm_s": 0.017207683000378893,
+      "parent_peak_rss_bytes": 38879232,
+      "largest_terminated_child_peak_rss_bytes": 66625536,
+      "child_cpu_s": 3.422152,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b4c522e67ef54f2dcda6ef9ca7638be97f1dcbcd00f371311f4aec1a7f06aee4"
+    }
+  ],
+  "identity": {
+    "at_utc": "2026-10-10T11:35:34.038224+00:00",
+    "configuration": {
+      "workers": [
+        1,
+        2,
+        4
+      ],
+      "timing_repeats": 3,
+      "times_s": [
+        0,
+        0.0001,
+        0.0005,
+        0.001,
+        0.002,
+        0.005
+      ],
+      "replicates": 2,
+      "detunings_Hz": [
+        0,
+        123,
+        500
+      ],
+      "seed": 20261010,
+      "max_runs": 24,
+      "job_timeout_s": 60,
+      "driver_timeout_s": 600
+    },
+    "configuration_sha256": "72da011eb9fdd13d07e2073f258c07533a7d9723963af2ed44042dead165d02e",
+    "evaluation_source_sha256": "d8fc6d2ecb580e0ba1c8881ffbd542d087c493b7621cb89509948e595211ec92",
+    "lab_source_sha256": "9c4490acf2e5a42e8e10007989eeb94b5e406b17f5d187ca310847581ee2edb7",
+    "inputs": [],
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+      "packages": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "qutip": "5.3.1",
+        "pyscf": "2.14.0",
+        "pycce": "1.1.1",
+        "ase": "3.29.0",
+        "maxwellbloch": "0.12.0",
+        "pynmrstar": "3.6.2",
+        "openpyxl": "3.1.5",
+        "sequence": "1.2.0",
+        "pandas": "2.3.3"
+      },
+      "git_commit": null
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null
+    },
+    "prospectively_preregistered": false,
+    "hardware_experiments": 0
+  },
+  "native_threads_per_worker": 1,
+  "timing_scope": "Subprocess startup, native channel computation and artifact IO; resume is terminal-result checkpoint reuse",
+  "memory_scope": "Parent peak and largest terminated child peak separately; no total concurrent peak estimate",
+  "hardware_validation": false,
+  "external_environment_validation": false
+}

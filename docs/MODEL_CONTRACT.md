@@ -1,101 +1,145 @@
-# Modeller, enheter och adaptrar i v0.4
+# Model Contract — v0.7.1
 
-Varje materialkandidat har ett eget id, familj, sammansättning, laddning, elektronspinn,
-platsspecifika isotoper, geometri, värdmaterial och proveniens. Saknade egenskaper är
-okända. Kandidatgenerering bevisar varken bindning, metastabilitet eller minnesfunktion.
+Every material candidate has its own id, family, composition, charge, electron spin,
+site-specific isotopes, geometry, host material, and provenance. Missing properties
+are unknown. Candidate generation does not prove binding, metastability, or memory
+function.
 
-Observationer och simulatorrecept är olika objekt. Ett simulatorrecept väljer en fysikmodell
-och anger vilka observationer/beräkningar/antaganden som motiverar parametrarna. Resultatet
-är en beräkning även när indata är experimentella.
+Observations and simulator recipes are different objects. A simulator recipe selects
+a physics model and states which observations, computations, or assumptions motivate
+the parameters. The result is a computation even when the input is experimental.
 
-## Familjer
+## Families
 
-| Familj | Implementerade lagringsbeskrivningar | Gräns |
+| Family | Implemented storage descriptions | Boundary |
 |---|---|---|
-| Atomensemble | Markovkanal; villkorsbunden koherenstabell | Effektiv skriv/läs-kanal måste anges; MaxwellBloch ger separat klassisk fältutbredning |
-| Fångad atom/jon | Markovkanal; koherenstabell | Geometri/elektronik kan beräknas med PySCF; inga livstider härleds automatiskt |
-| Sällsynt jordartsjon i fast material | Markovkanal; exakt litet spinnbad; PyCCE; koherenstabell | Värd, spinnnivåer, optisk protokollverkningsgrad och kopplingar måste specificeras |
-| Spindefekt | Samma fyra lagringsbeskrivningar | Strukturspecifika hyperfintensorer krävs; modellens källor måste vara oberoende |
-| Molekylspinn | Samma fyra lagringsbeskrivningar | Ett läkemedelsfragment eller NMR-spektrum är inte automatiskt ett kvantminne |
-| Negativ jon | Markovkanal eller koherenstabell; fotodetachment med given miljööverlappning | Överlappningen är en inparameter; verktyget löser inte kontinuumelektronens vågfunktion |
+| Atomic ensemble | Markov channel; conditional coherence table | Effective write/read channel must be specified; MaxwellBloch provides separate classical field propagation |
+| Trapped atom/ion | Markov channel; coherence table | Geometry/electronics can be computed with PySCF; no lifetimes are automatically derived |
+| Rare-earth ion in solid | Markov channel; exact small spin bath; PyCCE; coherence table | Host, spin levels, optical protocol efficiency, and couplings must be specified |
+| Spin defect | Same four storage descriptions | Structure-specific hyperfine tensors required; model sources must be independent |
+| Molecular spin | Same four storage descriptions | A drug fragment or NMR spectrum is not automatically a quantum memory |
+| Negative ion | Markov channel or coherence table; photodetachment with given environmental overlap | The overlap is an input parameter; the tool does not solve the continuum-electron wavefunction |
 
-Det är sex familjegrenar och flera återanvända fysikmodeller. Familjnamnet ändrar inte
-Hamiltonianen magiskt. AFC/EIT/DLCZ, detaljerade optiska kaviteter, kvantprickar,
-optomekaniska minnen och generella icke-Markovska process-tensorer är inte fullständigt
-implementerade här.
+There are six family branches and several reuse the same physics models. The family
+name does not magically change the Hamiltonian. AFC/EIT/DLCZ, detailed optical cavities,
+quantum dots, optomechanical memories, and general non-Markovian process tensors are
+not fully implemented here.
 
-## Lagring, temperatur och brus
+## Molecular data flow
 
-Internt används sekunder, Hz, tesla, kelvin och ångström. Ett tensorfält har också
-koordinatram. Hz och rad/s omvandlas med 2π. PyCCE får ms, kHz, G och rad/ms/G.
-Ett isotopbyte identifierar atomplatsen; isotopmassan skapar inte en hyperfintensor.
+For molecular-spin candidates, the contract distinguishes five layers that must not
+be conflated:
 
-Markovmodellen använder populationsrelaxation Γ1 och **ren** defasning Γφ.
-För konstant temperatur är T2 = 1/(Γ1/2 + Γφ). Vid ändrad temperatur används angivna
-temperaturmodeller och giltighetsintervall. Konstant koefficient över ett intervall
-är ett uttryckligt modellantagande. En temperaturramp accepteras inte som en
-kostnadsfri förändring: thermal_transition_s måste vara noll i denna version.
-Olika fasta temperaturer under skrivning, lagring och läsning är tillåtna, men
-övergångens genomförbarhet är inte validerad.
+1. **Molecular structure** — geometry, charge, spin multiplicity from PySCF or
+   experimental structure. This determines electronic structure but not coherence.
+2. **Computed couplings** — hyperfine tensors, g-tensor, zero-field splitting from
+   PySCF or imported from ORCA/QE. These are electronic-structure outputs, not
+   spin-bath dynamics.
+3. **Assumed environment** — host matrix, isotope composition, temperature, magnetic
+   field. These are declared assumptions, not derived from the molecule.
+4. **Computed coherence** — spin-bath evolution from PyCCE or exact small-bath
+   diagonalisation. This yields L(t) under the assumed environment.
+5. **Optical memory function** — write/read efficiency, wavelength, storage protocol,
+   retrieval model. These are separate from spin coherence.
 
-Exakt spinnbad:
+Molecular data or a coherence curve does not automatically determine write/read
+efficiency, wavelength, or memory protocol. A T_m value from a molecular-qubit
+dataset is a phase-memory time under the dataset's conditions, not an optical-memory
+retrieval efficiency.
 
-- H0 = Hb + m0 A·I och H1 = Hb + m1 A·I i approximationen för ren centralspindefasning.
-- Kärn-Zeeman, hyperfin-, kvadrupol- och angivna parvisa spinnkopplingar ingår.
-- L(t) = Tr[U0 ρb U1†], med termisk badtäthet vid angiven lagringstemperatur.
-- Ideala CPMG-pulser växlar grenarna. Logisk kontrollram återställs vid läsning.
-- Dimensionen begränsas; större bad kräver CCE och en konvergensstudie.
-- Tvärgående centralspinkopplingar och fononer måste modelleras separat.
+## Storage, temperature, and noise
 
-PyCCE-adaptern stöder konventionell CCE för normaliserad ren koherens. gCCE kräver
-en mer fullständig densitetsmatrisrekonstruktion och accepteras inte av denna adapter.
-Öka klusterordning, badradie och konnektivitetsradie och jämför L(t) före materialslutsatser.
-Badets standardisotopkonstanter kommer från PyCCE:s referenstabell; jämför dem med
-granskade kärndata innan de används som experimentellt belägg.
+Internally, the framework uses seconds, Hz, tesla, kelvin, and angstrom. A tensor
+field also has a coordinate frame. Hz and rad/s are converted with 2π. PyCCE receives
+ms, kHz, G, and rad/ms/G. An isotope swap identifies the atomic site; the isotope mass
+does not create a hyperfine tensor.
 
-Koherenstabeller behåller komplex fas och revivals. De måste börja med L(0)=1,
-ha |L|≤1 och matcha temperatur och kontroll. Linjär interpolation används enbart
-inom tabellen. En tabell som redan omfattar populationsrelaxation accepteras inte
-som ett oberoende defasningsbidrag.
+The Markov model uses population relaxation Γ₁ and **pure** dephasing Γφ. At constant
+temperature, T₂ = 1/(Γ₁/2 + Γφ). When temperature changes, declared temperature models
+and validity ranges apply. A constant coefficient over a range is an explicit model
+assumption. A temperature ramp is not accepted as a free change: `thermal_transition_s`
+must be zero in this version. Different fixed temperatures during write, storage, and
+read are allowed, but the transition's feasibility is not validated.
 
-## Kanal och nätverk
+Exact spin bath:
 
-Skriv- och läsdepolarisering, lagringskanal och tillståndsoberoende förlust sätts ihop.
-Utkanalen är CPTP från en qubit till tre tillstånd: 0, 1 och erasure. Choi-matris och
-Krausoperatorer exporteras. Villkorad genomsnittlig qubitfidelity, villkorad
-entanglement fidelity och retrieval probability är separata mått.
+- H₀ = H_b + m₀ A·I and H₁ = H_b + m₁ A·I in the pure central-spin dephasing
+  approximation.
+- Nuclear Zeeman, hyperfine, quadrupole, and supplied pairwise spin couplings are
+  included.
+- L(t) = Tr[U₀ ρ_b U₁†], with thermal bath density at the specified storage
+  temperature.
+- Ideal CPMG pulses switch the branches. The logical control frame resets at readout.
+- The dimension is bounded; larger baths require CCE and a convergence study.
+- Transverse central-spin couplings and phonons must be modelled separately.
 
-Fidelity använder **kvadrerad** Uhlmann/Jozsa-konvention, inte QuTiP:s rotfidelity.
-unconditional_target_overlap är framgångssannolikheten gånger den villkorade
-genomsnittliga överlappningen. Vid noll retrieval är villkorad fidelity odefinierad
-och rapporteras som null.
+The PyCCE adapter supports conventional CCE for normalised pure coherence. gCCE
+requires a more complete density-matrix reconstruction and is not accepted by this
+adapter. Increase cluster order, bath radius, and connectivity radius and compare L(t)
+before drawing material conclusions. The bath's default isotope constants come from
+PyCCE's reference table; compare them against reviewed nuclear data before using them
+as experimental evidence.
 
-Nätverksadaptern erbjuder density matrices och heraldat förlustutfall. Två qubits
-kan behandlas som en gemensam sammanflätad täthetsmatris. En ålderskanal appliceras
-en gång på ursprungstillståndet. Inkrementell applicering av samma ålderskanal skulle
-räkna brus två gånger och kan vara ogiltig vid revivals; API:t avvisar den operationen.
+Coherence tables retain complex phase and revivals. They must start with L(0)=1, have
+|L|≤1, and match temperature and control. Linear interpolation is used only within the
+table. A table that already includes population relaxation is not accepted as an
+independent dephasing contribution.
 
-Den inbyggda tvånodsbenchmarken har oberoende länkattempts och fast lagringsålder.
-Den har ingen repeaterkö, kapacitetskonflikt, routing eller dead-time-modell.
-SeQUeNCe, NetSquid och WestQuant-Network behöver anropa detta API från sina
-respektive händelsehanterare. Deras versionsspecifika klasser ingår inte i paketet.
+## Channel and network
 
-## Externa beräkningar
+Write and read depolarisation, the storage channel, and state-independent loss are
+composed. The output channel is CPTP from one qubit to three states: 0, 1, and
+erasure. Choi matrix and Kraus operators are exported. Conditional average qubit
+fidelity, conditional entanglement fidelity, and retrieval probability are separate
+metrics.
 
-PySCF beräknar vertikal HF/DFT-energi och valfri TDA vid given geometri. Cachen omfattar
-geometri, laddning, 2S, recept och backendversion. Born–Oppenheimer-elektroniken beror
-inte på isotopmassan vid samma kärngeometri. Isotopspinn och värdmiljö måste kopplas in
-via sina egna modeller.
+Fidelity uses the **squared** Uhlmann/Jozsa convention, not QuTiP's root fidelity.
+`unconditional_target_overlap` is the success probability times the conditional average
+overlap. At zero retrieval, conditional fidelity is undefined and reported as null.
 
-ORCA- och QE-adaptrarna skriver riktiga indatafiler och kör angiven lokal binär med
-timeout. QE kräver cell, pseudopotentialer och k-punkter. PyCCE kan importera ORCA/QE:s
-kopplingsdata; koordinatram och atomplatser behöver granskas efter import.
-ORCA/QE-binärerna ingår inte och kördes inte i den här verifieringen.
+The network adapter provides density matrices and heralded loss outcomes. Two qubits
+can be treated as a joint entangled density matrix. An age channel is applied once to
+the original state. Incremental application of the same age channel would count noise
+twice and may be invalid at revivals; the API rejects that operation.
 
-PyCCE 1.1.1 använder två borttagna API-namn. Adaptern återställer NumPy:s unicode_
-som str_ och SciPy:s flyttade isintlike. Det ändrar dtype-/indatakontroll, inte
-Hamiltonianen. Denna kompatibilitet kontrolleras mot en exakt enspinnlösning.
+The built-in two-node benchmark has independent link attempts and fixed storage age.
+It has no repeater queue, capacity contention, routing, or dead-time model. SeQUeNCe,
+QuNetSim, NetSquid, and WestQuant-Network need to call this API from their respective
+event handlers. Their version-specific classes are not included in the package.
 
-MaxwellBloch ger klassisk puls-/fältutbredning i backendens egna normaliserade enheter.
-En fysisk skalfaktor måste väljas för koppling till SI-enheter. Ingen qubitfidelity
-eller kvantminnesverkningsgrad uppfinns från en klassisk fältkurva.
+## External computations
+
+PySCF computes vertical HF/DFT energy and optional TDA at a given geometry. The cache
+covers geometry, charge, 2S, recipe, and backend version. Born–Oppenheimer electronics
+do not depend on the isotope mass at the same nuclear geometry. Isotope spin and host
+environment must be connected through their own models.
+
+ORCA and QE adapters write real input files and run a specified local binary with a
+timeout. QE requires cell, pseudopotentials, and k-points. PyCCE can import ORCA/QE
+coupling data; coordinate frame and atom positions need review after import. ORCA/QE
+binaries are not included and were not run in this verification.
+
+PyCCE 1.1.1 uses two removed API names. The adapter restores NumPy's `unicode_` as
+`str_` and SciPy's moved `isintlike`. This changes dtype/input checking, not the
+Hamiltonian. This compatibility is checked against an exact single-spin solution.
+
+MaxwellBloch provides classical pulse/field propagation in the backend's own
+normalised units. A physical scale factor must be chosen for connection to SI units.
+No qubit fidelity or quantum-memory efficiency is invented from a classical field
+curve.
+
+## Convergence guard
+
+Before a spin model is labelled as a material prediction, the convergence guard checks
+profile identity, bath convergence, and cluster-order convergence. A model that has
+not converged is labelled `computed` with an explicit `convergence_status` field. It is
+not promoted to `evaluated_reference` or `experimental`.
+
+## Protocol instrument
+
+The protocol instrument models the complete effective write/store/read process with
+explicit readout false positives. A true retrieved signal wins over background;
+background can register only if signal retrieval failed. This exclusive first-click
+model excludes double clicks. Signal noise already represented by the input channel
+must not include this source. The protocol test's registered maximum density-matrix
+error is approximately 1.44×10⁻¹⁵, which satisfies the 10⁻¹⁰ tolerance.

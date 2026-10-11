@@ -1,0 +1,10 @@
+{
+  "study_id": "matched_joint_experimental_protocol",
+  "status": "awaiting_matched_fidelity_efficiency_noise_data",
+  "time_axis": "storage_age_s; optical write/read durations supplied separately",
+  "required_same_conditions": ["material and logical encoding", "temperature and tensor/field frame", "write/store/read and refocusing sequence", "input photon regime", "detector window and herald/selection semantics"],
+  "required_per_time": ["independently measured six-state average fidelity or process-tomography counts", "signal retrieval probability and its trial denominator", "background-only detection counts and trial denominator", "uncertainties and cross-time/shared calibration covariance"],
+  "analysis": "Joint heldout comparison of all three observables; calibration data excluded from test residuals",
+  "blocked_substitutions": ["g2 correlation as qubit fidelity", "scalar spin coherence as an optical interface", "fidelity at one age as a storage-time series", "noise per herald as an unreviewed vacuum false-click probability"],
+  "joint_experimental_validation_passed": false
+}

@@ -1,0 +1,60 @@
+{
+  "study_id": "sequence_qunetsim_larger_v1",
+  "profile": {
+    "path": "../../../lab/examples/defect_spin_profile.json",
+    "sha256": "d87d94a295dc837d8d8deacc1839c7a77c54b3462696c87e0b01505c78f99c58"
+  },
+  "background_rates_s_inv": [
+    0,
+    5000
+  ],
+  "storage_ages_s": [
+    0,
+    0.001,
+    0.01,
+    0.03
+  ],
+  "herald_probabilities": [
+    0.25,
+    0.75
+  ],
+  "seeds": [
+    2101,
+    2102,
+    2103,
+    2104,
+    2105,
+    2106,
+    2107,
+    2108
+  ],
+  "master_seed": 20261010,
+  "attempts": 512,
+  "attempt_interval_s": 0.04,
+  "minimum_Bell_fidelity": 0.8,
+  "density_tolerance": 1e-10,
+  "detuning_Hz": 7,
+  "rates_s_inv": {
+    "population": 30,
+    "pure_dephasing": 50,
+    "erasure": 12
+  },
+  "io": {
+    "eta_write": 0.8,
+    "eta_read": 0.7,
+    "write_depolarizing_p": 0.01,
+    "read_depolarizing_p": 0.02
+  },
+  "detector": {
+    "event_model": "exclusive_signal_then_background",
+    "independent_of_signal_noise": true,
+    "noise_source_id": "readout_background",
+    "window_s": 1e-05,
+    "base_rate_s_inv": 0,
+    "age_rate_s_inv_per_s": 50000,
+    "background_excited_population": 0.5
+  },
+  "prospectively_preregistered": false,
+  "scope": "Larger local software control, following passed protocol/convergence/pilot gates; no material predictions",
+  "prerequisite_pilot_required": true
+}

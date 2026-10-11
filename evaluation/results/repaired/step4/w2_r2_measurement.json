@@ -1,0 +1,34 @@
+{
+  "cold": {
+    "study_id": "system_performance_control_v1",
+    "enumerated_run_count": 12,
+    "completed_runs": 12,
+    "statuses": {
+      "success": 12
+    },
+    "all_success": true,
+    "resumed_runs": 0,
+    "gate_pass_runs": 12,
+    "hardware_validated": false,
+    "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-system/step4/w2_r2"
+  },
+  "warm": {
+    "study_id": "system_performance_control_v1",
+    "enumerated_run_count": 12,
+    "completed_runs": 12,
+    "statuses": {
+      "success": 12
+    },
+    "all_success": true,
+    "resumed_runs": 12,
+    "gate_pass_runs": 12,
+    "hardware_validated": false,
+    "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-system/step4/w2_r2"
+  },
+  "cold_s": 1.615705356000035,
+  "warm_s": 0.010265203000017209,
+  "parent_peak_rss_bytes": 43028480,
+  "largest_terminated_child_peak_rss_bytes": 69738496,
+  "child_cpu_s": 2.734797,
+  "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak"
+}

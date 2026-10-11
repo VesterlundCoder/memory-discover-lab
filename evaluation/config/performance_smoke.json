@@ -1,0 +1,1 @@
+{"workers":[1,2],"timing_repeats":1,"times_s":[0,0.001],"replicates":1,"detunings_Hz":[0],"seed":20261010,"max_runs":2,"job_timeout_s":30,"driver_timeout_s":120}

@@ -1,0 +1,5 @@
+{
+  "status": "awaiting_reviewed_data",
+  "reference": {"doi":"10.1039/C8SC04122A", "role":"molecular-spin candidate reference, not a complete memory channel"},
+  "required": ["Audited normalized complex pure-dephasing curve with time in seconds and measurement uncertainties", "Reviewed fixed Hamiltonian, tensor frames, field, temperature, isotope composition and pulse sequence", "Separation of population relaxation from pure dephasing", "Independent review of optical write/read channel before network validation"]
+}

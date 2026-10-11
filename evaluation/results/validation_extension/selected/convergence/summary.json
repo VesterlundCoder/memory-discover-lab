@@ -1,0 +1,275 @@
+{
+  "status": "pass",
+  "coherence_solver_calls": 69,
+  "diagnostic_rows": 66,
+  "axes": {
+    "independent_solver": {
+      "status": "pass",
+      "final_rows": [
+        {
+          "axis": "independent_solver",
+          "pulses": 0,
+          "level": "expm_vs_spectral",
+          "max_complex_error": 4.594889227755668e-16,
+          "tolerance": 1e-10,
+          "gate": "pass"
+        },
+        {
+          "axis": "independent_solver",
+          "pulses": 1,
+          "level": "expm_vs_spectral",
+          "max_complex_error": 6.675160091024069e-16,
+          "tolerance": 1e-10,
+          "gate": "pass"
+        },
+        {
+          "axis": "independent_solver",
+          "pulses": 4,
+          "level": "expm_vs_spectral",
+          "max_complex_error": 1.4436183479621038e-15,
+          "tolerance": 1e-10,
+          "gate": "pass"
+        }
+      ]
+    },
+    "control_resolution": {
+      "status": "pass",
+      "final_rows": [
+        {
+          "axis": "control_resolution",
+          "pulses": 0,
+          "level": "128",
+          "max_complex_error": 2.331976642456912e-05,
+          "tolerance": 0.0001,
+          "gate": "pass"
+        },
+        {
+          "axis": "control_resolution",
+          "pulses": 1,
+          "level": "128",
+          "max_complex_error": 5.516501460411938e-06,
+          "tolerance": 0.0001,
+          "gate": "pass"
+        },
+        {
+          "axis": "control_resolution",
+          "pulses": 4,
+          "level": "128",
+          "max_complex_error": 1.1297981281496322e-08,
+          "tolerance": 0.0001,
+          "gate": "pass"
+        }
+      ]
+    },
+    "cluster_order": {
+      "status": "pass",
+      "final_rows": [
+        {
+          "axis": "cluster_order",
+          "pulses": 0,
+          "level": "4",
+          "max_complex_error": 3.937125919303991e-10,
+          "tolerance": 0.001,
+          "gate": "pass"
+        },
+        {
+          "axis": "cluster_order",
+          "pulses": 1,
+          "level": "4",
+          "max_complex_error": 4.1316061683005924e-10,
+          "tolerance": 0.001,
+          "gate": "pass"
+        },
+        {
+          "axis": "cluster_order",
+          "pulses": 4,
+          "level": "4",
+          "max_complex_error": 1.8746448841069238e-11,
+          "tolerance": 0.001,
+          "gate": "pass"
+        }
+      ]
+    },
+    "pair_cutoff": {
+      "status": "pass",
+      "final_rows": [
+        {
+          "axis": "pair_cutoff",
+          "pulses": 0,
+          "level": "40",
+          "max_complex_error": 3.937125919303991e-10,
+          "tolerance": 0.001,
+          "gate": "pass"
+        },
+        {
+          "axis": "pair_cutoff",
+          "pulses": 1,
+          "level": "40",
+          "max_complex_error": 4.1316061683005924e-10,
+          "tolerance": 0.001,
+          "gate": "pass"
+        },
+        {
+          "axis": "pair_cutoff",
+          "pulses": 4,
+          "level": "40",
+          "max_complex_error": 1.8746448841069238e-11,
+          "tolerance": 0.001,
+          "gate": "pass"
+        }
+      ]
+    },
+    "bath_size": {
+      "status": "pass",
+      "final_rows": [
+        {
+          "axis": "bath_size",
+          "pulses": 0,
+          "level": "8",
+          "max_complex_error": 1.4517408275258376e-08,
+          "tolerance": 0.001,
+          "gate": "pass"
+        },
+        {
+          "axis": "bath_size",
+          "pulses": 1,
+          "level": "8",
+          "max_complex_error": 5.236796551955081e-09,
+          "tolerance": 0.001,
+          "gate": "pass"
+        },
+        {
+          "axis": "bath_size",
+          "pulses": 4,
+          "level": "8",
+          "max_complex_error": 1.7442885540252403e-10,
+          "tolerance": 0.001,
+          "gate": "pass"
+        }
+      ]
+    },
+    "time_grid": {
+      "status": "pass",
+      "final_rows": [
+        {
+          "axis": "time_grid",
+          "pulses": 0,
+          "level": "257",
+          "max_complex_error": 1.3856897655983857e-06,
+          "tolerance": 0.0001,
+          "gate": "pass"
+        },
+        {
+          "axis": "time_grid",
+          "pulses": 1,
+          "level": "257",
+          "max_complex_error": 1.9496132486196416e-06,
+          "tolerance": 0.0001,
+          "gate": "pass"
+        },
+        {
+          "axis": "time_grid",
+          "pulses": 4,
+          "level": "257",
+          "max_complex_error": 7.521663281107038e-08,
+          "tolerance": 0.0001,
+          "gate": "pass"
+        }
+      ]
+    }
+  },
+  "runtime_s": 7.344408090999423,
+  "evidence_kind": "hypothetical",
+  "material_prediction_authorized": false,
+  "independent_physical_model_review": false,
+  "scope": "nested noncommuting finite-bath software controls, maximally mixed initialization",
+  "limitations": [
+    "Not a material lattice or measured hyperfine/bath ensemble",
+    "Time-grid gate tests mean |L| integration, not all revival extrema or a measured T2",
+    "Maximum exact bath size 8 spins; convergence domain is the supplied time window",
+    "Control pulses are ideal; pulse-shape/error convergence is not established"
+  ],
+  "small_bath_sha256": "7629c29d1db64fb8f14f75077fde17cd8229e89a6fdac5021cd2eb780ce90d0a",
+  "provenance": {
+    "at_utc": "2026-10-10T18:59:53.862058+00:00",
+    "configuration": {
+      "study_id": "synthetic_spin_convergence_v1",
+      "small_exact_spins": 4,
+      "pulses": [
+        0,
+        1,
+        4
+      ],
+      "max_age_s": 0.0004,
+      "time_points": 33,
+      "control_substeps": [
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "cluster_orders": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "pair_cutoffs_angstrom": [
+        5,
+        10,
+        20,
+        40
+      ],
+      "bath_sizes": [
+        2,
+        4,
+        6,
+        8
+      ],
+      "time_grid_sizes": [
+        33,
+        65,
+        129,
+        257
+      ],
+      "solver_tolerance": 1e-10,
+      "control_tolerance": 0.0001,
+      "cluster_tolerance": 0.001,
+      "bath_tolerance": 0.001,
+      "grid_tolerance": 0.0001,
+      "prospectively_preregistered": false,
+      "scope": "Synthetic controls only; finite time-window convergence cannot validate a new material"
+    },
+    "configuration_sha256": "bb64d4fd80707521f75bc68739319ec92a034c92bab70434dd24438494979ae6",
+    "evaluation_source_sha256": "ecc4ea6d77ca774a7f9cd3ed6f91285a5d5632a041ecdaa79ff829a5464cc373",
+    "lab_source_sha256": "3852565376c2a529bb33bc9394cf96061eeee147e19b4f4bbc2da724cf224f5a",
+    "inputs": [],
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+      "packages": {
+        "numpy": "2.3.5",
+        "scipy": "1.16.3",
+        "qutip": "5.3.1",
+        "pyscf": null,
+        "pycce": "1.1.1",
+        "ase": "3.29.0",
+        "maxwellbloch": null,
+        "pynmrstar": null,
+        "openpyxl": null,
+        "sequence": "1.2.0",
+        "pandas": "2.3.3"
+      },
+      "git_commit": "985c8fe0c7dac3830e187e8c74cd0a6eecf225f7"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": null
+    },
+    "prospectively_preregistered": false,
+    "hardware_experiments": 0
+  }
+}

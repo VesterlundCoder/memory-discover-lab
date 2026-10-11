@@ -1,0 +1,19 @@
+{
+  "study_id": "synthetic_spin_convergence_v1",
+  "small_exact_spins": 4,
+  "pulses": [0, 1, 4],
+  "max_age_s": 0.0004,
+  "time_points": 33,
+  "control_substeps": [8, 16, 32, 64, 128],
+  "cluster_orders": [1, 2, 3, 4],
+  "pair_cutoffs_angstrom": [5, 10, 20, 40],
+  "bath_sizes": [2, 4, 6, 8],
+  "time_grid_sizes": [33, 65, 129, 257],
+  "solver_tolerance": 1e-10,
+  "control_tolerance": 0.0001,
+  "cluster_tolerance": 0.001,
+  "bath_tolerance": 0.001,
+  "grid_tolerance": 0.0001,
+  "prospectively_preregistered": false,
+  "scope": "Synthetic controls only; finite time-window convergence cannot validate a new material"
+}

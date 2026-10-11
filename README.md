@@ -8,7 +8,7 @@
 
 WestQuant connects versioned experimental source data to typed observations, condition-matched coherence references, explicit quantum channels (Kraus operators with erasure), and native network-simulator adapters (SeQUeNCe and QuNetSim). Its contribution is an executable evidence contract across these interfaces, with retained failure outcomes and reproducible study identities.
 
-**Latest release: v0.7.0** — available on [PyPI](https://pypi.org/project/westquant-memory-lab/0.7.0/) and the [v0.7.0 git tag](https://github.com/VesterlundCoder/memory-discover-lab/tree/release/v0.7.0).
+**Latest release: v0.7.1** — available on [PyPI](https://pypi.org/project/westquant-memory-lab/0.7.1/) and the [v0.7.1 git tag](https://github.com/VesterlundCoder/memory-discover-lab/releases/tag/v0.7.1).
 
 > **Software verification is not hardware validation.** The framework preserves distinctions between experimental observations, curated observations, evaluated references, computed results, hypothetical controls, and unknown evidence. It does not claim universal simulator validation, new material discovery, or improved hardware performance.
 
@@ -34,7 +34,11 @@ Optional extras (install only what you need):
 | `propagation` | MaxwellBloch 0.12.0 | Optical propagation |
 | `datasets` | openpyxl, pynmrstar | Dataset importers |
 | `network` | SeQUeNCe 1.2.0, pandas | Native network simulation |
-| `all` | All of the above | Complete workflow |
+| `second-network` | QuNetSim 0.1.2, QuTiP 5.3.1, qutip-qip 0.4.2 | QuNetSim with custom QuTiP density backend |
+| `crosssim` | SeQUeNCe + QuNetSim + QuTiP | Cross-simulator benchmark (both network simulators) |
+| `all` | All of the above (except QuNetSim) | Complete workflow |
+
+**Note:** `[all]` does not install QuNetSim. QuNetSim requires Python 3.12+ and is installed separately via `[second-network]` or `[crosssim]`. This avoids dependency conflicts when only SeQUeNCe is needed.
 
 **Requirements:** Python 3.10+. The full workflow with SeQUeNCe requires Python 3.12+.
 
@@ -46,11 +50,17 @@ New to WestQuant? See the **[Getting Started guide](docs/GETTING_STARTED.md)** �
 # Check your environment
 wqml doctor
 
-# Run the bundled Teller et al. baseline (open data)
-wqml reproduce examples/teller2025_baseline.json --out baselines/teller2025
+# Simulate a channel using a packaged example profile
+# (works from any directory after pip install)
+python -c "
+from memorylab.examples import atomic_ensemble_profile
+import os, json
+path = os.path.join(os.path.dirname(atomic_ensemble_profile.__file__), 'atomic_ensemble_profile.json')
+print(f'Example profile at: {path}')
+"
 
-# Or run a full pipeline
-wqml pipeline examples/pipeline_full.json --out runs/my_lab
+# Or from a source checkout:
+wqml simulate examples/atomic_ensemble_profile.json --times 0,0.001,0.01,0.1,1 --out samples.json
 ```
 
 ### Example: `wqml doctor` output
@@ -144,7 +154,7 @@ The adapters apply sampled absolute-age channels once to the original input and 
 - Content hashes for source artifacts
 - Configuration and source fingerprints for every run
 - Checkpoint and resume logic
-- 124 passing tests, 1 skipped (v0.7.0)
+- 124 passing tests, 1 skipped (v0.7.1)
 
 ## Architecture
 
@@ -156,7 +166,11 @@ memorylab/
     spin.py             # Nuclear spin-bath evolution, CPMG, CCE
     network.py          # Network device export and retrieval
     sequence_adapter.py # SeQUeNCe native adapter
-    runner.py            # Bounded worker processes, checkpoints
+    qunetsim_adapter.py # QuNetSim adapter with custom QuTiP backend
+    protocol.py         # Effective write/store/read instrument with false positives
+    convergence_guard.py # Scope and identity checks before material prediction
+    bundled.py          # Verified, licensed numerical inputs
+    runner.py           # Bounded worker processes, checkpoints
     calibration.py      # Observation binding and condition matching
     t2assessment.py     # T2 inference gates and diagnostics
     t2curves.py         # Curve fitting and model mismatch detection
@@ -165,6 +179,7 @@ memorylab/
     pipeline.py         # Full pipeline orchestration
     cli.py              # Command-line interface (wqml)
     screening/          # Candidate screening and nuclear data
+    examples/           # Bundled example profiles (packaged in wheel)
 ```
 
 ## Command reference
@@ -215,11 +230,11 @@ The framework distinguishes seven evidence kinds and enforces their boundaries:
 
 ## Validated scope
 
-The v0.7.0 release validates:
+The v0.7.1 release validates:
 
-- 336 state probes across 56 channel-age points (numerical agreement below 10^-15)
-- 128 paired SeQUeNCe/QuNetSim comparisons (below 10^-10 tolerance)
-- 124 passing tests, 1 skipped
+- 336 state probes across 56 channel-age points (protocol test maximum density-matrix error approximately 1.44×10⁻¹⁵, satisfying the 10⁻¹⁰ tolerance)
+- 128 paired SeQUeNCe/QuNetSim comparisons (maximum density-matrix error 2.465×10⁻¹⁵, satisfying the 10⁻¹⁰ tolerance)
+- 124 passing tests, 1 skipped (Python 3.14.8, commit 8c06e44)
 - 359 JSON records and 11 exact random-trace arrays checked in replay
 - Open rare-earth (Pr³⁺:Y₂SiO₅) and diamond-spin (¹³C/NV) dataset reanalysis
 
@@ -235,9 +250,21 @@ The v0.7.0 release validates:
 - [Getting Started](docs/GETTING_STARTED.md) — From install to first channel in 5 commands
 - [Quickstart](docs/QUICKSTART.md) — 5-minute guide to the core workflow
 - [Tutorial](docs/TUTORIAL.md) — Full walkthrough from data import to network simulation
-- [Model Contract](docs/MODEL_CONTRACT.md) — Physical model definitions and inference boundaries
+- [Usage Example](docs/USAGE_EXAMPLE.md) — Complete example from profile to SeQUeNCe run
+- [Model Contract](docs/MODEL_CONTRACT.md) — Physical model definitions and inference boundaries (v0.7.1)
+- [SeQUeNCe Adapter Contract](docs/SEQUENCE_ADAPTER_CONTRACT.md) — Adapter scope, timing, and noise responsibility
+- [Benchmark Overview](docs/BENCHMARK_OVERVIEW.md) — SeQUeNCe–QuNetSim cross-simulator benchmark
 - [Data Sources](docs/DATA_SOURCES.md) — Source data provenance and licensing
 - [Extending](docs/EXTENDING.md) — How to add new model families and adapters
+- [Reproducibility](REPRODUCIBILITY.md) — Reproduction instructions and locked environment
+
+## Software vs. research package
+
+The PyPI wheel installs the software package (`memorylab/`) with bundled examples.
+Benchmark reproduction requires the evaluation configs and results from the
+[GitHub release archive](https://github.com/VesterlundCoder/memory-discover-lab/releases),
+not from the PyPI wheel. See [REPRODUCIBILITY.md](REPRODUCIBILITY.md) for the full
+reproduction instructions.
 
 ## Citation
 
@@ -247,7 +274,7 @@ If you use WestQuant in your research, please cite:
 @software{vesterlund2026westquant,
   author = {Vesterlund, David},
   title = {{WestQuant Memory Discovery Lab}},
-  version = {0.7.0},
+  version = {0.7.1},
   year = {2026},
   url = {https://github.com/VesterlundCoder/memory-discover-lab}
 }

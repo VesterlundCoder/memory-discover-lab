@@ -1,0 +1,95 @@
+name: Distribution build and test
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install build tools
+        run: pip install build twine
+
+      - name: Build wheel and sdist
+        run: python -m build
+
+      - name: Check metadata with twine
+        run: python -m twine check dist/*
+
+      - name: List distribution contents
+        run: |
+          echo "=== Wheel contents ==="
+          python -c "
+          import zipfile, sys
+          with zipfile.ZipFile('dist/westquant_memory_lab-0.7.1-py3-none-any.whl') as z:
+              for n in sorted(z.namelist()):
+                  print(n)
+          "
+          echo "=== Sdist contents ==="
+          tar tzf dist/westquant_memory_lab-0.7.1.tar.gz | sort
+
+      - name: Test wheel install in clean dir
+        run: |
+          mkdir -p /tmp/wheel_test
+          cd /tmp/wheel_test
+          pip install "$GITHUB_WORKSPACE/dist/westquant_memory_lab-0.7.1-py3-none-any.whl"
+          python -c "import memorylab; print(f'Version: {memorylab.__version__}')"
+          wqml doctor
+          python -c "
+          from memorylab.models import evaluate
+          print('Core import: OK')
+          "
+
+      - name: Test sdist install in clean dir
+        run: |
+          mkdir -p /tmp/sdist_test
+          cd /tmp/sdist_test
+          pip install "$GITHUB_WORKSPACE/dist/westquant_memory_lab-0.7.1.tar.gz"
+          python -c "import memorylab; print(f'Version: {memorylab.__version__}')"
+          wqml doctor
+
+      - name: Test quickstart from wheel install
+        run: |
+          mkdir -p /tmp/quickstart_test
+          cd /tmp/quickstart_test
+          # Use packaged examples
+          python -c "
+          from memorylab.examples import atomic_ensemble_profile
+          import json, os
+          profile_path = os.path.join(os.path.dirname(atomic_ensemble_profile.__file__), 'atomic_ensemble_profile.json')
+          print(f'Example at: {profile_path}')
+          with open(profile_path) as f:
+              print(f'Profile loaded: {json.load(f)[\"name\"]}')
+          "
+          # Simulate using packaged example
+          python -c "
+          import json, os
+          from memorylab.examples import atomic_ensemble_profile
+          profile_path = os.path.join(os.path.dirname(atomic_ensemble_profile.__file__), 'atomic_ensemble_profile.json')
+          from memorylab.models import evaluate
+          with open(profile_path) as f:
+              profile = json.load(f)
+          samples = evaluate(profile, [0.0, 0.001, 0.01, 0.1, 1], backend='analytic')
+          print(f'Generated {len(samples)} samples')
+          print(f'First fidelity: {samples[0][\"metrics\"][\"conditional_average_fidelity\"]:.6f}')
+          "
+
+      - name: Test SeQUeNCe adapter import
+        run: |
+          pip install "westquant-memory-lab[network]"
+          python -c "from memorylab.sequence_adapter import SequenceAdapter; print('SeQUeNCe adapter: OK')"
+
+      - name: Test QuNetSim adapter import
+        run: |
+          pip install "westquant-memory-lab[second-network]"
+          python -c "from memorylab.qunetsim_adapter import run_qunetsim; print('QuNetSim adapter: OK')"
+
+      - name: Upload distribution artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/

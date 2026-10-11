@@ -1,0 +1,405 @@
+{
+  "step": 4,
+  "status": "pass",
+  "worker_invariant_scientific_results": true,
+  "robustness": {
+    "missing_parameter_status": "missing_data",
+    "timeout_status": "timeout",
+    "partial_checkpoint_precompleted_status": "success",
+    "restored_summary": {
+      "study_id": "system_performance_control_v1",
+      "enumerated_run_count": 12,
+      "completed_runs": 12,
+      "statuses": {
+        "success": 12
+      },
+      "all_success": true,
+      "resumed_runs": 1,
+      "gate_pass_runs": 12,
+      "hardware_validated": false,
+      "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/robustness_partial_checkpoint"
+    },
+    "scope": "Resume after one normally completed checkpoint; no forced crash, power-loss or filesystem corruption experiment"
+  },
+  "measurements": [
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w1_r0"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w1_r0"
+      },
+      "cold_s": 3.407316267999704,
+      "warm_s": 0.009876478000478528,
+      "parent_peak_rss_bytes": 35463168,
+      "largest_terminated_child_peak_rss_bytes": 67571712,
+      "child_cpu_s": 3.066838,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b9d982d101401171185f28d55720193e62b2ccb110f4881928745670137d9334"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w4_r0"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w4_r0"
+      },
+      "cold_s": 1.1154531689999203,
+      "warm_s": 0.013253380999231013,
+      "parent_peak_rss_bytes": 39788544,
+      "largest_terminated_child_peak_rss_bytes": 67104768,
+      "child_cpu_s": 3.371668,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b9d982d101401171185f28d55720193e62b2ccb110f4881928745670137d9334"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w2_r0"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w2_r0"
+      },
+      "cold_s": 1.8131622450000577,
+      "warm_s": 0.012120899999899848,
+      "parent_peak_rss_bytes": 42057728,
+      "largest_terminated_child_peak_rss_bytes": 67080192,
+      "child_cpu_s": 3.158066,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b9d982d101401171185f28d55720193e62b2ccb110f4881928745670137d9334"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w1_r1"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w1_r1"
+      },
+      "cold_s": 3.253662426000119,
+      "warm_s": 0.010818753999956243,
+      "parent_peak_rss_bytes": 42749952,
+      "largest_terminated_child_peak_rss_bytes": 67289088,
+      "child_cpu_s": 2.853096,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b9d982d101401171185f28d55720193e62b2ccb110f4881928745670137d9334"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w4_r1"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w4_r1"
+      },
+      "cold_s": 0.8703959920003399,
+      "warm_s": 0.012634961999538064,
+      "parent_peak_rss_bytes": 42844160,
+      "largest_terminated_child_peak_rss_bytes": 67567616,
+      "child_cpu_s": 3.0506520000000004,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b9d982d101401171185f28d55720193e62b2ccb110f4881928745670137d9334"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w2_r1"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w2_r1"
+      },
+      "cold_s": 1.863767029999508,
+      "warm_s": 0.01128662599967356,
+      "parent_peak_rss_bytes": 42938368,
+      "largest_terminated_child_peak_rss_bytes": 67190784,
+      "child_cpu_s": 3.285003,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b9d982d101401171185f28d55720193e62b2ccb110f4881928745670137d9334"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w4_r2"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w4_r2"
+      },
+      "cold_s": 0.9158891850001964,
+      "warm_s": 0.01287021600001026,
+      "parent_peak_rss_bytes": 42938368,
+      "largest_terminated_child_peak_rss_bytes": 67227648,
+      "child_cpu_s": 3.17722,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b9d982d101401171185f28d55720193e62b2ccb110f4881928745670137d9334"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w1_r2"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w1_r2"
+      },
+      "cold_s": 3.252759963000244,
+      "warm_s": 0.0108861849994355,
+      "parent_peak_rss_bytes": 42938368,
+      "largest_terminated_child_peak_rss_bytes": 67653632,
+      "child_cpu_s": 2.84413,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b9d982d101401171185f28d55720193e62b2ccb110f4881928745670137d9334"
+    },
+    {
+      "cold": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 0,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w2_r2"
+      },
+      "warm": {
+        "study_id": "system_performance_control_v1",
+        "enumerated_run_count": 12,
+        "completed_runs": 12,
+        "statuses": {
+          "success": 12
+        },
+        "all_success": true,
+        "resumed_runs": 12,
+        "gate_pass_runs": 12,
+        "hardware_validated": false,
+        "output": "/workspace/scratch/b85c5791ca4a/repair-clean-clone/reproductions/gauge-confirmation/step4/w2_r2"
+      },
+      "cold_s": 1.6186760020000293,
+      "warm_s": 0.011469971999758855,
+      "parent_peak_rss_bytes": 42938368,
+      "largest_terminated_child_peak_rss_bytes": 67346432,
+      "child_cpu_s": 2.7959750000000003,
+      "rss_scope": "Separate parent maximum and largest terminated child maximum; not aggregate concurrent process peak",
+      "scientific_digest": "b9d982d101401171185f28d55720193e62b2ccb110f4881928745670137d9334"
+    }
+  ],
+  "identity": {
+    "at_utc": "2026-10-10T14:24:21.061052+00:00",
+    "configuration": {
+      "workers": [
+        1,
+        2,
+        4
+      ],
+      "timing_repeats": 3,
+      "times_s": [
+        0,
+        0.0001,
+        0.0005,
+        0.001,
+        0.002,
+        0.005
+      ],
+      "replicates": 2,
+      "detunings_Hz": [
+        0,
+        123,
+        500
+      ],
+      "seed": 20261010,
+      "max_runs": 24,
+      "job_timeout_s": 60,
+      "driver_timeout_s": 600
+    },
+    "configuration_sha256": "72da011eb9fdd13d07e2073f258c07533a7d9723963af2ed44042dead165d02e",
+    "evaluation_source_sha256": "254b1bbb8a1d3c95d28b63e69d40c3a7afcbc2aa76b4b14a2bf8a727c9ead1e9",
+    "lab_source_sha256": "99b0ef35caf1791653ce2b9c029514b21e9340ed58198194e291bccc4095e62f",
+    "inputs": [],
+    "environment": {
+      "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+      "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+      "packages": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1",
+        "qutip": null,
+        "pyscf": null,
+        "pycce": null,
+        "ase": null,
+        "maxwellbloch": null,
+        "pynmrstar": null,
+        "openpyxl": null,
+        "sequence": null,
+        "pandas": null
+      },
+      "git_commit": "b4fa295eb0b4a815a157f2dba4dbf6832317d589"
+    },
+    "thread_environment": {
+      "OMP_NUM_THREADS": null,
+      "MKL_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null,
+      "NUMEXPR_NUM_THREADS": null
+    },
+    "prospectively_preregistered": false,
+    "hardware_experiments": 0
+  },
+  "native_threads_per_worker": 1,
+  "timing_scope": "Subprocess startup, native channel computation and artifact IO; resume is terminal-result checkpoint reuse",
+  "memory_scope": "Parent peak and largest terminated child peak separately; no total concurrent peak estimate",
+  "hardware_validation": false,
+  "external_environment_validation": false
+}

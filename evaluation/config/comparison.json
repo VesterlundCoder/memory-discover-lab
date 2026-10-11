@@ -1,0 +1,10 @@
+{
+  "population_rates_s_inv": [0, 0.05, 10, 100],
+  "storage_temperatures_K": [4.2, 10, 80],
+  "detunings_Hz": [0, 123, -500, 1000],
+  "excited_populations": [0, 0.1, 0.5, 0.9],
+  "times_s": [0, 0.000001, 0.0001, 0.001, 0.01, 0.1],
+  "seed": 20261010,
+  "timing_repeats": 5,
+  "tolerance": 1e-8
+}
