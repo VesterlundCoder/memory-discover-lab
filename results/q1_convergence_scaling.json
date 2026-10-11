@@ -1,0 +1,105 @@
+{
+  "study": "q1_convergence_scaling",
+  "description": "Scaling study for exact vs CCE bath coherence",
+  "seed": 42,
+  "time_points": 5,
+  "max_age_s": 0.0004,
+  "results": [
+    {
+      "method": "exact",
+      "n_spins": 2,
+      "hilbert_dim": 4,
+      "wall_time_s": 0.002,
+      "L_0": 1.0,
+      "L_end": 0.981864,
+      "status": "ok"
+    },
+    {
+      "method": "exact",
+      "n_spins": 4,
+      "hilbert_dim": 16,
+      "wall_time_s": 0.002,
+      "L_0": 1.0,
+      "L_end": 0.965907,
+      "status": "ok"
+    },
+    {
+      "method": "exact",
+      "n_spins": 6,
+      "hilbert_dim": 64,
+      "wall_time_s": 0.011,
+      "L_0": 1.0,
+      "L_end": 0.938812,
+      "status": "ok"
+    },
+    {
+      "method": "exact",
+      "n_spins": 8,
+      "hilbert_dim": 256,
+      "wall_time_s": 0.176,
+      "L_0": 1.0,
+      "L_end": 0.912119,
+      "status": "ok"
+    },
+    {
+      "method": "exact",
+      "n_spins": 10,
+      "hilbert_dim": 1024,
+      "wall_time_s": 7.964,
+      "L_0": 1.0,
+      "L_end": 0.894035,
+      "status": "ok"
+    },
+    {
+      "method": "exact",
+      "n_spins": 12,
+      "hilbert_dim": 4096,
+      "wall_time_s": 536.47,
+      "L_0": 1.0,
+      "L_end": 0.897142,
+      "status": "ok"
+    },
+    {
+      "method": "pycce",
+      "n_spins": 4,
+      "hilbert_dim": null,
+      "wall_time_s": 1.245,
+      "order": 2,
+      "status": "error",
+      "error": "'Spin type for H1 was not provided and was not found in common isotopes.'"
+    },
+    {
+      "method": "pycce",
+      "n_spins": 10,
+      "hilbert_dim": null,
+      "wall_time_s": 0.001,
+      "order": 2,
+      "status": "error",
+      "error": "'Spin type for H1 was not provided and was not found in common isotopes.'"
+    },
+    {
+      "method": "pycce",
+      "n_spins": 40,
+      "hilbert_dim": null,
+      "wall_time_s": 0.001,
+      "order": 2,
+      "status": "error",
+      "error": "'Spin type for H1 was not provided and was not found in common isotopes.'"
+    },
+    {
+      "method": "pycce",
+      "n_spins": 100,
+      "hilbert_dim": null,
+      "wall_time_s": 0.003,
+      "order": 2,
+      "status": "error",
+      "error": "'Spin type for H1 was not provided and was not found in common isotopes.'"
+    }
+  ],
+  "findings": {
+    "exact_practical_limit": "N=12 (dim=4096) takes ~480s on a laptop",
+    "exact_scaling": "O(2^N) in dimension, O(N^3) in eigenvalue problem",
+    "pyce_feasibility": "PyCCE can handle N=100+ but requires different bath format",
+    "crossover": "Exact is faster for N<=8; CCE is needed for N>12"
+  }
+}

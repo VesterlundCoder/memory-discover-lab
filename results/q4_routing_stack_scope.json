@@ -1,0 +1,127 @@
+{
+  "study": "q4_routing_stack_scope",
+  "description": "Scope analysis for extending the benchmark to full routing",
+  "current_scope": {
+    "topology": "Two nodes (A, B), direct link",
+    "memory": "Single slot per node",
+    "protocol": "Direct entanglement generation, fixed storage age",
+    "routing": "None \u2014 no Router, RuleSet, or EntanglementProtocol",
+    "timing": "Fixed attempt interval, fixed storage age",
+    "what_is_tested": "Whether both simulators apply the same channel correctly",
+    "what_is_not_tested": "Routing, swapping, queueing, contention, dead time"
+  },
+  "proposed_extensions": [
+    {
+      "name": "Three-node chain (A \u2014 B \u2014 C)",
+      "description": "Add a repeater node B that swaps entanglement between A-C",
+      "new_components": [
+        "SeQUeNCe Node at B with two memories (one for each link)",
+        "EntanglementSwappingProtocol at B",
+        "RuleSet for A-B-C entanglement",
+        "Age tracking per memory (not fixed)"
+      ],
+      "challenges": [
+        "The two memories at B have different ages (one from A-B link, one from B-C link)",
+        "The swap occurs when both links succeed \u2014 the age is random",
+        "WestQuant requires exact age samples (no interpolation)",
+        "Need to export channels for the full range of possible ages"
+      ],
+      "estimated_effort": "1-2 weeks"
+    },
+    {
+      "name": "Star topology (hub with N spokes)",
+      "description": "Central hub with N memories, each connected to a leaf node",
+      "new_components": [
+        "Hub node with N memory slots",
+        "Per-link entanglement generation",
+        "Scheduler that selects which links to attempt",
+        "Capacity contention model"
+      ],
+      "challenges": [
+        "Hub has limited memory \u2014 not all links can be served simultaneously",
+        "Scheduling policy affects delivery probability",
+        "Need to model dead time (memory reset after readout)"
+      ],
+      "estimated_effort": "2-3 weeks"
+    },
+    {
+      "name": "Mesh with routing",
+      "description": "Multiple nodes with multiple paths; routing protocol selects paths",
+      "new_components": [
+        "SeQUeNCe Router at each node",
+        "Routing protocol (e.g. Dijkstra-based or Q-routing)",
+        "Path selection based on link quality",
+        "Multi-hop entanglement with intermediate swaps"
+      ],
+      "challenges": [
+        "Routing adds classical communication latency",
+        "Path selection depends on real-time link quality",
+        "Multi-hop entanglement requires multiple swaps",
+        "Each hop adds a memory age \u2014 the total age is the sum of hop ages"
+      ],
+      "estimated_effort": "3-4 weeks"
+    }
+  ],
+  "key_questions": [
+    {
+      "question": "Does routing delay or channel decoherence dominate delivery probability?",
+      "answer": "Unknown \u2014 needs the three-node chain benchmark to measure",
+      "method": "Compare delivery probability at various distances with and without routing delay"
+    },
+    {
+      "question": "Can the WestQuant channel handle asynchronous retrieval?",
+      "answer": "Partially \u2014 the channel requires an exact age sample. A routing benchmark would need to generate ages from the routing timing distribution and export a channel for each possible age.",
+      "method": "Pre-compute channels on a fine age grid; look up the closest age at retrieval"
+    },
+    {
+      "question": "How does multi-hop entanglement affect fidelity?",
+      "answer": "Each swap adds noise. The WestQuant channel models a single write-store-read cycle. A multi-hop benchmark would need to compose channels across hops.",
+      "method": "Compose channels: F_total = F_hop1 * F_hop2 * ... * F_hopN"
+    },
+    {
+      "question": "What is the capacity limit of a repeater node?",
+      "answer": "Unknown \u2014 the current benchmark has no capacity contention. A star topology benchmark would measure how many simultaneous links a hub can serve.",
+      "method": "Vary the number of spokes and measure delivery probability per link"
+    }
+  ],
+  "implementation_plan": {
+    "phase_1": {
+      "name": "Three-node chain",
+      "steps": [
+        "Extend sequence_adapter.py with a RoutedProtocol class",
+        "Create a 3-node chain topology (A \u2014 B \u2014 C)",
+        "Generate ages from the link-generation timing distribution",
+        "Export channels for the full age range (0 to max_age)",
+        "Compare delivery probability against the direct-link benchmark",
+        "Identify whether routing or decoherence is the bottleneck"
+      ],
+      "timeline": "1-2 weeks"
+    },
+    "phase_2": {
+      "name": "Star topology with scheduling",
+      "steps": [
+        "Add a hub node with N memory slots",
+        "Implement a scheduling policy (round-robin, priority, best-age)",
+        "Model dead time (memory reset after readout)",
+        "Measure delivery probability per link as a function of N"
+      ],
+      "timeline": "2-3 weeks"
+    },
+    "phase_3": {
+      "name": "Mesh with routing",
+      "steps": [
+        "Add SeQUeNCe Router at each node",
+        "Implement a routing protocol",
+        "Measure end-to-end delivery probability across multiple paths",
+        "Compare routing strategies (shortest path vs best quality)"
+      ],
+      "timeline": "3-4 weeks"
+    }
+  },
+  "what_the_codebase_provides": [
+    "memorylab/sequence_adapter.py \u2014 event-kernel adapter (foundation for routing)",
+    "memorylab/network.py \u2014 MemoryDevice with age-specific channels",
+    "memorylab/channels.py \u2014 Kraus operators and Choi matrices for channel export",
+    "evaluation/config/validation_extension/crosssim_larger.json \u2014 current benchmark config"
+  ]
+}

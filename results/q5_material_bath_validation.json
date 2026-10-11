@@ -1,0 +1,145 @@
+{
+  "study": "q5_material_bath_validation",
+  "description": "Requirements and gap analysis for material-specific bath validation",
+  "current_state": {
+    "validated": [
+      "Synthetic spin convergence (4-spin bath, cluster orders 1-4)",
+      "Protocol instrument (hypothetical defect-spin profile)",
+      "Cross-simulator benchmark (hypothetical defect-spin profile)"
+    ],
+    "not_validated": [
+      "No material-specific bath has been validated",
+      "No experimental coherence curve has been matched",
+      "No independent physical model review has been conducted"
+    ],
+    "experimental_audit": "inconclusive_missing_matched_fidelity_and_clock_review"
+  },
+  "requirements_for_material_validation": [
+    {
+      "requirement": "Crystal structure with verified atomic positions",
+      "source": "CIF file from experimental data or DFT optimization",
+      "status": "Available for Pr:Y2SiO5 (Teller baseline) but not extracted for bath modeling",
+      "gap": "Need to parse the CIF and extract nuclear positions around the active ion"
+    },
+    {
+      "requirement": "Isotope abundances and nuclear spin data",
+      "source": "CIAAW isotopic abundances + NIST nuclear spin data",
+      "status": "Available in the screening module (memorylab/screening/nucdata.py)",
+      "gap": "Need to select the relevant isotopes for the host material"
+    },
+    {
+      "requirement": "Hyperfine couplings",
+      "source": "DFT calculation (PySCF) or experimental EPR/ENDOR",
+      "status": "PySCF adapter available but not run for real materials",
+      "gap": "Need to compute or import hyperfine tensors for the specific material"
+    },
+    {
+      "requirement": "Coherence curve comparison",
+      "source": "Experimental T2 or Ramsey/echo data",
+      "status": "Teller (state fidelities, not coherence curve); Rodriguez-Moldes (T2 decay curves); Bradley (Ramsey/echo, not in local cache)",
+      "gap": "Need a coherence curve L(t) from experimental data to compare against the model"
+    },
+    {
+      "requirement": "Convergence certificate",
+      "source": "Convergence study at the experimental conditions",
+      "status": "Framework available (memorylab/convergence_guard.py) but only tested with synthetic data",
+      "gap": "Need to run the convergence study with real bath parameters and verify all 5 axes pass"
+    },
+    {
+      "requirement": "Independent physical model review",
+      "source": "External review of the bath model, hyperfine couplings, and convergence",
+      "status": "Not conducted",
+      "gap": "Need an independent expert to review the model before it can be labelled a material prediction"
+    },
+    {
+      "requirement": "Matched protocol tomography",
+      "source": "Experimental data with the same input states and measurements",
+      "status": "Not available for any material",
+      "gap": "Need experimental data with matched input states, measurements, and clock calibration"
+    },
+    {
+      "requirement": "Clock calibration review",
+      "source": "Reviewed time reference for the experimental data",
+      "status": "Not conducted",
+      "gap": "Need to verify the experimental clock matches the simulation clock"
+    }
+  ],
+  "candidate_materials": [
+    {
+      "name": "Pr3+:Y2SiO5 (Teller et al.)",
+      "data_available": {
+        "state_fidelities": true,
+        "coherence_curve": false,
+        "crystal_structure": "Available but not extracted",
+        "hyperfine_couplings": false,
+        "isotope_data": true
+      },
+      "feasibility": "MEDIUM \u2014 state fidelities are available but no coherence curve. The Teller data provides endpoint fidelities, not L(t). A bath validation would need a separate coherence measurement.",
+      "next_steps": [
+        "Extract the Y2SiO5 crystal structure from the Teller data",
+        "Identify 89Y nuclear spins (I=1/2, 100% abundance) as the bath",
+        "Compute hyperfine couplings for Pr3+ in Y2SiO5",
+        "Find or measure a coherence curve L(t) for Pr3+:Y2SiO5",
+        "Run the convergence study and compare"
+      ]
+    },
+    {
+      "name": "Pr3+ (Rodriguez-Moldes et al.)",
+      "data_available": {
+        "state_fidelities": false,
+        "coherence_curve": true,
+        "crystal_structure": false,
+        "hyperfine_couplings": false,
+        "isotope_data": true
+      },
+      "feasibility": "MEDIUM \u2014 coherence curves are available (T2 decay data) but no crystal structure or hyperfine couplings. The T2 data provides L(t) but not the bath parameters needed to compute L(t) from first principles.",
+      "next_steps": [
+        "Obtain the crystal structure for the Pr host material",
+        "Compute hyperfine couplings",
+        "Run the convergence study with the experimental conditions",
+        "Compare computed L(t) against the Rodriguez-Moldes T2 data"
+      ]
+    },
+    {
+      "name": "NV/13C diamond (Bradley et al.)",
+      "data_available": {
+        "state_fidelities": false,
+        "coherence_curve": true,
+        "crystal_structure": true,
+        "hyperfine_couplings": "Computable (NV center is well-characterized)",
+        "isotope_data": true
+      },
+      "feasibility": "HIGH \u2014 diamond crystal structure is well-known, 13C bath is well-characterized, NV hyperfine tensor is computable, and Bradley provides Ramsey/echo data. This is the best candidate for a full material-specific bath validation.",
+      "next_steps": [
+        "Obtain the Bradley et al. data from 4TU.ResearchData",
+        "Build a 13C bath around the NV center using the diamond lattice",
+        "Compute the NV hyperfine tensor (or use literature values)",
+        "Run the convergence study at the experimental conditions (temperature, field)",
+        "Compare computed L(t) against Bradley Ramsey/echo data",
+        "If convergence and coherence match, issue a convergence certificate",
+        "Run the protocol test with the material-specific profile"
+      ]
+    }
+  ],
+  "recommendation": {
+    "priority": "NV/13C diamond (Bradley et al.)",
+    "rationale": "The NV center in diamond is the best-characterized system among the candidates. The crystal structure is known, the 13C bath is well-modeled, the NV hyperfine tensor is available in the literature, and Bradley provides experimental Ramsey/echo data for comparison. This is the most direct path to a material-specific bath validation.",
+    "blockers": [
+      "Bradley data not in local cache \u2014 need to download from 4TU.ResearchData",
+      "Need to build a 13C bath model with realistic positions",
+      "Need to verify the convergence study passes at the experimental conditions",
+      "Need an independent review before labelling as a material prediction"
+    ],
+    "estimated_effort": "1-2 weeks for the bath model and convergence study; additional time for independent review"
+  },
+  "what_the_codebase_provides": [
+    "memorylab/convergence_guard.py \u2014 certificate structure and validation logic",
+    "memorylab/spin.py \u2014 exact bath coherence with CPMG",
+    "memorylab/backends.py \u2014 PyCCE adapter for cluster expansion",
+    "memorylab/experimental.py \u2014 experimental data reanalysis",
+    "memorylab/t2assessment.py \u2014 T2 inference gates",
+    "baselines/teller2025/ \u2014 Teller baseline results",
+    "t2_data/ \u2014 Rodriguez-Moldes Pr data",
+    "memorylab/screening/nucdata.py \u2014 nuclear spin and isotope data"
+  ]
+}
