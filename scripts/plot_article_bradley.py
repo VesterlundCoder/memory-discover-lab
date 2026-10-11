@@ -1,4 +1,5 @@
 """Vector figure from the retained Bradley measurements and calibrated parameters."""
+import argparse
 import csv
 import json
 from pathlib import Path
@@ -8,7 +9,11 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
 ROOT=Path(__file__).resolve().parents[1]
-results=ROOT/'evaluation/results/bradley2022-nv0'
+parser=argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--results',type=Path,default=ROOT/'evaluation/results/bradley2022-nv0')
+parser.add_argument('--out',type=Path,default=ROOT/'figures/validation_extension')
+args=parser.parse_args()
+results=args.results
 summary=json.loads((results/'summary.json').read_text())
 with (results/'model_vs_observables.csv').open(newline='') as f:rows=list(csv.DictReader(f))
 plt.rcParams.update({'font.size':12,'axes.spines.top':False,'axes.spines.right':False,'pdf.fonttype':42,'ps.fonttype':42})
@@ -28,7 +33,7 @@ for ax,name,label in zip(axes,('equatorial_length','X'),('Transverse Bloch lengt
     ax.plot(1000*times,model,color='#222222',label='effective model')
     ax.set(xlabel='Free evolution (ms)',ylabel=label);ax.legend(fontsize=10)
 fig.suptitle('Bradley 2022: retrospective split; source error bars')
-out=ROOT/'figures/validation_extension';out.mkdir(exist_ok=True,parents=True)
+out=args.out;out.mkdir(exist_ok=True,parents=True)
 fig.savefig(out/'bradley_observables.pdf',bbox_inches='tight')
 fig.savefig(out/'bradley_observables.png',dpi=180,bbox_inches='tight')
 plt.close(fig)

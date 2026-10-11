@@ -15,6 +15,7 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--online',action='store_true',help='Reacquire original wider sources (requires external servers)')
     ap.add_argument('--out',type=Path,default=ROOT/'reproductions/latest')
+    ap.add_argument('--skip-tests',action='store_true',help='Release runner executes the combined test suite once')
     args=ap.parse_args();out=args.out.resolve()
     missing=[p for p in ['qutip','sequence','matplotlib'] if importlib.util.find_spec(p) is None]
     if missing:ap.error('Paper replay needs '+', '.join(missing)+". Install: python -m pip install -c lab/constraints-tested.txt -r requirements-paper.txt -e './lab[all]'")
@@ -27,6 +28,7 @@ def main():
     tasks=[([sys.executable,'-m','memorylab','reproduce',str(ROOT/'lab/examples/teller2025_baseline.json'),'--out',str(lab/'baselines/teller2025'),*bundle],'paper_teller_reproduction.log'),
         ([sys.executable,'-m','memorylab.t2lab','run','--sequence','--root',str(lab/'t2_data'),'--out',str(lab/'t2_runs/deterministic'),*bundle],'paper_t2_reproduction.log'),
         ([sys.executable,'-m','unittest','discover','-s',str(ROOT/'lab/tests'),'-v'],'paper_test_results.log')]
+    if args.skip_tests: tasks=tasks[:-1]
     for command,name in tasks:
         print('Running:', ' '.join(command),flush=True)
         with (out/'evidence'/name).open('w') as log:
@@ -37,7 +39,7 @@ def main():
     for source,target in copies.items():shutil.copyfile(lab/source,out/'evidence'/target)
     subprocess.run([sys.executable,str(ROOT/'scripts/make_figures.py'),'--inputs',str(out),'--out',str(out/'figures')],check=True)
     subprocess.run([sys.executable,str(ROOT/'scripts/make_tables.py'),'--inputs',str(out),'--out',str(out/'tables')],check=True)
-    subprocess.run([sys.executable,str(ROOT/'scripts/verify_results.py'),'--inputs',str(out),*(['--numerical-replay'] if not args.online else [])],check=True)
+    subprocess.run([sys.executable,str(ROOT/'scripts/verify_results.py'),'--inputs',str(out),*(['--numerical-replay'] if not args.online else []),*(['--skip-tests'] if args.skip_tests else [])],check=True)
     write_json(out/'scope.json',{'status':'pass','mode':'source_acquisition' if args.online else 'licensed_numerical_replay',
         'environment':environment(),'molecular_collection_reacquired':args.online,'unbundled_paper_bytes_reverified':args.online,
         'independent_scientific_review':False,'hardware_validation':False})

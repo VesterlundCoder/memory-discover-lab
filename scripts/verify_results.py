@@ -13,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ap=argparse.ArgumentParser(description=__doc__)
 ap.add_argument("--inputs",type=Path,default=ROOT)
 ap.add_argument("--numerical-replay",action="store_true",help="Exclude the wider molecular acquisition audit")
+ap.add_argument("--skip-tests",action="store_true",help="Tests are recorded by the combined release runner")
 args=ap.parse_args();ROOT=args.inputs.resolve()
 claims = []
 
@@ -82,8 +83,9 @@ assert y["retrieved_pairs"] == 321 and y["attempts"] == 2000 and not y["measured
 near(y["analytic_conditional_Bell_fidelity"], 0.9559176317211332)
 record("C9", "Separate hypothetical network control", "evidence/hypothetical_sequence.json", 321,
        "Supplied uncalibrated IO parameters; numerical verification")
-testlog = (ROOT / "evidence/paper_test_results.log").read_text()
-assert re.search(r"Ran 75 tests", testlog) and re.search(r"^OK$", testlog, re.MULTILINE)
-record("C10", "Automated suite passes", "evidence/paper_test_results.log", 75, "Software tests; no new hardware experiments")
+if not args.skip_tests:
+    testlog = (ROOT / "evidence/paper_test_results.log").read_text()
+    assert re.search(r"Ran 75 tests", testlog) and re.search(r"^OK$", testlog, re.MULTILINE)
+    record("C10", "Automated suite passes", "evidence/paper_test_results.log", 75, "Software tests; no new hardware experiments")
 (ROOT / "evidence/claim_result_map.json").write_text(json.dumps({"schema": "westquant_article_claim_map_v1", "claims": claims}, indent=2)+"\n")
 print(f"Verified {len(claims)} reporting invariants; wrote evidence/claim_result_map.json")
