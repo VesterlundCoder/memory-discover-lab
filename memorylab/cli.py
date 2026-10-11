@@ -77,6 +77,11 @@ def main():
     p = commands.add_parser("sequence")
     p.add_argument("left"); p.add_argument("right"); p.add_argument("workload")
     p.add_argument("--seed", type=int, default=20261010); p.add_argument("--out", default="runs/sequence.json")
+    p = commands.add_parser("screen")
+    p.add_argument("phase", choices=["inventory", "tier1", "pilot", "calibrate", "tier2",
+                                      "tier2b", "tier3", "tier4", "tier5", "rank", "report"])
+    p.add_argument("--config", default="screening/configs/inventory.json")
+    p.add_argument("--out", default="screening/results")
     args = ap.parse_args()
     try:
         if args.command == "doctor":
@@ -152,6 +157,9 @@ def main():
             from .network import load_device
             result = run_link(load_device(args.left), load_device(args.right), read_json(args.workload), args.seed)
             write_json(args.out, result)
+        elif args.command == "screen":
+            from .screening import dispatch_screen
+            result = dispatch_screen(args.phase, args.config, args.out)
         else:
             from .pipeline import pipeline
             result = pipeline(read_json(args.config), args.out, args.skip_fetch)

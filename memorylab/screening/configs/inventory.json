@@ -1,0 +1,20 @@
+{
+  "t2_data_root": "t2_data",
+  "references_json": "data/t2_references.json",
+  "all_elements_json": "examples/all_elements.json",
+  "combinations_json": "examples/new_combinations.json",
+  "include_hosts": true,
+  "fetch_dryad": true,
+  "dryad_doi": "10.5061/dryad.v6wwpzh55",
+  "fetch_nucdata": true,
+  "nucdata_source": "IAEA/NUBASE",
+  "fetch_host_cifs": true,
+  "host_sources": {
+    "Y2SiO5": "https://www.crystallography.net/cod/",
+    "YVO4": "https://www.crystallography.net/cod/",
+    "CaWO4": "https://www.crystallography.net/cod/",
+    "diamond": "https://www.crystallography.net/cod/",
+    "4H-SiC": "https://www.crystallography.net/cod/",
+    "Si": "https://www.crystallography.net/cod/"
+  }
+}

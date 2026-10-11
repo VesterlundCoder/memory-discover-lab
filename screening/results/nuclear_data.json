@@ -1,0 +1,895 @@
+{
+  "schema": "westquant_nuclear_data_v1",
+  "created_at": "2026-10-11T09:25:01.166216+00:00",
+  "source": "IAEA/NUBASE2020 + CODATA2018 + CIAAW abundances + Stone(2015) quadrupole moments",
+  "total_isotopes": 110,
+  "isotopes": {
+    "H-1": {
+      "isotope_id": "H-1",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": 267522128.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 99.9885,
+      "is_magnetic": true
+    },
+    "H-2": {
+      "isotope_id": "H-2",
+      "spin_I": 1.0,
+      "gamma_rad_s_T": 41066272.0,
+      "Q_barn": 0.00286,
+      "abundance_pct": 0.0115,
+      "is_magnetic": true
+    },
+    "H-3": {
+      "isotope_id": "H-3",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": 285349579.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 0.0,
+      "is_magnetic": true
+    },
+    "He-3": {
+      "isotope_id": "He-3",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": -203800000.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 0.0002,
+      "is_magnetic": true
+    },
+    "He-4": {
+      "isotope_id": "He-4",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 99.9998,
+      "is_magnetic": false
+    },
+    "Li-6": {
+      "isotope_id": "Li-6",
+      "spin_I": 1.0,
+      "gamma_rad_s_T": 39371000.0,
+      "Q_barn": -0.000808,
+      "abundance_pct": 4.85,
+      "is_magnetic": true
+    },
+    "Li-7": {
+      "isotope_id": "Li-7",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 103976000.0,
+      "Q_barn": -4.01,
+      "abundance_pct": 95.15,
+      "is_magnetic": true
+    },
+    "Be-9": {
+      "isotope_id": "Be-9",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": -37577000.0,
+      "Q_barn": 5.288,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "B-10": {
+      "isotope_id": "B-10",
+      "spin_I": 3.0,
+      "gamma_rad_s_T": 28746999.999999996,
+      "Q_barn": 8.459,
+      "abundance_pct": 19.65,
+      "is_magnetic": true
+    },
+    "B-11": {
+      "isotope_id": "B-11",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 85847000.0,
+      "Q_barn": 4.059,
+      "abundance_pct": 80.35,
+      "is_magnetic": true
+    },
+    "C-12": {
+      "isotope_id": "C-12",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 98.93,
+      "is_magnetic": false
+    },
+    "C-13": {
+      "isotope_id": "C-13",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": 67283000.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 1.07,
+      "is_magnetic": true
+    },
+    "C-14": {
+      "isotope_id": "C-14",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 0.0,
+      "is_magnetic": false
+    },
+    "N-14": {
+      "isotope_id": "N-14",
+      "spin_I": 1.0,
+      "gamma_rad_s_T": 19338000.0,
+      "Q_barn": 2.044,
+      "abundance_pct": 99.6205,
+      "is_magnetic": true
+    },
+    "N-15": {
+      "isotope_id": "N-15",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": -27126000.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 0.3795,
+      "is_magnetic": true
+    },
+    "O-16": {
+      "isotope_id": "O-16",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 99.757,
+      "is_magnetic": false
+    },
+    "O-17": {
+      "isotope_id": "O-17",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": -36281000.0,
+      "Q_barn": -2.558,
+      "abundance_pct": 0.0383,
+      "is_magnetic": true
+    },
+    "O-18": {
+      "isotope_id": "O-18",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 0.2047,
+      "is_magnetic": false
+    },
+    "F-19": {
+      "isotope_id": "F-19",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": 251812000.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Ne-20": {
+      "isotope_id": "Ne-20",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 90.48,
+      "is_magnetic": false
+    },
+    "Ne-21": {
+      "isotope_id": "Ne-21",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": -21130000.0,
+      "Q_barn": 10.155,
+      "abundance_pct": 0.27,
+      "is_magnetic": true
+    },
+    "Ne-22": {
+      "isotope_id": "Ne-22",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 9.25,
+      "is_magnetic": false
+    },
+    "Na-23": {
+      "isotope_id": "Na-23",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 70808000.0,
+      "Q_barn": 10.4,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Mg-24": {
+      "isotope_id": "Mg-24",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 78.951,
+      "is_magnetic": false
+    },
+    "Mg-25": {
+      "isotope_id": "Mg-25",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": -16390000.0,
+      "Q_barn": 19.94,
+      "abundance_pct": 10.011,
+      "is_magnetic": true
+    },
+    "Mg-26": {
+      "isotope_id": "Mg-26",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 11.038,
+      "is_magnetic": false
+    },
+    "Al-27": {
+      "isotope_id": "Al-27",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": 69762000.0,
+      "Q_barn": 14.66,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Si-28": {
+      "isotope_id": "Si-28",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 92.197,
+      "is_magnetic": false
+    },
+    "Si-29": {
+      "isotope_id": "Si-29",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": -53190000.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 4.673,
+      "is_magnetic": true
+    },
+    "Si-30": {
+      "isotope_id": "Si-30",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 3.13,
+      "is_magnetic": false
+    },
+    "P-31": {
+      "isotope_id": "P-31",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": 108390000.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "S-32": {
+      "isotope_id": "S-32",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 94.85,
+      "is_magnetic": false
+    },
+    "S-33": {
+      "isotope_id": "S-33",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 20550000.0,
+      "Q_barn": -6.78,
+      "abundance_pct": 0.76,
+      "is_magnetic": true
+    },
+    "S-34": {
+      "isotope_id": "S-34",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 4.28,
+      "is_magnetic": false
+    },
+    "S-36": {
+      "isotope_id": "S-36",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 0.11,
+      "is_magnetic": false
+    },
+    "Cl-35": {
+      "isotope_id": "Cl-35",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 26240000.0,
+      "Q_barn": -8.16,
+      "abundance_pct": 75.76,
+      "is_magnetic": true
+    },
+    "Cl-37": {
+      "isotope_id": "Cl-37",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 21840000.0,
+      "Q_barn": -6.44,
+      "abundance_pct": 24.24,
+      "is_magnetic": true
+    },
+    "K-39": {
+      "isotope_id": "K-39",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 12500000.0,
+      "Q_barn": 5.85,
+      "abundance_pct": 93.2581,
+      "is_magnetic": true
+    },
+    "K-40": {
+      "isotope_id": "K-40",
+      "spin_I": 4.0,
+      "gamma_rad_s_T": 5850000.0,
+      "Q_barn": -5.85,
+      "abundance_pct": 0.0117,
+      "is_magnetic": true
+    },
+    "K-41": {
+      "isotope_id": "K-41",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 6860000.000000001,
+      "Q_barn": 7.11,
+      "abundance_pct": 6.7302,
+      "is_magnetic": true
+    },
+    "Ca-40": {
+      "isotope_id": "Ca-40",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 96.941,
+      "is_magnetic": false
+    },
+    "Ca-43": {
+      "isotope_id": "Ca-43",
+      "spin_I": 3.5,
+      "gamma_rad_s_T": -18030000.0,
+      "Q_barn": -4.08,
+      "abundance_pct": 0.135,
+      "is_magnetic": true
+    },
+    "Ca-44": {
+      "isotope_id": "Ca-44",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 2.086,
+      "is_magnetic": false
+    },
+    "Ti-46": {
+      "isotope_id": "Ti-46",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 8.25,
+      "is_magnetic": false
+    },
+    "Ti-47": {
+      "isotope_id": "Ti-47",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": -15109999.999999998,
+      "Q_barn": 3.02,
+      "abundance_pct": 7.44,
+      "is_magnetic": true
+    },
+    "Ti-48": {
+      "isotope_id": "Ti-48",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 73.72,
+      "is_magnetic": false
+    },
+    "Ti-49": {
+      "isotope_id": "Ti-49",
+      "spin_I": 3.5,
+      "gamma_rad_s_T": -15109999.999999998,
+      "Q_barn": 2.47,
+      "abundance_pct": 5.41,
+      "is_magnetic": true
+    },
+    "Ti-50": {
+      "isotope_id": "Ti-50",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 5.18,
+      "is_magnetic": false
+    },
+    "V-50": {
+      "isotope_id": "V-50",
+      "spin_I": 6.0,
+      "gamma_rad_s_T": 26140000.0,
+      "Q_barn": 2.6,
+      "abundance_pct": 0.25,
+      "is_magnetic": true
+    },
+    "V-51": {
+      "isotope_id": "V-51",
+      "spin_I": 3.5,
+      "gamma_rad_s_T": 70460000.0,
+      "Q_barn": -4.3,
+      "abundance_pct": 99.75,
+      "is_magnetic": true
+    },
+    "Cr-50": {
+      "isotope_id": "Cr-50",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 4.345,
+      "is_magnetic": false
+    },
+    "Cr-52": {
+      "isotope_id": "Cr-52",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 83.789,
+      "is_magnetic": false
+    },
+    "Cr-53": {
+      "isotope_id": "Cr-53",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": -15160000.0,
+      "Q_barn": -15.0,
+      "abundance_pct": 9.501,
+      "is_magnetic": true
+    },
+    "Cr-54": {
+      "isotope_id": "Cr-54",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 2.365,
+      "is_magnetic": false
+    },
+    "Mn-55": {
+      "isotope_id": "Mn-55",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": 66449999.99999999,
+      "Q_barn": 33.0,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Fe-54": {
+      "isotope_id": "Fe-54",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 5.845,
+      "is_magnetic": false
+    },
+    "Fe-56": {
+      "isotope_id": "Fe-56",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 91.754,
+      "is_magnetic": false
+    },
+    "Fe-57": {
+      "isotope_id": "Fe-57",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": 8680000.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 2.119,
+      "is_magnetic": true
+    },
+    "Fe-58": {
+      "isotope_id": "Fe-58",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 0.282,
+      "is_magnetic": false
+    },
+    "Co-59": {
+      "isotope_id": "Co-59",
+      "spin_I": 3.5,
+      "gamma_rad_s_T": 63170000.0,
+      "Q_barn": 42.0,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Ni-58": {
+      "isotope_id": "Ni-58",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 68.077,
+      "is_magnetic": false
+    },
+    "Ni-60": {
+      "isotope_id": "Ni-60",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 26.223,
+      "is_magnetic": false
+    },
+    "Ni-61": {
+      "isotope_id": "Ni-61",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": -23940000.0,
+      "Q_barn": 16.2,
+      "abundance_pct": 1.14,
+      "is_magnetic": true
+    },
+    "Ni-62": {
+      "isotope_id": "Ni-62",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 3.634,
+      "is_magnetic": false
+    },
+    "Ni-64": {
+      "isotope_id": "Ni-64",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 0.926,
+      "is_magnetic": false
+    },
+    "Cu-63": {
+      "isotope_id": "Cu-63",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 71110000.0,
+      "Q_barn": -22.0,
+      "abundance_pct": 69.15,
+      "is_magnetic": true
+    },
+    "Cu-65": {
+      "isotope_id": "Cu-65",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 76150000.0,
+      "Q_barn": -19.5,
+      "abundance_pct": 30.85,
+      "is_magnetic": true
+    },
+    "Zn-64": {
+      "isotope_id": "Zn-64",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 48.63,
+      "is_magnetic": false
+    },
+    "Zn-66": {
+      "isotope_id": "Zn-66",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 27.9,
+      "is_magnetic": false
+    },
+    "Zn-67": {
+      "isotope_id": "Zn-67",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": 16770000.0,
+      "Q_barn": 15.0,
+      "abundance_pct": 4.1,
+      "is_magnetic": true
+    },
+    "Zn-68": {
+      "isotope_id": "Zn-68",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 18.75,
+      "is_magnetic": false
+    },
+    "Zn-70": {
+      "isotope_id": "Zn-70",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 0.62,
+      "is_magnetic": false
+    },
+    "Y-89": {
+      "isotope_id": "Y-89",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": -13160000.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Zr-90": {
+      "isotope_id": "Zr-90",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 51.45,
+      "is_magnetic": false
+    },
+    "Zr-91": {
+      "isotope_id": "Zr-91",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": -13910000.0,
+      "Q_barn": -17.6,
+      "abundance_pct": 11.22,
+      "is_magnetic": true
+    },
+    "Zr-92": {
+      "isotope_id": "Zr-92",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 17.15,
+      "is_magnetic": false
+    },
+    "W-182": {
+      "isotope_id": "W-182",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 26.494,
+      "is_magnetic": false
+    },
+    "W-183": {
+      "isotope_id": "W-183",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": 11279999.999999998,
+      "Q_barn": 0.0,
+      "abundance_pct": 14.313,
+      "is_magnetic": true
+    },
+    "W-184": {
+      "isotope_id": "W-184",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 30.642,
+      "is_magnetic": false
+    },
+    "W-186": {
+      "isotope_id": "W-186",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 28.426,
+      "is_magnetic": false
+    },
+    "Pr-141": {
+      "isotope_id": "Pr-141",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": 17110000.0,
+      "Q_barn": -5.89,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Nd-142": {
+      "isotope_id": "Nd-142",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 27.2,
+      "is_magnetic": false
+    },
+    "Nd-143": {
+      "isotope_id": "Nd-143",
+      "spin_I": 3.5,
+      "gamma_rad_s_T": -10800000.0,
+      "Q_barn": -49.0,
+      "abundance_pct": 12.2,
+      "is_magnetic": true
+    },
+    "Nd-145": {
+      "isotope_id": "Nd-145",
+      "spin_I": 3.5,
+      "gamma_rad_s_T": -6660000.0,
+      "Q_barn": -33.0,
+      "abundance_pct": 8.3,
+      "is_magnetic": true
+    },
+    "Sm-147": {
+      "isotope_id": "Sm-147",
+      "spin_I": 3.5,
+      "gamma_rad_s_T": -8380000.0,
+      "Q_barn": -25.0,
+      "abundance_pct": 15.0,
+      "is_magnetic": true
+    },
+    "Sm-149": {
+      "isotope_id": "Sm-149",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": -6939999.999999999,
+      "Q_barn": 7.97,
+      "abundance_pct": 13.8,
+      "is_magnetic": true
+    },
+    "Eu-151": {
+      "isotope_id": "Eu-151",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": 29370000.0,
+      "Q_barn": 90.3,
+      "abundance_pct": 47.81,
+      "is_magnetic": true
+    },
+    "Eu-153": {
+      "isotope_id": "Eu-153",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": 12980000.0,
+      "Q_barn": 241.2,
+      "abundance_pct": 52.19,
+      "is_magnetic": true
+    },
+    "Gd-155": {
+      "isotope_id": "Gd-155",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 8250000.0,
+      "Q_barn": 127.0,
+      "abundance_pct": 14.8,
+      "is_magnetic": true
+    },
+    "Gd-157": {
+      "isotope_id": "Gd-157",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 10940000.0,
+      "Q_barn": 135.0,
+      "abundance_pct": 15.7,
+      "is_magnetic": true
+    },
+    "Tb-159": {
+      "isotope_id": "Tb-159",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 25339999.999999996,
+      "Q_barn": 143.2,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Dy-161": {
+      "isotope_id": "Dy-161",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": 8600000.0,
+      "Q_barn": 250.7,
+      "abundance_pct": 18.91,
+      "is_magnetic": true
+    },
+    "Dy-163": {
+      "isotope_id": "Dy-163",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": 11900000.0,
+      "Q_barn": 264.8,
+      "abundance_pct": 24.9,
+      "is_magnetic": true
+    },
+    "Ho-165": {
+      "isotope_id": "Ho-165",
+      "spin_I": 3.5,
+      "gamma_rad_s_T": 17110000.0,
+      "Q_barn": 358.0,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Er-166": {
+      "isotope_id": "Er-166",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 33.6,
+      "is_magnetic": false
+    },
+    "Er-167": {
+      "isotope_id": "Er-167",
+      "spin_I": 3.5,
+      "gamma_rad_s_T": -8169999.999999999,
+      "Q_barn": 356.0,
+      "abundance_pct": 22.95,
+      "is_magnetic": true
+    },
+    "Er-168": {
+      "isotope_id": "Er-168",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 26.8,
+      "is_magnetic": false
+    },
+    "Er-170": {
+      "isotope_id": "Er-170",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 14.9,
+      "is_magnetic": false
+    },
+    "Tm-169": {
+      "isotope_id": "Tm-169",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": -22100000.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Yb-168": {
+      "isotope_id": "Yb-168",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 0.13,
+      "is_magnetic": false
+    },
+    "Yb-170": {
+      "isotope_id": "Yb-170",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 3.04,
+      "is_magnetic": false
+    },
+    "Yb-171": {
+      "isotope_id": "Yb-171",
+      "spin_I": 0.5,
+      "gamma_rad_s_T": 47320000.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 14.28,
+      "is_magnetic": true
+    },
+    "Yb-172": {
+      "isotope_id": "Yb-172",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 21.83,
+      "is_magnetic": false
+    },
+    "Yb-173": {
+      "isotope_id": "Yb-173",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": -13100000.0,
+      "Q_barn": 28.0,
+      "abundance_pct": 16.13,
+      "is_magnetic": true
+    },
+    "Yb-174": {
+      "isotope_id": "Yb-174",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 31.83,
+      "is_magnetic": false
+    },
+    "Yb-176": {
+      "isotope_id": "Yb-176",
+      "spin_I": 0.0,
+      "gamma_rad_s_T": 0.0,
+      "Q_barn": 0.0,
+      "abundance_pct": 12.76,
+      "is_magnetic": false
+    },
+    "Bi-209": {
+      "isotope_id": "Bi-209",
+      "spin_I": 4.5,
+      "gamma_rad_s_T": 43360000.0,
+      "Q_barn": -51.6,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "I-127": {
+      "isotope_id": "I-127",
+      "spin_I": 2.5,
+      "gamma_rad_s_T": 53900000.0,
+      "Q_barn": -71.5,
+      "abundance_pct": 100.0,
+      "is_magnetic": true
+    },
+    "Br-79": {
+      "isotope_id": "Br-79",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 67250000.0,
+      "Q_barn": 31.3,
+      "abundance_pct": 50.69,
+      "is_magnetic": true
+    },
+    "Br-81": {
+      "isotope_id": "Br-81",
+      "spin_I": 1.5,
+      "gamma_rad_s_T": 72500000.0,
+      "Q_barn": 26.2,
+      "abundance_pct": 49.31,
+      "is_magnetic": true
+    }
+  },
+  "notes": [
+    "Ground-state isotopes only; isomers not included",
+    "gamma in rad s^-1 T^-1 (converted from 10^7 rad T^-1 s^-1 tabulated values)",
+    "Q in barn (10^-28 m^2)",
+    "Abundance in percent (0-100)",
+    "is_magnetic = True when spin_I > 0 and gamma != 0"
+  ]
+}

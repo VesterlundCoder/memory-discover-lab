@@ -1,0 +1,8 @@
+{
+  "phase": "inventory",
+  "created_at": "2026-10-11T09:24:21.471818+00:00",
+  "config_hash": "55e03889732b70be1e2ff110a149a39e4964e73ece7c7c0026fd4d3f3b702b4d",
+  "report_path": "screening/results/inventory_report.json",
+  "report_sha256": "6a4af1872356a88eba656da853f475b55e09f7bd0c38fe90bb92bf76907da863",
+  "universe_db_sha256": "879a18c3c2759d2c6290de330b201da35cc0e5eec205fcafbd31109664f40a41"
+}

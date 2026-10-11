@@ -1,0 +1,61 @@
+{
+  "schema": "westquant_screening_inventory_v1",
+  "created_at": "2026-10-11T09:24:21.471092+00:00",
+  "total_candidates": 2508,
+  "family_counts": {
+    "molecular_spin": 135,
+    "rare_earth_solid": 8,
+    "defect_spin": 5,
+    "trapped_atom_ion": 2360
+  },
+  "status_counts": {
+    "success": 1995,
+    "missing_data": 41,
+    "blocked": 472
+  },
+  "source_counts": {
+    "mtd2024": 123,
+    "t2_references": 10,
+    "all_elements": 2360,
+    "new_combinations": 9,
+    "cod_host_cifs": 6
+  },
+  "molecular_rows": 201,
+  "molecular_cif_matched": 88,
+  "molecular_cif_unmatched": 58,
+  "cif_match_rate": 0.7154471544715447,
+  "cif_errors": [],
+  "review_references": 10,
+  "atom_ion_candidates": 2360,
+  "combination_candidates": 9,
+  "host_candidates": 6,
+  "unit_review_queue_size": 96,
+  "unit_review_queue_path": "screening/results/unit_review_queue.csv",
+  "license_status": {
+    "MTD_CSV": "not_specified (assumed CC-BY)",
+    "MTD_CIFs": "not_specified (assumed CC-BY)",
+    "t2_references": "reviewed_transcription",
+    "Teller_2025": "CC BY 4.0",
+    "Pr_2026": "CC BY 4.0",
+    "Bradley_2022": "CC BY 4.0",
+    "NV_2025": "CC BY 4.0",
+    "Dryad_optical": "to_verify",
+    "COD_hosts": "CC0"
+  },
+  "data_gaps": [
+    "nuclear_spin_I_gamma_Q (Phase 0b will address via IAEA/NUBASE)",
+    "NIST_ASD_atomic_levels (Extension X2, deferred)",
+    "electron_affinities_for_negative_ions (Extension X3, deferred)",
+    "host_CIFs_for_Y2SiO5_diamond_SiC_Si (Extension X1, approved)",
+    "Dryad_optical_license (to verify in Phase 0)"
+  ],
+  "universe_db_path": "screening/results/private/universe.sqlite",
+  "extensions_approved": [
+    "X1_host_CIFs",
+    "X4_nuclear_data"
+  ],
+  "extensions_deferred": [
+    "X2_NIST_ASD",
+    "X3_electron_affinities"
+  ]
+}
