@@ -22,6 +22,7 @@
     "QuNetSim"
   ],
   "related_identifiers": [
+    {"identifier": "10.5281/zenodo.23732317", "relation": "isSupplementedBy", "scheme": "doi"},
     {"identifier": "10.5281/zenodo.14929997", "relation": "isDerivedFrom", "scheme": "doi"},
     {"identifier": "10.5281/zenodo.21532904", "relation": "isDerivedFrom", "scheme": "doi"},
     {"identifier": "10.4121/16887658.v3", "relation": "isDerivedFrom", "scheme": "doi"},

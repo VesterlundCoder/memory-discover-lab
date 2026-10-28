@@ -14,6 +14,8 @@ The legacy public `v0.7.0` tag resolves to a different tree and has not been mov
 Earlier article/execution snapshots are retained in `HISTORY.md`; the new replay
 and separately manifested sensitivity studies are supplied in the companion data
 archive. DOI links will be added after the approved deposition is published.
+Companion data and reproduction materials:
+[10.5281/zenodo.23732317](https://doi.org/10.5281/zenodo.23732317).
 The manuscript files retained in this code snapshot are historical. The revised
 DQS manuscript and Additional File 1 are supplied in the companion data archive.
 
