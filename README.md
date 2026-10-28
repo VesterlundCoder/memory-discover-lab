@@ -5,6 +5,14 @@
 [![PyPI version](https://badge.fury.io/py/westquant-memory-lab.svg)](https://pypi.org/project/westquant-memory-lab/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![Article software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23732341.svg)](https://doi.org/10.5281/zenodo.23732341)
+[![Article data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23732317.svg)](https://doi.org/10.5281/zenodo.23732317)
+
+**System-paper archive:** [software v0.7.0](https://doi.org/10.5281/zenodo.23732341)
+and [data/reproduction materials](https://doi.org/10.5281/zenodo.23732317).
+For article reproduction, use the
+[v0.7.0-archive release](https://github.com/VesterlundCoder/memory-discover-lab/releases/tag/v0.7.0-archive),
+whose scientific source is pinned to commit `2c6bb71fac1a8b6561c2dfea89d280f2866155ae`.
 
 WestQuant connects versioned experimental source data to typed observations, condition-matched coherence references, explicit quantum channels (Kraus operators with erasure), and native network-simulator adapters (SeQUeNCe and QuNetSim). Its contribution is an executable evidence contract across these interfaces, with retained failure outcomes and reproducible study identities.
 
