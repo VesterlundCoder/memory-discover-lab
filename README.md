@@ -6,13 +6,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Article software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23732341.svg)](https://doi.org/10.5281/zenodo.23732341)
-[![Article data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23732317.svg)](https://doi.org/10.5281/zenodo.23732317)
+[![Article data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23733543.svg)](https://doi.org/10.5281/zenodo.23733543)
 
-**System-paper archive:** [software v0.7.0](https://doi.org/10.5281/zenodo.23732341)
-and [data/reproduction materials](https://doi.org/10.5281/zenodo.23732317).
-For article reproduction, use the
-[v0.7.0-archive release](https://github.com/VesterlundCoder/memory-discover-lab/releases/tag/v0.7.0-archive),
-whose scientific source is pinned to commit `2c6bb71fac1a8b6561c2dfea89d280f2866155ae`.
+**System-paper source:** [v0.7.0-replay](https://github.com/VesterlundCoder/memory-discover-lab/tree/v0.7.0-replay)
+points exactly to `2c6bb71fac1a8b6561c2dfea89d280f2866155ae`.
+The [software archive](https://doi.org/10.5281/zenodo.23732341) packages the same
+scientific code with citation metadata as `v0.7.0-archive`.
+[Data and reproduction materials, revision 2](https://doi.org/10.5281/zenodo.23733543)
+include the named-tag bundle and retained-result comparison. The legacy `v0.7.0`
+tag is not the article's checkout target.
 
 WestQuant connects versioned experimental source data to typed observations, condition-matched coherence references, explicit quantum channels (Kraus operators with erasure), and native network-simulator adapters (SeQUeNCe and QuNetSim). Its contribution is an executable evidence contract across these interfaces, with retained failure outcomes and reproducible study identities.
 
