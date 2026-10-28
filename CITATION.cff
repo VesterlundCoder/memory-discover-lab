@@ -5,6 +5,7 @@ title: "WestQuant Memory Discovery Lab v0.7.0"
 version: 0.7.0
 date-released: 2026-10-11
 license: MIT
+doi: "10.5281/zenodo.23732341"
 authors:
   - family-names: Vesterlund
     given-names: David

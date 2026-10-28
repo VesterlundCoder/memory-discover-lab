@@ -1,5 +1,8 @@
 # WestQuant Memory Discovery Lab — research article and reproducibility bundle
 
+[![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23732341.svg)](https://doi.org/10.5281/zenodo.23732341)
+[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23732317.svg)](https://doi.org/10.5281/zenodo.23732317)
+
 ## Archival reproduction identity
 
 The DQS archive preparation reproduces scientific source commit
@@ -13,7 +16,9 @@ For this replay, check out the full commit above and pass it to
 The legacy public `v0.7.0` tag resolves to a different tree and has not been moved.
 Earlier article/execution snapshots are retained in `HISTORY.md`; the new replay
 and separately manifested sensitivity studies are supplied in the companion data
-archive. DOI links will be added after the approved deposition is published.
+archive. The archived software version is
+[10.5281/zenodo.23732341](https://doi.org/10.5281/zenodo.23732341);
+[10.5281/zenodo.23732340](https://doi.org/10.5281/zenodo.23732340) identifies all versions.
 Companion data and reproduction materials:
 [10.5281/zenodo.23732317](https://doi.org/10.5281/zenodo.23732317).
 The manuscript files retained in this code snapshot are historical. The revised
