@@ -1,5 +1,22 @@
 # WestQuant Memory Discovery Lab — research article and reproducibility bundle
 
+## Archival reproduction identity
+
+The DQS archive preparation reproduces scientific source commit
+`2c6bb71fac1a8b6561c2dfea89d280f2866155ae` with Python 3.12.15 and the pinned
+distributions in `requirements-release-v070.txt`. The new run passes 109 tests
+and the canonical/confirmation comparisons. This archival branch changes citation
+metadata and documentation only; scientific code remains identical to that commit.
+
+For this replay, check out the full commit above and pass it to
+`scripts/reproduce_release.py --tag 2c6bb71fac1a8b6561c2dfea89d280f2866155ae`.
+The legacy public `v0.7.0` tag resolves to a different tree and has not been moved.
+Earlier article/execution snapshots are retained in `HISTORY.md`; the new replay
+and separately manifested sensitivity studies are supplied in the companion data
+archive. DOI links will be added after the approved deposition is published.
+The manuscript files retained in this code snapshot are historical. The revised
+DQS manuscript and Additional File 1 are supplied in the companion data archive.
+
 **David Vesterlund — WestQuant, Vesterlund Ventures, Sweden. 10 October 2026.**
 
 This repository accompanies *WestQuant Memory Discovery Lab: An Evidence-Aware Framework from Experimental Data to Quantum-Memory Simulation*. Its contribution is an executable source-to-model workflow with explicit physical and evidence boundaries. It is an English scientific manuscript covering the original version-0.6.0 reruns and the subsequent Bradley, complete-protocol, convergence and two-simulator studies. It retains analytical verification, processed experimental-data reanalysis, negative diagnostics and revision-specific source identities.

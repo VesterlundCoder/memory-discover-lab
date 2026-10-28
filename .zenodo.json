@@ -1,0 +1,34 @@
+{
+  "upload_type": "software",
+  "title": "WestQuant Memory Discovery Lab v0.7.0",
+  "version": "0.7.0",
+  "creators": [
+    {
+      "name": "Vesterlund, David",
+      "orcid": "0009-0000-6455-1141",
+      "affiliation": "WestQuant, Vesterlund Ventures Holding AB, Bankeryd, Sweden"
+    }
+  ],
+  "license": "MIT",
+  "access_right": "open",
+  "description": "<p>WestQuant connects versioned experimental sources, typed observations, condition-matched references, quantum channels and native network simulators through executable evidence contracts. The scientific code is software version 0.7.0 at immutable source commit 2c6bb71fac1a8b6561c2dfea89d280f2866155ae. A clean reproduction on 28 October 2026 passed 109 tests and confirmed the core studies, including 359 extension JSON records and 11 random-trace arrays. This archival revision adds citation metadata and a history document while preserving the scientific code unchanged.</p><p>Original software is MIT-licensed. Experimental inputs retain their original CC BY 4.0 licenses and attribution. The companion dataset contains the new core replay and separately identified retrospective sensitivity studies.</p>",
+  "keywords": [
+    "quantum memories",
+    "reproducible simulation",
+    "provenance",
+    "quantum channels",
+    "quantum networks",
+    "SeQUeNCe",
+    "QuNetSim"
+  ],
+  "related_identifiers": [
+    {"identifier": "10.5281/zenodo.14929997", "relation": "isDerivedFrom", "scheme": "doi"},
+    {"identifier": "10.5281/zenodo.21532904", "relation": "isDerivedFrom", "scheme": "doi"},
+    {"identifier": "10.4121/16887658.v3", "relation": "isDerivedFrom", "scheme": "doi"},
+    {
+      "identifier": "https://github.com/VesterlundCoder/memory-discover-lab/tree/2c6bb71fac1a8b6561c2dfea89d280f2866155ae",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}
