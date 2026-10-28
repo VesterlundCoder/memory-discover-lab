@@ -1,18 +1,18 @@
 # WestQuant Memory Discovery Lab — research article and reproducibility bundle
 
 [![Software DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23732341.svg)](https://doi.org/10.5281/zenodo.23732341)
-[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23732317.svg)](https://doi.org/10.5281/zenodo.23732317)
+[![Data DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23733543.svg)](https://doi.org/10.5281/zenodo.23733543)
 
 ## Archival reproduction identity
 
-The DQS archive preparation reproduces scientific source commit
+The DQS source release `v0.7.0-replay` identifies scientific source commit
 `2c6bb71fac1a8b6561c2dfea89d280f2866155ae` with Python 3.12.15 and the pinned
 distributions in `requirements-release-v070.txt`. The new run passes 109 tests
 and the canonical/confirmation comparisons. This archival branch changes citation
 metadata and documentation only; scientific code remains identical to that commit.
 
-For this replay, check out the full commit above and pass it to
-`scripts/reproduce_release.py --tag 2c6bb71fac1a8b6561c2dfea89d280f2866155ae`.
+For this replay, check out `v0.7.0-replay` and use
+`scripts/reproduce_release.py --tag v0.7.0-replay`.
 The legacy public `v0.7.0` tag resolves to a different tree and has not been moved.
 Earlier article/execution snapshots are retained in `HISTORY.md`; the new replay
 and separately manifested sensitivity studies are supplied in the companion data
@@ -20,7 +20,7 @@ archive. The archived software version is
 [10.5281/zenodo.23732341](https://doi.org/10.5281/zenodo.23732341);
 [10.5281/zenodo.23732340](https://doi.org/10.5281/zenodo.23732340) identifies all versions.
 Companion data and reproduction materials:
-[10.5281/zenodo.23732317](https://doi.org/10.5281/zenodo.23732317).
+[10.5281/zenodo.23733543](https://doi.org/10.5281/zenodo.23733543).
 The manuscript files retained in this code snapshot are historical. The revised
 DQS manuscript and Additional File 1 are supplied in the companion data archive.
 
